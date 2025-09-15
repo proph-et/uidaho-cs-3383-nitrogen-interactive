@@ -24,7 +24,7 @@ https://discord.gg/2A5ut4xN3J
 Nitrogen Interactive
 
 ## Team Logo
-<img src="team_logo.png" alt="drawing" width="420"/>
+<img src="docs/team_logo.png" alt="drawing" width="420"/>
 
 [temporary]
 
