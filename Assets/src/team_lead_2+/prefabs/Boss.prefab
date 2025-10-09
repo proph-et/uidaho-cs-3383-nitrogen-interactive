@@ -157,7 +157,7 @@ MonoBehaviour:
     m_Bits: 8
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   sightRange: 3
 --- !u!114 &2546444180564352842
 MonoBehaviour:
