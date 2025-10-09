@@ -705,6 +705,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 49219387}
+    - target: {fileID: 786943659911516758, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1438348507310371686, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.59
