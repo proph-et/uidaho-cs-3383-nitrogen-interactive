@@ -2,8 +2,9 @@ using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEngine.InputSystem;
 
-public class CanClickTest
+public class CanClickTest : InputTestFixture
 {
     Mouse mouse;
 
