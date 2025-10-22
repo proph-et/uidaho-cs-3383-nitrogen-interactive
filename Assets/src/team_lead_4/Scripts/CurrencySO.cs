@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CurrencySO : CollectableSOBase
 {
-    private int CurrencyAmount = 1;
+    public int CurrencyAmount =1;
     private int Currency = 0;
 
     private void OnEnable()

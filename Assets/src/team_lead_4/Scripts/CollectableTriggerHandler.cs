@@ -16,6 +16,9 @@ public class CollectableTriggerHandler : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             _collectable.Collect(collision.gameObject);
+
+
+            
             //Destroy for now...
             Destroy(gameObject);
         }
