@@ -475,7 +475,7 @@ Transform:
   m_GameObject: {fileID: 161673476}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.61, y: 1, z: 0}
+  m_LocalPosition: {x: -2.25, y: -1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1327,7 +1327,6 @@ GameObject:
   - component: {fileID: 1386180776}
   - component: {fileID: 1386180775}
   - component: {fileID: 1386180774}
-  - component: {fileID: 1386180773}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1335,19 +1334,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1386180773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386180772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 158c49cbafd13bd45ace26dd05bdca68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 50
 --- !u!114 &1386180774
 MonoBehaviour:
   m_ObjectHideFlags: 0
