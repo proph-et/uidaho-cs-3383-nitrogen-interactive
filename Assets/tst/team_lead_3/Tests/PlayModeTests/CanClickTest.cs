@@ -18,7 +18,7 @@ public class CanClickTest : InputTestFixture
     }
 
     [UnityTest]
-    public IEnumerator CanClickTest()
+    public IEnumerator ClickTest()
     {
         // Assert.Pass();
         Press(mouse.leftButton);
