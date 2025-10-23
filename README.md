@@ -8,8 +8,7 @@ https://github.com/proph-et/uidaho-cs-3383-nitrogen-interactive
 https://discord.gg/2A5ut4xN3J
 
 ## Gantt Chart Link
-[insert here]
-
+https://vandalsuidaho-my.sharepoint.com/:x:/g/personal/meye4747_vandals_uidaho_edu/EU1tbgx8Xn1ItoyfYf2XexIBDhF1ILGX5i-WKBy8CPJEOQ?rtime=RlQ5alAS3kg
 
 ## Team Leads
 1) Andersen Westphal (git, IT stuff)  
@@ -42,4 +41,5 @@ Nitrogen Interactive
 + 3 maps
   + 2 enemies types per map
   + 1 large mini boss
+
   + 1 boss per map
