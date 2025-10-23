@@ -19,7 +19,8 @@ public class SkillTreeTest : InputTestFixture
     public IEnumerator DoesSkillTreeWork()
     {
         Press(keyboard.xKey);
-        if (Input.GetKeyDown(KeyCode.X))
+        InputSystem.Update();
+        if (keyboard.xKey.wasPressedThisFrame)
         {
             Debug.Log("Skill tree is up");
             Assert.Pass();

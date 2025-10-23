@@ -23,7 +23,6 @@ public class CanClickTest : InputTestFixture
 
         if (mouse.leftButton.wasPressedThisFrame)
         {
-            Debug.Log("Buying a skill");
             Assert.Pass();
         }
         else
