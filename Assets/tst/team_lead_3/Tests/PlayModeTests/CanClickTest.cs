@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class CanClickTest : InputTestFixture
 {
     Mouse mouse;
+    
 
     [UnitySetUp]
     public IEnumerator SetUp()
@@ -17,8 +18,9 @@ public class CanClickTest : InputTestFixture
     }
 
     [UnityTest]
-    public IEnumerator DoesSkillTreeWork()
+    public IEnumerator CanClickTest()
     {
+        // Assert.Pass();
         Press(mouse.leftButton);
         yield return null; // best to wait a frame
 

@@ -8,6 +8,7 @@ public class SkillTreeTest : InputTestFixture
 {
     Keyboard keyboard;
 
+
     [UnitySetUp]
     public IEnumerator SetUp()
     {
@@ -18,6 +19,7 @@ public class SkillTreeTest : InputTestFixture
     [UnityTest]
     public IEnumerator DoesSkillTreeWork()
     {
+        // Assert.Pass();
         Press(keyboard.xKey);
         InputSystem.Update();
         if (keyboard.xKey.wasPressedThisFrame)
