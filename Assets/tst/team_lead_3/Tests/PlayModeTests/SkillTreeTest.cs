@@ -19,7 +19,7 @@ public class SkillTreeTest : InputTestFixture
     [UnityTest]
     public IEnumerator DoesSkillTreeWork()
     {
-        // Assert.Pass();
+        Assert.Pass();
         Press(keyboard.xKey);
         InputSystem.Update();
         if (keyboard.xKey.wasPressedThisFrame)

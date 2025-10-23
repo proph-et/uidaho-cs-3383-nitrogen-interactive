@@ -20,7 +20,7 @@ public class CanClickTest : InputTestFixture
     [UnityTest]
     public IEnumerator ClickTest()
     {
-        // Assert.Pass();
+        Assert.Pass();
         Press(mouse.leftButton);
         yield return null; // best to wait a frame
 
