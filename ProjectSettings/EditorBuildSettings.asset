@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/src/team_lead_3/SkillTreeScene.unity
     guid: bc2d32d00dc8d4e32a768beac9af82c7
   - enabled: 1
-    path: Assets/src/team_lead_2/Scenes/SampleScene.unity
-    guid: c308fa854eaa6224299e86bcbe552c37
+    path: Assets/src/team_lead_4/Scenes/SampleSceneCollectibles.unity
+    guid: e212250e9061eb544893a6f616b5b4bf
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
