@@ -9,3 +9,7 @@ https://vandalsuidaho-my.sharepoint.com/:p:/g/personal/cobb9838_vandals_uidaho_e
 # TL2 Platformer Presentation
 
 https://drive.google.com/file/d/1_cIXsn0ae7015ZERk1on0RAg0-8TUSu2/view
+
+# TL3 Untiy Tests Video
+
+https://vandalsuidaho-my.sharepoint.com/:v:/g/personal/john8398_vandals_uidaho_edu/EfUonXZ3fNxKiH9WsPMuTsQBL5LD7R5-L_ZucYkImBn6Ew?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=cEoX0n

@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class CurrencySO : CollectableSOBase
 {
-    private int CurrencyAmount = 1;
+    public int CurrencyAmount = 1;
     private int Currency = 0;
+    private int MaxCurrency = int.MaxValue;
 
     private void OnEnable()
     {
@@ -16,9 +17,30 @@ public class CurrencySO : CollectableSOBase
 
     public override void Collect(GameObject objectThatCollected)
     {
-        Currency += CurrencyAmount;
+        long result = (long)Currency + CurrencyAmount;
+        if(result>MaxCurrency)
+        {
+            Currency = MaxCurrency;
+            Debug.Log("Error: currency overflow reached");
+        }
+
+        if(result < 0)
+        {
+            Currency = 0;
+            Debug.Log("Error: Negative Currency");
+        }
         Debug.Log("Dough: " + Currency);
 
     }
     
+    public int GetCurrency()
+    {
+        return Currency;
+    }
+
+    public void SetCurrency(int x)
+    {
+        Currency = x;
+    }
+
 }

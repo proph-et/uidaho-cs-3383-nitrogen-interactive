@@ -15,7 +15,7 @@ public class Collectable : MonoBehaviour
     void Update()
     {
         //Rotate the object for the effect
-        transform.Rotate (new Vector3 (15, 30, 45) * Time.deltaTime);
+        // transform.Rotate (new Vector3 (15, 30, 45) * Time.deltaTime);
         
     }
 
