@@ -8,10 +8,12 @@ namespace src.team_lead_1.scripts
         private Button _myButton;
         public UIManager uiManager;
 
-        void Start()
+        void Awake()
         {
             _myButton = GetComponent<Button>();
-            _myButton.onClick.AddListener(OnButtonClick);
+            if (_myButton != null)
+                _myButton.onClick.AddListener(OnButtonClick);
+
             uiManager = FindFirstObjectByType<UIManager>();
         }
 
@@ -19,7 +21,8 @@ namespace src.team_lead_1.scripts
         {
             int value = 5;
             Debug.Log("item sold");
-            uiManager.SellItem(value);
+            if (uiManager != null)
+                uiManager.SellItem(value);
         }
     }
 }

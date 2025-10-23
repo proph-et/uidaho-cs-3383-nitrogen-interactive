@@ -8,7 +8,6 @@ using System.IO;
 public class Log
 {
     string file_path = "log.txt";
-
     public void Write_to_file(int num_nodes)
     {
         using (StreamWriter writer = new StreamWriter(file_path, true))
@@ -16,7 +15,6 @@ public class Log
             writer.WriteLine(num_nodes);
         } 
     }
-
 }
 
 
