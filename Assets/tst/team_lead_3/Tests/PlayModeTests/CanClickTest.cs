@@ -15,6 +15,7 @@ public class CanClickTest : InputTestFixture
 
         yield return null;
     }
+
     [UnityTest]
     public IEnumerator DoesSkillTreeWork()
     {
@@ -29,6 +30,7 @@ public class CanClickTest : InputTestFixture
         {
             Assert.Fail();
         }
+
         yield return null;
     }
 
@@ -39,6 +41,7 @@ public class CanClickTest : InputTestFixture
         {
             InputSystem.RemoveDevice(mouse);
         }
+
         yield return null;
     }
 }

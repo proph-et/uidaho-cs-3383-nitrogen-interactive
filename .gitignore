@@ -100,3 +100,10 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# editor build settings
+ProjectSettings/EditorBuildSettings.asset
+
+Assets/_Recovery*
+
+.idea/
