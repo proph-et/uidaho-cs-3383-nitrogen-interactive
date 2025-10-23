@@ -7,6 +7,14 @@ public class Boss : MonoBehaviour
 
     private bool isActive = false;
 
+    void Start()
+    {
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player").transform;
+        }
+    }
+
 
     private void Awake()
     {
