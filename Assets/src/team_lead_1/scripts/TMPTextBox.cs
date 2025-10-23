@@ -11,15 +11,17 @@ namespace src.team_lead_1.scripts
         public TextMeshProUGUI myTMPTextElement; // Drag your TextMeshProUGUI object here
         [SerializeField] public string initialText;
 
-        void Start()
+        void Awake()
         {
+            myTMPTextElement = GetComponent<TextMeshProUGUI>();
             if (myTMPTextElement != null)
                 myTMPTextElement.text = initialText;
         }
 
         public void ChangeTMPText(string newText)
         {
-            myTMPTextElement.text = newText;
+            if (myTMPTextElement != null)
+                myTMPTextElement.text = newText;
         }
     }
 }

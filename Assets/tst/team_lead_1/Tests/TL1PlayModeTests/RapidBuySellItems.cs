@@ -48,6 +48,7 @@ public class RapidBuySellItems
 
         for (int i = 0; i < iterations; i++)
         {
+            Debug.Log($"iteration: {i}");
             if (_uiManager.money >= itemValue)
             {
                 _uiManager.BuyItem(itemValue);
