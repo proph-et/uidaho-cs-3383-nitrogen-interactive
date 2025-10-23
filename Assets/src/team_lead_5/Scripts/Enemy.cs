@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
             walkPointSet = true;
     }
 
-    private void ChasePlayer()
+    public void ChasePlayer()
     {
         agent.SetDestination(player.position);
     }
@@ -113,6 +113,21 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+
+    public bool FindPlayerCheck()
+    {
+        if (playerInSightRange && !playerInAttackRange);
+        return true;
+        
+        return false;
+    }
+    public bool AttackPlayerCheck()
+    {
+        if (playerInAttackRange && playerInSightRange);
+        return true;
+        
+        return false;
     }
 }
 
