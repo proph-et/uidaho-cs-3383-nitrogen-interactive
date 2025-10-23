@@ -14,7 +14,7 @@ public class WeaponSO : CollectableSOBase
         
         if (holder != null && weaponPrefab != null)
         {
-            Debug.Log("equipping weapon");
+            // Debug.Log("equipping weapon");
             holder.equipWeapon(weaponPrefab);
         }
     }
