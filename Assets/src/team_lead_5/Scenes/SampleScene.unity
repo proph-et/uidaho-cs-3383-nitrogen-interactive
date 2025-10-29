@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 49219383}
   - component: {fileID: 49219382}
   - component: {fileID: 49219389}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1239,7 +1239,7 @@ GameObject:
   - component: {fileID: 1319465812}
   - component: {fileID: 1319465811}
   - component: {fileID: 1319465810}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1468,7 +1468,7 @@ GameObject:
   - component: {fileID: 1986509806}
   - component: {fileID: 1986509805}
   - component: {fileID: 1986509804}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1604,13 +1604,13 @@ MonoBehaviour:
   player: {fileID: 49219387}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   health: 120
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
+  walkPointRange: 2
   timeBetweenAttacks: 0.5
   projectile: {fileID: 0}
   sightRange: 5
