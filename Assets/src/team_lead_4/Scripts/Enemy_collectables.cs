@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsPlayer;
 
-    public float health = 50;
+    public float health;
 
     //Patroling
     public Vector3 walkPoint;
@@ -46,7 +46,6 @@ public class Enemy : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
-        //TakeDamage(50);
     }
 
     private void Patroling()
