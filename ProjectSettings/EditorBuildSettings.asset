@@ -24,5 +24,6 @@ EditorBuildSettings:
     path: Assets/tst/team_lead_2+/Scene/Boss_test_boundries.unity
     guid: 856008fe44638f5428fb7d815a163951
   m_configObjects:
-    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.input.settings: {fileID: 11400000, guid: 3392606fe494775429699269a492e76f, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 242aa1b51e8bc0b4ea25b079f93f4a4b, type: 3}
   m_UseUCBPForAssetBundles: 0
