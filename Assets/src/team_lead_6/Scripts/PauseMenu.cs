@@ -1,26 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject container;
+    public static bool Paused = false;
+    public GameObject PauseMenuCanvas;
+
+    void Start()
+    {
+        Time.timeScale = 1f;
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            container.SetActive(true);
-            Time.timeScale = 0;
+            if (Paused)
+            {
+                Play();
+            }
+            else
+            {
+                Stop();
+            }
         }
     }
 
-    public void ResumeButton()
+    public void Stop()
     {
-        container.SetActive(false);
-        Time.timeScale = 1;
+        PauseMenuCanvas.SetActive(true);
+        Time.timeScale = 0f;
+        Paused = true;
+    }
+
+    public void Play()
+    {
+        PauseMenuCanvas.SetActive(false);
+        Time.timeScale = 1f;
+        Paused = false;
     }
 
     public void MainMenuButton()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
