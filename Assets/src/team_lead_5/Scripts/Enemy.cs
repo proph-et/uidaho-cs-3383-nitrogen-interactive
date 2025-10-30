@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+using System.Collections.Generic;
 public class Enemy : MonoBehaviour
 {
     
@@ -24,6 +26,10 @@ public class Enemy : MonoBehaviour
     //States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
+
+    // [added by Haddie] LootTable
+    [Header("Loot")]
+    public List<LootItem> lootTable = new List<LootItem>();
 
     private void Awake()
     {
@@ -103,7 +109,19 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        //[modified by Haddie]
+        if (health <= 0)
+        {
+            foreach(LootItem lootItem in lootTable)
+            {
+                if(Random.Range(0f, 100f) <= lootItem.dropChance)
+                {
+                    InstantiateLoot(lootItem.itemPrefab);
+                }
+                break;
+            }
+            Invoke(nameof(DestroyEnemy), 0.5f);  
+        } 
     }
     private void DestroyEnemy()
     {
@@ -116,6 +134,15 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+
+    //[added by Haddie] 
+    void InstantiateLoot(GameObject loot)
+    {
+        if(loot != null)
+        {
+            GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+        }
     }
 
     
@@ -140,5 +167,7 @@ public class Enemy : MonoBehaviour
         return false;
     }
 }
+
+
 
 

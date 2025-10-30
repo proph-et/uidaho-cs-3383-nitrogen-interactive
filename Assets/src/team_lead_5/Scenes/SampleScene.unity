@@ -1617,6 +1617,7 @@ MonoBehaviour:
   attackRange: 5
   playerInSightRange: 0
   playerInAttackRange: 0
+  lootTable: []
 --- !u!195 &2079842203
 NavMeshAgent:
   m_ObjectHideFlags: 0
