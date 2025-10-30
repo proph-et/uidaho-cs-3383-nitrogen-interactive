@@ -81,10 +81,13 @@ public class Enemy : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            ///Attack code here
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            //get player position
+            Vector3 direction = (player.position - transform.position).normalized;
+            
+            ///Attack code here 
+            Rigidbody rb = Instantiate(projectile, transform.position + direction * 1f, Quaternion.LookRotation(direction)).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 8f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 3f, ForceMode.Impulse);
             ///End of attack code
 
             alreadyAttacked = true;
@@ -115,17 +118,24 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 
+    
+    //Tests on features
     public bool FindPlayerCheck()
     {
-        if (playerInSightRange && !playerInAttackRange);
-        return true;
+        if (playerInSightRange && !playerInAttackRange)
+        {
+            return true;
+        }
+        
         
         return false;
     }
     public bool AttackPlayerCheck()
     {
-        if (playerInAttackRange && playerInSightRange);
-        return true;
+        if (playerInAttackRange && playerInSightRange)
+        {
+            return true;
+        }
         
         return false;
     }
