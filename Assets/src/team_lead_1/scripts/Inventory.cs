@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Item
+{
+    public string itemName;
+}
 public class Inventory : MonoBehaviour
 {
     public List<Item> items = new List<Item>();
