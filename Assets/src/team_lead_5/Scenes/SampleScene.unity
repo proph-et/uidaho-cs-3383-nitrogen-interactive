@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 49219383}
   - component: {fileID: 49219382}
   - component: {fileID: 49219389}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1239,7 +1239,7 @@ GameObject:
   - component: {fileID: 1319465812}
   - component: {fileID: 1319465811}
   - component: {fileID: 1319465810}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1333,8 +1333,8 @@ Transform:
   m_GameObject: {fileID: 1319465809}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5, y: 0, z: -5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1350,7 +1350,7 @@ GameObject:
   - component: {fileID: 1455339384}
   - component: {fileID: 1455339383}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: NavMeshSurface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1375,7 +1375,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4160
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: efdaba5eb9ea16147850e60a38faddf6, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c66eade32441dbc47b96439fe5b8d1d2, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1455339384
 Transform:
@@ -1468,7 +1468,7 @@ GameObject:
   - component: {fileID: 1986509806}
   - component: {fileID: 1986509805}
   - component: {fileID: 1986509804}
-  m_Layer: 7
+  m_Layer: 13
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1604,19 +1604,24 @@ MonoBehaviour:
   player: {fileID: 49219387}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   health: 120
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
+  walkPointRange: 1
   timeBetweenAttacks: 0.5
-  projectile: {fileID: 0}
-  sightRange: 5
-  attackRange: 1
+  projectile: {fileID: 2207459426766296842, guid: 510afbf3818c6b742afa221af59df293, type: 3}
+  sightRange: 10
+  attackRange: 5
   playerInSightRange: 0
   playerInAttackRange: 0
+  lootTable:
+  - itemPrefab: {fileID: 3768510866801655889, guid: 3a478b1a2c018c046a87b8867a4f4310, type: 3}
+    dropChance: 32.6
+  - itemPrefab: {fileID: 4510537224572103534, guid: 2cc3e42fa8f78f54fa7e0ead32c7d2d5, type: 3}
+    dropChance: 75.5
 --- !u!195 &2079842203
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1725,7 +1730,7 @@ Transform:
   m_GameObject: {fileID: 2079842201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.29, y: 0.83, z: -4.45}
+  m_LocalPosition: {x: 2.88, y: 0.83, z: -1.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

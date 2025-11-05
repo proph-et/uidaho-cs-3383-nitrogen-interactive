@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
+using System.Collections.Generic;
 public class Enemy : MonoBehaviour
 {
     
@@ -9,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     public LayerMask whatIsGround, whatIsPlayer;
 
-    public float health;
+    public float health = 50;
 
     //Patroling
     public Vector3 walkPoint;
@@ -24,6 +26,10 @@ public class Enemy : MonoBehaviour
     //States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
+
+    // [added by Haddie] LootTable
+    [Header("Loot")]
+    public List<LootItem> lootTable = new List<LootItem>();
 
     private void Awake()
     {
@@ -40,6 +46,7 @@ public class Enemy : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        //TakeDamage(50);
     }
 
     private void Patroling()
@@ -81,10 +88,13 @@ public class Enemy : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            ///Attack code here
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            //get player position
+            Vector3 direction = (player.position - transform.position).normalized;
+            
+            ///Attack code here 
+            Rigidbody rb = Instantiate(projectile, transform.position + direction * 1f, Quaternion.LookRotation(direction)).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 8f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 3f, ForceMode.Impulse);
             ///End of attack code
 
             alreadyAttacked = true;
@@ -100,7 +110,19 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        //[modified by Haddie]
+        if (health <= 0)
+        {
+            foreach(LootItem lootItem in lootTable)
+            {
+                if(Random.Range(0f, 100f) <= lootItem.dropChance)
+                {
+                    InstantiateLoot(lootItem.itemPrefab);
+                }
+                break;
+            }
+            Invoke(nameof(DestroyEnemy), 0.5f);  
+        } 
     }
     private void DestroyEnemy()
     {
@@ -115,20 +137,38 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
 
+    //[added by Haddie] 
+    void InstantiateLoot(GameObject loot)
+    {
+        if(loot != null)
+        {
+            GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+        }
+    }
+
+    
+    //Tests on features
     public bool FindPlayerCheck()
     {
-        if (playerInSightRange && !playerInAttackRange);
-        return true;
+        if (playerInSightRange && !playerInAttackRange)
+        {
+            return true;
+        }
+        
         
         return false;
     }
     public bool AttackPlayerCheck()
     {
-        if (playerInAttackRange && playerInSightRange);
-        return true;
+        if (playerInAttackRange && playerInSightRange)
+        {
+            return true;
+        }
         
         return false;
     }
 }
+
+
 
 
