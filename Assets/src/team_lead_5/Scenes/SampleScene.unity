@@ -154,8 +154,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   speed: 8
+  move: {x: 0, y: 0}
   spawnPoint: {fileID: 0}
   fallThreshold: -5
+  dashSpeed: 16
+  dashDuration: 0.2
+  dashCooldown: 1
+  rightArm: {fileID: 0}
+  attackDuration: 0.1
+  attackRange: 2
+  attackCooldown: 0.2
+  attackDamage: 10
 --- !u!114 &49219383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,6 +1590,7 @@ GameObject:
   - component: {fileID: 2079842204}
   - component: {fileID: 2079842203}
   - component: {fileID: 2079842202}
+  - component: {fileID: 2079842208}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1595,7 +1605,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079842201}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9dc718981611e247a2c8d937754b4fd, type: 3}
   m_Name: 
@@ -1736,6 +1746,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2079842208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079842201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a46e98b6d3b75443bab5d421d7554d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NewAssembly::RangedEnemyController
+  agent: {fileID: 2079842203}
+  player: {fileID: 49219387}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 4096
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  projectilePrefab: {fileID: 2207459426766296842, guid: 510afbf3818c6b742afa221af59df293, type: 3}
+  health: 50
+  sightRange: 10
+  attackRange: 5
+  walkPointRange: 10
+  timeBetweenAttacks: 0.5
 --- !u!1001 &1117359508365268864
 PrefabInstance:
   m_ObjectHideFlags: 0
