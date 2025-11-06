@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Fighter : SkillTreeClass
 {
+    // theres needs to be a game object up here for the button
+
     // there should be 12 fighter nodes
     public int fighterLevel = 0;
 
@@ -31,7 +33,7 @@ public class Fighter : SkillTreeClass
     {
         /*
         bool flag = false;
-        int req = 2; // the required level
+        int levReq = 2; // the required level
         if (ab101 == true)
         {
             flag = true;
@@ -44,42 +46,123 @@ public class Fighter : SkillTreeClass
     }
     void Ability103()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 3;
+        if (ab102 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        // AddSkill(103, levReq, fighterLevel, flag);
+        fighterLevel = fighterLevel + 1;
+        ab103 = true;
     }
     void Ability104()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 4;
+        if (ab103 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        fighterLevel = fighterLevel + 1;
+        ab104 = true;
     }
     void Ability105()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 5;
+        if (ab104 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        fighterLevel = fighterLevel + 1;
+        ab105 = true;
     }
     void Ability106()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 6;
+        if (ab105 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        fighterLevel = fighterLevel + 1;
+        ab106 = true;
     }
     void Ability107()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 7;
+        if (ab106 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        fighterLevel = fighterLevel + 1;
+        ab107 = true;
     }
     void Ability108()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 8;
+        if (ab107 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        fighterLevel = fighterLevel + 1;
+        ab108 = true;
     }
     void Ability109()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 9;
+        if (ab108 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        fighterLevel = fighterLevel + 1;
+        ab109 = true;
     }
     void Ability110()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 10;
+        if (ab109 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        fighterLevel = fighterLevel + 1;
+        ab110 = true;
     }
     void Ability111()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 11;
+        if (ab110 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        fighterLevel = fighterLevel + 1;
+        ab111 = true;
     }
     void Ability112()
     {
-        // empty function for now
+         bool flag = false;
+        int levReq = 12;
+        if (ab111 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        fighterLevel = fighterLevel + 1;
+        ab112 = true;
     }
 }

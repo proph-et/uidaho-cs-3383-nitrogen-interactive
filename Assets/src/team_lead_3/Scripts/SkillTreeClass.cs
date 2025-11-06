@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SkillTreeClass
+public class SkillTreeClass : Ability
 {
     public int overallLevel = 0;
     int levReq; // the level required to unlock that skill

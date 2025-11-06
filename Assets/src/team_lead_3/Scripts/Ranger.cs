@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Ranger : SkillTreeClass
 {
+    // need to put a gameobject up here for the button
+    
     public int rangerLevel = 0;
 
     bool ab201 = false;
@@ -16,38 +18,104 @@ public class Ranger : SkillTreeClass
 
     void Ability201()
     {
-        // empty for now
+        // add ability
+        rangerLevel = rangerLevel + 1;
+        ab201 = true;
     }
     void Ability202()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 2;
+        if (ab201 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        rangerLevel = rangerLevel + 1;
+        ab202 = true;
     }
     void Ability203()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 3;
+        if (ab202 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        rangerLevel = rangerLevel + 1;
+        ab203 = true;
     }
     void Ability204()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 4;
+        if (ab203 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        rangerLevel = rangerLevel + 1;
+        ab204 = true;
     }
     void Ability205()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 5;
+        if (ab204 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        rangerLevel = rangerLevel + 1;
+        ab205 = true;
     }
     void Ability206()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 6;
+        if (ab205 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        rangerLevel = rangerLevel + 1;
+        ab206 = true;
     }
     void Ability207()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 7;
+        if (ab206 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        rangerLevel = rangerLevel + 1;
+        ab207 = true;
     }
     void Ability208()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 8;
+        if (ab207 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        rangerLevel = rangerLevel + 1;
+        ab208 = true;
     }
     void Ability209()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 9;
+        if (ab208 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        rangerLevel = rangerLevel + 1;
+        ab209 = true;
     }
 }

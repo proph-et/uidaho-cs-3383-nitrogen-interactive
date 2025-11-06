@@ -14,34 +14,92 @@ public class Mage : SkillTreeClass
 
     void Ability301()
     {
-        // playerHealth = playerHealth * 0.1 + playerHealth;
+        // add ability
+        mageLevel = mageLevel + 1;
+        ab301 = true;
     }
     void Ability302()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 2;
+        if (ab301 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        mageLevel = mageLevel + 1;
+        ab302 = true;
     }
     void Ability303()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 3;
+        if (ab302 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        mageLevel = mageLevel + 1;
+        ab303 = true;
     }
     void Ability304()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 4;
+        if (ab303 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        mageLevel = mageLevel + 1;
+        ab304 = true;
     }
     void Ability305()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 5;
+        if (ab304 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        mageLevel = mageLevel + 1;
+        ab305 = true;
     }
     void Ability306()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 6;
+        if (ab305 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        mageLevel = mageLevel + 1;
+        ab306 = true;
     }
     void Ability307()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 7;
+        if (ab306 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        mageLevel = mageLevel + 1;
+        ab307 = true;
     }
     void Ability308()
     {
-        // empty function for now
+        bool flag = false;
+        int levReq = 8;
+        if (ab307 == true)
+        {
+            flag = true;
+        }
+        // add ability
+        mageLevel = mageLevel + 1;
+        ab308 = true;
     }
 }
