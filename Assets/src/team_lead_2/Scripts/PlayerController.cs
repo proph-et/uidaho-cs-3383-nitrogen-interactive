@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Random Shit")]
     Rigidbody rb;
+    private Animator _animator;
 
     [Header("Movement Settings")]
     public float speed;
@@ -35,12 +36,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int attackDamage = 10;
     private bool canAttack = true;
 
-
+    [Header("Health Settings")]
+    private Health _health;
 
     // ------------------
     // Input Events
     // -------------------
-
 
     public void OnDash(InputAction.CallbackContext context)
     {
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if(context.performed && canAttack)
+        if (context.performed && canAttack)
         {
             Debug.Log("Player is attacking");
             StartCoroutine(BasicAttack());
@@ -66,11 +67,16 @@ public class PlayerController : MonoBehaviour
     // ---------------
     // Unity Functions
     // -----------------
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        _health = GetComponent<Health>();
+        _animator = GetComponentInChildren<Animator>();
 
         currentAbility = new DashAbility(dashSpeed, dashDuration);
+
+        _health.AddOnDeathListener(OnDeath);
     }
 
     void FixedUpdate()
@@ -85,19 +91,28 @@ public class PlayerController : MonoBehaviour
         CheckFall();
     }
 
-
     /// -----------------
     /// Core Movement
     /// -----------------
+    
     public void MovePlayer()
     {
         Vector3 movement = new Vector3(move.x, 0f, move.y);
+        bool isMoving = movement.sqrMagnitude > 0.001f;
 
-        if (movement != Vector3.zero)
+
+        if (isMoving)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(movement), 0.15f);
+            Quaternion targetRotation = Quaternion.LookRotation(movement);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.15f);
+
+            transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        } 
+        
+        if (_animator != null)
+        {
+            _animator.SetBool("isRunning", isMoving);
         }
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
     }
 
     ///-------------------------
@@ -109,6 +124,11 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         canDash = false;
         isInvincible = true;
+
+        if(_animator != null)
+        {
+            _animator.SetTrigger("isDashing");
+        }
 
         Vector3 dashDirection = transform.forward;
 
@@ -123,6 +143,11 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(dashDuration - 0.18f);
         rb.linearVelocity = Vector3.zero;
         isDashing = false;
+
+        if(_animator != null)
+        {
+            _animator.SetBool("isDashing", false);
+        }
 
         //Dash Cooldown
         yield return new WaitForSeconds(dashCooldown);
@@ -148,6 +173,11 @@ public class PlayerController : MonoBehaviour
         canAttack = false;
         rightArm.SetActive(true);
 
+        if(_animator != null)
+        {
+            _animator.SetTrigger("isAttacking");
+        }
+
         Vector3 attackDirection = transform.forward;
         Debug.Log($"Attacking in Direction: { attackDirection}");
 
@@ -161,7 +191,15 @@ public class PlayerController : MonoBehaviour
             foreach (var hit in hits)
             {
                 if (hit.transform == transform) continue;
-                Debug.Log($"Hit {hit.transform.name}! Dealt {attackDamage} damage");
+                if (hit.transform.TryGetComponent(out Health targetHealth))
+                {
+                    targetHealth.TakeDamage(attackDamage);
+                    Debug.Log($"{hit.transform.name} took {attackDamage} damage. Remaming Health: {targetHealth.GetCurrentHealth()}");
+                }
+                else
+                {
+                    Debug.Log($"{hit.transform.name} has no Health component.");
+                }
             }
         }
         else
@@ -199,5 +237,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(0, 1, 0);
         }
+    }
+
+    private void OnDeath()
+    {
+        Debug.Log("Player had died");
+        Respawn();
     }
 }
