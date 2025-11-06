@@ -94,7 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96fa889d113a8944d8632c1a7589e7ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitboxScript
-  sword: {fileID: 3672041154539298991}
 --- !u!1 &6852199483657004404
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,9 +106,6 @@ GameObject:
   - component: {fileID: 3267380691550754743}
   - component: {fileID: 7372939500901954218}
   - component: {fileID: 8073347781286616401}
-  - component: {fileID: 3672041154539298991}
-  - component: {fileID: -6678299288706744231}
-  - component: {fileID: 2755310922635696940}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -210,48 +206,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3672041154539298991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6852199483657004404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16ece35b7d86dc64981e75a8c1c24fc3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Sword
-  weaponName: Default
-  damage: 10
-  attackRate: 1
-  swingDuration: 0.4
-  hitbox: {fileID: 6348452155749860205}
---- !u!114 &-6678299288706744231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6852199483657004404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56cede9899a50024ca42be2c0e25a36a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Collectable
-  _collectable: {fileID: 11400000, guid: 7ea8ff18fdf006b4fa6b124d820c048a, type: 2}
---- !u!114 &2755310922635696940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6852199483657004404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e56a4e365df9246970a2842be736f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollectableTriggerHandler
-  WhoCanCollect:
-    serializedVersion: 2
-    m_Bits: 4294967295
