@@ -9,6 +9,14 @@ public class SkillTree : MonoBehaviour
     private string MainScene = "SkillTreeScene"; // probably will need to change this
     public static bool is_open = false;
     public GameObject SkillTreeMenu;
+    public LevelWindow levelWindow;
+    private LevelSystem levelSystem;
+
+    private void Start()
+    {
+        levelSystem = new LevelSystem();
+        levelWindow.SetLevelSystem(levelSystem);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))
@@ -42,5 +50,10 @@ public class SkillTree : MonoBehaviour
         SkillTreeMenu.SetActive(true);
         Time.timeScale = 0f;
         is_open = true;
+    }
+
+    public LevelSystem GetLvlSystem()
+    {
+        return levelSystem;
     }
 }

@@ -14,9 +14,12 @@ public class LevelSystem
 
     public LevelSystem()
     {
-        level = 25;
+        level = 0;
         xp = 0;
         xpToNext = 100;
+
+        OnlvlChanged?.Invoke(this, EventArgs.Empty);
+        OnXpChanged?.Invoke(this, EventArgs.Empty);
     }
 
     public void AddXp(int amount)

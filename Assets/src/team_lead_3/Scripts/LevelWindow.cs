@@ -11,6 +11,11 @@ public class LevelWindow : MonoBehaviour
     private TMPro.TMP_Text xpDisplay;
     private LevelSystem levelSystem;
 
+    private void Start()
+    {
+        levelSystem = new LevelSystem();
+    } 
+
     private void Awake()
     {
         levelDisplay = transform.Find("levelText").GetComponent<TMP_Text>();
@@ -19,12 +24,14 @@ public class LevelWindow : MonoBehaviour
 
     private void SetXpNum()
     {
-        xpDisplay.text = "XP: " + levelSystem.GetXpNum().ToString();
+        xpDisplay.text = "XP: " + levelSystem.GetXpNum().ToString() + "/100";
+        Debug.Log("Setting the Xp");
     }
 
     private void SetLvlNum()
     {
-        levelDisplay.text = "LEVEL\n" + (levelSystem.GetLevelNum() + 1);
+        levelDisplay.text = "LEVEL " + (levelSystem.GetLevelNum() + 1);
+        Debug.Log("Setting the lvl");
     }
 
     public void SetLevelSystem(LevelSystem levelSystem)
