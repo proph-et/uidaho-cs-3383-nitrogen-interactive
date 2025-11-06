@@ -47,7 +47,7 @@ public class LevelSystem
 
     public float GetXpNum()
     {
-        return (float)xp / (float)xpToNext;
+        return (float)xp; //  / (float)xpToNext;
     }
 
 }
