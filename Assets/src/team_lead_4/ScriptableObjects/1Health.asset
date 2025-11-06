@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c2d9a7174c3dbb4782ba28af1927057, type: 3}
-  m_Name: Sword
-  m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
-  weaponPrefab: {fileID: 6852199483657004404, guid: 0b87a465a9df4ce4fb443b05d182d2e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 45f30c284b3cede418008e35e8c2b4c4, type: 3}
+  m_Name: 1Health
+  m_EditorClassIdentifier: TL4NewAssembly::HealthSO
+  HealthAmount: 1

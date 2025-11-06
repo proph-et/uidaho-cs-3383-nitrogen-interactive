@@ -1,0 +1,20 @@
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Item
+{
+    public string itemName;
+}
+public class Inventory1 : MonoBehaviour
+{
+    public List<Item> items = new List<Item>();
+
+    public void AddItem(Item item)
+    {
+        if (item != null)
+        {
+            items.Add(item);
+            Debug.Log("Added item: " + item.itemName);
+        }
+    }
+}
