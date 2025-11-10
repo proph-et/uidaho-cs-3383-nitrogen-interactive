@@ -14,6 +14,8 @@ public class Sword : WeaponBase
     public override void Attack()
     {
         Debug.Log("insert sword attack here");
+
+        
     }
 }
 

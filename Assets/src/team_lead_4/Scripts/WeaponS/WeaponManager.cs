@@ -27,15 +27,17 @@ public class WeaponManager : MonoBehaviour
         wand = new Wand(wandPrefab);
 
 
-        AddWeapon(new Sword(swordPrefab));
-        AddWeapon(new Bow(bowPrefab));
-        AddWeapon(new Wand(wandPrefab));
+        AddWeapon(sword);
+        AddWeapon(bow);
+        AddWeapon(wand);
 
         EquipWeapon("Sword");
     }
 
     private void Update()
     {
+        SetLocation();
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             EquipWeapon("Sword");
@@ -58,6 +60,15 @@ public class WeaponManager : MonoBehaviour
         }
     }
 
+    private void SetLocation()
+    {
+        //do stuffff
+
+        currentInstance.transform.parent = weaponHolder;
+        currentInstance.transform.localPosition = Vector3.zero;
+        currentInstance.transform.localRotation = Quaternion.identity;
+    }
+
     private void AddWeapon(WeaponBase weapon)
     {
         var instance = Instantiate(weapon.prefab, weaponHolder);
@@ -75,6 +86,7 @@ public class WeaponManager : MonoBehaviour
         var (data, instance) = weapons[name];
         instance.SetActive(true);
         currentWeapon = data;
+        currentInstance = instance;
 
         Debug.Log($"Equipped {name}");
 
