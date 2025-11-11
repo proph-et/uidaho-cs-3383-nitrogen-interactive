@@ -53,10 +53,18 @@ public class WeaponManager : MonoBehaviour
             EquipWeapon("Wand");
         }
 
-        if (Input.GetMouseButtonDown(0))
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     currentWeapon.Attack();
+        //     // currentWeapon.StartCooldown(this);
+        // }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(Input.GetMouseButtonDown(0))
         {
-            currentWeapon.Attack();
-            // currentWeapon.StartCooldown(this);
+            currentWeapon.Attack(other);
         }
     }
 
