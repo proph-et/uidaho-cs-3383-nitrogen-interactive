@@ -31,7 +31,7 @@ Go to this link:
 ---
 
 ## 🌐 Important Links
-- **GitHub Repository:** [Nitrogen Interactive Project](https://github.com/proph-et/uidaho-cs-3383-nitrogen-interactive)  
+- **GitHub Repository:** [Nitrogen Interactive Project](https://vandalsuidaho-my.sharepoint.com/:x:/g/personal/meye4747_vandals_uidaho_edu/EU1tbgx8Xn1ItoyfYf2XexIBDhF1ILGX5i-WKBy8CPJEOQ?rtime=ORXbs5ka3kg)  
 - **Discord Server:** [Join Here](https://discord.gg/2A5ut4xN3J)  
 - **Gantt Chart:** [View Project Timeline](https://vandalsuidaho-my.sharepoint.com/:x:/g/personal/meye4747_vandals_uidaho_edu/EU1tbgx8Xn1ItoyfYf2XexIBDhF1ILGX5i-WKBy8CPJEOQ?rtime=RlQ5alAS3kg)
 ---
@@ -54,6 +54,7 @@ Go to this link:
 ---
 
 *Created with 💻 by Nitrogen Interactive Team*
+
 
 
 
