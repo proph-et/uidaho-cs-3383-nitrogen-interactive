@@ -17,3 +17,7 @@ https://vandalsuidaho-my.sharepoint.com/:v:/g/personal/john8398_vandals_uidaho_e
 # TL6 Ethics Video
 
 https://vandalsuidaho-my.sharepoint.com/personal/chme6647_vandals_uidaho_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fchme6647%5Fvandals%5Fuidaho%5Fedu%2FDocuments%2FGMT20251111%2D043836%5FClip%5FACM%5FIEEE%20CS%20Joint%20Task%20Force%20on%20Software%20Engineering%20Ethics%20and%20Professional%20Practices%20%281%29%201%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eab89928d%2D8159%2D4739%2D8198%2D76f3b97107fe&isDarkMode=true
+
+# TL6_Presentation Video
+
+https://vandalsuidaho-my.sharepoint.com/personal/chme6647_vandals_uidaho_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fchme6647_vandals_uidaho_edu%2FDocuments%2FTL6_Videos+1.mp4&referrer=StreamWebApp.Web&referrerScenario=AddressBarCopied.view.63b7f656-f9bb-4591-8caf-7289fe21a7ab&isDarkMode=true&startedResponseCatch=true
