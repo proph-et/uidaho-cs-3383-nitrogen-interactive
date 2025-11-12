@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
     /// -----------------
     /// Core Movement
     /// -----------------
-    
+
     public void MovePlayer()
     {
         Vector3 movement = new Vector3(move.x, 0f, move.y);
@@ -107,8 +107,8 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.15f);
 
             transform.Translate(movement * speed * Time.deltaTime, Space.World);
-        } 
-        
+        }
+
         if (_animator != null)
         {
             _animator.SetBool("isRunning", isMoving);

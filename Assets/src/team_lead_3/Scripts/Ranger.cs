@@ -3,7 +3,7 @@ using UnityEngine;
 public class Ranger : SkillTreeClass
 {
     // need to put a gameobject up here for the button
-    
+
     public int rangerLevel = 0;
 
     bool ab201 = false;
@@ -30,9 +30,17 @@ public class Ranger : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        rangerLevel = rangerLevel + 1;
-        ab202 = true;
+        if (AddSkill(202, levReq, rangerLevel, flag))
+        {
+            rangerLevel = rangerLevel + 1;
+            ab202 = true;
+            Debug.Log("Skill unlocked!");
+            // will add the level here too
+        }
+        else
+        {
+            Debug.Log("Not enough skill points");
+        }
     }
     void Ability203()
     {
@@ -117,5 +125,39 @@ public class Ranger : SkillTreeClass
         // add ability
         rangerLevel = rangerLevel + 1;
         ab209 = true;
+    }
+
+    public void GetAb(int ability)
+    {
+        switch (ability)
+        {
+            case 201:
+                Ability201();
+                break;
+            case 202:
+                Ability202();
+                break;
+            case 203:
+                Ability203();
+                break;
+            case 204:
+                Ability204();
+                break;
+            case 205:
+                Ability205();
+                break;
+            case 206:
+                Ability206();
+                break;
+            case 207:
+                Ability207();
+                break;
+            case 208:
+                Ability208();
+                break;
+            case 209:
+                Ability209();
+                break;
+        }
     }
 }

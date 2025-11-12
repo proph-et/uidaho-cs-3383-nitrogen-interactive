@@ -1739,7 +1739,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+<<<<<<< Updated upstream:Assets/src/team_lead_4/Scenes/SampleScene 1.unity
 --- !u!1 &1387905158
+=======
+--- !u!1 &1410441353
+>>>>>>> Stashed changes:Assets/src/team_lead_2/Scenes/SampleScene.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1747,14 +1751,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream:Assets/src/team_lead_4/Scenes/SampleScene 1.unity
   - component: {fileID: 1387905159}
   m_Layer: 0
   m_Name: WeaponHolder
+=======
+  - component: {fileID: 1410441355}
+  - component: {fileID: 1410441354}
+  m_Layer: 0
+  m_Name: SkillTreeManager
+>>>>>>> Stashed changes:Assets/src/team_lead_2/Scenes/SampleScene.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream:Assets/src/team_lead_4/Scenes/SampleScene 1.unity
 --- !u!4 &1387905159
 Transform:
   m_ObjectHideFlags: 0
@@ -1788,11 +1800,15 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &1455339383
+=======
+--- !u!114 &1410441354
+>>>>>>> Stashed changes:Assets/src/team_lead_2/Scenes/SampleScene.unity
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/src/team_lead_4/Scenes/SampleScene 1.unity
   m_GameObject: {fileID: 1455339382}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1820,25 +1836,45 @@ MonoBehaviour:
   m_NavMeshData: {fileID: 23800000, guid: c66eade32441dbc47b96439fe5b8d1d2, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1455339384
+=======
+  m_GameObject: {fileID: 1410441353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65805ef4374f4b3c83b9f66b16869f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::SkillTreeManager
+  Scene: SkillTreeScene
+--- !u!4 &1410441355
+>>>>>>> Stashed changes:Assets/src/team_lead_2/Scenes/SampleScene.unity
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/src/team_lead_4/Scenes/SampleScene 1.unity
   m_GameObject: {fileID: 1455339382}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.59601, y: 0, z: 0.8976}
+=======
+  m_GameObject: {fileID: 1410441353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 424.87875, y: 207.62259, z: 0}
+>>>>>>> Stashed changes:Assets/src/team_lead_2/Scenes/SampleScene.unity
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream:Assets/src/team_lead_4/Scenes/SampleScene 1.unity
 --- !u!4 &1476779935 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8606345298374266953, guid: 0502d05391816304fa87008f5e9ff715, type: 3}
   m_PrefabInstance: {fileID: 1117359508365268864}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes:Assets/src/team_lead_2/Scenes/SampleScene.unity
 --- !u!1 &1581794215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,6 +2315,11 @@ SceneRoots:
   - {fileID: 106582009}
   - {fileID: 375752968}
   - {fileID: 991610420}
+<<<<<<< Updated upstream:Assets/src/team_lead_4/Scenes/SampleScene 1.unity
   - {fileID: 1058882176}
   - {fileID: 2079842207}
   - {fileID: 1455339384}
+=======
+  - {fileID: 1972059827}
+  - {fileID: 1410441355}
+>>>>>>> Stashed changes:Assets/src/team_lead_2/Scenes/SampleScene.unity

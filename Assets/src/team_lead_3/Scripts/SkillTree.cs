@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SkillTree : MonoBehaviour
 {
@@ -12,10 +13,37 @@ public class SkillTree : MonoBehaviour
     public LevelWindow levelWindow;
     private LevelSystem levelSystem;
 
+    [SerializeField] private Button fighterButton;
+    [SerializeField] private Button rangerButton;
+    [SerializeField] private Button mageButton;
+
     private void Start()
     {
         levelSystem = new LevelSystem();
         levelWindow.SetLevelSystem(levelSystem);
+    }
+
+    private void Awake()
+    {
+        fighterButton.onClick.AddListener(() =>
+        {
+            Debug.Log("Fighter button was pushed");
+        });
+        if (rangerButton != null)
+        {
+            rangerButton.onClick.AddListener(() =>
+            {
+                Debug.Log("Ranger button was pushed");
+            });
+        }
+        if (mageButton != null)
+        {
+            mageButton.onClick.AddListener(() =>
+            {
+                Debug.Log("Mage button was pushed");
+            });
+        }
+
     }
     void Update()
     {
