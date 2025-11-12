@@ -1346,6 +1346,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &1410516086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1451,6 +1452,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 588902ffcfd755b46add86c929136c0e, type: 3}
+=======
+--- !u!1 &1410441353
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410441355}
+  - component: {fileID: 1410441354}
+  m_Layer: 0
+  m_Name: SkillTreeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1410441354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410441353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65805ef4374f4b3c83b9f66b16869f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::SkillTreeManager
+  Scene: SkillTreeScene
+--- !u!4 &1410441355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410441353}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 424.87875, y: 207.62259, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1581794215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,4 +1848,8 @@ SceneRoots:
   - {fileID: 375752968}
   - {fileID: 991610420}
   - {fileID: 1972059827}
+<<<<<<< Updated upstream
   - {fileID: 1410516086}
+=======
+  - {fileID: 1410441355}
+>>>>>>> Stashed changes

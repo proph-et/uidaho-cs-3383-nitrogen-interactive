@@ -7,8 +7,8 @@ public class Fighter : SkillTreeClass
     // there should be 12 fighter nodes
     public int fighterLevel = 0;
 
-// these will be used by the add function to see if the required skills have been unlocked before adding the skill
-    bool ab101 = false; 
+    // these will be used by the add function to see if the required skills have been unlocked before adding the skill
+    bool ab101 = false;
     bool ab102 = false;
     bool ab103 = false;
     bool ab104 = false;
@@ -155,7 +155,7 @@ public class Fighter : SkillTreeClass
     }
     void Ability112()
     {
-         bool flag = false;
+        bool flag = false;
         int levReq = 12;
         if (ab111 == true)
         {
@@ -164,5 +164,48 @@ public class Fighter : SkillTreeClass
         // add ability
         fighterLevel = fighterLevel + 1;
         ab112 = true;
+    }
+
+    public void GetAb(int ability)
+    {
+        switch (ability)
+        {
+            case 101:
+                Ability101();
+                break;
+            case 102:
+                Ability102();
+                break;
+            case 103:
+                Ability103();
+                break;
+            case 104:
+                Ability104();
+                break;
+            case 105:
+                Ability105();
+                break;
+            case 106:
+                Ability106();
+                break;
+            case 107:
+                Ability107();
+                break;
+            case 108:
+                Ability108();
+                break;
+            case 109:
+                Ability109();
+                break;
+            case 110:
+                Ability110();
+                break;
+            case 111:
+                Ability111();
+                break;
+            case 112:
+                Ability112();
+                break;
+        }
     }
 }
