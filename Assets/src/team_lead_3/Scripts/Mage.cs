@@ -17,7 +17,6 @@ public class Mage : SkillTreeClass
         // add ability
         mageLevel = mageLevel + 1;
         ab301 = true;
-        Debug.Log("301");
     }
     void Ability302()
     {
@@ -30,7 +29,6 @@ public class Mage : SkillTreeClass
         // add ability
         mageLevel = mageLevel + 1;
         ab302 = true;
-        Debug.Log("302");
     }
     void Ability303()
     {
@@ -43,7 +41,6 @@ public class Mage : SkillTreeClass
         // add ability
         mageLevel = mageLevel + 1;
         ab303 = true;
-        Debug.Log("303");
     }
     void Ability304()
     {
@@ -56,7 +53,6 @@ public class Mage : SkillTreeClass
         // add ability
         mageLevel = mageLevel + 1;
         ab304 = true;
-        Debug.Log("304");
     }
     void Ability305()
     {
@@ -69,7 +65,6 @@ public class Mage : SkillTreeClass
         // add ability
         mageLevel = mageLevel + 1;
         ab305 = true;
-        Debug.Log("305");
     }
     void Ability306()
     {
@@ -82,7 +77,6 @@ public class Mage : SkillTreeClass
         // add ability
         mageLevel = mageLevel + 1;
         ab306 = true;
-        Debug.Log("306");
     }
     void Ability307()
     {
@@ -95,7 +89,6 @@ public class Mage : SkillTreeClass
         // add ability
         mageLevel = mageLevel + 1;
         ab307 = true;
-        Debug.Log("307");
     }
     void Ability308()
     {
@@ -108,37 +101,5 @@ public class Mage : SkillTreeClass
         // add ability
         mageLevel = mageLevel + 1;
         ab308 = true;
-        Debug.Log("308");
-    }
-
-    public void GetAb(int ability)
-    {
-        switch (ability)
-        {
-            case 301:
-                Ability301();
-                break;
-            case 302:
-                Ability302();
-                break;
-            case 303:
-                Ability303();
-                break;
-            case 304:
-                Ability304();
-                break;
-            case 305:
-                Ability305();
-                break;
-            case 306:
-                Ability306();
-                break;
-            case 307:
-                Ability307();
-                break;
-            case 308:
-                Ability308();
-                break;
-        }
     }
 }

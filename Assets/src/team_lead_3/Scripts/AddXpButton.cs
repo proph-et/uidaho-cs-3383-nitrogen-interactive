@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AddXpButton : MonoBehaviour
 {
     public SkillTree skillTree; // Drag your SkillTree GameObject here in the Inspector
-    public int xpAmount = 5;    // How much XP this button gives
+    public int xpAmount = 50;    // How much XP this button gives
 
     private Button button;
 

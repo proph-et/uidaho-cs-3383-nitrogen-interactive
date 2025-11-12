@@ -13,14 +13,7 @@ public class LevelWindow : MonoBehaviour
 
     private void Start()
     {
-        if (levelSystem == null)
-        {
-            levelSystem = new LevelSystem();
-        }
-        else
-        {
-            Debug.Log("levelSystem was already created. message from the level window script");
-        }
+        levelSystem = new LevelSystem();
     } 
 
     private void Awake()
@@ -31,13 +24,13 @@ public class LevelWindow : MonoBehaviour
 
     private void SetXpNum()
     {
-        xpDisplay.text = "XP: " + levelSystem.GetXpNum().ToString() + "/" + levelSystem.GetXpToNext((int)levelSystem.GetLevelNum()).ToString();
+        xpDisplay.text = "XP: " + levelSystem.GetXpNum().ToString() + "/100";
         Debug.Log("Setting the Xp");
     }
 
     private void SetLvlNum()
     {
-        levelDisplay.text = "LEVEL " + levelSystem.GetLevelNum();
+        levelDisplay.text = "LEVEL " + (levelSystem.GetLevelNum() + 1);
         Debug.Log("Setting the lvl");
     }
 
@@ -60,7 +53,7 @@ public class LevelWindow : MonoBehaviour
         // the level has changed, so update the text
         SetLvlNum();
         float stuff = levelSystem.GetLevelNum();
-        Debug.Log($"Setting the lvl {stuff}");
+        Debug.Log($"Setting the xp {stuff}");
     }
 
     private void LevelSystem_OnXpChanged(object sender, EventArgs e)

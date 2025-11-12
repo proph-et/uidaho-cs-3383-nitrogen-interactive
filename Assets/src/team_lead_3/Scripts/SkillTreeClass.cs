@@ -2,37 +2,18 @@ using UnityEngine;
 
 public class SkillTreeClass : Ability
 {
-    public int overallLevel = 1; // set to 33 for debugging, the level system script should set it back to 1 at runtime
-    private LevelSystem levelSystem;
-    protected int skillPoints;
+    public int overallLevel = 0;
     int levReq; // the level required to unlock that skill
-
-    public void SetLevelSystem(LevelSystem levelSystem)
+    void AddSkill(int skillID, int levReq, int classLevel, bool flag) 
     {
-        this.levelSystem = levelSystem;
-    }
-
-    private void Start() // no idea if this works until we call the class later
-    {
-
-        overallLevel = (int)levelSystem.GetLevelNum();
-        Debug.Log($"The level is {overallLevel}");
-        skillPoints = overallLevel;
-    }
-    public bool AddSkill(int skillID, int levReq, int classLevel, bool flag) 
-    {
-        Debug.Log("ADD SKILL IS BEING CALLED");
-        if (classLevel >= levReq && flag == true && skillPoints >= 1)
+        if (classLevel >= levReq && flag == true)
         {
             //add the skill
             overallLevel = overallLevel + 1;
-            skillPoints = skillPoints - 1;
-            return true;
         }
         else
         {
             Debug.Log("Not enough skill points");
-            return false;
             // probably will put a canvas message here to display an error message
         }
     }
