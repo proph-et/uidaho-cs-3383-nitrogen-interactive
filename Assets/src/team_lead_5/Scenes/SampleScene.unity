@@ -1348,6 +1348,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1344958294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1344958296}
+  - component: {fileID: 1344958295}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1344958295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344958294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66da191447fbac4e8fcdf922e137dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: NewAssembly::EnemySpawner
+  interval: 1
+  Enemy: {fileID: 2079842201}
+  MaxNumEnemies: 3
+  spawnRadius: 10
+--- !u!4 &1344958296
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344958294}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.45, y: 2.82, z: -4.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1455339382
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,7 +1637,6 @@ GameObject:
   - component: {fileID: 2079842205}
   - component: {fileID: 2079842204}
   - component: {fileID: 2079842203}
-  - component: {fileID: 2079842202}
   - component: {fileID: 2079842208}
   m_Layer: 0
   m_Name: Enemy
@@ -1598,40 +1645,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2079842202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079842201}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dc718981611e247a2c8d937754b4fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  agent: {fileID: 2079842203}
-  player: {fileID: 49219387}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 4096
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 8192
-  health: 120
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 1
-  timeBetweenAttacks: 0.5
-  projectile: {fileID: 2207459426766296842, guid: 510afbf3818c6b742afa221af59df293, type: 3}
-  sightRange: 10
-  attackRange: 5
-  playerInSightRange: 0
-  playerInAttackRange: 0
-  lootTable:
-  - itemPrefab: {fileID: 3768510866801655889, guid: 3a478b1a2c018c046a87b8867a4f4310, type: 3}
-    dropChance: 32.6
-  - itemPrefab: {fileID: 4510537224572103534, guid: 2cc3e42fa8f78f54fa7e0ead32c7d2d5, type: 3}
-    dropChance: 75.5
 --- !u!195 &2079842203
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1866,3 +1879,4 @@ SceneRoots:
   - {fileID: 1058882176}
   - {fileID: 2079842207}
   - {fileID: 1455339384}
+  - {fileID: 1344958296}

@@ -28,7 +28,6 @@ public class EnemySpawner : MonoBehaviour
     
     Vector3 GetRandomPointInSphere()
     {
-        // Random point inside a unit sphere, scaled by radius
         Vector3 randomPoint = Random.insideUnitSphere * spawnRadius;
         // Offset by this spawner's position
         return transform.position + randomPoint;
