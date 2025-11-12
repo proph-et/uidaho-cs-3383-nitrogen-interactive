@@ -9,26 +9,27 @@ public class LevelSystem
     public event EventHandler OnlvlChanged;
 
     int level;
-    public int xp;
+    int xp;
     int xpToNext;
 
     public LevelSystem()
     {
-        level = 0;
+        level = 1;
         xp = 0;
-        xpToNext = 100;
+        xpToNext = 10;
 
         OnlvlChanged?.Invoke(this, EventArgs.Empty);
         OnXpChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public void AddXp(int amount)
+    public void AddXp(int amount) // might want to make this private, but other classes call it
     {
         xp = xp + amount;
-        if (xp >= xpToNext) // if you have enough xp
+        while (xp >= xpToNext) // if you have enough xp
         {
-            level++;
             xp = xp - xpToNext;
+            level++;
+            xpToNext = GetXpToNext(level);
             if (OnXpChanged != null)
             {
                 OnlvlChanged(this, EventArgs.Empty);
@@ -40,14 +41,18 @@ public class LevelSystem
         }
     }
 
-    public float GetLevelNum()
+    public float GetLevelNum() // a getter so it must be public 
     {
         return level;
     }
 
-    public float GetXpNum()
+    public float GetXpNum() // also a getter
     {
-        return (float)xp; //  / (float)xpToNext;
+        return (float)xp;
     }
 
+    public int GetXpToNext(int level)
+    {
+        return level * 10;
+    }
 }
