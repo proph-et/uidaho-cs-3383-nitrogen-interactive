@@ -11,7 +11,7 @@ public class Bow : WeaponBase
         prefab = prefabType;
     }
 
-    public override void Attack(Collider other)
+    public override void Attack()
     {
         Debug.Log("insert bow attack here");
     }

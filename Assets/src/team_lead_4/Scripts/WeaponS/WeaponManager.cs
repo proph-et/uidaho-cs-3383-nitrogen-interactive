@@ -8,6 +8,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject swordPrefab;
     public GameObject bowPrefab;
     public GameObject wandPrefab;
+    public GameObject magicOrbPrefab;
 
     private Dictionary<string, (WeaponBase data, GameObject instance)> weapons = new Dictionary<string, (WeaponBase, GameObject)>();
 
@@ -25,6 +26,7 @@ public class WeaponManager : MonoBehaviour
         sword = new Sword(swordPrefab);
         bow = new Bow(bowPrefab);
         wand = new Wand(wandPrefab);
+        wand.projectilePrefab = magicOrbPrefab;
 
 
         AddWeapon(sword);
@@ -53,20 +55,20 @@ public class WeaponManager : MonoBehaviour
             EquipWeapon("Wand");
         }
 
-        // if (Input.GetMouseButtonDown(0))
-        // {
-        //     currentWeapon.Attack();
-        //     // currentWeapon.StartCooldown(this);
-        // }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            currentWeapon.Attack(other);
+            currentWeapon.Attack();
+            // currentWeapon.StartCooldown(this);
         }
     }
+
+    // private void OnTriggerStay(Collider other)
+    // {
+    //     if(Input.GetMouseButtonDown(0))
+    //     {
+    //         currentWeapon.Attack(other);
+    //     }
+    // }
 
     private void SetLocation()
     {
@@ -84,6 +86,16 @@ public class WeaponManager : MonoBehaviour
         instance.transform.localRotation = Quaternion.identity;
         instance.SetActive(false);
         weapons[weapon.weaponName] = (weapon, instance);
+
+        // Wands
+        if (weapon is Wand Wand_Weapon)
+        {
+            Transform firePoint = instance.transform.Find("firePoint");
+            if (firePoint != null)
+            {
+                Wand_Weapon.SetFirePoint(firePoint);
+            }
+    }
     }
 
     private void EquipWeapon(string name)

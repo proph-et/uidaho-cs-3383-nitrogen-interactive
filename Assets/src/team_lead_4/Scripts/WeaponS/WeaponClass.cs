@@ -11,17 +11,17 @@ public class WeaponBase
     protected bool canAttack = true;
 
     //lets any weapon type define its own attack behavior (swing projectile etc)
-    public virtual void Attack(Collider other)
+    public virtual void Attack()
     {
         Debug.Log("attacking...");
     }
 
-    protected IEnumerator AttackCooldown()
-    {
-        canAttack = false;
-        yield return new WaitForSeconds(1f/ attackRate);
-        canAttack = true;
-    }
+    // protected IEnumerator AttackCooldown()
+    // {
+    //     canAttack = false;
+    //     yield return new WaitForSeconds(1f/ attackRate);
+    //     canAttack = true;
+    // }
 }
 
 

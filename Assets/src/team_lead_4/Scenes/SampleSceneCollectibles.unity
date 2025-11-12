@@ -1229,6 +1229,7 @@ MonoBehaviour:
   swordPrefab: {fileID: 6852199483657004404, guid: 0b87a465a9df4ce4fb443b05d182d2e1, type: 3}
   bowPrefab: {fileID: 3567570617625977865, guid: a6e580179fdd6b94a973848ff46d9c01, type: 3}
   wandPrefab: {fileID: 3681383412935456387, guid: ba6a17332b8271c4fb7a3ff9e432f78d, type: 3}
+  magicOrbPrefab: {fileID: 3426547337634153820, guid: 000485916a2335949a72151d2862596a, type: 3}
   weaponHolder: {fileID: 1379963779}
 --- !u!114 &858835542
 MonoBehaviour:

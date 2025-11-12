@@ -11,20 +11,21 @@ public class Sword : WeaponBase
         prefab = prefabType;
     }
 
-    public override void Attack(Collider other)
+    public override void Attack()
     {
         Debug.Log("insert sword attack here");
-        if (other == null)
-        {
-            Debug.Log("other is null");
-        }
 
-        Enemy enemy = other.GetComponent<Enemy>();
-        if (enemy != null)
-        {
-            enemy.TakeDamage(damage);
-            Debug.Log($"Sword hit {enemy.name} for {damage} damage!");
-        }
+        // if (other == null)
+        // {
+        //     Debug.Log("other is null");
+        // }
+
+        // Enemy enemy = other.GetComponent<Enemy>();
+        // if (enemy != null)
+        // {
+        //     enemy.TakeDamage(damage);
+        //     Debug.Log($"Sword hit {enemy.name} for {damage} damage!");
+        // }
 
     }
 }
