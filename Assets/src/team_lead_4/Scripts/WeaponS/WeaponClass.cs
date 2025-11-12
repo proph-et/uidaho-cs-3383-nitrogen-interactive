@@ -11,7 +11,7 @@ public class WeaponBase
     protected bool canAttack = true;
 
     //lets any weapon type define its own attack behavior (swing projectile etc)
-    public virtual void Attack()
+    public virtual void Attack(GameObject self)
     {
         Debug.Log("attacking...");
     }

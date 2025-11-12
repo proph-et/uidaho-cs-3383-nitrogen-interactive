@@ -9,6 +9,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject bowPrefab;
     public GameObject wandPrefab;
     public GameObject magicOrbPrefab;
+    public GameObject arrowPrefab;
 
     private Dictionary<string, (WeaponBase data, GameObject instance)> weapons = new Dictionary<string, (WeaponBase, GameObject)>();
 
@@ -26,7 +27,8 @@ public class WeaponManager : MonoBehaviour
         sword = new Sword(swordPrefab);
         bow = new Bow(bowPrefab);
         wand = new Wand(wandPrefab);
-        wand.projectilePrefab = magicOrbPrefab;
+        wand.orbPrefab = magicOrbPrefab;
+        bow.projectilePrefab = arrowPrefab;
 
 
         AddWeapon(sword);
@@ -57,7 +59,7 @@ public class WeaponManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            currentWeapon.Attack();
+            currentWeapon.Attack(this.gameObject);
             // currentWeapon.StartCooldown(this);
         }
     }
@@ -93,9 +95,19 @@ public class WeaponManager : MonoBehaviour
             Transform firePoint = instance.transform.Find("firePoint");
             if (firePoint != null)
             {
-                Wand_Weapon.SetFirePoint(firePoint);
+                Wand_Weapon.SetFirePointWand(firePoint);
             }
-    }
+        }
+
+        // Bows
+        if (weapon is Bow Bow_Weapon)
+        {
+            Transform firePoint = instance.transform.Find("firePoint");
+            if (firePoint != null)
+            {
+                Bow_Weapon.SetFirePointBow(firePoint);
+            }
+        }
     }
 
     private void EquipWeapon(string name)
