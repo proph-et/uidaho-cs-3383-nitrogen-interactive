@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f0aa234d-c40c-41d2-8857-d1f38227a7dc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EnemySpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +56,8 @@
       <workItem from="1759985270973" duration="520000" />
       <workItem from="1761691835724" duration="1588000" />
       <workItem from="1761778027052" duration="5698000" />
-      <workItem from="1762389607412" duration="7214000" />
+      <workItem from="1762389607412" duration="8146000" />
+      <workItem from="1762906883986" duration="1060000" />
     </task>
     <servers />
   </component>
