@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : MenuBase
 {
     // This script follows the Command Pattern.
     // -------------------------------------------------------
@@ -17,10 +17,10 @@ public class MainMenu : MonoBehaviour
 
     // Called when the "Play" button is pressed.
     // This command loads the next scene in the Build Settings list.
-    public void PlayGame()
+    public override void PlayGame()
     {
         // Load the next scene by index.
-        // This is equivalent to starting the game.
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
         // Alternative method: load by scene index asynchronously.
@@ -29,9 +29,9 @@ public class MainMenu : MonoBehaviour
 
     // Called when the "Quit" button is pressed.
     // This command exits the application.
-    public void Quit()
+    public override void Quit()
     {
-        // Close the application.
+        
         Application.Quit();
 
         // Log message appears in the Editor for testing purposes,
