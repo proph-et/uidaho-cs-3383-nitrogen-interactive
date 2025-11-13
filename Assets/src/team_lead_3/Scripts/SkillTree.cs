@@ -21,12 +21,17 @@ public class SkillTree : MonoBehaviour
 
     private void Start()
     {
-        levelSystem = new LevelSystem();
+        // levelSystem = new LevelSystem();
         levelWindow.SetLevelSystem(levelSystem);
     }
 
     private void Awake()
     {
+        levelSystem = LevelSystem.Instance;
+
+        DontDestroyOnLoad(gameObject);
+
+
         fighterButton.onClick.AddListener(() =>
         {
             Debug.Log("Fighter button was pushed");
@@ -45,7 +50,6 @@ public class SkillTree : MonoBehaviour
                 Debug.Log("Mage button was pushed");
             });
         }
-
     }
     void Update()
     {
