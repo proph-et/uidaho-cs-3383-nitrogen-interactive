@@ -11,10 +11,11 @@ public class Wand : WeaponBase
 
     public Wand(GameObject prefabType)
     {
-        weaponName = "Wand";
-        damage = 10;
-        attackRate = 1.5f;
+        setWeaponName("Wand");
+        setWeaponDamage(10);
+        setAttackRate(1.5f);
         prefab = prefabType;
+        setWeaponTier(1);
     }
 
     public void SetFirePointWand(Transform point)
@@ -25,8 +26,6 @@ public class Wand : WeaponBase
 
     public override void Attack(GameObject self)
     {
-
-
         if (firePoint == null && prefab != null)
         {
             Debug.Log("null firepoint");
@@ -52,10 +51,7 @@ public class Wand : WeaponBase
 
         if (orbScript != null)
         {
-            orbScript.damage = damage;
+            orbScript.damage = getWeaponDamage();
         }
-
     }
 }
-
-

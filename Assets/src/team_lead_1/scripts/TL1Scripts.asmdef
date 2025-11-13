@@ -2,7 +2,8 @@
   "name": "TL1Scripts",
   "rootNamespace": "",
   "references": [
-    "Unity.TextMeshPro"
+    "Unity.TextMeshPro",
+    "TL4WeaponCore"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

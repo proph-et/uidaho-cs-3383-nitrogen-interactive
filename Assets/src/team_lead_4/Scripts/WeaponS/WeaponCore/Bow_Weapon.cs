@@ -11,10 +11,11 @@ public class Bow : WeaponBase
 
     public Bow(GameObject prefabType)
     {
-        weaponName = "Bow";
-        damage = 10;
-        attackRate = 1.5f;
+        setWeaponName("Bow");
+        setWeaponDamage(10);
+        setAttackRate(1.5f);
         prefab = prefabType;
+        setWeaponTier(1);
     }
 
     public void SetFirePointBow(Transform point)
@@ -55,13 +56,11 @@ public class Bow : WeaponBase
             Collider bowCollider = self.GetComponent<Collider>();
 
             Physics.IgnoreCollision(arrowCollider, bowCollider, true);
-        
-            arrowRB.linearVelocity = firePoint.forward * arrowSpeed;
-            Debug.Log("arrow linear vel: "+ arrowRB.linearVelocity);
 
-            arrowScript.damage = damage;
+            arrowRB.linearVelocity = firePoint.forward * arrowSpeed;
+            Debug.Log("arrow linear vel: " + arrowRB.linearVelocity);
+
+            arrowScript.damage = getWeaponDamage();
         }
     }
 }
-
-

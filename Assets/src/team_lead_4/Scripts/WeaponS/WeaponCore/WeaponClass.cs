@@ -1,0 +1,66 @@
+using UnityEngine;
+using System.Collections;
+
+public class WeaponBase
+{
+    private string weaponName = "Default";
+    private int damage = 10;
+    private float attackRate = 1f;
+    public GameObject prefab;
+    private int weaponTier;
+
+    protected bool canAttack = true;
+
+    //lets any weapon type define its own attack behavior (swing projectile etc)
+    public virtual void Attack(GameObject self)
+    {
+        Debug.Log("attacking...");
+    }
+
+    public int getWeaponTier()
+    {
+        return weaponTier;
+    }
+
+    public void setWeaponTier(int newWeaponTier)
+    {
+        weaponTier = newWeaponTier;
+    }
+
+    public int getWeaponDamage()
+    {
+        return damage;
+    }
+
+    public void setWeaponDamage(int newDamage)
+    {
+        damage = newDamage;
+    }
+
+    public float getAttackRate()
+    {
+        return attackRate;
+    }
+
+    public void setAttackRate(float newAttackRate)
+    {
+        attackRate = newAttackRate;
+    }
+
+    public string getName()
+    {
+        return weaponName;
+    }
+
+    public void setWeaponName(string newName)
+    {
+        weaponName = newName;
+    }
+
+    // protected IEnumerator AttackCooldown()
+    // {
+    //     canAttack = false;
+    //     yield return new WaitForSeconds(1f/ attackRate);
+    //     canAttack = true;
+    // }
+}
