@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossLevel : MonoBehaviour
@@ -5,30 +6,36 @@ public class BossLevel : MonoBehaviour
     [Header("References")]
     [SerializeField] private Transform player;
     [SerializeField] private Health health;
+    [SerializeField] private BossAbilities abilities;
+    [SerializeField] private BossMovement movement;
+    [SerializeField] private CooldownManagerBoss cooldowns;
+    [SerializeField] private BossCombat combat;
+    [SerializeField] private Animator animator;
 
     [Header("Boss Phase thresholds as %")]
     [Range(0f, 1f)][SerializeField] private float phase2AtHp = 0.68f;
     [Range(0f, 1f)][SerializeField] private float phase3AtHp = 0.34f;
 
-    [SerializeField] private BossAbilities abilities;
-
-    public BossAbilities Abilities => abilities;
     private BossPhase _currentphase;
 
     // Public read-only for the BehaviorPath calculations 
+    public BossAbilities Abilities => abilities;
     public Transform Player => player;
     public Health Health => health;
+    public BossMovement Movement => movement;
+    public CooldownManagerBoss Cooldowns => cooldowns;
+    public BossCombat Combat => combat;
+    public Animator Animator => animator;
 
     private void Awake()
     {
-        if (abilities == null)
-        {
-            abilities = GetComponent<BossAbilities>();
-        }
-        if (health == null)
-        {
-            health = GetComponent<Health>();
-        }
+        if (abilities == null) abilities = GetComponent<BossAbilities>();
+        if (movement == null) movement = GetComponent<BossMovement>();
+        if (cooldowns == null) cooldowns = GetComponent<CooldownManagerBoss>();
+        if (combat == null) combat = GetComponent<BossCombat>();
+        if (animator == null) animator = GetComponentInChildren<Animator>();
+        if (health == null) health = GetComponent<Health>();
+
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player")?.transform;
@@ -37,6 +44,8 @@ public class BossLevel : MonoBehaviour
         //need animation and sonds to play for die and onBossDamage
         health.AddOnDeathListener(Die);
         health.AddOnDamageListener(OnBossDamaged);
+
+        abilities.Init(this);
 
         //init phase 1
         var p1 = new Phase1();
@@ -72,14 +81,15 @@ public class BossLevel : MonoBehaviour
 
     private void Die()
     {
-        //add animations and sound
+        Debug.Log("Boss died");
+        //add animation here
         Debug.Log("Boss died");
         enabled = false;
     }
 
     private void OnBossDamaged(float dmg)
     {
-        //add animations and sound
+        //add animation here
         Debug.Log($"Boss took {dmg} damage");
     }
 }
