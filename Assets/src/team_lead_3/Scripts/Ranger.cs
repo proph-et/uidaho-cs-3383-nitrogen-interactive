@@ -18,9 +18,19 @@ public class Ranger : SkillTreeClass
 
     void Ability201()
     {
-        // add ability
-        rangerLevel = rangerLevel + 1;
-        ab201 = true;
+        bool flag = true;
+        int levReq = 1;
+        if (AddSkill(201, levReq, rangerLevel, flag))
+        {
+            rangerLevel = rangerLevel + 1;
+            ab201 = true;
+            Debug.Log("201 Unlocked");
+            // add ability
+        }
+        else
+        {
+            Debug.Log("Not enough skill points");
+        }
     }
     void Ability202()
     {
@@ -50,9 +60,17 @@ public class Ranger : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        rangerLevel = rangerLevel + 1;
-        ab203 = true;
+        if (AddSkill(203, levReq, rangerLevel, flag))
+        {
+            // add ability
+            rangerLevel = rangerLevel + 1;
+            ab203 = true;
+            Debug.Log("Skill unlocked!");
+        }
+        else
+        {
+            Debug.Log("Not enough skill points");
+        }
     }
     void Ability204()
     {
@@ -62,9 +80,17 @@ public class Ranger : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        rangerLevel = rangerLevel + 1;
-        ab204 = true;
+        if (AddSkill(204, levReq, rangerLevel, flag))
+        {
+            // add ability
+            rangerLevel = rangerLevel + 1;
+            ab204 = true;
+            Debug.Log("Skill unlocked!");
+        }
+        else
+        {
+            Debug.Log("Not enough skill points");
+        }
     }
     void Ability205()
     {
@@ -74,9 +100,17 @@ public class Ranger : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        rangerLevel = rangerLevel + 1;
-        ab205 = true;
+        if (AddSkill(205, levReq, rangerLevel, flag))
+        {
+            // add ability
+            rangerLevel = rangerLevel + 1;
+            ab205 = true;
+            Debug.Log("Skill unlocked!");
+        }
+        else
+        {
+            Debug.Log("Not enough skill points");
+        }
     }
     void Ability206()
     {
@@ -86,9 +120,17 @@ public class Ranger : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        rangerLevel = rangerLevel + 1;
-        ab206 = true;
+        if (AddSkill(206, levReq, rangerLevel, flag))
+        {
+            // add ability
+            rangerLevel = rangerLevel + 1;
+            ab206 = true;
+            Debug.Log("Skill unlocked!");
+        }
+        else
+        {
+            Debug.Log("Not enough skill points");
+        }
     }
     void Ability207()
     {
@@ -98,9 +140,17 @@ public class Ranger : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        rangerLevel = rangerLevel + 1;
-        ab207 = true;
+        if (AddSkill(207, levReq, rangerLevel, flag))
+        {
+            // add ability
+            rangerLevel = rangerLevel + 1;
+            ab207 = true;
+            Debug.Log("Skill unlocked!");
+        }
+        else
+        {
+            Debug.Log("Not enough skill points");
+        }
     }
     void Ability208()
     {
@@ -110,9 +160,17 @@ public class Ranger : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        rangerLevel = rangerLevel + 1;
-        ab208 = true;
+        if (AddSkill(208, levReq, rangerLevel, flag))
+        {
+            // add ability
+            rangerLevel = rangerLevel + 1;
+            ab208 = true;
+            Debug.Log("Skill unlocked!");
+        }
+        else
+        {
+            Debug.Log("Not enough skill points");
+        }
     }
     void Ability209()
     {
@@ -122,9 +180,17 @@ public class Ranger : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        rangerLevel = rangerLevel + 1;
-        ab209 = true;
+        if (AddSkill(209, levReq, rangerLevel, flag))
+        {
+            // add ability
+            rangerLevel = rangerLevel + 1;
+            ab209 = true;
+            Debug.Log("Skill unlocked!");
+        }
+        else
+        {
+            Debug.Log("Not enough skill points");
+        }
     }
 
     public void GetAb(int ability)

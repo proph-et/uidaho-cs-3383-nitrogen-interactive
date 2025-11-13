@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 move;
 
     [Header("Respawn Settings")]
-    public Transform spawnPoint;
-    public float fallThreshold = -5f;
+    private Transform spawnPoint;
+    private float fallThreshold = -5f;
 
     [Header("Dash Settings")]
     [SerializeField] private float dashSpeed = 16f; //Double Player movement speed
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     private bool canAttack = true;
 
     [Header("Health Settings")]
-    private Health _health;
+    [SerializeField] private Health _health;
 
     // ------------------
     // Input Events
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
 
         currentAbility = new DashAbility(dashSpeed, dashDuration);
 
-        _health.AddOnDeathListener(OnDeath);
+        //_health.AddOnDeathListener(OnDeath);
     }
 
     void FixedUpdate()
@@ -114,7 +114,6 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("isRunning", isMoving);
         }
     }
-
     ///-------------------------
     /// iFrames/Dash Function
     /// ----------------------

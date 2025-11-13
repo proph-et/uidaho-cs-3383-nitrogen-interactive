@@ -5,6 +5,20 @@ using System;
 
 public class LevelSystem
 {
+    private static LevelSystem _instance;
+    public static LevelSystem Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new LevelSystem();
+            }
+            return _instance;
+        }
+    }
+
+
     public event EventHandler OnXpChanged;
     public event EventHandler OnlvlChanged;
 

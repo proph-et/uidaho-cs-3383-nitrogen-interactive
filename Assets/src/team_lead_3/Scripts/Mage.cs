@@ -14,10 +14,14 @@ public class Mage : SkillTreeClass
 
     void Ability301()
     {
-        // add ability
-        mageLevel = mageLevel + 1;
-        ab301 = true;
-        Debug.Log("301");
+        bool flag = true;
+        int levReq = 1;
+        if (AddSkill(301, levReq, mageLevel, flag))
+        {
+            mageLevel = mageLevel + 1;
+            ab301 = true;
+        }
+        Debug.Log("This is 301");
     }
     void Ability302()
     {
@@ -27,10 +31,16 @@ public class Mage : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        mageLevel = mageLevel + 1;
-        ab302 = true;
-        Debug.Log("302");
+        if (AddSkill(302, levReq, mageLevel, flag))
+        {
+            mageLevel = mageLevel + 1;
+            ab302 = true;
+            // add ability here
+        }
+        else
+        {
+            Debug.Log("302");
+        }
     }
     void Ability303()
     {
@@ -40,10 +50,16 @@ public class Mage : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        mageLevel = mageLevel + 1;
-        ab303 = true;
-        Debug.Log("303");
+        if (AddSkill(303, levReq, mageLevel, flag))
+        {
+            mageLevel = mageLevel + 1;
+            ab303 = true;
+            // add ability here
+        }
+        else
+        {
+            Debug.Log("303");
+        }
     }
     void Ability304()
     {
@@ -53,10 +69,16 @@ public class Mage : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        mageLevel = mageLevel + 1;
-        ab304 = true;
-        Debug.Log("304");
+        if (AddSkill(304, levReq, mageLevel, flag))
+        {
+            mageLevel = mageLevel + 1;
+            ab304 = true;
+            // add ability here
+        }
+        else
+        {
+            Debug.Log("304");
+        }
     }
     void Ability305()
     {
@@ -66,10 +88,16 @@ public class Mage : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        mageLevel = mageLevel + 1;
-        ab305 = true;
-        Debug.Log("305");
+        if (AddSkill(305, levReq, mageLevel, flag))
+        {
+            mageLevel = mageLevel + 1;
+            ab305 = true;
+            // add ability here
+        }
+        else
+        {
+            Debug.Log("305");
+        }
     }
     void Ability306()
     {
@@ -79,10 +107,16 @@ public class Mage : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        mageLevel = mageLevel + 1;
-        ab306 = true;
-        Debug.Log("306");
+        if (AddSkill(306, levReq, mageLevel, flag))
+        {
+            mageLevel = mageLevel + 1;
+            ab306 = true;
+            // add ability here
+        }
+        else
+        {
+            Debug.Log("306");
+        }
     }
     void Ability307()
     {
@@ -92,10 +126,16 @@ public class Mage : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        mageLevel = mageLevel + 1;
-        ab307 = true;
-        Debug.Log("307");
+        if (AddSkill(307, levReq, mageLevel, flag))
+        {
+            mageLevel = mageLevel + 1;
+            ab307 = true;
+            // add ability here
+        }
+        else
+        {
+            Debug.Log("307");
+        }
     }
     void Ability308()
     {
@@ -105,10 +145,16 @@ public class Mage : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        mageLevel = mageLevel + 1;
-        ab308 = true;
-        Debug.Log("308");
+        if (AddSkill(308, levReq, mageLevel, flag))
+        {
+            mageLevel = mageLevel + 1;
+            ab308 = true;
+            // add ability here
+        }
+        else
+        {
+            Debug.Log("308");
+        }
     }
 
     public void GetAb(int ability)
