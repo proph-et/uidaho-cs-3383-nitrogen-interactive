@@ -5,37 +5,22 @@ using System.Collections.Generic;
 
 public class WeaponManager : MonoBehaviour
 {
-    public GameObject swordPrefab;
-    public GameObject bowPrefab;
-    public GameObject wandPrefab;
-    public GameObject magicOrbPrefab;
-    public GameObject arrowPrefab;
+    public Inventory playerInventory;
 
-    private Dictionary<string, (WeaponBase data, GameObject instance)> weapons = new Dictionary<string, (WeaponBase, GameObject)>();
+    private Dictionary<string, (WeaponBase data, GameObject instance)> weapons =
+        new Dictionary<string, (WeaponBase, GameObject)>();
 
     public Transform weaponHolder;
 
-    private WeaponBase currentWeapon;
     private GameObject currentInstance;
-
-    private Sword sword;
-    private Bow bow;
-    private Wand wand;
 
     private void Start()
     {
-        sword = new Sword(swordPrefab);
-        bow = new Bow(bowPrefab);
-        wand = new Wand(wandPrefab);
-        wand.orbPrefab = magicOrbPrefab;
-        bow.projectilePrefab = arrowPrefab;
+        AddWeapon(playerInventory.getSword());
+        AddWeapon(playerInventory.getBow());
+        AddWeapon(playerInventory.getWand());
 
-
-        AddWeapon(sword);
-        AddWeapon(bow);
-        AddWeapon(wand);
-
-        EquipWeapon("Sword");
+        EquipWeapon(playerInventory.getSword().getName());
     }
 
     private void Update()
@@ -44,22 +29,22 @@ public class WeaponManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            EquipWeapon("Sword");
+            EquipWeapon(playerInventory.getSword().getName());
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            EquipWeapon("Bow");
+            EquipWeapon(playerInventory.getBow().getName());
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            EquipWeapon("Wand");
+            EquipWeapon(playerInventory.getWand().getName());
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            currentWeapon.Attack(this.gameObject);
+            playerInventory.getCurrentWeapon().Attack(this.gameObject);
             // currentWeapon.StartCooldown(this);
         }
     }
@@ -75,6 +60,7 @@ public class WeaponManager : MonoBehaviour
     private void SetLocation()
     {
         //do stuffff
+        if (currentInstance == null) return;
 
         currentInstance.transform.parent = weaponHolder;
         currentInstance.transform.localPosition = Vector3.zero;
@@ -87,7 +73,8 @@ public class WeaponManager : MonoBehaviour
         instance.transform.localPosition = Vector3.zero;
         instance.transform.localRotation = Quaternion.identity;
         instance.SetActive(false);
-        weapons[weapon.weaponName] = (weapon, instance);
+        // weapons = playerInventory.getWeapons()
+        weapons[weapon.getName()] = (weapon, instance);
 
         // Wands
         if (weapon is Wand Wand_Weapon)
@@ -117,12 +104,9 @@ public class WeaponManager : MonoBehaviour
 
         var (data, instance) = weapons[name];
         instance.SetActive(true);
-        currentWeapon = data;
+        playerInventory.setCurrentWeapon(data);
         currentInstance = instance;
 
         Debug.Log($"Equipped {name}");
-
-
     }
-    
 }

@@ -1,0 +1,7 @@
+{
+  "name": "TL4WeaponManager",
+  "references": [
+    "TL1Scripts",
+    "TL4WeaponCore"
+  ]
+}

@@ -5,10 +5,11 @@ public class Sword : WeaponBase
 {
     public Sword(GameObject prefabType)
     {
-        weaponName = "Sword";
-        damage = 10;
-        attackRate = 1.5f;
+        setWeaponName("Sword");
+        setWeaponDamage(10);
+        setAttackRate(1.5f);
         prefab = prefabType;
+        setWeaponTier(1);
     }
 
     public override void Attack(GameObject self)
@@ -26,7 +27,5 @@ public class Sword : WeaponBase
         //     enemy.TakeDamage(damage);
         //     Debug.Log($"Sword hit {enemy.name} for {damage} damage!");
         // }
-
     }
 }
-
