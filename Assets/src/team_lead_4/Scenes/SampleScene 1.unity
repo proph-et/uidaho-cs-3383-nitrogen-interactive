@@ -1044,6 +1044,8 @@ MonoBehaviour:
   swordPrefab: {fileID: 6852199483657004404, guid: 0b87a465a9df4ce4fb443b05d182d2e1, type: 3}
   bowPrefab: {fileID: 3567570617625977865, guid: a6e580179fdd6b94a973848ff46d9c01, type: 3}
   wandPrefab: {fileID: 3681383412935456387, guid: ba6a17332b8271c4fb7a3ff9e432f78d, type: 3}
+  magicOrbPrefab: {fileID: 0}
+  arrowPrefab: {fileID: 0}
   weaponHolder: {fileID: 1387905159}
 --- !u!114 &855913609
 MonoBehaviour:
@@ -1817,7 +1819,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: c66eade32441dbc47b96439fe5b8d1d2, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c6d67ca1aa8fe3f42b9f04b233f06f28, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1455339384
 Transform:
