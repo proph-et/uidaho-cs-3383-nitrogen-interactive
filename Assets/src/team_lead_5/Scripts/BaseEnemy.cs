@@ -52,6 +52,7 @@ public class BaseEnemy
             Attack();
     }
 
+
     // --- Core behaviors (virtual) ---
     protected virtual void Patrol() 
     {
@@ -96,7 +97,7 @@ public class BaseEnemy
             OnDeath();
     }
 
-    protected virtual void OnDeath()
+    public virtual void OnDeath()
     {
         Object.Destroy(contextTransform.gameObject, 0.5f);
     }

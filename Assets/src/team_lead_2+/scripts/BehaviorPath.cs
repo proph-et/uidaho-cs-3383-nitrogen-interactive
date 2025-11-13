@@ -6,25 +6,32 @@ using UnityEngine;
 public class BehaviorPath
 {
     private readonly string _name;
-    private float _weight;
+    private float _baseWeight;
+    private float _currentWeight;
     private readonly List<BehaviorNode> _entryNodes = new();
     private readonly List<List<BehaviorNode>> _steps = new();
 
     public BehaviorPath(string name, float initialWeight)
     {
-        _name = name;
-        _weight = initialWeight;
+        this._name = name;
+        _baseWeight = initialWeight;
+        _currentWeight = initialWeight;
     }
 
     //make the values readonly accessable 
     public string GetName() => _name;
-    public float GetWeight() => _weight;
+    public float GetWeight() => _currentWeight;
     public IReadOnlyList<BehaviorNode> GetEntryNodes() => _entryNodes.AsReadOnly();
     public IReadOnlyList<List<BehaviorNode>> GetSteps() => _steps.AsReadOnly();
 
+    public void ResetToBaseWeight()
+    {
+        _currentWeight = _baseWeight;
+    }
+
     public void SetWeight(float weight)
     {
-        _weight = weight;
+        _currentWeight = weight;
     }
 
     public void AddEntryNode(BehaviorNode node)
