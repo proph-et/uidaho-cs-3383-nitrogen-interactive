@@ -5,6 +5,7 @@ using System;
 
 public class LevelSystem
 {
+    // singleton pattern
     private static LevelSystem _instance;
     public static LevelSystem Instance
     {
@@ -26,7 +27,7 @@ public class LevelSystem
     int xp;
     int xpToNext;
 
-    public LevelSystem()
+    public LevelSystem() // this technically needs to be private
     {
         level = 1;
         xp = 0;

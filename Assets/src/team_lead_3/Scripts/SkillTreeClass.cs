@@ -15,13 +15,14 @@ public class SkillTreeClass : Ability
     private void Start() // no idea if this works until we call the class later
     {
 
-        overallLevel = (int)levelSystem.GetLevelNum();
+        overallLevel = (int)LevelSystem.Instance.GetLevelNum();
         Debug.Log($"The level is {overallLevel}");
-        skillPoints = overallLevel;
+        skillPoints = 1;
     }
     public bool AddSkill(int skillID, int levReq, int classLevel, bool flag) 
     {
         Debug.Log("ADD SKILL IS BEING CALLED");
+        Debug.Log($"YOU HAVE {skillPoints} skill points");
         if (classLevel >= levReq && flag == true && skillPoints >= 1)
         {
             //add the skill
