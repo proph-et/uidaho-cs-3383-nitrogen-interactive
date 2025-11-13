@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573a3733ff7c79348978ba5164256430, type: 3}
   m_Name: 1XP
   m_EditorClassIdentifier: TL4NewAssembly::XPSO
-  XPamount: 1
+  xpAmount: 10

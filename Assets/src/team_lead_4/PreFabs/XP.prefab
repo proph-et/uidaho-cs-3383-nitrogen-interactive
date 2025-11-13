@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5260910380195787439}
   - component: {fileID: 8635333889938966631}
   - component: {fileID: -6548835837695977566}
+  - component: {fileID: -3147276905966382499}
   m_Layer: 0
   m_Name: XP
   m_TagString: Untagged
@@ -127,3 +128,17 @@ MonoBehaviour:
   WhoCanCollect:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &-3147276905966382499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487750977179941515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f0fb0b5bc57ff4ebbe2b36f2b149bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TL4NewAssembly::XPHandler
+  _collectable: {fileID: 11400000, guid: 331f488c2f7445640be0b0ff024f1676, type: 2}
+  xpData: {fileID: 0}
