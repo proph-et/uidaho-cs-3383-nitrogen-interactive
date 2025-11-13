@@ -1128,6 +1128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 826229542}
   - component: {fileID: 826229543}
+  - component: {fileID: 826229544}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1164,6 +1165,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1be6f0f2fe0fe5f4ab639d46a26a8767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TL6_Scripts::MainMenu
+--- !u!114 &826229544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826229541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037750369ef540d4da355b361627a4ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TL6_Scripts::MenuInvoker
 --- !u!1 &846592940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,9 +1608,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 826229543}
-        m_TargetAssemblyTypeName: MainMenu, TL6_Scripts
-        m_MethodName: PlayGame
+      - m_Target: {fileID: 826229544}
+        m_TargetAssemblyTypeName: MenuInvoker, TL6_Scripts
+        m_MethodName: OnPlayButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2122,12 +2135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.SpatialTracking::UnityEngine.SpatialTracking.TrackedPoseDriver
-  m_Device: 0
-  m_PoseSource: 2
-  m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 0
-  m_UpdateType: 0
-  m_UseRelativeTransform: 0
 --- !u!1 &2012105199
 GameObject:
   m_ObjectHideFlags: 0
