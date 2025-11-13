@@ -32,13 +32,13 @@ public class LevelWindow : MonoBehaviour
     private void SetXpNum()
     {
         xpDisplay.text = "XP: " + levelSystem.GetXpNum().ToString() + "/" + levelSystem.GetXpToNext((int)levelSystem.GetLevelNum()).ToString();
-        Debug.Log("Setting the Xp");
+        // Debug.Log("Setting the Xp");
     }
 
     private void SetLvlNum()
     {
         levelDisplay.text = "LEVEL " + levelSystem.GetLevelNum();
-        Debug.Log("Setting the lvl");
+        // Debug.Log("Setting the lvl");
     }
 
     public void SetLevelSystem(LevelSystem levelSystem)
@@ -60,7 +60,7 @@ public class LevelWindow : MonoBehaviour
         // the level has changed, so update the text
         SetLvlNum();
         float stuff = levelSystem.GetLevelNum();
-        Debug.Log($"Setting the lvl {stuff}");
+        // Debug.Log($"Setting the lvl {stuff}");
     }
 
     private void LevelSystem_OnXpChanged(object sender, EventArgs e)
@@ -68,6 +68,6 @@ public class LevelWindow : MonoBehaviour
         // the xp has gone up, so update the text
         SetXpNum();
         float stuff = levelSystem.GetXpNum();
-        Debug.Log($"Setting the xp {stuff}");
+        // Debug.Log($"Setting the xp {stuff}");
     }
 }

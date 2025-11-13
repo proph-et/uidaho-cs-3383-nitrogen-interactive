@@ -5,6 +5,7 @@ using System;
 
 public class LevelSystem
 {
+    public int skillPoint;
     // singleton pattern
     private static LevelSystem _instance;
     public static LevelSystem Instance
