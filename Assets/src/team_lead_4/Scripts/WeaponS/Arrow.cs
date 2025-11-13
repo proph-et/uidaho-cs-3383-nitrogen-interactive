@@ -45,9 +45,9 @@ public class Arrow : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("collision triggered");
+        // Debug.Log("collision triggered");
         if (!collisionActive) return;
-        Debug.Log("has hit");
+        // Debug.Log("has hit");
         if (hasHit) return;
         hasHit = true;
 
