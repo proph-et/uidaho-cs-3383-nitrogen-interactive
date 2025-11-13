@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     private bool canAttack = true;
 
     [Header("Health Settings")]
-    private Health _health;
+    [SerializeField] private Health _health;
 
     // ------------------
     // Input Events

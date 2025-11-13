@@ -2,7 +2,8 @@
     "name": "team_lead_2_Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c"
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:63115060b2e5e8d4bac8b1272a1ccab1"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
