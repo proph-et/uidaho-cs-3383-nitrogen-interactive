@@ -1793,8 +1793,8 @@ GameObject:
   - component: {fileID: 979921049}
   - component: {fileID: 979921048}
   - component: {fileID: 979921047}
-  - component: {fileID: 979921046}
   - component: {fileID: 979921054}
+  - component: {fileID: 979921055}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1802,37 +1802,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &979921046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979921045}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5602e8ada2535fe469d01648aa16420b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: team_lead_2_Runtime::Health
-  maxHealth: 100
-  onDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 979921049}
-        m_TargetAssemblyTypeName: PlayerController, team_lead_2_Runtime
-        m_MethodName: Respawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDamage:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &979921047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2020,8 +1989,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   speed: 8
   move: {x: 0, y: 0}
-  spawnPoint: {fileID: 0}
-  fallThreshold: -5
   dashSpeed: 16
   dashDuration: 0.2
   dashCooldown: 1
@@ -2030,6 +1997,7 @@ MonoBehaviour:
   attackRange: 0.5
   attackCooldown: 0.2
   attackDamage: 10
+  _health: {fileID: 0}
 --- !u!136 &979921050
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2139,6 +2107,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2a04816be82c3f4cb72fb21462aee49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPersist
+--- !u!114 &979921055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979921045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d62c53984c3dd42b21eacf0c213684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TL2+Scripts::Health
+  maxHealth: 100
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &991610419
 GameObject:
   m_ObjectHideFlags: 0

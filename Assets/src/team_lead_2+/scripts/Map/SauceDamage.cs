@@ -6,11 +6,14 @@ public class SauceDamage : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log("OnTriggerStay works");
         if (other.CompareTag("Player"))
         {
-            var health = other.GetComponent<Health>();
+            Debug.Log("comparetag palyer works");
+            var health = other.GetComponentInParent<Health>();
             if (health != null)
             {
+                Debug.Log("health on palyer was not null");
                 health.TakeDamage(damagePerSecond * Time.deltaTime);
             }
         }

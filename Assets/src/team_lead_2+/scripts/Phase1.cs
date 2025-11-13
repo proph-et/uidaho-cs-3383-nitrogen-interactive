@@ -7,7 +7,7 @@ public class Phase1 : BossPhase
     {
         base.Init(bossContext);
 
-        // Then do phase-specific changes
+        //phase-specific changes
         boss.Movement.SetSpeedMultiplier(1f);
         boss.Cooldowns.SetCooldownMultiplier(1f);
         boss.Animator.SetFloat("AttackSpeed", 1f);
@@ -15,7 +15,6 @@ public class Phase1 : BossPhase
 
     protected override void BuildGraph()
     {
-        // MOVEMENT NODE
         var move = new BehaviorNode(
             name: "Move",
             type: AbilityType.Movement,
@@ -30,7 +29,6 @@ public class Phase1 : BossPhase
             }
         );
 
-        // ATTACK NODE
         var attack = new BehaviorNode(
             name: "Attack",
             type: AbilityType.Attack,
