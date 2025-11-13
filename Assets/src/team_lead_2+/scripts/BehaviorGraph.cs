@@ -33,9 +33,11 @@ public class BehaviorGraph
     {
         _isExecutingPath = true;
         Debug.Log($"[BehaviorGraph] Executing path: {path.GetName()}");
+        Debug.Log("COROUTINE: START PATH");
 
         foreach (var step in path.GetSteps()) // iterate through all steps in order
         {
+            Debug.Log("COROUTINE: Executing step");
             // Pick one node from this step (weighted random)
             var usableNodes = step.FindAll(n => n.CanExecute());
             if (usableNodes.Count == 0)
@@ -55,6 +57,8 @@ public class BehaviorGraph
             while (!done)
                 yield return null;
         }
+
+        Debug.Log("COROUTINE: END PATH");
 
         ReevaluateProbabilities();
         _isExecutingPath = false;
@@ -119,6 +123,11 @@ public class BehaviorGraph
         float hp = boss.Health.GetHealthRatio();
         float distance = Vector3.Distance(boss.Player.position, boss.transform.position);
 
+        foreach (var path in _paths)
+        {
+            path.ResetToBaseWeight();
+        }
+
         foreach (var path in _paths) 
         {
             bool pathInvalid = false;
@@ -154,9 +163,17 @@ public class BehaviorGraph
                     }
 
                     //figure out the hp per phase value 30% left in the phase
-                    if (hp < 0.3f && node.Type == AbilityType.Heavyattack)
+                    if (hp < 0.34f && node.Type == AbilityType.Heavyattack)
                     {
-                        node.SetProbability(node.Probability * 2f);
+                        node.SetProbability(node.Probability * 1.4f);
+                    }
+                    else if (hp < 0.68f && hp > 0.34f && node.Type == AbilityType.Special)
+                    {
+                        node.SetProbability(node.Probability * 1.4f);
+                    }
+                    else if (hp > 0.68 && node.Type == AbilityType.Attack)
+                    {
+                        node.SetProbability(node.Probability * 1.4f);
                     }
 
                     usableSum += node.Probability;

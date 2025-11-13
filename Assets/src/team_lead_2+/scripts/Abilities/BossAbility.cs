@@ -1,29 +1,32 @@
 using UnityEngine;
 using System;
-using System.Collections;
 
-public abstract class BossAbility : MonoBehaviour
+public abstract class BossAbility
 {
-    [SerializeField] protected Animator animator;
-    [SerializeField] protected float cooldown = 1f;
-    private float _readyAt;
+    public string Name { get; protected set; }
 
-    protected virtual void Awake()
+    public AbilityType type { get; protected set; }
+
+    public float Range { get; protected set; }
+
+    public float cooldown { get; protected set; }
+
+    protected abstract bool CanExecuteInternal(BossLevel boss);
+    protected abstract void ExecuteInternal(BossLevel boss, Action onComplete);
+
+    public bool CanExecute(BossLevel boss)
     {
-        if (animator == null)
-            animator = GetComponentInParent<Animator>();
+        return boss != null && CanExecuteInternal(boss);
     }
 
-    public virtual bool CanUse() => Time.time >= _readyAt;
-
-    public void ArmCooldown() => _readyAt = Time.time + cooldown;
-
-    public abstract void Execute(Action onComplete);
-
-    protected IEnumerator FinishAfterAnim(string animName, Action onComplete)
+    public void Execute(BossLevel boss, Action onComplete)
     {
-        // If you want dynamic length, fetch from AnimatorClipInfo
-        yield return new WaitForSeconds(0.8f);
-        onComplete?.Invoke();
+        if(boss == null)
+        {
+            onComplete?.Invoke();
+            return;
+        }
+
+        ExecuteInternal(boss, onComplete);
     }
 }
