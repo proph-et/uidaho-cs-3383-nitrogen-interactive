@@ -21,6 +21,7 @@ public class BehaviorGraph
     {
         if (_isExecutingPath) { return; }
 
+        ReevaluateProbabilities();
         _currentPath = PickWeightedPath(_paths);
 
         if (_currentPath != null && _currentPath.GetWeight() > 0f)
@@ -60,8 +61,8 @@ public class BehaviorGraph
 
         Debug.Log("COROUTINE: END PATH");
 
-        ReevaluateProbabilities();
         _isExecutingPath = false;
+        _currentPath = null;
     }
 
     private BehaviorPath PickWeightedPath(List<BehaviorPath> list)
@@ -123,6 +124,8 @@ public class BehaviorGraph
         float hp = boss.Health.GetHealthRatio();
         float distance = Vector3.Distance(boss.Player.position, boss.transform.position);
 
+        Debug.Log("We pass the Revaluate function");
+
         foreach (var path in _paths)
         {
             path.ResetToBaseWeight();
@@ -130,6 +133,7 @@ public class BehaviorGraph
 
         foreach (var path in _paths) 
         {
+            Debug.Log("We pass one path");
             bool pathInvalid = false;
             float usableSum = 0f;
             float requieredProduct = 1f;
@@ -137,8 +141,10 @@ public class BehaviorGraph
 
             foreach (var entry in path.GetEntryNodes())
             {
-                foreach(var node in FlattenPath(entry))
+                Debug.Log("We pass the GetEntryNodes");
+                foreach (var node in FlattenPath(entry))
                 {
+                    Debug.Log("We pass the FlattenPath");
                     node.ResetProbability();
 
                     // cooldown check
@@ -201,6 +207,7 @@ public class BehaviorGraph
     private void NormalizePathWeight()
     {
         float total = 0f;
+
         foreach (var path in _paths)
         {
             total += path.GetWeight();

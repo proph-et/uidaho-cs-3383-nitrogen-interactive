@@ -50,8 +50,14 @@ public class Phase2 : BossPhase
         var aggressive = new BehaviorPath("aggressive", 1.0f);
         aggressive.AddStep(move);
         aggressive.AddStep(attack);
+        aggressive.FinalizePath();
+
+        var moveOnly = new BehaviorPath("MoveOnly", 0.5f);
+        moveOnly.AddStep(move);
+        moveOnly.FinalizePath();
 
         // initialize graph
         graph.AddPath(aggressive);
+        graph.AddPath(moveOnly);
     }
 }

@@ -8886,211 +8886,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 786943659911516758, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 786943659911516758, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-      propertyPath: whatIsGround.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1438348507310371686, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1438348507310371686, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1438348507310371686, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1438348507310371686, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1438348507310371686, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1438348507310371686, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1438348507310371686, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1438348507310371686, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1438348507310371686, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1438348507310371686, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2546444180564352842, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5276264363155778697, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    - target: {fileID: 5276264363155778697, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 786943659911516758, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-    - {fileID: 2546444180564352842, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5276264363155778697, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 403159338}
-    - targetCorrespondingSourceObject: {fileID: 5276264363155778697, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 403159337}
-    - targetCorrespondingSourceObject: {fileID: 5276264363155778697, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 403159336}
-    - targetCorrespondingSourceObject: {fileID: 5276264363155778697, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 403159335}
-    - targetCorrespondingSourceObject: {fileID: 5276264363155778697, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 403159334}
-    - targetCorrespondingSourceObject: {fileID: 5276264363155778697, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 403159333}
-    - targetCorrespondingSourceObject: {fileID: 5276264363155778697, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 403159339}
-  m_SourcePrefab: {fileID: 100100000, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
---- !u!1 &403159332 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5276264363155778697, guid: ba2dbcd9f4462174b941ee5f4cac7781, type: 3}
-  m_PrefabInstance: {fileID: 403159331}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &403159333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403159332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77ce49df521b38446ba581f86a941880, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossAbilities
---- !u!114 &403159334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403159332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca1f10e7b1bb5fd4ebdaa4c82bb683a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CooldownManagerBoss
---- !u!114 &403159335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403159332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35ec76aa7d1b1914fba1833d5068b128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossCombat
-  swordRange: 2
-  swordDamage: 10
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 8192
---- !u!114 &403159336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403159332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a51b1d60d84aac84da61d9f5f90e5c4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossMovement
-  baseSpeed: 3.5
---- !u!114 &403159337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403159332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d62c53984c3dd42b21eacf0c213684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 100
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
-  onDamage:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &403159338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403159332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe9c44600270754fa75df0dcf3f4ce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossLevel
-  player: {fileID: 0}
-  health: {fileID: 403159337}
-  abilities: {fileID: 403159333}
-  movement: {fileID: 403159336}
-  cooldowns: {fileID: 403159334}
-  combat: {fileID: 403159335}
-  animator: {fileID: 403159339}
-  phase2AtHp: 0.68
-  phase3AtHp: 0.34
---- !u!95 &403159339
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 403159332}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
 --- !u!1 &406271844
 GameObject:
   m_ObjectHideFlags: 0

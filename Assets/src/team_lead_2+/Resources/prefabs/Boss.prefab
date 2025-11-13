@@ -13,10 +13,15 @@ GameObject:
   - component: {fileID: 4536358354037574872}
   - component: {fileID: 7189460704701113656}
   - component: {fileID: 8876712963612710682}
-  - component: {fileID: 786943659911516758}
-  - component: {fileID: 2546444180564352842}
+  - component: {fileID: 5127152044642176066}
+  - component: {fileID: 5934326064380010187}
+  - component: {fileID: 4972167498018068864}
+  - component: {fileID: 7994998610057604083}
+  - component: {fileID: 2631940384084548316}
+  - component: {fileID: 6798407007886345516}
+  - component: {fileID: 7475724850128040373}
   m_Layer: 7
-  m_Name: Boss_obj
+  m_Name: Boss
   m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 5276264363155778697}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.66, y: 1, z: -3.44}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -138,7 +143,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &786943659911516758
+--- !u!114 &5127152044642176066
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,19 +152,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5276264363155778697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dc0d06c82582cb4db13d58187de2b7b, type: 3}
+  m_Script: {fileID: 11500000, guid: afe9c44600270754fa75df0dcf3f4ce3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossAI
-  agent: {fileID: 8876712963612710682}
+  m_EditorClassIdentifier: Assembly-CSharp::BossLevel
   player: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 0
-  sightRange: 3
---- !u!114 &2546444180564352842
+  health: {fileID: 5934326064380010187}
+  abilities: {fileID: 6798407007886345516}
+  movement: {fileID: 4972167498018068864}
+  cooldowns: {fileID: 2631940384084548316}
+  combat: {fileID: 7994998610057604083}
+  animator: {fileID: 7475724850128040373}
+  phase2AtHp: 0.68
+  phase3AtHp: 0.34
+--- !u!114 &5934326064380010187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,8 +173,89 @@ MonoBehaviour:
   m_GameObject: {fileID: 5276264363155778697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a907022dc77204149bc771793354e97d, type: 3}
+  m_Script: {fileID: 11500000, guid: 68d62c53984c3dd42b21eacf0c213684, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Boss
-  player: {fileID: 0}
-  BossAi: {fileID: 786943659911516758}
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 100
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4972167498018068864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276264363155778697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51b1d60d84aac84da61d9f5f90e5c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossMovement
+  baseSpeed: 5
+--- !u!114 &7994998610057604083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276264363155778697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ec76aa7d1b1914fba1833d5068b128, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossCombat
+  swordRange: 2
+  swordDamage: 10
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+--- !u!114 &2631940384084548316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276264363155778697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca1f10e7b1bb5fd4ebdaa4c82bb683a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CooldownManagerBoss
+--- !u!114 &6798407007886345516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276264363155778697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ce49df521b38446ba581f86a941880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossAbilities
+--- !u!95 &7475724850128040373
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276264363155778697}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

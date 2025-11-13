@@ -1,5 +1,5 @@
-using NUnit.Framework;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -53,5 +53,34 @@ public class BehaviorPath
 
         if (step.Count > 0)
             _steps.Add(step);
+    }
+
+    public void FinalizePath()
+    {
+        SetEntryNodes(
+            _steps
+                .Select(s => s.Count > 0 ? s[0] : null)
+                .Where(n => n != null)
+                .ToList()
+        );
+    }
+
+    public void SetEntryNodes(List<BehaviorNode> entryNodes)
+    {
+        // Sanitize the input
+        entryNodes = entryNodes
+            .Where(n => n != null)
+            .Distinct()
+            .ToList();
+
+        _entryNodes.Clear();            // ✔ allowed
+        _entryNodes.AddRange(entryNodes); // ✔ allowed
+
+        if (_entryNodes.Count == 0)
+        {
+            Debug.LogWarning(
+                $"BehaviorPath '{_name}' has NO entry nodes assigned!"
+            );
+        }
     }
 }
