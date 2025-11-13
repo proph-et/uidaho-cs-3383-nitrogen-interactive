@@ -279,6 +279,7 @@ MonoBehaviour:
   attackRange: 0.5
   attackCooldown: 0.2
   attackDamage: 10
+  _health: {fileID: 0}
 --- !u!136 &49219384
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -561,25 +562,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5602e8ada2535fe469d01648aa16420b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: team_lead_2_Runtime::Health
-  maxHealth: 100
-  onDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 49219382}
-        m_TargetAssemblyTypeName: PlayerController, team_lead_2_Runtime
-        m_MethodName: Respawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onDamage:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &49219393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -616,7 +598,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49219381}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bfcd528bd148b9459900f8be6753238, type: 3}
   m_Name: 
@@ -6338,13 +6320,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461474882}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.009905913, y: 0.044195153, z: -0.052814353, w: 0.9975768}
+  m_LocalRotation: {x: 0.9829185, y: 0.043927703, z: -0.03381848, w: -0.17549326}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1486518640}
-  m_LocalEulerAnglesHint: {x: 1.4, y: 5, z: -6}
+  m_LocalEulerAnglesHint: {x: 200, y: 5, z: -6}
 --- !u!4 &1486518640 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1561907739081200918, guid: 2e43844444bc02d41afaaea650728558, type: 3}

@@ -1,6 +1,5 @@
 using System.Collections;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -98,8 +97,14 @@ public class PlayerController : MonoBehaviour
     public void MovePlayer()
     {
         Vector3 movement = new Vector3(move.x, 0f, move.y);
-        bool isMoving = movement.sqrMagnitude > 0.001f;
+        Vector2 tilt = GetTiltInput();
 
+        if(tilt != Vector2.zero)
+        {
+            movement = new Vector3(tilt.x, 0f, tilt.y);
+        }
+
+        bool isMoving = movement.sqrMagnitude > 0.001f;
 
         if (isMoving)
         {
@@ -114,6 +119,31 @@ public class PlayerController : MonoBehaviour
             _animator.SetBool("isRunning", isMoving);
         }
     }
+
+
+    ///------------
+    /// Tilt Controls
+    /// ------------- 
+    
+    private Vector2 GetTiltInput()
+    {
+        Vector3 accel = Input.acceleration;
+
+
+        Vector2 tilt = new Vector2(accel.x, accel.y);
+
+        if(tilt.magnitude < 0.15f)
+        {
+            tilt = Vector2.zero;
+        }
+
+        float sensitivity = 2.0f;
+        tilt *= sensitivity;
+
+        return tilt;
+    }
+
+
     ///-------------------------
     /// iFrames/Dash Function
     /// ----------------------

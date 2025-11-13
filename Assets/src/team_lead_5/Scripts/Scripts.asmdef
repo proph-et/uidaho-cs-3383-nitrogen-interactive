@@ -1,3 +1,6 @@
 {
-	"name": "NewAssembly"
+  "name": "TL5Scripts",
+  "references": [
+    "TL2+Scripts"
+  ]
 }
