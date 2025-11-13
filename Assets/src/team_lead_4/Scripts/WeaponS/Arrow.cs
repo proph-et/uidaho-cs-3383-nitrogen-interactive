@@ -5,7 +5,7 @@ public class Arrow : MonoBehaviour
     public float speed = 15f;
     public float damage = 10f;
     public float lifetime = 10f;
-    public float collisionDelay = 1f;
+    private float collisionDelay = 0.05f;
 
     private float spawnTime;
     private bool collisionActive = false;
@@ -24,6 +24,15 @@ public class Arrow : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
+    void Update()
+    {
+        if (!collisionActive && Time.time-spawnTime >= collisionDelay)
+        {
+            collisionActive = true;
+            Debug.Log("collision active true");
+        }
+    }
+
     void FixedUpdate()
     {
 
@@ -32,18 +41,13 @@ public class Arrow : MonoBehaviour
             transform.forward = Vector3.Lerp(transform.forward, arrowRB.linearVelocity.normalized, Time.fixedDeltaTime * 10f);
         }
 
-        if (!collisionActive && Time.time-spawnTime >= collisionDelay)
-        {
-            collisionActive = true;
-        }
     }
 
     void OnTriggerEnter(Collider collider)
     {
-        
-
-        Debug.Log("has hit");
+        Debug.Log("collision triggered");
         if (!collisionActive) return;
+        Debug.Log("has hit");
         if (hasHit) return;
         hasHit = true;
 
