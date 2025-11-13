@@ -882,7 +882,6 @@ GameObject:
   - component: {fileID: 858835533}
   - component: {fileID: 858835542}
   - component: {fileID: 858835541}
-  - component: {fileID: 858835543}
   m_Layer: 0
   m_Name: Player (1)
   m_TagString: Player
@@ -1108,8 +1107,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   speed: 8
   move: {x: 0, y: 0}
-  spawnPoint: {fileID: 0}
-  fallThreshold: -5
   dashSpeed: 16
   dashDuration: 0.2
   dashCooldown: 1
@@ -1227,11 +1224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bfcd528bd148b9459900f8be6753238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TL4NewAssembly::WeaponManager
-  swordPrefab: {fileID: 6852199483657004404, guid: 0b87a465a9df4ce4fb443b05d182d2e1, type: 3}
-  bowPrefab: {fileID: 3567570617625977865, guid: a6e580179fdd6b94a973848ff46d9c01, type: 3}
-  wandPrefab: {fileID: 3681383412935456387, guid: ba6a17332b8271c4fb7a3ff9e432f78d, type: 3}
-  magicOrbPrefab: {fileID: 3426547337634153820, guid: 000485916a2335949a72151d2862596a, type: 3}
-  arrowPrefab: {fileID: 3643442020744239277, guid: 4c4445ca2be5a084a8537e3c472a42b1, type: 3}
+  playerInventory: {fileID: 0}
   weaponHolder: {fileID: 1379963779}
 --- !u!114 &858835542
 MonoBehaviour:
@@ -1245,18 +1238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21b600ed97957642943ab9a3cedfe08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TL4NewAssembly::Inventory1
---- !u!114 &858835543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 858835532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2b8281a1e0d4c1b9aa29c80c3b0341, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Game::LevelWindow
 --- !u!1 &991610419
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,6 +1495,51 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.88, y: 0.83, z: -1.76}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1199118344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1199118346}
+  - component: {fileID: 1199118345}
+  m_Layer: 0
+  m_Name: SkillTreeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1199118345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199118344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c65805ef4374f4b3c83b9f66b16869f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Game::SkillTreeManager
+  Scene: SkillTreeScene
+--- !u!4 &1199118346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199118344}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 420.78934, y: 212.73465, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2364,3 +2390,4 @@ SceneRoots:
   - {fileID: 1179450336}
   - {fileID: 1538997943}
   - {fileID: 1649348442}
+  - {fileID: 1199118346}
