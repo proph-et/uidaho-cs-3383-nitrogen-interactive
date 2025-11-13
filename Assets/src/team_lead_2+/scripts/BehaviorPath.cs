@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -73,8 +73,8 @@ public class BehaviorPath
             .Distinct()
             .ToList();
 
-        _entryNodes.Clear();            // ✔ allowed
-        _entryNodes.AddRange(entryNodes); // ✔ allowed
+        _entryNodes.Clear();
+        _entryNodes.AddRange(entryNodes);
 
         if (_entryNodes.Count == 0)
         {
