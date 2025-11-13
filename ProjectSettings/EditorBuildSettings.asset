@@ -8,5 +8,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/src/team_lead_2/Scenes/MainScene.unity
     guid: c308fa854eaa6224299e86bcbe552c37
+  - enabled: 1
+    path: Assets/src/team_lead_3/SkillTreeScene.unity
+    guid: bc2d32d00dc8d4e32a768beac9af82c7
+  - enabled: 1
+    path: Assets/src/team_lead_2+/Scene/Boss.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
