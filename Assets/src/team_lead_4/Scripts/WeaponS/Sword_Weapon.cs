@@ -11,7 +11,7 @@ public class Sword : WeaponBase
         prefab = prefabType;
     }
 
-    public override void Attack()
+    public override void Attack(GameObject self)
     {
         Debug.Log("insert sword attack here");
 

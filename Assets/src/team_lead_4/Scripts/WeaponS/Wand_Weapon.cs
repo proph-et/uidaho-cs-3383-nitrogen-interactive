@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Wand : WeaponBase
 {
-    public GameObject projectilePrefab;
+    public GameObject orbPrefab;
     public Transform firePoint;
     Vector3 spawnP;
     Quaternion spawnR;
@@ -17,13 +17,13 @@ public class Wand : WeaponBase
         prefab = prefabType;
     }
 
-    public void SetFirePoint(Transform point)
+    public void SetFirePointWand(Transform point)
     {
         firePoint = point;
     }
 
 
-    public override void Attack()
+    public override void Attack(GameObject self)
     {
 
 
@@ -33,7 +33,7 @@ public class Wand : WeaponBase
             firePoint = prefab.transform.Find("firePoint");
         }
 
-        if (projectilePrefab == null)
+        if (orbPrefab == null)
         {
             Debug.Log("Wand projectile not assigned");
             return;
@@ -46,7 +46,7 @@ public class Wand : WeaponBase
             Debug.Log("spawn position: " + spawnP);
         }
 
-        GameObject orb = GameObject.Instantiate(projectilePrefab, spawnP, spawnR);
+        GameObject orb = GameObject.Instantiate(orbPrefab, spawnP, spawnR);
 
         MagicOrb orbScript = orb.GetComponent<MagicOrb>();
 
