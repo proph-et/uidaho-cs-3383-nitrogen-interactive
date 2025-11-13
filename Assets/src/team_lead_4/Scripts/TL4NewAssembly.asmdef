@@ -1,3 +1,5 @@
 {
-	"name": "TL4NewAssembly"
+  "name": "TL4NewAssembly",
+  "references": [
+  ]
 }

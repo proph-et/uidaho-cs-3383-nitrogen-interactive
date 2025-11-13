@@ -20,58 +20,29 @@ public class RangerManager : MonoBehaviour
         ranger = new Ranger();
 
         ab201.onClick.AddListener(() => ranger.GetAb(201));
+        ab201.onClick.AddListener(() => ChangeColor(ab201, 1));
         ab202.onClick.AddListener(() => ranger.GetAb(202));
+        ab202.onClick.AddListener(() => ChangeColor(ab202, 2));
         ab203.onClick.AddListener(() => ranger.GetAb(203));
+        ab203.onClick.AddListener(() => ChangeColor(ab203, 3));
         ab204.onClick.AddListener(() => ranger.GetAb(204));
+        ab204.onClick.AddListener(() => ChangeColor(ab204, 4));
         ab205.onClick.AddListener(() => ranger.GetAb(205));
+        ab205.onClick.AddListener(() => ChangeColor(ab205, 5));
         ab206.onClick.AddListener(() => ranger.GetAb(206));
+        ab206.onClick.AddListener(() => ChangeColor(ab206, 6));
         ab207.onClick.AddListener(() => ranger.GetAb(207));
+        ab207.onClick.AddListener(() => ChangeColor(ab207, 7));
         ab208.onClick.AddListener(() => ranger.GetAb(208));
+        ab208.onClick.AddListener(() => ChangeColor(ab208, 8));
         ab209.onClick.AddListener(() => ranger.GetAb(209));
+        ab209.onClick.AddListener(() => ChangeColor(ab209, 9));
     }
-    public Button GetButton(int ability)
+    public void ChangeColor(Button button, int req)
     {
-        switch (ability)
-        {
-            case 201:
-                return ab201;
-            case 202:
-                return ab202;
-            case 203:
-                return ab203;
-            case 204:
-                return ab204;
-            case 205:
-                return ab205;
-            case 206:
-                return ab206;
-            case 207:
-                return ab207;
-            case 208:
-                return ab208;
-            default:
-                return null;
-        }
-    }
-
-    private IEnumerator Visual(int ability, bool flag)
-    {
-        Button button = GetButton(ability);
-        if (button == null)
-        {
-            yield break;
-        }
-
-        Color ogColor = button.image.color;
-        if (flag == true)
+        if (ranger.rangerLevel >= req)
         {
             button.image.color = Color.black;
-        }
-        else
-        {
-            button.image.color = Color.red;
-            yield return new WaitForSeconds(0.3f);
-            button.image.color = ogColor;
         }
     }
 }

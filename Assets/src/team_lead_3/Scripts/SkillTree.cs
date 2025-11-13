@@ -12,6 +12,8 @@ public class SkillTree : MonoBehaviour
     public GameObject SkillTreeMenu;
     public LevelWindow levelWindow;
     private LevelSystem levelSystem;
+    private float xpTimer = 0f;
+    private float OneSec = 1f;
 
     [SerializeField] private Button fighterButton;
     [SerializeField] private Button rangerButton;
@@ -47,6 +49,14 @@ public class SkillTree : MonoBehaviour
     }
     void Update()
     {
+        xpTimer += Time.deltaTime;
+        if (xpTimer >= OneSec)
+        {
+            levelSystem.AddXp(1);
+            xpTimer = 0f;
+        }
+        // Debug.Log("Adding 1xp rn");
+
         if (Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("Pressing the key");
