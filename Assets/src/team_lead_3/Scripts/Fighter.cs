@@ -23,26 +23,34 @@ public class Fighter : SkillTreeClass
 
     void Ability101()
     {
-        /* playerHealth = playerHealth * 0.1 + playerHealth;
-        * fighterLevel = fighterLevel + 1;
-        * AddSkill(101, 1, fighterLevel, true)
-        * ab101 = true;
-        */
+        bool flag = true;
+        int levReq = 1;
+        if (AddSkill(101, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab101 = true;
+        }
+        Debug.Log("This is 101");
     }
     void Ability102()
     {
-        /*
         bool flag = false;
-        int levReq = 2; // the required level
+        int levReq = 2;
         if (ab101 == true)
         {
             flag = true;
         }
-        punchDamage = punchDamage + 0.1 + punchDamage;
-        fighterLevel = fighterLevel + 1;
-        AddSkill(102, req, fighterLevel, flag);
-        ab102 = true;
-        */
+        if (AddSkill(102, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab102 = true;
+            // add the ability here
+            Debug.Log("Skill Unlocked!");
+        }
+        else
+        {
+            Debug.Log("Unable to lock skill rn");
+        }
     }
     void Ability103()
     {
@@ -52,10 +60,17 @@ public class Fighter : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        // AddSkill(103, levReq, fighterLevel, flag);
-        fighterLevel = fighterLevel + 1;
-        ab103 = true;
+        if (AddSkill(103, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab103 = true;
+            // add the ability here
+            Debug.Log("Skill Unlocked!");
+        }
+        else
+        {
+            Debug.Log("Unable to lock skill rn");
+        }
     }
     void Ability104()
     {
@@ -65,9 +80,17 @@ public class Fighter : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        fighterLevel = fighterLevel + 1;
-        ab104 = true;
+        if (AddSkill(104, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab104 = true;
+            // add the ability here
+            Debug.Log("Skill Unlocked!");
+        }
+        else
+        {
+            Debug.Log("Unable to lock skill rn");
+        }
     }
     void Ability105()
     {
@@ -77,9 +100,17 @@ public class Fighter : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        fighterLevel = fighterLevel + 1;
-        ab105 = true;
+        if (AddSkill(105, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab105 = true;
+            // add the ability here
+            Debug.Log("Skill Unlocked!");
+        }
+        else
+        {
+            Debug.Log("Unable to lock skill rn");
+        }
     }
     void Ability106()
     {
@@ -89,9 +120,17 @@ public class Fighter : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        fighterLevel = fighterLevel + 1;
-        ab106 = true;
+        if (AddSkill(106, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab106 = true;
+            // add the ability here
+            Debug.Log("Skill Unlocked!");
+        }
+        else
+        {
+            Debug.Log("Unable to lock skill rn");
+        }
     }
     void Ability107()
     {
@@ -101,9 +140,17 @@ public class Fighter : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        fighterLevel = fighterLevel + 1;
-        ab107 = true;
+        if (AddSkill(107, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab107 = true;
+            // add the ability here
+            Debug.Log("Skill Unlocked!");
+        }
+        else
+        {
+            Debug.Log("Unable to lock skill rn");
+        }
     }
     void Ability108()
     {
@@ -113,9 +160,17 @@ public class Fighter : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        fighterLevel = fighterLevel + 1;
-        ab108 = true;
+        if (AddSkill(108, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab108 = true;
+            // add the ability here
+            Debug.Log("Skill Unlocked!");
+        }
+        else
+        {
+            Debug.Log("Unable to lock skill rn");
+        }
     }
     void Ability109()
     {
@@ -125,9 +180,17 @@ public class Fighter : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        fighterLevel = fighterLevel + 1;
-        ab109 = true;
+        if (AddSkill(109, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab109 = true;
+            // add the ability here
+            Debug.Log("Skill Unlocked!");
+        }
+        else
+        {
+            Debug.Log("Unable to lock skill rn");
+        }
     }
     void Ability110()
     {
@@ -137,9 +200,17 @@ public class Fighter : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        fighterLevel = fighterLevel + 1;
-        ab110 = true;
+        if (AddSkill(110, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab110 = true;
+            // add the ability here
+            Debug.Log("Skill Unlocked!");
+        }
+        else
+        {
+            Debug.Log("Unable to lock skill rn");
+        }
     }
     void Ability111()
     {
@@ -149,21 +220,37 @@ public class Fighter : SkillTreeClass
         {
             flag = true;
         }
-        // add ability
-        fighterLevel = fighterLevel + 1;
-        ab111 = true;
+        if (AddSkill(111, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab111 = true;
+            // add the ability here
+            Debug.Log("Skill Unlocked!");
+        }
+        else
+        {
+            Debug.Log("Unable to lock skill rn");
+        }
     }
     void Ability112()
     {
         bool flag = false;
         int levReq = 12;
-        if (ab111 == true)
+        if (ab112 == true)
         {
             flag = true;
         }
-        // add ability
-        fighterLevel = fighterLevel + 1;
-        ab112 = true;
+        if (AddSkill(112, levReq, fighterLevel, flag))
+        {
+            fighterLevel = fighterLevel + 1;
+            ab112 = true;
+            // add the ability here
+            Debug.Log("Skill Unlocked!");
+        }
+        else
+        {
+            Debug.Log("Unable to lock skill rn");
+        }
     }
 
     public void GetAb(int ability)

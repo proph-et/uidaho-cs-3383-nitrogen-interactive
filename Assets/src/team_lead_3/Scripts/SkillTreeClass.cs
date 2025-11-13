@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SkillTreeClass : Ability
 {
-    public int overallLevel = 1; // set to 33 for debugging, the level system script should set it back to 1 at runtime
+    public int overallLevel = 1; 
     private LevelSystem levelSystem;
     protected int skillPoints;
     int levReq; // the level required to unlock that skill
