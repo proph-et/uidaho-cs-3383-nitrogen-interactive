@@ -5,6 +5,7 @@ public class Fighter : SkillTreeClass
     // theres needs to be a game object up here for the button
 
     // there should be 12 fighter nodes
+
     public int fighterLevel = 0;
 
     // these will be used by the add function to see if the required skills have been unlocked before adding the skill
@@ -299,3 +300,5 @@ public class Fighter : SkillTreeClass
         }
     }
 }
+
+

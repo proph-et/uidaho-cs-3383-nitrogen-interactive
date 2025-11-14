@@ -1,8 +1,8 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class SkillTreeClass : Ability
+public class SkillTreeClass
 {
-
     protected static Health health;
     protected static PlayerController pc;
     private int overallLevel = 1;
@@ -11,7 +11,8 @@ public class SkillTreeClass : Ability
 
     public void SetLevelSystem(LevelSystem levelSystem)
     {
-        levelSystem = LevelSystem.Instance;
+        this.levelSystem = levelSystem;
+        //levelSystem = LevelSystem.Instance;
     }
 
     public void Init()
@@ -20,10 +21,12 @@ public class SkillTreeClass : Ability
         Debug.Log($"The level is {overallLevel}");
         LevelSystem.Instance.skillPoint = 1;
         Debug.Log($"You have {LevelSystem.Instance.skillPoint} skill points");
-        // health = new Health();
-        // pc = new PlayerController();
 
+        // *** This is where the dynamic binding gets called so uncomment this ****
+        //DynamicAbility ability = new Ability101();
+        // ability.Unlock();
     }
+
     protected bool AddSkill(int skillID, int levReq, int classLevel, bool flag)
     {
         Debug.Log("ADD SKILL IS BEING CALLED");

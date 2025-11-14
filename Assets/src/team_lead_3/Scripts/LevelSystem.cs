@@ -20,7 +20,7 @@ public class LevelSystem
         }
     }
 
-
+    // observer pattern
     public event EventHandler OnXpChanged;
     public event EventHandler OnlvlChanged;
 
