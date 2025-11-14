@@ -7,7 +7,7 @@ public class Phase3 : BossPhase
     {
         base.Init(bossContext);
 
-        // Then do phase-specific changes
+        //phase-specific changes
         boss.Movement.SetSpeedMultiplier(1.4f);
         boss.Cooldowns.SetCooldownMultiplier(0.8f);
         boss.Animator.SetFloat("AttackSpeed", 1.4f);
@@ -15,7 +15,6 @@ public class Phase3 : BossPhase
 
     protected override void BuildGraph()
     {
-        // MOVEMENT NODE
         var move = new BehaviorNode(
             name: "Move",
             type: AbilityType.Movement,
@@ -30,7 +29,6 @@ public class Phase3 : BossPhase
             }
         );
 
-        // ATTACK NODE
         var attack = new BehaviorNode(
             name: "Attack",
             type: AbilityType.Attack,
@@ -49,8 +47,14 @@ public class Phase3 : BossPhase
         var aggressive = new BehaviorPath("aggressive", 1.0f);
         aggressive.AddStep(move);
         aggressive.AddStep(attack);
+        aggressive.FinalizePath();
+
+        var moveOnly = new BehaviorPath("MoveOnly", 0.5f);
+        moveOnly.AddStep(move);
+        moveOnly.FinalizePath();
 
         // initialize graph
         graph.AddPath(aggressive);
+        graph.AddPath(moveOnly);
     }
 }

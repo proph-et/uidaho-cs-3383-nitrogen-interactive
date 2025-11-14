@@ -12,7 +12,7 @@ public class BossCombat : MonoBehaviour
         Collider[] hits = Physics.OverlapSphere(transform.position, swordRange, playerLayer);
         foreach (var hit in hits) 
         {
-            var hp = hit.GetComponent<Health>();
+            var hp = hit.GetComponentInParent<Health>();
             if(hp != null)
             {
                 hp.TakeDamage(swordDamage);

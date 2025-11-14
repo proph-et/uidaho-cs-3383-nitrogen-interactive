@@ -47,6 +47,15 @@ public class SMScript : MonoBehaviour
         bgSource.Play();
     }
 
+    public void pauseBackgroundMusic()
+    {
+        bgSource.Pause();
+    }
+    public void unpauseBackgroundMusic()
+    {
+        bgSource.UnPause();
+    }
+
     // ------------------------
     //  One-Shot SFX
     // ------------------------

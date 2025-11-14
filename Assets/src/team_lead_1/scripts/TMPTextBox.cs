@@ -14,7 +14,15 @@ namespace src.team_lead_1.scripts
         void Awake()
         {
             myTMPTextElement = GetComponent<TextMeshProUGUI>();
-            if (myTMPTextElement != null)
+            if (myTMPTextElement == null)
+                return;
+
+            if (string.IsNullOrEmpty(initialText))
+            {
+            }
+            else if (initialText == "NONE")
+                myTMPTextElement.text = "";
+            else
                 myTMPTextElement.text = initialText;
         }
 

@@ -2,31 +2,37 @@ using UnityEngine;
 
 public class SkillTreeClass : Ability
 {
+
+    // protected static Health health;
     public int overallLevel = 1; 
     private LevelSystem levelSystem;
-    protected int skillPoints;
     int levReq; // the level required to unlock that skill
 
     public void SetLevelSystem(LevelSystem levelSystem)
     {
-        this.levelSystem = levelSystem;
+        //this.levelSystem = levelSystem;
+        levelSystem = LevelSystem.Instance;
     }
 
-    private void Start() // no idea if this works until we call the class later
+    public void Init() // no idea if this works until we call the class later
     {
 
-        overallLevel = (int)levelSystem.GetLevelNum();
+        overallLevel = (int)LevelSystem.Instance.GetLevelNum();
         Debug.Log($"The level is {overallLevel}");
-        skillPoints = overallLevel;
+        LevelSystem.Instance.skillPoint = 1;
+        Debug.Log($"You have {LevelSystem.Instance.skillPoint} skill points");
+        // health = new Health();
+        // skillPoints = (int)levelSystem.GetLevelNum(); // just added this, this seems like a logic error
     }
     public bool AddSkill(int skillID, int levReq, int classLevel, bool flag) 
     {
         Debug.Log("ADD SKILL IS BEING CALLED");
-        if (classLevel >= levReq && flag == true && skillPoints >= 1)
+        // Debug.Log($"YOU HAVE {skillPoints} skill points");
+        if (flag == true && LevelSystem.Instance.skillPoint >= 1)
         {
             //add the skill
             overallLevel = overallLevel + 1;
-            skillPoints = skillPoints - 1;
+            LevelSystem.Instance.skillPoint = LevelSystem.Instance.skillPoint - 1;
             return true;
         }
         else

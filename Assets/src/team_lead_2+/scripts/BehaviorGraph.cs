@@ -21,6 +21,7 @@ public class BehaviorGraph
     {
         if (_isExecutingPath) { return; }
 
+        ReevaluateProbabilities();
         _currentPath = PickWeightedPath(_paths);
 
         if (_currentPath != null && _currentPath.GetWeight() > 0f)
@@ -33,11 +34,11 @@ public class BehaviorGraph
     {
         _isExecutingPath = true;
         Debug.Log($"[BehaviorGraph] Executing path: {path.GetName()}");
-        Debug.Log("COROUTINE: START PATH");
+        //Debug.Log("COROUTINE: START PATH");
 
         foreach (var step in path.GetSteps()) // iterate through all steps in order
         {
-            Debug.Log("COROUTINE: Executing step");
+            //Debug.Log("COROUTINE: Executing step");
             // Pick one node from this step (weighted random)
             var usableNodes = step.FindAll(n => n.CanExecute());
             if (usableNodes.Count == 0)
@@ -58,10 +59,10 @@ public class BehaviorGraph
                 yield return null;
         }
 
-        Debug.Log("COROUTINE: END PATH");
+        //Debug.Log("COROUTINE: END PATH");
 
-        ReevaluateProbabilities();
         _isExecutingPath = false;
+        _currentPath = null;
     }
 
     private BehaviorPath PickWeightedPath(List<BehaviorPath> list)
@@ -123,6 +124,8 @@ public class BehaviorGraph
         float hp = boss.Health.GetHealthRatio();
         float distance = Vector3.Distance(boss.Player.position, boss.transform.position);
 
+        //Debug.Log("We pass the Revaluate function");
+
         foreach (var path in _paths)
         {
             path.ResetToBaseWeight();
@@ -130,6 +133,7 @@ public class BehaviorGraph
 
         foreach (var path in _paths) 
         {
+            //Debug.Log("We pass one path");
             bool pathInvalid = false;
             float usableSum = 0f;
             float requieredProduct = 1f;
@@ -137,8 +141,10 @@ public class BehaviorGraph
 
             foreach (var entry in path.GetEntryNodes())
             {
-                foreach(var node in FlattenPath(entry))
+                //Debug.Log("We pass the GetEntryNodes");
+                foreach (var node in FlattenPath(entry))
                 {
+                    //Debug.Log("We pass the FlattenPath");
                     node.ResetProbability();
 
                     // cooldown check
@@ -201,6 +207,7 @@ public class BehaviorGraph
     private void NormalizePathWeight()
     {
         float total = 0f;
+
         foreach (var path in _paths)
         {
             total += path.GetWeight();
