@@ -21,7 +21,7 @@ public class Fighter : SkillTreeClass
     bool ab111 = false;
     bool ab112 = false;
 
-    void Ability101()
+    void Ability101() // adds 35xp
     {
         bool flag = true;
         int levReq = 1;
@@ -29,10 +29,11 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab101 = true;
+            LevelSystem.Instance.AddXp(35);
         }
         Debug.Log("This is 101");
     }
-    void Ability102()
+    void Ability102() // adds 9 health
     {
         bool flag = false;
         int levReq = 2;
@@ -44,7 +45,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab102 = true;
-            // add the ability here
+            health.Heal(9);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -52,7 +53,7 @@ public class Fighter : SkillTreeClass
             Debug.Log("Unable to lock skill rn");
         }
     }
-    void Ability103()
+    void Ability103() // adds 12xp
     {
         bool flag = false;
         int levReq = 3;
@@ -64,7 +65,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab103 = true;
-            // add the ability here
+            LevelSystem.Instance.AddXp(12);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -72,7 +73,7 @@ public class Fighter : SkillTreeClass
             Debug.Log("Unable to lock skill rn");
         }
     }
-    void Ability104()
+    void Ability104() // adds a free skill point
     {
         bool flag = false;
         int levReq = 4;
@@ -84,15 +85,14 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab104 = true;
-            // add the ability here
-            Debug.Log("Skill Unlocked!");
+            LevelSystem.Instance.GetAddSp(1);
         }
         else
         {
             Debug.Log("Unable to lock skill rn");
         }
     }
-    void Ability105()
+    void Ability105() // adds 34 health
     {
         bool flag = false;
         int levReq = 5;
@@ -104,7 +104,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab105 = true;
-            // add the ability here
+            health.Heal(34);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -112,7 +112,7 @@ public class Fighter : SkillTreeClass
             Debug.Log("Unable to lock skill rn");
         }
     }
-    void Ability106()
+    void Ability106() // temp xp boost
     {
         bool flag = false;
         int levReq = 6;
@@ -124,7 +124,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab106 = true;
-            // add the ability here
+            LevelSystem.Instance.GetXpBoost(12);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -132,7 +132,7 @@ public class Fighter : SkillTreeClass
             Debug.Log("Unable to lock skill rn");
         }
     }
-    void Ability107()
+    void Ability107() // free skill point
     {
         bool flag = false;
         int levReq = 7;
@@ -144,7 +144,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab107 = true;
-            // add the ability here
+            LevelSystem.Instance.GetAddSp(1);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -152,7 +152,7 @@ public class Fighter : SkillTreeClass
             Debug.Log("Unable to lock skill rn");
         }
     }
-    void Ability108()
+    void Ability108() // adds 18 health
     {
         bool flag = false;
         int levReq = 8;
@@ -164,7 +164,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab108 = true;
-            // add the ability here
+            health.Heal(18);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -172,7 +172,7 @@ public class Fighter : SkillTreeClass
             Debug.Log("Unable to lock skill rn");
         }
     }
-    void Ability109()
+    void Ability109() // adds 70 xp
     {
         bool flag = false;
         int levReq = 9;
@@ -184,7 +184,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab109 = true;
-            // add the ability here
+            LevelSystem.Instance.AddXp(70);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -192,7 +192,7 @@ public class Fighter : SkillTreeClass
             Debug.Log("Unable to lock skill rn");
         }
     }
-    void Ability110()
+    void Ability110() // xp boost
     {
         bool flag = false;
         int levReq = 10;
@@ -204,7 +204,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab110 = true;
-            // add the ability here
+            LevelSystem.Instance.GetXpBoost(5);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -212,7 +212,7 @@ public class Fighter : SkillTreeClass
             Debug.Log("Unable to lock skill rn");
         }
     }
-    void Ability111()
+    void Ability111() // fully restores health
     {
         bool flag = false;
         int levReq = 11;
@@ -224,7 +224,9 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab111 = true;
-            // add the ability here
+
+            float amountToRestore = health.GetMaxHealth() - health.GetCurrentHealth();
+            health.Heal(amountToRestore);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -232,7 +234,7 @@ public class Fighter : SkillTreeClass
             Debug.Log("Unable to lock skill rn");
         }
     }
-    void Ability112()
+    void Ability112() // adds 2 skill points and 100xp
     {
         bool flag = false;
         int levReq = 12;
@@ -244,7 +246,8 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab112 = true;
-            // add the ability here
+            LevelSystem.Instance.GetAddSp(2);
+            LevelSystem.Instance.AddXp(100);
             Debug.Log("Skill Unlocked!");
         }
         else

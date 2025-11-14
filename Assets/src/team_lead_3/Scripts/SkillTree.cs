@@ -66,7 +66,6 @@ public class SkillTree : MonoBehaviour
             levelSystem.AddXp(1);
             xpTimer = 0f;
         }
-        // Debug.Log("Adding 1xp rn");
 
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -90,7 +89,7 @@ public class SkillTree : MonoBehaviour
 
     public void LoadScene()
     {
-        Debug.Log("Loading the main scene");
+        // Debug.Log("Loading the main scene");
         SceneManager.LoadScene(MainScene);
     }
 
