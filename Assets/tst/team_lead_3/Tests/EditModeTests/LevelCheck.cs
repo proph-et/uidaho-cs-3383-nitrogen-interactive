@@ -25,7 +25,7 @@ public class LevelCheck
     public IEnumerator DoesOverallLevelWork()
     {
         int shouldbe = fighter.fighterLevel + ranger.rangerLevel + mage.mageLevel;
-        if (level.overallLevel == shouldbe)
+        if (level.GetOverallLvl() == shouldbe)
         {
             Assert.Pass();
         }

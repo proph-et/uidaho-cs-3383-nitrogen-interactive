@@ -12,7 +12,7 @@ public class Mage : SkillTreeClass
     bool ab307 = false;
     bool ab308 = false;
 
-    void Ability301()
+    void Ability301() // adds 30xp 
     {
         bool flag = true;
         int levReq = 1;
@@ -20,10 +20,10 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab301 = true;
+            LevelSystem.Instance.AddXp(30);
         }
-        Debug.Log("This is 301");
     }
-    void Ability302()
+    void Ability302() // adds 45 health
     {
         bool flag = false;
         int levReq = 2;
@@ -35,14 +35,14 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab302 = true;
-            // add ability here
+            health.Heal(45);
         }
         else
         {
             Debug.Log("302");
         }
     }
-    void Ability303()
+    void Ability303() // adds 50xp
     {
         bool flag = false;
         int levReq = 3;
@@ -54,14 +54,14 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab303 = true;
-            // add ability here
+            LevelSystem.Instance.AddXp(50);
         }
         else
         {
             Debug.Log("303");
         }
     }
-    void Ability304()
+    void Ability304() // adds a skill point
     {
         bool flag = false;
         int levReq = 4;
@@ -73,14 +73,14 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab304 = true;
-            // add ability here
+            LevelSystem.Instance.GetAddSp(1);
         }
         else
         {
             Debug.Log("304");
         }
     }
-    void Ability305()
+    void Ability305() // Adds xp boost
     {
         bool flag = false;
         int levReq = 5;
@@ -92,14 +92,14 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab305 = true;
-            // add ability here
+            LevelSystem.Instance.GetXpBoost(15);
         }
         else
         {
             Debug.Log("305");
         }
     }
-    void Ability306()
+    void Ability306() // adds 50 health
     {
         bool flag = false;
         int levReq = 6;
@@ -111,14 +111,14 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab306 = true;
-            // add ability here
+            health.Heal(50);
         }
         else
         {
             Debug.Log("306");
         }
     }
-    void Ability307()
+    void Ability307() // adds 150 xp
     {
         bool flag = false;
         int levReq = 7;
@@ -130,14 +130,14 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab307 = true;
-            // add ability here
+            LevelSystem.Instance.AddXp(150);
         }
         else
         {
             Debug.Log("307");
         }
     }
-    void Ability308()
+    void Ability308() // adds 300xp and a skill point
     {
         bool flag = false;
         int levReq = 8;
@@ -149,7 +149,8 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab308 = true;
-            // add ability here
+            LevelSystem.Instance.AddXp(300);
+            LevelSystem.Instance.GetAddSp(1);
         }
         else
         {

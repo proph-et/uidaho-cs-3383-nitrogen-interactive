@@ -57,6 +57,20 @@ public class LevelSystem
         }
     }
 
+    private void XpBoost(int duration)
+    {
+        for (int i = 0; i < duration; i++)
+        {
+            AddXp(1);
+        }
+    }
+
+    private void AddSp(int amount)
+    {
+        skillPoint = skillPoint + amount;
+    }
+
+    // ***** Getters ********
     public float GetLevelNum() // a getter so it must be public 
     {
         return level;
@@ -70,5 +84,13 @@ public class LevelSystem
     public int GetXpToNext(int level)
     {
         return level * 10;
+    }
+    public void GetXpBoost(int duration)
+    {
+        XpBoost(duration);
+    }
+    public void GetAddSp(int amount)
+    {
+        AddSp(amount);
     }
 }

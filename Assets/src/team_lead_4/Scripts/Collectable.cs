@@ -25,7 +25,7 @@ public class Collectable : MonoBehaviour
         GetComponent<BoxCollider>().isTrigger = true;
     }
 
-    public void Collect(GameObject objectThatCollected)
+    public virtual void Collect(GameObject objectThatCollected)
     {
         _collectable.Collect(objectThatCollected);
     }
