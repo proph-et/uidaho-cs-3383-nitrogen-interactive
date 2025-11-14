@@ -16,6 +16,7 @@ public class Wand : WeaponBase
         setAttackRate(1.5f);
         prefab = prefabType;
         setWeaponTier(1);
+        setAugmentName("NONE");
     }
 
     public void SetFirePointWand(Transform point)

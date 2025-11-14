@@ -16,6 +16,7 @@ public class Bow : WeaponBase
         setAttackRate(1.5f);
         prefab = prefabType;
         setWeaponTier(1);
+        setAugmentName("NONE");
     }
 
     public void SetFirePointBow(Transform point)

@@ -17,6 +17,8 @@ public class Inventory : MonoBehaviour
     public GameObject magicOrbPrefab;
     public GameObject arrowPrefab;
 
+    private int money;
+
     private void Start()
     {
         sword = new Sword(swordPrefab);
@@ -50,6 +52,22 @@ public class Inventory : MonoBehaviour
     {
         return wand;
     }
+
+    public int getMoney()
+    {
+        return money;
+    }
+
+    public void addMoney(int inputMoney)
+    {
+        money += inputMoney;
+    }
+
+    public void spendMoney(int inputMoney)
+    {
+        money -= inputMoney;
+    }
+
 
     // public void AddItem(Item item)
     // {

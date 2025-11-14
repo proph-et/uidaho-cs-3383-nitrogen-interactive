@@ -8,6 +8,7 @@ public class WeaponBase
     private float attackRate = 1f;
     public GameObject prefab;
     private int weaponTier;
+    private string augmentName;
 
     protected bool canAttack = true;
 
@@ -25,6 +26,13 @@ public class WeaponBase
     public void setWeaponTier(int newWeaponTier)
     {
         weaponTier = newWeaponTier;
+    }
+
+    public void upgradeWeapon()
+    {
+        damage += 5 * weaponTier;
+        attackRate += 1 * weaponTier;
+        weaponTier++;
     }
 
     public int getWeaponDamage()
@@ -55,6 +63,16 @@ public class WeaponBase
     public void setWeaponName(string newName)
     {
         weaponName = newName;
+    }
+
+    public void setAugmentName(string newAugmentName)
+    {
+        augmentName = newAugmentName;
+    }
+
+    public string getAugmentName()
+    {
+        return augmentName;
     }
 
     // protected IEnumerator AttackCooldown()
