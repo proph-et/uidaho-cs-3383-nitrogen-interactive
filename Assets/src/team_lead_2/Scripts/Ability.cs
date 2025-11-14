@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Ability
+public abstract class Ability
 {
    public virtual void Activate(GameObject user)
     {
