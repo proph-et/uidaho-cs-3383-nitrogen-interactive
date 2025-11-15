@@ -79,7 +79,7 @@ public class BossLevel : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         Debug.Log("Boss died");
         //add animation here
@@ -89,6 +89,8 @@ public class BossLevel : MonoBehaviour
         Animator.SetTrigger("death");
 
         StartCoroutine(FinishDeath());
+
+        Debug.Log("You won the Game!");
     }
 
     private IEnumerator FinishDeath()
