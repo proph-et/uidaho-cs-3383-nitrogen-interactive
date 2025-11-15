@@ -7,17 +7,10 @@ public class HealthSO : CollectableSOBase
 
     public override void Collect (GameObject objectThatCollected)
     {
-        // Inventory1 inventory = objectThatCollected.GetComponent<Inventory1>();
-
-        // if (inventory != null)
-        // {
-        //     Item healthItem = new Item {itemName = "HealthBuff"};
-        //     inventory.AddItem(healthItem);
-        // }
-
-        // else
-        // {
-        //     Debug.LogWarning("Error: no inventory");
-        // }
+        var health = objectThatCollected.GetComponent<Health>();
+        if (health != null)
+        {
+            health.Heal(HealthAmount);
+        }
     }
 }
