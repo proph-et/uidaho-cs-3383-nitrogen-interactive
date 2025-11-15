@@ -49,6 +49,7 @@ public class LevelSystem
             if (OnXpChanged != null)
             {
                 OnlvlChanged(this, EventArgs.Empty);
+                AddSp(1);
             }
         }
         if (OnXpChanged != null)
