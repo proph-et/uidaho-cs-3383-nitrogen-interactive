@@ -5,6 +5,8 @@ using System;
 
 public class LevelSystem
 {
+    public int skillPoint;
+    // singleton pattern
     private static LevelSystem _instance;
     public static LevelSystem Instance
     {
@@ -18,7 +20,7 @@ public class LevelSystem
         }
     }
 
-
+    // observer pattern
     public event EventHandler OnXpChanged;
     public event EventHandler OnlvlChanged;
 
@@ -26,7 +28,7 @@ public class LevelSystem
     int xp;
     int xpToNext;
 
-    public LevelSystem()
+    public LevelSystem() // this technically needs to be private
     {
         level = 1;
         xp = 0;
@@ -47,6 +49,7 @@ public class LevelSystem
             if (OnXpChanged != null)
             {
                 OnlvlChanged(this, EventArgs.Empty);
+                AddSp(1);
             }
         }
         if (OnXpChanged != null)
@@ -55,6 +58,20 @@ public class LevelSystem
         }
     }
 
+    private void XpBoost(int duration)
+    {
+        for (int i = 0; i < duration; i++)
+        {
+            AddXp(1);
+        }
+    }
+
+    private void AddSp(int amount)
+    {
+        skillPoint = skillPoint + amount;
+    }
+
+    // ***** Getters ********
     public float GetLevelNum() // a getter so it must be public 
     {
         return level;
@@ -68,5 +85,13 @@ public class LevelSystem
     public int GetXpToNext(int level)
     {
         return level * 10;
+    }
+    public void GetXpBoost(int duration)
+    {
+        XpBoost(duration);
+    }
+    public void GetAddSp(int amount)
+    {
+        AddSp(amount);
     }
 }

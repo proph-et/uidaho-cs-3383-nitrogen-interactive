@@ -1,32 +1,41 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class SkillTreeClass : Ability
+public class SkillTreeClass
 {
-    public int overallLevel = 1; 
+    protected static Health health;
+    protected static PlayerController pc;
+    private int overallLevel = 1;
     private LevelSystem levelSystem;
-    protected int skillPoints;
-    int levReq; // the level required to unlock that skill
+    private int levReq; // the level required to unlock that skill
 
     public void SetLevelSystem(LevelSystem levelSystem)
     {
         this.levelSystem = levelSystem;
+        //levelSystem = LevelSystem.Instance;
     }
 
-    private void Start() // no idea if this works until we call the class later
+    public void Init()
     {
-
-        overallLevel = (int)levelSystem.GetLevelNum();
+        overallLevel = (int)LevelSystem.Instance.GetLevelNum();
         Debug.Log($"The level is {overallLevel}");
-        skillPoints = overallLevel;
+        LevelSystem.Instance.skillPoint = 1;
+        Debug.Log($"You have {LevelSystem.Instance.skillPoint} skill points");
+
+        // *** This is where the dynamic binding gets called so uncomment this ****
+        //DynamicAbility ability = new Ability101();
+        // ability.Unlock();
     }
-    public bool AddSkill(int skillID, int levReq, int classLevel, bool flag) 
+
+    protected bool AddSkill(int skillID, int levReq, int classLevel, bool flag)
     {
         Debug.Log("ADD SKILL IS BEING CALLED");
-        if (classLevel >= levReq && flag == true && skillPoints >= 1)
+        // Debug.Log($"YOU HAVE {skillPoints} skill points");
+        if (flag == true && LevelSystem.Instance.skillPoint >= 1)
         {
             //add the skill
             overallLevel = overallLevel + 1;
-            skillPoints = skillPoints - 1;
+            LevelSystem.Instance.skillPoint = LevelSystem.Instance.skillPoint - 1;
             return true;
         }
         else
@@ -35,5 +44,11 @@ public class SkillTreeClass : Ability
             return false;
             // probably will put a canvas message here to display an error message
         }
+    }
+
+    // getters 
+    public int GetOverallLvl()
+    {
+        return overallLevel;
     }
 }

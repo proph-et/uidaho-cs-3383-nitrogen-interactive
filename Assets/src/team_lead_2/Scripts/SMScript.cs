@@ -2,18 +2,24 @@ using UnityEngine;
 
 public class SMScript : MonoBehaviour
 {
-    [Header("Player Sounds")]
-    [SerializeField] private AudioClip player_dash_clip;
+    [Header("Player Sounds")] [SerializeField]
+    private AudioClip player_dash_clip;
 
-    [Header("Enemy Sounds")]
-    [SerializeField] private AudioClip enemy_defeated_clip;
+    [Header("Enemy Sounds")] [SerializeField]
+    private AudioClip enemy_defeated_clip;
 
-    [Header("Item Sounds")]
-    [SerializeField] private AudioClip collectable_clip;
+    [Header("Item Sounds")] [SerializeField]
+    private AudioClip collectable_clip;
+
     [SerializeField] private AudioClip powerup_clip;
 
-    [Header("Background Music")]
-    [SerializeField] private AudioClip background_clip;
+    [Header("Error Sound")] [SerializeField]
+    private AudioClip errorClip;
+
+    [Header("Background Music")] [SerializeField]
+    private AudioClip background_clip;
+
+
     [SerializeField] private float background_volume = 1f;
 
     private AudioSource bgSource;
@@ -23,7 +29,7 @@ public class SMScript : MonoBehaviour
     {
         // Create one reusable SFX AudioSource
         sfxSource = gameObject.AddComponent<AudioSource>();
-        
+
         // Create background audio source
         bgSource = gameObject.AddComponent<AudioSource>();
         bgSource.loop = true;
@@ -45,6 +51,16 @@ public class SMScript : MonoBehaviour
 
         bgSource.clip = background_clip;
         bgSource.Play();
+    }
+
+    public void pauseBackgroundMusic()
+    {
+        bgSource.Pause();
+    }
+
+    public void unpauseBackgroundMusic()
+    {
+        bgSource.UnPause();
     }
 
     // ------------------------
@@ -73,5 +89,10 @@ public class SMScript : MonoBehaviour
         if (powerup_clip != null)
             sfxSource.PlayOneShot(powerup_clip);
     }
-}
 
+    public void ErrorSound()
+    {
+        if (errorClip != null)
+            sfxSource.PlayOneShot(errorClip);
+    }
+}

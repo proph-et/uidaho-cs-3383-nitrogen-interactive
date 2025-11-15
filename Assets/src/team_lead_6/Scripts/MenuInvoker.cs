@@ -7,7 +7,7 @@ public class MenuInvoker : MonoBehaviour
     void Awake()
     {
         // Get the MenuBase component (which will actually be a MainMenu)
-        menu = GetComponent<MenuBase>();
+        menu = new MainMenu();
     }
 
     // This will be linked to the button OnClick in the inspector
@@ -16,6 +16,11 @@ public class MenuInvoker : MonoBehaviour
         // Now we call through the BASE CLASS reference!
         // This uses dynamic binding to run the MainMenu version of PlayGame()
         menu.PlayGame();
+    }
+
+    public void OnQuitButtonClicked()
+    {
+        menu.Quit();
     }
 }
 

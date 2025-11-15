@@ -1,5 +1,16 @@
 {
-  "name": "TL4NewAssembly",
-  "references": [
-  ]
+    "name": "TL4NewAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4c4b1f44c0c07494fba6366c8560f36b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

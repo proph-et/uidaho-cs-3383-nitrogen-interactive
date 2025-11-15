@@ -14,6 +14,7 @@ public class SkillTree : MonoBehaviour
     private LevelSystem levelSystem;
     private float xpTimer = 0f;
     private float OneSec = 1f;
+    private SkillTreeClass skilltree;
 
     [SerializeField] private Button fighterButton;
     [SerializeField] private Button rangerButton;
@@ -23,6 +24,11 @@ public class SkillTree : MonoBehaviour
     {
         // levelSystem = new LevelSystem();
         levelWindow.SetLevelSystem(levelSystem);
+        
+        skilltree = new SkillTreeClass();
+        skilltree.SetLevelSystem(levelSystem);
+        skilltree.Init();
+
     }
 
     private void Awake()
@@ -30,7 +36,6 @@ public class SkillTree : MonoBehaviour
         levelSystem = LevelSystem.Instance;
 
         DontDestroyOnLoad(gameObject);
-
 
         fighterButton.onClick.AddListener(() =>
         {
@@ -51,15 +56,16 @@ public class SkillTree : MonoBehaviour
             });
         }
     }
+
     void Update()
     {
+        int check = (int)levelSystem.GetLevelNum();
         xpTimer += Time.deltaTime;
         if (xpTimer >= OneSec)
         {
             levelSystem.AddXp(1);
             xpTimer = 0f;
         }
-        // Debug.Log("Adding 1xp rn");
 
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -73,11 +79,17 @@ public class SkillTree : MonoBehaviour
                 Pause();
             }
         }
+        if (levelSystem.GetLevelNum() > check)
+        {
+            levelSystem.skillPoint++;
+            Debug.Log("Added a skill point");
+            Debug.Log($"You now have {levelSystem.skillPoint}");
+        }
     }
 
     public void LoadScene()
     {
-        Debug.Log("Loading the main scene");
+        // Debug.Log("Loading the main scene");
         SceneManager.LoadScene(MainScene);
     }
 

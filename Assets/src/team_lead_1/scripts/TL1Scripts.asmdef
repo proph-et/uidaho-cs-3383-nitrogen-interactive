@@ -3,7 +3,8 @@
   "rootNamespace": "",
   "references": [
     "Unity.TextMeshPro",
-    "TL4WeaponCore"
+    "TL4WeaponCore",
+    "team_lead_2_Runtime"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

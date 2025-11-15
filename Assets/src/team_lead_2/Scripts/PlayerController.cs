@@ -1,4 +1,5 @@
 using System.Collections;
+using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [Header("Random Shit")]
     Rigidbody rb;
     private Animator _animator;
+    private Ability currentAbility;
 
     [Header("Movement Settings")]
     public float speed;
@@ -19,21 +21,20 @@ public class PlayerController : MonoBehaviour
     private float fallThreshold = -5f;
 
     [Header("Dash Settings")]
-    [SerializeField] private float dashSpeed = 16f; //Double Player movement speed
-    [SerializeField] public float dashDuration = .2f;
-    [SerializeField] public float dashCooldown = 1.0f;
-    private bool isDashing = false;
-    private bool canDash = true;
+    [SerializeField] private float dashSpeed;
+    [SerializeField] public float dashDuration;
+    [SerializeField] public float dashCooldown;
+    private Ability dashAbility;
+
     private bool isInvincible = false;
-    private Ability currentAbility;
 
     [Header("Attack Settings")]
     [SerializeField] private GameObject rightArm;
-    [SerializeField] private float attackDuration = .1f;
-    [SerializeField] private float attackRange = 2f;
-    [SerializeField] private float attackCooldown = 0.2f;
-    [SerializeField] private int attackDamage = 10;
-    private bool canAttack = true;
+    [SerializeField] private float attackDuration;
+    [SerializeField] private float attackRange;
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private float attackDamage;
+    private Ability attackAbility;
 
     [Header("Health Settings")]
     [SerializeField] private Health _health;
@@ -44,9 +45,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnDash(InputAction.CallbackContext context)
     {
-        if (context.performed && canDash)
+        if (context.performed)
         {
-            currentAbility.Activate(gameObject);
+            dashAbility.Activate(gameObject);
         }
     }
     public void OnMove(InputAction.CallbackContext context)
@@ -56,10 +57,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.performed && canAttack)
+        if (context.performed)
         {
-            Debug.Log("Player is attacking");
-            StartCoroutine(BasicAttack());
+            attackAbility.Activate(gameObject);
         }
     }
 
@@ -73,17 +73,15 @@ public class PlayerController : MonoBehaviour
         _health = GetComponent<Health>();
         _animator = GetComponentInChildren<Animator>();
 
-        currentAbility = new DashAbility(dashSpeed, dashDuration);
+        dashAbility = new DashAbility(this, dashSpeed, dashDuration, dashCooldown);
+        attackAbility = new AttackAbility(this, attackDamage, attackRange, attackDuration, attackCooldown);
 
         //_health.AddOnDeathListener(OnDeath);
     }
 
     void FixedUpdate()
     {
-        if (!isDashing)
-        {
-            MovePlayer();
-        }
+        MovePlayer();
     }
     void Update()
     {
@@ -143,106 +141,19 @@ public class PlayerController : MonoBehaviour
         return tilt;
     }
 
-
-    ///-------------------------
-    /// iFrames/Dash Function
-    /// ----------------------
-
-    public IEnumerator Dash()
-    {
-        isDashing = true;
-        canDash = false;
-        isInvincible = true;
-
-        if(_animator != null)
-        {
-            _animator.SetTrigger("isDashing");
-        }
-
-        Vector3 dashDirection = transform.forward;
-
-        rb.linearVelocity = Vector3.zero;
-        rb.AddForce(dashDirection * dashSpeed, ForceMode.VelocityChange);
-
-
-        //My attempt at iFrames (shooting for about 11 which seems to be industry standardish)
-        yield return new WaitForSeconds(0.18f);
-        isInvincible = false;
-
-        yield return new WaitForSeconds(dashDuration - 0.18f);
-        rb.linearVelocity = Vector3.zero;
-        isDashing = false;
-
-        if(_animator != null)
-        {
-            _animator.SetBool("isDashing", false);
-        }
-
-        //Dash Cooldown
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
-    }
-
-    /// ---------
-    /// Public "getter" function for the private Dash function 
-    /// for use for enemies, Health, etc
+    /// -----------------
+    /// The below allow abilities like DashAbility to toggle i-frames.
     /// -------------------
+    public void SetInvincible(bool value)
+    {
+        isInvincible = value;
+    }
 
     public bool IsInvincible()
     {
         return isInvincible;
     }
     
-    /// -----------------
-    /// Attack Function
-    /// ------------------
-    
-    private IEnumerator BasicAttack()
-    {
-        canAttack = false;
-        rightArm.SetActive(true);
-
-        if(_animator != null)
-        {
-            _animator.SetTrigger("isAttacking");
-        }
-
-        Vector3 attackDirection = transform.forward;
-        Debug.Log($"Attacking in Direction: { attackDirection}");
-
-        RaycastHit[] hits = Physics.SphereCastAll(transform.position +
-        transform.forward,
-        0.5f,
-        transform.forward, attackRange);
-
-        if (hits.Length > 0)
-        {
-            foreach (var hit in hits)
-            {
-                if (hit.transform == transform) continue;
-                if (hit.transform.TryGetComponent(out Health targetHealth))
-                {
-                    targetHealth.TakeDamage(attackDamage);
-                    Debug.Log($"{hit.transform.name} took {attackDamage} damage. Remaming Health: {targetHealth.GetCurrentHealth()}");
-                }
-                else
-                {
-                    Debug.Log($"{hit.transform.name} has no Health component.");
-                }
-            }
-        }
-        else
-        {
-            Debug.Log("No targets hit.");
-        }
-        
-        yield return new WaitForSeconds(attackDuration);
-        rightArm.SetActive(false);
-
-        yield return new WaitForSeconds(attackCooldown);
-        canAttack = true;
-    }
-
     /// ---------------
     /// Respawn stuff
     /// -----------------
