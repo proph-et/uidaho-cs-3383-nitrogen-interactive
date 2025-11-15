@@ -1,0 +1,56 @@
+newmtl Armor_BodySG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.26 0.26 0.26
+Ns 20.58
+newmtl Armor_LimbSG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.26 0.26 0.26
+Ns 17.96
+newmtl Armor_SkirtSG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.26 0.26 0.26
+Ns 22.65
+newmtl BodySG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.26 0.26 0.26
+Ns 21.95
+newmtl HeadSG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.26 0.26 0.26
+Ns 22.65
+newmtl HelmetSG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.26 0.26 0.26
+Ns 22.65
+newmtl ShwordSG
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.21 0.21 0.21
+Ns 22.71

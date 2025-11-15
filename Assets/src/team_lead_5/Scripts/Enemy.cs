@@ -27,9 +27,19 @@ public class Enemy : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    //Owning spawner
+    private EnemySpawner enemySpawner;
+
+    public GameObject prefab;
+
     // [added by Haddie] LootTable
     [Header("Loot")]
     public List<LootItem> lootTable = new List<LootItem>();
+
+    public Enemy(GameObject Enemyprefab)
+    {
+        prefab = Enemyprefab;
+    }
 
     private void Awake()
     {
@@ -128,6 +138,7 @@ public class Enemy : MonoBehaviour
     }
     private void DestroyEnemy()
     {
+        enemySpawner.decrementEnemys();
         Destroy(gameObject);
     }
 
@@ -168,6 +179,11 @@ public class Enemy : MonoBehaviour
         }
         
         return false;
+    }
+
+    public void SetEnemySpawner(EnemySpawner inputEnemySpawner)
+    {
+        enemySpawner = inputEnemySpawner;
     }
 }
 
