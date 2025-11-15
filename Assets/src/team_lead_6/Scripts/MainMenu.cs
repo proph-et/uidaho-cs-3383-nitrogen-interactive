@@ -20,7 +20,7 @@ public class MainMenu : MenuBase
     public override void PlayGame()
     {
         // Load the next scene by index.
-        
+
         SceneManager.LoadScene("MainScene");
 
         // Alternative method: load by scene index asynchronously.
@@ -31,7 +31,7 @@ public class MainMenu : MenuBase
     // This command exits the application.
     public override void Quit()
     {
-        
+
         Application.Quit();
 
         // Log message appears in the Editor for testing purposes,

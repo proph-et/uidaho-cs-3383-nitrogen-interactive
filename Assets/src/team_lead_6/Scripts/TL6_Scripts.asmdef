@@ -1,3 +1,16 @@
 {
-	"name": "TL6_Scripts"
+    "name": "TL6_Scripts",
+    "rootNamespace": "",
+    "references": [
+        "GUID:63115060b2e5e8d4bac8b1272a1ccab1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
