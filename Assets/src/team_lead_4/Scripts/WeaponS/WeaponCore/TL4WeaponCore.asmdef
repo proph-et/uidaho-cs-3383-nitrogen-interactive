@@ -1,4 +1,16 @@
 {
-  "name": "TL4WeaponCore"
+    "name": "TL4WeaponCore",
+    "rootNamespace": "",
+    "references": [
+        "GUID:63115060b2e5e8d4bac8b1272a1ccab1"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
-

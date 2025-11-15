@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class Bow : WeaponBase
 {
@@ -8,6 +9,7 @@ public class Bow : WeaponBase
     Vector3 spawnP;
     Quaternion spawnR;
     Rigidbody arrowRB;
+    private bool isAttacking = false;
 
     public Bow(GameObject prefabType)
     {
@@ -24,44 +26,57 @@ public class Bow : WeaponBase
         firePoint = point;
     }
 
-    public override void Attack(GameObject self)
+    public override void Attack(GameObject self, Collider collider)
     {
-        if (firePoint == null && prefab != null)
+        if(isAttacking)
         {
-            Debug.Log("null firepoint");
-            firePoint = prefab.transform.Find("firePoint");
+            if (firePoint == null && prefab != null)
+            {
+                Debug.Log("null firepoint");
+                firePoint = prefab.transform.Find("firePoint");
+            }
+
+            if (projectilePrefab == null)
+            {
+                Debug.Log("Bow projectile not assigned");
+                return;
+            }
+
+            if (firePoint != null)
+            {
+                spawnP = firePoint.position;
+                spawnR = firePoint.rotation;
+                // Debug.Log("spawn position: " + spawnP);
+            }
+
+            GameObject arrow = GameObject.Instantiate(projectilePrefab, spawnP, spawnR);
+
+            Arrow arrowScript = arrow.GetComponent<Arrow>();
+
+            if (arrowScript != null)
+            {
+                arrowRB = arrowScript.GetArrowRB();
+                float arrowSpeed = arrowScript.GetArrowSpeed();
+                Collider arrowCollider = arrowScript.GetComponent<Collider>();
+                Collider bowCollider = self.GetComponent<Collider>();
+
+                Physics.IgnoreCollision(arrowCollider, bowCollider, true);
+
+                arrowRB.linearVelocity = firePoint.forward * arrowSpeed;
+                Debug.Log("arrow linear vel: " + arrowRB.linearVelocity);
+
+                arrowScript.damage = getWeaponDamage();
+            }
         }
+    }
 
-        if (projectilePrefab == null)
-        {
-            Debug.Log("Bow projectile not assigned");
-            return;
-        }
+    public void StartAttack()
+    {
+        isAttacking = true;
+    }
 
-        if (firePoint != null)
-        {
-            spawnP = firePoint.position;
-            spawnR = firePoint.rotation;
-            // Debug.Log("spawn position: " + spawnP);
-        }
-
-        GameObject arrow = GameObject.Instantiate(projectilePrefab, spawnP, spawnR);
-
-        Arrow arrowScript = arrow.GetComponent<Arrow>();
-
-        if (arrowScript != null)
-        {
-            arrowRB = arrowScript.GetArrowRB();
-            float arrowSpeed = arrowScript.GetArrowSpeed();
-            Collider arrowCollider = arrowScript.GetComponent<Collider>();
-            Collider bowCollider = self.GetComponent<Collider>();
-
-            Physics.IgnoreCollision(arrowCollider, bowCollider, true);
-
-            arrowRB.linearVelocity = firePoint.forward * arrowSpeed;
-            Debug.Log("arrow linear vel: " + arrowRB.linearVelocity);
-
-            arrowScript.damage = getWeaponDamage();
-        }
+    public void EndAttack()
+    {
+        isAttacking = false;
     }
 }

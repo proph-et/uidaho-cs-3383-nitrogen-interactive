@@ -11,6 +11,7 @@ public class WeaponManager : MonoBehaviour
         new Dictionary<string, (WeaponBase, GameObject)>();
 
     public Transform weaponHolder;
+    private bool isAttacking = false;
 
     private GameObject currentInstance;
 
@@ -44,18 +45,15 @@ public class WeaponManager : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            playerInventory.getCurrentWeapon().Attack(this.gameObject);
+            playerInventory.getCurrentWeapon().StartAttack();
             // currentWeapon.StartCooldown(this);
         }
     }
 
-    // private void OnTriggerStay(Collider other)
-    // {
-    //     if(Input.GetMouseButtonDown(0))
-    //     {
-    //         currentWeapon.Attack(other);
-    //     }
-    // }
+    private void OnTriggerEnter(Collider other)
+    {
+        playerInventory.getCurrentWeapon().Attack(this.gameObject, other);
+    }
 
     private void SetLocation()
     {
