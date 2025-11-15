@@ -9,7 +9,7 @@ public class Bow : WeaponBase
     Vector3 spawnP;
     Quaternion spawnR;
     Rigidbody arrowRB;
-    private bool isAttacking = false;
+    private bool isAttacking = true;
 
     public Bow(GameObject prefabType)
     {
@@ -68,14 +68,15 @@ public class Bow : WeaponBase
                 arrowScript.damage = getWeaponDamage();
             }
         }
+        EndAttack();
     }
 
-    public void StartAttack()
+    public override void StartAttack()
     {
         isAttacking = true;
     }
 
-    public void EndAttack()
+    public override void EndAttack()
     {
         isAttacking = false;
     }

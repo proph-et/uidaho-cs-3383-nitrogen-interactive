@@ -75,12 +75,12 @@ public class WeaponBase
         return augmentName;
     }
 
-        public void StartAttack()
+    public virtual void StartAttack()
     {
         isAttacking = true;
     }
 
-    public void EndAttack()
+    public virtual void EndAttack()
     {
         isAttacking = false;
     }

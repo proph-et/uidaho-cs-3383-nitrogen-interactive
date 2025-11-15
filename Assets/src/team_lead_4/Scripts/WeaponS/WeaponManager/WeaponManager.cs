@@ -46,6 +46,8 @@ public class WeaponManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             playerInventory.getCurrentWeapon().StartAttack();
+            playerInventory.getCurrentWeapon().Attack(this.gameObject, null);
+
             // currentWeapon.StartCooldown(this);
         }
     }

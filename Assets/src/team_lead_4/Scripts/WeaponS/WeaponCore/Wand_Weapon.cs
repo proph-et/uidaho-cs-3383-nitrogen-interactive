@@ -47,7 +47,7 @@ public class Wand : WeaponBase
             {
                 spawnP = firePoint.position;
                 spawnR = firePoint.rotation;
-                Debug.Log("spawn position: " + spawnP);
+                // Debug.Log("spawn position: " + spawnP);
             }
 
             GameObject orb = GameObject.Instantiate(orbPrefab, spawnP, spawnR);
@@ -59,15 +59,18 @@ public class Wand : WeaponBase
                 orbScript.damage = getWeaponDamage();
             }
         }
+        EndAttack();
     }
 
-    public void StartAttack()
+    public override void StartAttack()
     {
         isAttacking = true;
+        // Debug.Log("isattacking");
     }
 
-    public void EndAttack()
+    public override void EndAttack()
     {
         isAttacking = false;
+        // Debug.Log("is NOT attacking");
     }
 }

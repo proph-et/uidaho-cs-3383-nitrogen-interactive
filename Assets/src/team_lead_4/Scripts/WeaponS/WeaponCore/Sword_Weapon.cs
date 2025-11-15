@@ -17,9 +17,9 @@ public class Sword : WeaponBase
 
     public override void Attack(GameObject self, Collider collider)
     {
-        Debug.Log("insert sword attack here");
-        if (isAttacking){
-
+        if (isAttacking && collider != null)
+        {
+            Debug.Log("insert sword attack here");
             var health = collider.GetComponent<Health>();
 
             if (health != null)
@@ -27,15 +27,18 @@ public class Sword : WeaponBase
                 health.TakeDamage(getWeaponDamage());
             }
         }
+        EndAttack();
     }
 
-    public void StartAttack()
+    public override void StartAttack()
     {
         isAttacking = true;
+        // Debug.Log("isattacking");
     }
 
-    public void EndAttack()
+    public override void EndAttack()
     {
         isAttacking = false;
+        // Debug.Log("is NOT attacking");
     }
 }

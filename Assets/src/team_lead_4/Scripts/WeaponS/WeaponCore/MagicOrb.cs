@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MagicOrb : MonoBehaviour
 {
-    public float speed = 15f;
-    public float lifetime = 2f;
+    private float speed = 15f;
+    private float lifetime = 2f;
     public int damage = 10;
 
     private void Start()
@@ -16,9 +16,13 @@ public class MagicOrb : MonoBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("do damage projectile");
+        var health = collider.GetComponent<Health>();
+        if (health != null)
+        {
+            health.TakeDamage(damage);
+        }
     }
 }
 
