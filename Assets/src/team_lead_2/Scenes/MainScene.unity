@@ -7815,9 +7815,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3336830127831437690, guid: 588902ffcfd755b46add86c929136c0e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3739365064785521582, guid: 588902ffcfd755b46add86c929136c0e, type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: PlayerHealth
       objectReference: {fileID: 0}
     - target: {fileID: 6797872742100124303, guid: 588902ffcfd755b46add86c929136c0e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7826,6 +7830,10 @@ PrefabInstance:
     - target: {fileID: 6797872742100124303, guid: 588902ffcfd755b46add86c929136c0e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010852231614872355, guid: 588902ffcfd755b46add86c929136c0e, type: 3}
+      propertyPath: m_Value
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12727,10 +12735,10 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 49219387}
+  - {fileID: 1410516086}
   - {fileID: 600228401}
   - {fileID: 991610420}
   - {fileID: 1972059827}
-  - {fileID: 1410516086}
   - {fileID: 2024319517}
   - {fileID: 1410713447}
   - {fileID: 861117543}
