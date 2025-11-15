@@ -10,12 +10,12 @@ public class WeaponBase
     private int weaponTier;
     private string augmentName;
 
-    protected bool canAttack = true;
+    protected bool isAttacking = true;
 
     //lets any weapon type define its own attack behavior (swing projectile etc)
-    public virtual void Attack(GameObject self)
+    public virtual void Attack(GameObject self, Collider collider)
     {
-        Debug.Log("attacking...");
+        // Debug.Log("attacking...");
     }
 
     public int getWeaponTier()
@@ -73,6 +73,16 @@ public class WeaponBase
     public string getAugmentName()
     {
         return augmentName;
+    }
+
+    public virtual void StartAttack()
+    {
+        isAttacking = true;
+    }
+
+    public virtual void EndAttack()
+    {
+        isAttacking = false;
     }
 
     // protected IEnumerator AttackCooldown()

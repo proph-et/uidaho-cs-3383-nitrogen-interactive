@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class Sword : WeaponBase
 {
+    private bool isAttacking = false;
     public Sword(GameObject prefabType)
     {
         setWeaponName("Sword");
@@ -13,20 +15,30 @@ public class Sword : WeaponBase
         setAugmentName("NONE");
     }
 
-    public override void Attack(GameObject self)
+    public override void Attack(GameObject self, Collider collider)
     {
-        Debug.Log("insert sword attack here");
+        if (isAttacking && collider != null)
+        {
+            // Debug.Log("insert sword attack here");
+            var health = collider.GetComponent<Health>();
 
-        // if (other == null)
-        // {
-        //     Debug.Log("other is null");
-        // }
+            if (health != null)
+            {
+                health.TakeDamage(getWeaponDamage());
+            }
+        }
+        EndAttack();
+    }
 
-        // Enemy enemy = other.GetComponent<Enemy>();
-        // if (enemy != null)
-        // {
-        //     enemy.TakeDamage(damage);
-        //     Debug.Log($"Sword hit {enemy.name} for {damage} damage!");
-        // }
+    public override void StartAttack()
+    {
+        isAttacking = true;
+        // Debug.Log("isattacking");
+    }
+
+    public override void EndAttack()
+    {
+        isAttacking = false;
+        // Debug.Log("is NOT attacking");
     }
 }

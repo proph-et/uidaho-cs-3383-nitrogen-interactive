@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    public float speed = 15f;
+    private float speed = 15f;
     public float damage = 10f;
-    public float lifetime = 10f;
+    private float lifetime = 10f;
     private float collisionDelay = 0.05f;
 
     private float spawnTime;
@@ -29,7 +29,7 @@ public class Arrow : MonoBehaviour
         if (!collisionActive && Time.time-spawnTime >= collisionDelay)
         {
             collisionActive = true;
-            Debug.Log("collision active true");
+            // Debug.Log("collision active true");
         }
     }
 
@@ -55,7 +55,11 @@ public class Arrow : MonoBehaviour
         arrowRB.isKinematic = true;
         transform.parent = collider.transform;
 
-        Debug.Log("do damage projectile");
+        var health = collider.GetComponent<Health>();
+        if (health != null)
+        {
+            health.TakeDamage(damage);
+        }
     }
 
     public float GetArrowSpeed()

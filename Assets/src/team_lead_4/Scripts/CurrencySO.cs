@@ -29,7 +29,7 @@ public class CurrencySO : CollectableSOBase
             Currency = 0;
             Debug.Log("Error: Negative Currency");
         }
-        Debug.Log("Dough: " + Currency);
+        // Debug.Log("Dough: " + Currency);
 
     }
     
