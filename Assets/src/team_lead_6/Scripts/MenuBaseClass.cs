@@ -1,7 +1,7 @@
 using UnityEngine;
 
 // Base class for all menu types
-public abstract class MenuBase : MonoBehaviour
+public abstract class MenuBase
 {
     // Virtual methods allow child classes to override them dynamically
     public virtual void PlayGame()

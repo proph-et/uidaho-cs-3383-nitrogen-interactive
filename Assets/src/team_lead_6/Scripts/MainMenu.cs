@@ -21,7 +21,7 @@ public class MainMenu : MenuBase
     {
         // Load the next scene by index.
         
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("MainScene");
 
         // Alternative method: load by scene index asynchronously.
         // SceneManager.LoadSceneAsync(1);

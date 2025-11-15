@@ -24,7 +24,7 @@ public class DashAbility : Ability
         animator = controller.GetComponentInChildren<Animator>();
     }
 
-    public override void Activate(GameObject user)
+    public void Activate(GameObject user)
     {
         Debug.Log($"{user.name} activated the Dash ability.");
         if (!canDash) return;
