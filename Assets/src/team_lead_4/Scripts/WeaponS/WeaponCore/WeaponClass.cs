@@ -15,7 +15,7 @@ public class WeaponBase
     //lets any weapon type define its own attack behavior (swing projectile etc)
     public virtual void Attack(GameObject self, Collider collider)
     {
-        Debug.Log("attacking...");
+        // Debug.Log("attacking...");
     }
 
     public int getWeaponTier()

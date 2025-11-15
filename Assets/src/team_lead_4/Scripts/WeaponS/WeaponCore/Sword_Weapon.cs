@@ -19,7 +19,7 @@ public class Sword : WeaponBase
     {
         if (isAttacking && collider != null)
         {
-            Debug.Log("insert sword attack here");
+            // Debug.Log("insert sword attack here");
             var health = collider.GetComponent<Health>();
 
             if (health != null)

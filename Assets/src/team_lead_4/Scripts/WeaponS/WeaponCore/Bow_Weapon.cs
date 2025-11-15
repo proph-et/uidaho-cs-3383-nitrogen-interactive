@@ -63,7 +63,7 @@ public class Bow : WeaponBase
                 Physics.IgnoreCollision(arrowCollider, bowCollider, true);
 
                 arrowRB.linearVelocity = firePoint.forward * arrowSpeed;
-                Debug.Log("arrow linear vel: " + arrowRB.linearVelocity);
+                // Debug.Log("arrow linear vel: " + arrowRB.linearVelocity);
 
                 arrowScript.damage = getWeaponDamage();
             }

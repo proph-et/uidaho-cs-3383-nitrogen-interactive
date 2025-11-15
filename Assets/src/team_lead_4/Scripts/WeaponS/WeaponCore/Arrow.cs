@@ -29,7 +29,7 @@ public class Arrow : MonoBehaviour
         if (!collisionActive && Time.time-spawnTime >= collisionDelay)
         {
             collisionActive = true;
-            Debug.Log("collision active true");
+            // Debug.Log("collision active true");
         }
     }
 

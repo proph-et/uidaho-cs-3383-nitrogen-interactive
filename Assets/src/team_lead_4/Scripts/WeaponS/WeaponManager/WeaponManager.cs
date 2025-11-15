@@ -107,6 +107,6 @@ public class WeaponManager : MonoBehaviour
         playerInventory.setCurrentWeapon(data);
         currentInstance = instance;
 
-        Debug.Log($"Equipped {name}");
+        // Debug.Log($"Equipped {name}");
     }
 }
