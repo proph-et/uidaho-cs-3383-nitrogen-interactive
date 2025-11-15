@@ -1,6 +1,6 @@
 # Pause Menu  
 ★★★★★ (4921 reviews)  
-Author: *Your Name*  
+Author: *Torry Chmelik*  
 
 **$0.99**  
 **Version:** 1.1  
