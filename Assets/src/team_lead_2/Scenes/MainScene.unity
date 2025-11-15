@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 49219393}
   - component: {fileID: 49219394}
   - component: {fileID: 49219395}
+  - component: {fileID: 49219396}
   m_Layer: 13
   m_Name: Player
   m_TagString: Player
@@ -603,6 +604,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: TL4WeaponManager::WeaponManager
   playerInventory: {fileID: 49219394}
   weaponHolder: {fileID: 1461474883}
+--- !u!114 &49219396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49219381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d62c53984c3dd42b21eacf0c213684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TL2+Scripts::Health
+  maxHealth: 100
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  onDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &76599069
 GameObject:
   m_ObjectHideFlags: 0
