@@ -4,26 +4,50 @@ using System.Collections; // Needed for IEnumerator
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private float interval = 0.5f;
-    [SerializeField] private GameObject Enemy;
+    [SerializeField] private GameObject _enemyprefab;
     [SerializeField] private int MaxNumEnemies = 3;
+    [SerializeField] private bool oneshot = false;
+
     public float spawnRadius = 10f;
     private int numberEnemies = 0;
-   void Start()
+
+    private Enemy _enemy;
+
+    private void Update()
     {
-        StartCoroutine(spawnEnemy(interval, Enemy, MaxNumEnemies));
+        if (numberEnemies != MaxNumEnemies && !oneshot)
+        {
+            StartCoroutine(spawnEnemy(interval, _enemy, MaxNumEnemies));
+        }
+    }
+
+    void Start()
+    {
+        _enemy = new Enemy(_enemyprefab);
+
+        if (!oneshot) 
+        {
+            StartCoroutine(spawnEnemy(interval, _enemy, MaxNumEnemies));
+        }
+    }
+
+    public void decrementEnemys()
+    {
+        numberEnemies--;
     }
  
-    private IEnumerator spawnEnemy(float interval, GameObject Enemy, int MaxNumEnemies)
+    private IEnumerator spawnEnemy(float interval, Enemy InputEnemy, int MaxNumEnemies)
     {
         yield return new WaitForSeconds(interval);
         Vector3 spawnPos = GetRandomPointInSphere();
-        GameObject newEnemy = Instantiate(Enemy, spawnPos, Quaternion.identity);
+        GameObject newEnemy = Instantiate(InputEnemy.prefab, spawnPos, Quaternion.identity);
+
+        //chat
+        Enemy newEnemyReference = newEnemy.GetComponent<Enemy>();
+        newEnemyReference.SetEnemySpawner(this);
+
         numberEnemies++;
         //Debug.Log("Enemy: "+ numberEnemies);
-        if (numberEnemies != MaxNumEnemies)
-        {
-            StartCoroutine(spawnEnemy(interval, Enemy, MaxNumEnemies));
-        }
     }
     
     Vector3 GetRandomPointInSphere()
@@ -37,5 +61,13 @@ public class EnemySpawner : MonoBehaviour
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, spawnRadius);
+    }
+
+    public void SpawnEnemyBoss(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            StartCoroutine(spawnEnemy(interval, _enemy, MaxNumEnemies));
+        }
     }
 }

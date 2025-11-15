@@ -1,0 +1,1516 @@
+fileFormatVersion: 2
+guid: 172367806d7ee3f4ea22f1899fe05d28
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Arm_Body
+    second: {fileID: 2100000, guid: f99fb33baa2f43242966f80e923a79d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Arm_Limb
+    second: {fileID: 2100000, guid: 459b3b24c5de2bf4889d5fe6e46db7b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Body
+    second: {fileID: 2100000, guid: 42315e2c5a3c5554ea817d12636b604d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Head
+    second: {fileID: 2100000, guid: d7da09a14814c104784e8659f5da4267, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Helmet
+    second: {fileID: 2100000, guid: e0def9e9850150549a6282e09a899b4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Skirt
+    second: {fileID: 2100000, guid: 6ce8c9df5da6a0747b50766d59e86ac0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Sword
+    second: {fileID: 2100000, guid: 9edf1d19465c22f46b9c14616302d9a6, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 0
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: Dark_Knight_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandMiddle1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandMiddle2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandMiddle3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandPinky1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandPinky2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_LeftHandPinky3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandMiddle1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandMiddle2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandMiddle3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandRing1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandRing2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandRing3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandPinky1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandPinky2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_RightHandPinky3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Dark_Knight_Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Base_mash(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Helmet
+      parentName: Base_mash(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Armor_Skirt
+      parentName: Base_mash(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Armor_Limb
+      parentName: Base_mash(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Armor_Body
+      parentName: Base_mash(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Head
+      parentName: Base_mash(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Body
+      parentName: Base_mash(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000081460335, y: -0, z: -0, w: 1}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Shword
+      parentName: Base_mash(Clone)
+      position: {x: 0.71333325, y: 1.2560928, z: 0.31622463}
+      rotation: {x: 0.6464658, y: -0.19632219, z: -0.28650013, w: 0.6793065}
+      scale: {x: 36.948044, y: 36.948044, z: 36.948044}
+    - name: Dark_Knight_Reference
+      parentName: Base_mash(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Hips
+      parentName: Dark_Knight_Reference
+      position: {x: 6.961103e-18, y: 1.1618041, z: 2.088331e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftUpLeg
+      parentName: Dark_Knight_Hips
+      position: {x: -0.123481594, y: -0.06270004, z: 2.0244324e-17}
+      rotation: {x: -0.0000023533426, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftLeg
+      parentName: Dark_Knight_LeftUpLeg
+      position: {x: -0.059355106, y: -0.42980003, z: -0.0000019199122}
+      rotation: {x: 0.000002175644, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftFoot
+      parentName: Dark_Knight_LeftLeg
+      position: {x: -0.065409064, y: -0.61444616, z: -0.071984306}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftToeBase
+      parentName: Dark_Knight_LeftFoot
+      position: {x: -0.054700356, y: -0.042446174, z: 0.17448407}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightUpLeg
+      parentName: Dark_Knight_Hips
+      position: {x: 0.123481594, y: -0.06270004, z: -6.2010945e-17}
+      rotation: {x: 0.000001003446, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightLeg
+      parentName: Dark_Knight_RightUpLeg
+      position: {x: 0.05935524, y: -0.42980003, z: -0.0000013345899}
+      rotation: {x: -0.00000079745445, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightFoot
+      parentName: Dark_Knight_RightLeg
+      position: {x: 0.0654092, y: -0.61444616, z: -0.07198432}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightToeBase
+      parentName: Dark_Knight_RightFoot
+      position: {x: 0.054700356, y: -0.04244604, z: 0.17448412}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Spine
+      parentName: Dark_Knight_Hips
+      position: {x: 1.3334822e-17, y: 0.1201094, z: 4.0004466e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Spine1
+      parentName: Dark_Knight_Spine
+      position: {x: 1.8395218e-17, y: 0.1656894, z: 9.1976085e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Spine2
+      parentName: Dark_Knight_Spine1
+      position: {x: 1.8395218e-17, y: 0.1656894, z: 1.2876652e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftShoulder
+      parentName: Dark_Knight_Spine2
+      position: {x: -0.07414382, y: 0.15228377, z: -0.050893452}
+      rotation: {x: -0, y: 0.009164274, z: 0.010685338, w: 0.99990094}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftArm
+      parentName: Dark_Knight_LeftShoulder
+      position: {x: -0.10707251, y: 0.030533751, z: -0.026187286}
+      rotation: {x: 0.0067233583, y: 0.0026483424, z: -0.3640476, w: 0.9313524}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftForeArm
+      parentName: Dark_Knight_LeftArm
+      position: {x: -0.25139257, y: -0.24462669, z: -0.0064290185}
+      rotation: {x: 0.1089936, y: -0.12544642, z: 0.078369275, w: 0.9829761}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHand
+      parentName: Dark_Knight_LeftForeArm
+      position: {x: -0.23257253, y: -0.13626374, z: 0.1053316}
+      rotation: {x: -0.012347756, y: -0.009671531, z: -0.039775636, w: 0.9990856}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandThumb1
+      parentName: Dark_Knight_LeftHand
+      position: {x: -0.022533963, y: -0.030653082, z: 0.063954316}
+      rotation: {x: -0.1439472, y: -0.10516348, z: -0.09779334, w: 0.97911}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandThumb2
+      parentName: Dark_Knight_LeftHandThumb1
+      position: {x: 0.0020992232, y: -0.028088532, z: 0.02711538}
+      rotation: {x: -0.18082762, y: 0.025564754, z: 0.040481478, w: 0.9823488}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandThumb3
+      parentName: Dark_Knight_LeftHandThumb2
+      position: {x: -0.0028685026, y: -0.046278074, z: 0.016411709}
+      rotation: {x: -0.06005618, y: -0.007339092, z: -0.031191662, w: 0.9976806}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandThumb4
+      parentName: Dark_Knight_LeftHandThumb3
+      position: {x: 0.0019760116, y: -0.046828, z: 0.0072133965}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandIndex1
+      parentName: Dark_Knight_LeftHand
+      position: {x: -0.09133599, y: -0.0819896, z: 0.06417134}
+      rotation: {x: -0.0138565535, y: -0.02197744, z: -0.08992372, w: 0.99560976}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandIndex2
+      parentName: Dark_Knight_LeftHandIndex1
+      position: {x: -0.021977693, y: -0.04906845, z: 0.015378942}
+      rotation: {x: 0.032675207, y: -0.054323193, z: -0.12661189, w: 0.9899246}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandIndex3
+      parentName: Dark_Knight_LeftHandIndex2
+      position: {x: -0.0022275606, y: -0.03397484, z: 0.014000635}
+      rotation: {x: -0.03236728, y: -0.022694405, z: -0.060247734, w: 0.99740046}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandIndex4
+      parentName: Dark_Knight_LeftHandIndex3
+      position: {x: 0.005925464, y: -0.041383285, z: 0.012412331}
+      rotation: {x: 0, y: -0.000005316577, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandMiddle1
+      parentName: Dark_Knight_LeftHand
+      position: {x: -0.09542245, y: -0.09653335, z: 0.038296707}
+      rotation: {x: -0.06134128, y: 0.0028300749, z: -0.14570802, w: 0.9874201}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandMiddle2
+      parentName: Dark_Knight_LeftHandMiddle1
+      position: {x: -0.015419389, y: -0.04511398, z: 0.005615102}
+      rotation: {x: 0.0061433217, y: -0.012223688, z: -0.08134072, w: 0.99659246}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandMiddle3
+      parentName: Dark_Knight_LeftHandMiddle2
+      position: {x: -0.0033996594, y: -0.03843216, z: 0.005518731}
+      rotation: {x: 0.018201139, y: -0.025844676, z: -0.16876858, w: 0.9851487}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandMiddle4
+      parentName: Dark_Knight_LeftHandMiddle3
+      position: {x: 0.014453276, y: -0.042590406, z: 0.008080885}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandRing1
+      parentName: Dark_Knight_LeftHand
+      position: {x: -0.09296943, y: -0.101457365, z: 0.011376755}
+      rotation: {x: -0.12004092, y: 0.03264956, z: -0.21680273, w: 0.9682566}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandRing2
+      parentName: Dark_Knight_LeftHandRing1
+      position: {x: -0.0076087187, y: -0.036679532, z: -0.001310893}
+      rotation: {x: 0.0008950752, y: 0.0004460177, z: -0.017675249, w: 0.99984336}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandRing3
+      parentName: Dark_Knight_LeftHandRing2
+      position: {x: -0.003014984, y: -0.034265213, z: -0.0010173224}
+      rotation: {x: 0.06386211, y: -0.0026894438, z: -0.098668076, w: 0.9930654}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandRing4
+      parentName: Dark_Knight_LeftHandRing3
+      position: {x: 0.005683821, y: -0.032790907, z: 0.004572505}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandPinky1
+      parentName: Dark_Knight_LeftHand
+      position: {x: -0.08139724, y: -0.10492676, z: -0.008242547}
+      rotation: {x: -0.15330136, y: 0.034335874, z: -0.29542583, w: 0.94236046}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandPinky2
+      parentName: Dark_Knight_LeftHandPinky1
+      position: {x: -0.0013188929, y: -0.030107727, z: -0.0028148533}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandPinky3
+      parentName: Dark_Knight_LeftHandPinky2
+      position: {x: -0.0008003991, y: -0.027582625, z: -0.0044812337}
+      rotation: {x: 0.044620812, y: 0.024267102, z: -0.15733632, w: 0.98623806}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_LeftHandPinky4
+      parentName: Dark_Knight_LeftHandPinky3
+      position: {x: 0.0094702905, y: -0.025501784, z: -0.0012476143}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightShoulder
+      parentName: Dark_Knight_Spine2
+      position: {x: 0.07414382, y: 0.15228377, z: -0.050893452}
+      rotation: {x: -0, y: -0.009164274, z: -0.010685338, w: 0.99990094}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightArm
+      parentName: Dark_Knight_RightShoulder
+      position: {x: 0.10707251, y: 0.030533751, z: -0.026187286}
+      rotation: {x: 0.006723496, y: -0.0026480397, z: 0.3640475, w: 0.93135244}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightForeArm
+      parentName: Dark_Knight_RightArm
+      position: {x: 0.2513927, y: -0.24462675, z: -0.0064287875}
+      rotation: {x: 0.10899343, y: 0.12544627, z: -0.07836952, w: 0.982976}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHand
+      parentName: Dark_Knight_RightForeArm
+      position: {x: 0.23257256, y: -0.13626373, z: 0.10533167}
+      rotation: {x: -0.012347661, y: 0.009671465, z: 0.039775312, w: 0.9990856}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandMiddle1
+      parentName: Dark_Knight_RightHand
+      position: {x: 0.09542244, y: -0.09653335, z: 0.03829674}
+      rotation: {x: -0.06134101, y: -0.0028300986, z: 0.1457071, w: 0.9874202}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandMiddle2
+      parentName: Dark_Knight_RightHandMiddle1
+      position: {x: 0.015419387, y: -0.04511398, z: 0.0056151114}
+      rotation: {x: 0.0061438517, y: 0.012218311, z: 0.08133953, w: 0.99659264}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandMiddle3
+      parentName: Dark_Knight_RightHandMiddle2
+      position: {x: 0.0033997162, y: -0.03843216, z: 0.005518701}
+      rotation: {x: 0.018200679, y: 0.025855668, z: 0.16877075, w: 0.985148}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandMiddle4
+      parentName: Dark_Knight_RightHandMiddle3
+      position: {x: -0.014453365, y: -0.042590406, z: 0.008080734}
+      rotation: {x: 0, y: -0.0000053167487, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandRing1
+      parentName: Dark_Knight_RightHand
+      position: {x: 0.09296943, y: -0.101457365, z: 0.011376787}
+      rotation: {x: -0.12004142, y: -0.03264938, z: 0.21680401, w: 0.9682562}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandRing2
+      parentName: Dark_Knight_RightHandRing1
+      position: {x: 0.0076087187, y: -0.036679532, z: -0.0013108867}
+      rotation: {x: 0.0008952094, y: -0.0004514343, z: 0.017677888, w: 0.99984324}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandRing3
+      parentName: Dark_Knight_RightHandRing2
+      position: {x: 0.0030149731, y: -0.034265213, z: -0.0010173494}
+      rotation: {x: 0.06386175, y: 0.002699995, z: 0.09866891, w: 0.99306536}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandRing4
+      parentName: Dark_Knight_RightHandRing3
+      position: {x: -0.0056838715, y: -0.032790907, z: 0.004572448}
+      rotation: {x: 0, y: -0.0000053167487, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandThumb1
+      parentName: Dark_Knight_RightHand
+      position: {x: 0.022533948, y: -0.030653076, z: 0.06395432}
+      rotation: {x: -0.14394723, y: 0.10516338, z: 0.097793244, w: 0.97911}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandThumb2
+      parentName: Dark_Knight_RightHandThumb1
+      position: {x: -0.002099229, y: -0.02808853, z: 0.027115382}
+      rotation: {x: -0.18082601, y: -0.02556461, z: -0.040481485, w: 0.98234904}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandThumb3
+      parentName: Dark_Knight_RightHandThumb2
+      position: {x: 0.002868499, y: -0.046278074, z: 0.016411714}
+      rotation: {x: -0.060057506, y: 0.007339092, z: 0.031191997, w: 0.9976805}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandThumb4
+      parentName: Dark_Knight_RightHandThumb3
+      position: {x: -0.0019760136, y: -0.046828, z: 0.007213402}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandIndex1
+      parentName: Dark_Knight_RightHand
+      position: {x: 0.09133598, y: -0.081989594, z: 0.06417137}
+      rotation: {x: -0.0138568515, y: 0.021977643, z: 0.08992483, w: 0.9956097}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandIndex2
+      parentName: Dark_Knight_RightHandIndex1
+      position: {x: 0.021977691, y: -0.04906845, z: 0.015378953}
+      rotation: {x: 0.032675665, y: 0.05431299, z: 0.12661396, w: 0.9899249}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandIndex3
+      parentName: Dark_Knight_RightHandIndex2
+      position: {x: 0.002227855, y: -0.033974838, z: 0.014000592}
+      rotation: {x: -0.032366384, y: 0.02271463, z: 0.060245138, w: 0.9974001}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandIndex4
+      parentName: Dark_Knight_RightHandIndex3
+      position: {x: -0.005925731, y: -0.041383285, z: 0.012412208}
+      rotation: {x: 0, y: -0.0000053167487, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandPinky1
+      parentName: Dark_Knight_RightHand
+      position: {x: 0.08139724, y: -0.10492676, z: -0.008242517}
+      rotation: {x: -0.15330146, y: -0.034335326, z: 0.295427, w: 0.94236016}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandPinky2
+      parentName: Dark_Knight_RightHandPinky1
+      position: {x: 0.0013188933, y: -0.030107727, z: -0.0028148491}
+      rotation: {x: 0, y: -0.0000053167487, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandPinky3
+      parentName: Dark_Knight_RightHandPinky2
+      position: {x: 0.000800352, y: -0.027582625, z: -0.004481239}
+      rotation: {x: 0.044620663, y: -0.024257496, z: 0.15734272, w: 0.9862372}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_RightHandPinky4
+      parentName: Dark_Knight_RightHandPinky3
+      position: {x: -0.0094702775, y: -0.025501784, z: -0.0012477136}
+      rotation: {x: 0, y: -0.0000053167487, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sword1
+      parentName: Dark_Knight_RightHand
+      position: {x: 0.018182857, y: -0.12727648, z: -0.055724937}
+      rotation: {x: -0.4615064, y: 0.5350548, z: 0.5358346, w: 0.46217903}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sword2
+      parentName: Sword1
+      position: {x: -0.70985955, y: -1.4210854e-16, z: -2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Neck
+      parentName: Dark_Knight_Spine2
+      position: {x: 1.8395218e-17, y: 0.1656894, z: 1.6555696e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Head
+      parentName: Dark_Knight_Neck
+      position: {x: 9.909091e-18, y: 0.19999999, z: 0.008925313}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_11
+      parentName: Dark_Knight_Spine
+      position: {x: 0.000036, y: -0.19720384, z: 0.12691602}
+      rotation: {x: -0.028862992, y: 0.028862992, z: 0.7065175, w: 0.7065175}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_12
+      parentName: Toga_11
+      position: {x: -0.4337675, y: -9.632486e-17, z: -7.105427e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_L_11
+      parentName: Dark_Knight_Spine
+      position: {x: -0.14861302, y: -0.0542319, z: 0.08617504}
+      rotation: {x: -0.04341386, y: 0.02696831, z: 0.5269808, w: 0.8483391}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_L_12
+      parentName: Toga_L_11
+      position: {x: -0.09855393, y: 0, z: -7.105427e-17}
+      rotation: {x: 0.0059064976, y: -0.011695243, z: -0.008581114, w: 0.9998774}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_L_13
+      parentName: Toga_L_12
+      position: {x: -0.14665103, y: 4.2632563e-16, z: -3.5527135e-16}
+      rotation: {x: -0.02208386, y: 0.053001393, z: 0.081234224, w: 0.99503976}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_L_14
+      parentName: Toga_L_13
+      position: {x: -0.15195808, y: -1.4210854e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_L_21
+      parentName: Dark_Knight_Spine
+      position: {x: -0.19320801, y: 0.01708608, z: -0.081790976}
+      rotation: {x: -0.03660402, y: 0.02296084, z: 0.5308887, w: 0.8463393}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_L_22
+      parentName: Toga_L_21
+      position: {x: -0.11380327, y: -1.4210854e-16, z: 7.105427e-17}
+      rotation: {x: 0.009950384, y: -0.02249021, z: 0.03376807, w: 0.9991271}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_L_23
+      parentName: Toga_L_22
+      position: {x: -0.1820204, y: -1.4210854e-16, z: -1.1546319e-16}
+      rotation: {x: -0.005736655, y: 0.013282399, z: -0.024936799, w: 0.9995843}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_L_24
+      parentName: Toga_L_23
+      position: {x: -0.17285742, y: 2.842171e-16, z: 1.1574075e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_B_11
+      parentName: Dark_Knight_Spine
+      position: {x: -0.139381, y: -0.0145209, z: -0.14526395}
+      rotation: {x: 0.08790387, y: -0.07247264, z: 0.6319902, w: 0.7665567}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_B_12
+      parentName: Toga_B_11
+      position: {x: -0.17257887, y: 0, z: -1.4210854e-16}
+      rotation: {x: -0.0055093667, y: 0.018605074, z: -0.095882274, w: 0.99520355}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_B_13
+      parentName: Toga_B_12
+      position: {x: -0.19766973, y: 0, z: 7.105427e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_B_31
+      parentName: Dark_Knight_Spine
+      position: {x: 0.000036, y: -0.03024386, z: -0.17241895}
+      rotation: {x: 0.054018524, y: -0.054018524, z: 0.70504045, w: 0.70504045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_B_32
+      parentName: Toga_B_31
+      position: {x: -0.24734703, y: -1.3729468e-16, z: 0}
+      rotation: {x: 0, y: -0.11301769, z: -0, w: 0.993593}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_B_33
+      parentName: Toga_B_32
+      position: {x: -0.22361661, y: -6.542943e-17, z: 7.105427e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_B_21
+      parentName: Dark_Knight_Spine
+      position: {x: 0.139453, y: -0.0145209, z: -0.14526395}
+      rotation: {x: 0.07247265, y: -0.08790386, z: 0.76655656, w: 0.63199025}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_B_22
+      parentName: Toga_B_21
+      position: {x: -0.17257887, y: 7.105427e-17, z: 1.4210854e-16}
+      rotation: {x: 0.005509366, y: 0.018605078, z: 0.095882535, w: 0.99520355}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_B_23
+      parentName: Toga_B_22
+      position: {x: -0.19766973, y: 7.105427e-17, z: -7.105427e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_R_21
+      parentName: Dark_Knight_Spine
+      position: {x: 0.19328004, y: 0.01708608, z: -0.081790976}
+      rotation: {x: -0.022960845, y: 0.03660402, z: 0.84633917, w: 0.5308888}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_R_22
+      parentName: Toga_R_21
+      position: {x: -0.11380325, y: 1.4210854e-16, z: 2.6645352e-17}
+      rotation: {x: -0.009950382, y: -0.02249021, z: -0.03376782, w: 0.9991271}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_R_23
+      parentName: Toga_R_22
+      position: {x: -0.18202041, y: 5.684342e-16, z: -7.5495166e-17}
+      rotation: {x: 0.005736656, y: 0.013282399, z: 0.024936652, w: 0.9995843}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_R_24
+      parentName: Toga_R_23
+      position: {x: -0.17285742, y: -4.2632563e-16, z: 1.7735812e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_R_11
+      parentName: Dark_Knight_Spine
+      position: {x: 0.148685, y: -0.0542319, z: 0.08617504}
+      rotation: {x: -0.026968304, y: 0.043413863, z: 0.84833914, w: 0.5269807}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_R_12
+      parentName: Toga_R_11
+      position: {x: -0.09855394, y: 0, z: 0}
+      rotation: {x: -0.005906499, y: -0.0116952425, z: 0.008580985, w: 0.9998774}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_R_13
+      parentName: Toga_R_12
+      position: {x: -0.14665103, y: 0, z: -3.5527135e-16}
+      rotation: {x: 0.022083879, y: 0.05300138, z: -0.08123387, w: 0.9950398}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Toga_R_14
+      parentName: Toga_R_13
+      position: {x: -0.15195811, y: -2.842171e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_Reference
+      parentName: Base_mash(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_HipsEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0, y: 1.0991039, z: 0}
+      rotation: {x: 3.0817192e-16, y: -5.551115e-17, z: -1.6653345e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftAnkleEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.24824576, y: 0.054857712, z: -0.071984}
+      rotation: {x: 1.110223e-16, y: -8.326673e-17, z: -4.8572257e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightAnkleEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.24824606, y: 0.05485775, z: -0.07198677}
+      rotation: {x: -1.7520707e-16, y: 2.7755576e-17, z: 1.3877788e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftWristEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.665186, y: 1.4152228, z: 0.02183548}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightWristEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.6651815, y: 1.4152192, z: 0.02182208}
+      rotation: {x: -1.2325952e-32, y: 6.123234e-17, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftKneeEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.18283667, y: 0.66930395, z: 0.00000037209364}
+      rotation: {x: 1.3436518e-15, y: 3.989864e-17, z: -2.1510571e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightKneeEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.1828369, y: 0.66930395, z: -0.0000024582685}
+      rotation: {x: -1.874694e-15, y: 1.994932e-17, z: 2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftElbowEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.43261313, y: 1.5514865, z: -0.0834963}
+      rotation: {x: 0, y: 2.6367797e-16, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightElbowEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.43260893, y: 1.5514832, z: -0.08350956}
+      rotation: {x: 2.359224e-16, y: -6.938894e-17, z: 1.6653345e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_ChestOriginEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 2.2022856e-22, y: 1.2819134, z: -2.9608783e-33}
+      rotation: {x: 3.0817192e-16, y: -5.551115e-17, z: -1.6653345e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_ChestEndEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0, y: 1.7655759, z: -0.050893452}
+      rotation: {x: 3.0817192e-16, y: -5.551115e-17, z: -1.6653345e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftFootEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.30294612, y: 0.012411599, z: 0.102500096}
+      rotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightFootEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.30294642, y: 0.012411637, z: 0.102497324}
+      rotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftShoulderEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.18121633, y: 1.7961096, z: -0.07708074}
+      rotation: {x: 1.5005358e-16, y: 1.8301333e-16, z: 2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightShoulderEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.18121633, y: 1.7961096, z: -0.07708074}
+      rotation: {x: 1.1969592e-16, y: -2.1423835e-16, z: 8.326673e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_HeadEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 2.2022856e-22, y: 1.9789816, z: 0.008925313}
+      rotation: {x: 3.0817192e-16, y: -5.551115e-17, z: -1.6653345e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHipEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.123481594, y: 1.0991039, z: -2.7418422e-17}
+      rotation: {x: 1.6477237e-15, y: -3.1160664e-16, z: -3.7470027e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHipEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.123481594, y: 1.0991039, z: 2.7418422e-17}
+      rotation: {x: -1.1168442e-15, y: 1.3878464e-17, z: 3.469447e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandThumbEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.68651307, y: 1.2633749, z: 0.13653038}
+      rotation: {x: 2.7755576e-17, y: 1.2490009e-16, z: 1.4224733e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandIndexEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.7748018, y: 1.2088064, z: 0.1277987}
+      rotation: {x: 8.552333e-33, y: -1.0061396e-16, z: 8.500145e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandMiddleEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.7649743, y: 1.1925526, z: 0.07934698}
+      rotation: {x: -2.7755576e-17, y: 2.4286129e-17, z: 9.020562e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandRingEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.7630953, y: 1.2100296, z: 0.035456594}
+      rotation: {x: -2.0252357e-32, y: 6.938894e-17, z: 2.9186722e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandPinkyEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0.73923224, y: 1.2271038, z: 0.0050492794}
+      rotation: {x: 2.4286129e-16, y: -3.8163916e-17, z: -2.3635607e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandThumbEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.6865087, y: 1.2633716, z: 0.1365169}
+      rotation: {x: -4.718448e-16, y: 2.359224e-16, z: 1.700029e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandIndexEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.77479726, y: 1.2088032, z: 0.12778528}
+      rotation: {x: 2.085421e-33, y: 3.8163916e-17, z: -5.464379e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandMiddleEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.7649697, y: 1.1925495, z: 0.07933355}
+      rotation: {x: -1.3877788e-17, y: 8.326673e-17, z: -6.591949e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandRingEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.7630908, y: 1.2100263, z: 0.035443164}
+      rotation: {x: 3.9609458e-34, y: 1.7347235e-18, z: -2.2833298e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandPinkyEffector
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: 0.7392277, y: 1.2271004, z: 0.005035865}
+      rotation: {x: -6.938894e-18, y: -1.7347235e-17, z: 4.4338448e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_Hips
+      parentName: Dark_Knight_Ctrl_Reference
+      position: {x: -0, y: 1.1618041, z: 0}
+      rotation: {x: 1.9714962e-16, y: -5.551115e-17, z: -5.551115e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftUpLeg
+      parentName: Dark_Knight_Ctrl_Hips
+      position: {x: -0.123481594, y: -0.06270004, z: 0}
+      rotation: {x: 8.699237e-16, y: -3.162689e-16, z: -1.6653345e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftLeg
+      parentName: Dark_Knight_Ctrl_LeftUpLeg
+      position: {x: -0.059355125, y: -0.42980003, z: 0}
+      rotation: {x: 5.5478625e-16, y: 1.3010426e-17, z: -6.938894e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftFoot
+      parentName: Dark_Knight_Ctrl_LeftLeg
+      position: {x: -0.06540909, y: -0.6144462, z: -0.07198424}
+      rotation: {x: 1.110223e-16, y: -8.326673e-17, z: -4.8572257e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftToeBase
+      parentName: Dark_Knight_Ctrl_LeftFoot
+      position: {x: -0.054700356, y: -0.04244611, z: 0.17448409}
+      rotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightUpLeg
+      parentName: Dark_Knight_Ctrl_Hips
+      position: {x: 0.123481594, y: -0.06270004, z: 0}
+      rotation: {x: -1.1168442e-15, y: 1.3878464e-17, z: 3.469447e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightLeg
+      parentName: Dark_Knight_Ctrl_RightUpLeg
+      position: {x: 0.059355125, y: -0.42980003, z: 0}
+      rotation: {x: -2.1553939e-16, y: -2.2551405e-17, z: 6.938894e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightFoot
+      parentName: Dark_Knight_Ctrl_RightLeg
+      position: {x: 0.06540909, y: -0.6144462, z: -0.07198424}
+      rotation: {x: -1.405126e-16, y: 5.551115e-17, z: 6.2450045e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightToeBase
+      parentName: Dark_Knight_Ctrl_RightFoot
+      position: {x: 0.054700356, y: -0.04244611, z: 0.17448409}
+      rotation: {x: 2.2365468e-32, y: -0, z: -1.2246469e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_Spine
+      parentName: Dark_Knight_Ctrl_Hips
+      position: {x: -0, y: 0.1201094, z: 0}
+      rotation: {x: 1.9714962e-16, y: -5.551115e-17, z: -5.551115e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_Spine1
+      parentName: Dark_Knight_Ctrl_Spine
+      position: {x: -0, y: 0.1656894, z: 0}
+      rotation: {x: 1.9714962e-16, y: -5.551115e-17, z: -5.551115e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_Spine2
+      parentName: Dark_Knight_Ctrl_Spine1
+      position: {x: -0, y: 0.1656894, z: 0}
+      rotation: {x: 1.9714962e-16, y: -5.551115e-17, z: -5.551115e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftShoulder
+      parentName: Dark_Knight_Ctrl_Spine2
+      position: {x: -0.07414382, y: 0.15228377, z: -0.050893452}
+      rotation: {x: -6.938894e-18, y: -1.3877788e-17, z: -5.2041704e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftArm
+      parentName: Dark_Knight_Ctrl_LeftShoulder
+      position: {x: -0.10707251, y: 0.030533751, z: -0.026187286}
+      rotation: {x: 1.5005358e-16, y: 1.8301333e-16, z: 2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftForeArm
+      parentName: Dark_Knight_Ctrl_LeftArm
+      position: {x: -0.2513965, y: -0.24462295, z: -0.006415877}
+      rotation: {x: 0, y: 2.6367797e-16, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHand
+      parentName: Dark_Knight_Ctrl_LeftForeArm
+      position: {x: -0.23257256, y: -0.13626373, z: 0.10533166}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandThumb1
+      parentName: Dark_Knight_Ctrl_LeftHand
+      position: {x: -0.02253395, y: -0.030653076, z: 0.06395432}
+      rotation: {x: -6.740755e-34, y: 6.938894e-18, z: 9.7144515e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandThumb2
+      parentName: Dark_Knight_Ctrl_LeftHandThumb1
+      position: {x: 0.0020992279, y: -0.02808853, z: 0.027115382}
+      rotation: {x: 2.7755576e-17, y: -5.551115e-17, z: -3.7470027e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandThumb3
+      parentName: Dark_Knight_Ctrl_LeftHandThumb2
+      position: {x: -0.0028684996, y: -0.046278074, z: 0.016411714}
+      rotation: {x: 1.3877788e-17, y: 1.4925957e-33, z: 1.07552856e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandThumb4
+      parentName: Dark_Knight_Ctrl_LeftHandThumb3
+      position: {x: 0.0019760132, y: -0.046828, z: 0.0072134016}
+      rotation: {x: 2.7755576e-17, y: 6.938894e-17, z: 4.1633363e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandIndex1
+      parentName: Dark_Knight_Ctrl_LeftHand
+      position: {x: -0.09133598, y: -0.081989594, z: 0.06417136}
+      rotation: {x: -4.3021142e-16, y: 3.469447e-17, z: -1.5439039e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandIndex2
+      parentName: Dark_Knight_Ctrl_LeftHandIndex1
+      position: {x: -0.021977691, y: -0.04906845, z: 0.015378952}
+      rotation: {x: -5.551115e-17, y: 6.938894e-18, z: 4.9092674e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandIndex3
+      parentName: Dark_Knight_Ctrl_LeftHandIndex2
+      position: {x: -0.0022277068, y: -0.033974838, z: 0.014000616}
+      rotation: {x: 1.110223e-16, y: 7.632783e-17, z: -7.459311e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandIndex4
+      parentName: Dark_Knight_Ctrl_LeftHandIndex3
+      position: {x: 0.005925598, y: -0.041383285, z: 0.012412271}
+      rotation: {x: 8.552333e-33, y: -1.0061396e-16, z: 8.500145e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandMiddle1
+      parentName: Dark_Knight_Ctrl_LeftHand
+      position: {x: -0.09542244, y: -0.09653335, z: 0.03829674}
+      rotation: {x: -3.469447e-17, y: -1.2490009e-16, z: -9.887924e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandMiddle2
+      parentName: Dark_Knight_Ctrl_LeftHandMiddle1
+      position: {x: -0.015419387, y: -0.04511398, z: 0.00561511}
+      rotation: {x: -2.359224e-16, y: -7.7195195e-17, z: 1.801944e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandMiddle3
+      parentName: Dark_Knight_Ctrl_LeftHandMiddle2
+      position: {x: -0.003399658, y: -0.03843216, z: 0.005518737}
+      rotation: {x: 1.3877788e-16, y: 1.0061396e-16, z: 1.9862584e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandMiddle4
+      parentName: Dark_Knight_Ctrl_LeftHandMiddle3
+      position: {x: 0.014453277, y: -0.042590406, z: 0.008080888}
+      rotation: {x: -2.7755576e-17, y: 2.4286129e-17, z: 9.020562e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandRing1
+      parentName: Dark_Knight_Ctrl_LeftHand
+      position: {x: -0.09296943, y: -0.101457365, z: 0.011376783}
+      rotation: {x: 6.938894e-18, y: 9.107298e-18, z: -2.879912e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandRing2
+      parentName: Dark_Knight_Ctrl_LeftHandRing1
+      position: {x: -0.0076087187, y: -0.036679532, z: -0.0013108873}
+      rotation: {x: 4.3715032e-16, y: -3.8597597e-17, z: -4.4019286e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandRing3
+      parentName: Dark_Knight_Ctrl_LeftHandRing2
+      position: {x: -0.003014984, y: -0.034265213, z: -0.0010173178}
+      rotation: {x: -4.1633363e-17, y: -6.418477e-17, z: 1.951564e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandRing4
+      parentName: Dark_Knight_Ctrl_LeftHandRing3
+      position: {x: 0.0056838226, y: -0.032790907, z: 0.0045725084}
+      rotation: {x: -2.0252357e-32, y: 6.938894e-17, z: 2.9186722e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandPinky1
+      parentName: Dark_Knight_Ctrl_LeftHand
+      position: {x: -0.08139724, y: -0.10492676, z: -0.00824252}
+      rotation: {x: -6.938894e-18, y: 4.033232e-17, z: 1.8084492e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandPinky2
+      parentName: Dark_Knight_Ctrl_LeftHandPinky1
+      position: {x: -0.0013188934, y: -0.030107727, z: -0.0028148496}
+      rotation: {x: 1.5265567e-16, y: 5.6812194e-17, z: -4.1741784e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandPinky3
+      parentName: Dark_Knight_Ctrl_LeftHandPinky2
+      position: {x: -0.00080039975, y: -0.027582625, z: -0.0044812304}
+      rotation: {x: 1.8735014e-16, y: -3.469447e-18, z: 3.2309225e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_LeftHandPinky4
+      parentName: Dark_Knight_Ctrl_LeftHandPinky3
+      position: {x: 0.0094702905, y: -0.025501784, z: -0.0012476128}
+      rotation: {x: 2.4286129e-16, y: -3.8163916e-17, z: -2.3635607e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightShoulder
+      parentName: Dark_Knight_Ctrl_Spine2
+      position: {x: 0.07414382, y: 0.15228377, z: -0.050893452}
+      rotation: {x: -6.938894e-18, y: 1.3877788e-17, z: 5.2041704e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightArm
+      parentName: Dark_Knight_Ctrl_RightShoulder
+      position: {x: 0.10707251, y: 0.030533751, z: -0.026187286}
+      rotation: {x: 1.4918622e-16, y: -1.8474805e-16, z: 8.326673e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightForeArm
+      parentName: Dark_Knight_Ctrl_RightArm
+      position: {x: 0.2513965, y: -0.24462295, z: -0.006415877}
+      rotation: {x: 2.359224e-16, y: -6.938894e-17, z: 1.6653345e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHand
+      parentName: Dark_Knight_Ctrl_RightForeArm
+      position: {x: 0.23257256, y: -0.13626373, z: 0.10533166}
+      rotation: {x: -1.2325952e-32, y: 6.123234e-17, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandThumb1
+      parentName: Dark_Knight_Ctrl_RightHand
+      position: {x: 0.02253395, y: -0.030653076, z: 0.06395432}
+      rotation: {x: -1.110223e-16, y: 3.8163916e-17, z: 4.510281e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandThumb2
+      parentName: Dark_Knight_Ctrl_RightHandThumb1
+      position: {x: -0.0020992279, y: -0.02808853, z: 0.027115382}
+      rotation: {x: 2.7755576e-17, y: 5.551115e-17, z: 1.2143064e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandThumb3
+      parentName: Dark_Knight_Ctrl_RightHandThumb2
+      position: {x: 0.0028684996, y: -0.046278074, z: 0.016411714}
+      rotation: {x: 2.7755576e-17, y: -6.938894e-17, z: -4.1633363e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandThumb4
+      parentName: Dark_Knight_Ctrl_RightHandThumb3
+      position: {x: -0.0019760132, y: -0.046828, z: 0.0072134016}
+      rotation: {x: -4.718448e-16, y: 2.359224e-16, z: 1.700029e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandIndex1
+      parentName: Dark_Knight_Ctrl_RightHand
+      position: {x: 0.09133598, y: -0.081989594, z: 0.06417136}
+      rotation: {x: 4.1633363e-17, y: -1.179612e-16, z: -2.4286129e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandIndex2
+      parentName: Dark_Knight_Ctrl_RightHandIndex1
+      position: {x: 0.021977691, y: -0.04906845, z: 0.015378952}
+      rotation: {x: 2.7755576e-17, y: -4.3368087e-17, z: -2.064321e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandIndex3
+      parentName: Dark_Knight_Ctrl_RightHandIndex2
+      position: {x: 0.0022277068, y: -0.033974838, z: 0.014000616}
+      rotation: {x: 5.551115e-17, y: -1.3877788e-17, z: -2.6020852e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandIndex4
+      parentName: Dark_Knight_Ctrl_RightHandIndex3
+      position: {x: -0.005925598, y: -0.041383285, z: 0.012412271}
+      rotation: {x: 5.551115e-17, y: 3.8163916e-17, z: -6.7654216e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandMiddle1
+      parentName: Dark_Knight_Ctrl_RightHand
+      position: {x: 0.09542244, y: -0.09653335, z: 0.03829674}
+      rotation: {x: 1.3877788e-17, y: -1.7347235e-17, z: 7.372575e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandMiddle2
+      parentName: Dark_Knight_Ctrl_RightHandMiddle1
+      position: {x: 0.015419387, y: -0.04511398, z: 0.00561511}
+      rotation: {x: 1.3877788e-17, y: 6.938894e-18, z: -1.7347235e-18, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandMiddle3
+      parentName: Dark_Knight_Ctrl_RightHandMiddle2
+      position: {x: 0.003399658, y: -0.03843216, z: 0.005518737}
+      rotation: {x: -4.1633363e-17, y: 1.3877788e-17, z: -2.3245295e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandMiddle4
+      parentName: Dark_Knight_Ctrl_RightHandMiddle3
+      position: {x: -0.014453277, y: -0.042590406, z: 0.008080888}
+      rotation: {x: 1.3877788e-17, y: 2.7755576e-17, z: -5.637851e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandRing1
+      parentName: Dark_Knight_Ctrl_RightHand
+      position: {x: 0.09296943, y: -0.101457365, z: 0.011376783}
+      rotation: {x: -6.938894e-18, y: 5.2041704e-18, z: 6.654291e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandRing2
+      parentName: Dark_Knight_Ctrl_RightHandRing1
+      position: {x: 0.0076087187, y: -0.036679532, z: -0.0013108873}
+      rotation: {x: -8.900623e-34, y: 3.2526065e-18, z: 2.7364585e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandRing3
+      parentName: Dark_Knight_Ctrl_RightHandRing2
+      position: {x: 0.003014984, y: -0.034265213, z: -0.0010173178}
+      rotation: {x: -1.7867514e-34, y: -1.7347235e-18, z: -1.02999206e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandRing4
+      parentName: Dark_Knight_Ctrl_RightHandRing3
+      position: {x: -0.0056838226, y: -0.032790907, z: 0.0045725084}
+      rotation: {x: 3.9609458e-34, y: 1.7347235e-18, z: -2.2833298e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandPinky1
+      parentName: Dark_Knight_Ctrl_RightHand
+      position: {x: 0.08139724, y: -0.10492676, z: -0.00824252}
+      rotation: {x: -1.3877788e-17, y: 1.3010426e-18, z: 1.09531524e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandPinky2
+      parentName: Dark_Knight_Ctrl_RightHandPinky1
+      position: {x: 0.0013188934, y: -0.030107727, z: -0.0028148496}
+      rotation: {x: 1.3877788e-17, y: 4.7271215e-17, z: -4.8843308e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandPinky3
+      parentName: Dark_Knight_Ctrl_RightHandPinky2
+      position: {x: 0.00080039975, y: -0.027582625, z: -0.0044812304}
+      rotation: {x: -6.938894e-18, y: -5.2041704e-18, z: -9.75782e-19, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_RightHandPinky4
+      parentName: Dark_Knight_Ctrl_RightHandPinky3
+      position: {x: -0.0094702905, y: -0.025501784, z: -0.0012476128}
+      rotation: {x: 9.573226e-34, y: -6.938894e-18, z: 1.3796473e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_Neck
+      parentName: Dark_Knight_Ctrl_Spine2
+      position: {x: -0, y: 0.1656894, z: 0}
+      rotation: {x: -4.510281e-17, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Dark_Knight_Ctrl_Head
+      parentName: Dark_Knight_Ctrl_Neck
+      position: {x: -0, y: 0.19999999, z: 0.008925313}
+      rotation: {x: 1.9714962e-16, y: -5.551115e-17, z: -5.551115e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
