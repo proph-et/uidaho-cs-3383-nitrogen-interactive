@@ -11,6 +11,7 @@ public class BaseEnemy
     public float attackRange;
     public float timeBetweenAttacks;
 
+
     // --- State ---
     protected bool alreadyAttacked;
     protected bool walkPointSet;
@@ -29,7 +30,7 @@ public class BaseEnemy
 
     // --- Owning spawner ---
     private EnemySpawner enemySpawner;
-    
+
     // --- Constructor ---
     public BaseEnemy(Transform context, NavMeshAgent agent, Transform player,
         LayerMask ground, LayerMask playerMask, float walkRange = 10f)
@@ -103,17 +104,13 @@ public class BaseEnemy
 
     public virtual void OnDeath()
     {
-        enemySpawner.decrementEnemyCount();
-        Object.Destroy(contextTransform.gameObject, 0.5f);
     }
+
 
     public virtual void ResetAttack()
     {
         alreadyAttacked = false;
     }
 
-    public void SetEnemySpawner(EnemySpawner inputEnemySpawner)
-    {
-        enemySpawner = inputEnemySpawner;
-    }
+
 }
