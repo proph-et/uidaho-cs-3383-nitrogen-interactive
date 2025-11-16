@@ -10,7 +10,7 @@ public class RangedEnemyController : MonoBehaviour
     public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
     public GameObject projectilePrefab;
-	private Health healthCall;
+    private Health healthCall;
 
     //stats
     public float health = 50f;
@@ -18,7 +18,7 @@ public class RangedEnemyController : MonoBehaviour
     public float attackRange = 5f;
     public float walkPointRange = 10f;
     public float timeBetweenAttacks = 2f;
-	
+
 
     private void Awake()
     {
@@ -32,8 +32,9 @@ public class RangedEnemyController : MonoBehaviour
         enemyLogic.health = health;
         enemyLogic.sightRange = sightRange;
         enemyLogic.attackRange = attackRange;
-        enemyLogic.timeBetweenAttacks = timeBetweenAttacks; 
-		//healthCall.AddOnDeathListener(enemyLogic.OnDeath);
+        enemyLogic.timeBetweenAttacks = timeBetweenAttacks;
+        //healthCall.AddOnDeathListener(enemyLogic.OnDeath);
+        enemyLogic.SetEnemySpawner(GetComponent<EnemySpawner>());
     }
 
     private void Update()

@@ -2,7 +2,7 @@
     "name": "TL4WeaponCore",
     "rootNamespace": "",
     "references": [
-        "GUID:63115060b2e5e8d4bac8b1272a1ccab1"
+        "TL2+Scripts"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
