@@ -60,7 +60,10 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            StartCoroutine(spawnEnemy(interval, _enemy, MaxNumEnemies));
+            if(numberEnemies < MaxNumEnemies)
+            {
+                StartCoroutine(spawnEnemy(interval, _enemy, MaxNumEnemies));
+            }
         }
     }
 }

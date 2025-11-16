@@ -60,7 +60,6 @@ public class Phase2 : BossPhase
 
         // Behavior path
         var aggressive = new BehaviorPath("aggressive", 1.0f);
-        aggressive.AddStep(move);
         aggressive.AddStep(attack);
         aggressive.FinalizePath();
 

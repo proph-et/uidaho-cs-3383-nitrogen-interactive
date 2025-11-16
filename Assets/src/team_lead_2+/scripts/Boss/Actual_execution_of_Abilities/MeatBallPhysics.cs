@@ -52,6 +52,14 @@ public class MeatBallPhysics : MonoBehaviour
 
         Vector3 disiredPos = target.position + Vector3.up * followHeight;
         transform.position = Vector3.Lerp(transform.position, disiredPos, Time.deltaTime * followSpeed);
+
+        float dist = Vector3.Distance(transform.position, disiredPos);
+
+        if(dist < 0.1f)
+        {
+            DropDown();
+        }
+
     }
 
     private void FallDownward()
