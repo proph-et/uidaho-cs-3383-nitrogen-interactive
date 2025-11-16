@@ -21,4 +21,14 @@ public class CurrencySO : CollectableSOBase
             Debug.LogWarning("Collector has no Inventory component!");
         }
     }
+
+    public int GetCurrency()
+    {
+        return CurrencyAmount;
+    }
+
+    public void SetCurrency(int amount)
+    {
+        CurrencyAmount = amount;
+    }
 }

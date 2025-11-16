@@ -40,4 +40,9 @@ public class Sword : WeaponBase
         isAttacking = false;
         // Debug.Log("is NOT attacking");
     }
+
+    protected override GameObject CreateProjectile()
+    {
+        return null; // default: melee weapons return null
+    }
 }

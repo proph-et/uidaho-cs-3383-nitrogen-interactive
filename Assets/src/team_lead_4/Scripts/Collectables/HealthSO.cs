@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="Collectable/Health", fileName ="New Health Collectable")]
 public class HealthSO : CollectableSOBase
 {
-    public int HealthAmount = 1;
+    private int HealthAmount = 10;
 
     public override void Collect (GameObject objectThatCollected)
     {
@@ -12,5 +12,15 @@ public class HealthSO : CollectableSOBase
         {
             health.Heal(HealthAmount);
         }
+    }
+
+    public int GetHealthAmount()
+    {
+        return HealthAmount;
+    }
+
+    public void SetHealthAmount(int amount)
+    {
+        HealthAmount = amount;
     }
 }

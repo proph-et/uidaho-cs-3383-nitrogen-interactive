@@ -27,6 +27,15 @@ public class WeaponBase
         EndAttack();
     }
 
+    protected virtual GameObject CreateProjectile()
+    {
+        return null; // default: melee weapons return null
+    }
+
+    protected void ConfigureAndLaunch(GameObject projectile, GameObject self)
+    {
+    }
+
     public int getWeaponTier()
     {
         return weaponTier;

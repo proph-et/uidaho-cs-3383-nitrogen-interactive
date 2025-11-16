@@ -43,7 +43,7 @@ public class MeatballAbility : BossAbility
         yield return new WaitForSeconds(animTime * 0.7f);
 
         // Spawn the fireball
-        boss.Combat.SpawnFireballAboveBoss();
+        boss.Combat.SpawnMeatballAboveBoss();
 
         // Small delay after the projectile forms
         yield return new WaitForSeconds(animTime * 0.3f);

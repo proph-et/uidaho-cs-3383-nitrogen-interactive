@@ -22,10 +22,10 @@ public class BossCombat : MonoBehaviour
 
     }
 
-    public void SpawnFireballAboveBoss()
+    public void SpawnMeatballAboveBoss()
     {
         Vector3 spawnPos = transform.position + Vector3.up * 3f;
-        Instantiate(MeatballPrefab, spawnPos, Quaternion.identity);
+        GameObject obj = Instantiate(MeatballPrefab, spawnPos, Quaternion.identity);
     }
 
     private void OnDrawGizmosSelected()
