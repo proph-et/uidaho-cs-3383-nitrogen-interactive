@@ -4,7 +4,10 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "TL4NewAssembly"
+        "TL4NewAssembly",
+        "TL2+Scripts",
+        "TL4WeaponCore",
+        "Game"
     ],
     "includePlatforms": [
         "Editor"
