@@ -9,6 +9,7 @@ public class Bow : WeaponBase
     private Vector3 spawnP;
     private Quaternion spawnR;
     private Rigidbody arrowRB;
+    private GameObject arrow;
 
     public Bow(GameObject prefabType)
     {
@@ -43,12 +44,9 @@ public class Bow : WeaponBase
 
             if (GetFirePoint() != null)
             {
-                spawnP = GetFirePoint().position;
-                spawnR = GetFirePoint().rotation;
+                arrow = CreateProjectile();
                 // Debug.Log("spawn position: " + spawnP);
             }
-
-            GameObject arrow = GameObject.Instantiate(GetProjectilePrefab(), spawnP, spawnR);
 
             Arrow arrowScript = arrow.GetComponent<Arrow>();
 
@@ -68,6 +66,15 @@ public class Bow : WeaponBase
             }
         }
         EndAttack();
+    }
+
+    protected override GameObject CreateProjectile()
+    {
+        spawnP = GetFirePoint().position;
+        spawnR = GetFirePoint().rotation;
+
+        GameObject arrow = GameObject.Instantiate(GetProjectilePrefab(), spawnP, spawnR);
+        return arrow;
     }
 
     public override void StartAttack()
