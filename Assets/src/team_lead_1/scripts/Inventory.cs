@@ -24,8 +24,8 @@ public class Inventory : MonoBehaviour
         sword = new Sword(swordPrefab);
         bow = new Bow(bowPrefab);
         wand = new Wand(wandPrefab);
-        wand.orbPrefab = magicOrbPrefab;
-        bow.projectilePrefab = arrowPrefab;
+        wand.SetOrbPrefab(magicOrbPrefab);
+        bow.SetProjectilePrefab(arrowPrefab);
     }
 
     public WeaponBase getCurrentWeapon()

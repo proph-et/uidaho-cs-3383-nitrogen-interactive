@@ -6,16 +6,25 @@ public class WeaponBase
     private string weaponName = "Default";
     private int damage = 10;
     private float attackRate = 1f;
-    public GameObject prefab;
+    private GameObject prefab;
     private int weaponTier;
     private string augmentName;
 
-    protected bool isAttacking = true;
+    protected bool isAttacking = false;
 
     //lets any weapon type define its own attack behavior (swing projectile etc)
     public virtual void Attack(GameObject self, Collider collider)
     {
-        // Debug.Log("attacking...");
+        if (isAttacking && collider != null)
+        {
+            var health = collider.GetComponent<Health>();
+
+            if (health != null)
+            {
+                health.TakeDamage(getWeaponDamage());
+            }
+        }
+        EndAttack();
     }
 
     public int getWeaponTier()
@@ -84,6 +93,18 @@ public class WeaponBase
     {
         isAttacking = false;
     }
+
+    public GameObject GetPrefab()
+    {
+        return prefab;
+    }
+
+    public void SetPrefab(GameObject Prefab)
+    {
+        prefab = Prefab;
+    }
+
+
 
     // protected IEnumerator AttackCooldown()
     // {

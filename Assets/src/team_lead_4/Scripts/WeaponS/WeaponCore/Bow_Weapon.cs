@@ -4,19 +4,18 @@ using UnityEngine.Events;
 
 public class Bow : WeaponBase
 {
-    public GameObject projectilePrefab;
-    public Transform firePoint;
-    Vector3 spawnP;
-    Quaternion spawnR;
-    Rigidbody arrowRB;
-    private bool isAttacking = true;
+    private GameObject projectilePrefab;
+    private Transform firePoint;
+    private Vector3 spawnP;
+    private Quaternion spawnR;
+    private Rigidbody arrowRB;
 
     public Bow(GameObject prefabType)
     {
         setWeaponName("Bow");
-        setWeaponDamage(10);
+        setWeaponDamage(20);
         setAttackRate(1.5f);
-        prefab = prefabType;
+        SetPrefab(prefabType);
         setWeaponTier(1);
         setAugmentName("NONE");
     }
@@ -30,26 +29,26 @@ public class Bow : WeaponBase
     {
         if(isAttacking)
         {
-            if (firePoint == null && prefab != null)
+            if (GetFirePoint() == null && GetPrefab() != null)
             {
                 Debug.Log("null firepoint");
-                firePoint = prefab.transform.Find("firePoint");
+                SetFirePoint(GetPrefab().transform.Find("firePoint"));
             }
 
-            if (projectilePrefab == null)
+            if (GetProjectilePrefab() == null)
             {
                 Debug.Log("Bow projectile not assigned");
                 return;
             }
 
-            if (firePoint != null)
+            if (GetFirePoint() != null)
             {
-                spawnP = firePoint.position;
-                spawnR = firePoint.rotation;
+                spawnP = GetFirePoint().position;
+                spawnR = GetFirePoint().rotation;
                 // Debug.Log("spawn position: " + spawnP);
             }
 
-            GameObject arrow = GameObject.Instantiate(projectilePrefab, spawnP, spawnR);
+            GameObject arrow = GameObject.Instantiate(GetProjectilePrefab(), spawnP, spawnR);
 
             Arrow arrowScript = arrow.GetComponent<Arrow>();
 
@@ -62,10 +61,10 @@ public class Bow : WeaponBase
 
                 Physics.IgnoreCollision(arrowCollider, bowCollider, true);
 
-                arrowRB.linearVelocity = firePoint.forward * arrowSpeed;
+                arrowRB.linearVelocity = GetFirePoint().forward * arrowSpeed;
                 // Debug.Log("arrow linear vel: " + arrowRB.linearVelocity);
 
-                arrowScript.damage = getWeaponDamage();
+                arrowScript.SetDamage(getWeaponDamage());
             }
         }
         EndAttack();
@@ -79,5 +78,25 @@ public class Bow : WeaponBase
     public override void EndAttack()
     {
         isAttacking = false;
+    }
+
+    public GameObject GetProjectilePrefab()
+    {
+        return projectilePrefab;
+    }
+
+    public void SetProjectilePrefab(GameObject prefab)
+    {
+        projectilePrefab = prefab;
+    }
+
+    public Transform GetFirePoint()
+    {
+        return firePoint;
+    }
+
+    public void SetFirePoint(Transform point)
+    {
+        firePoint = point;
     }
 }

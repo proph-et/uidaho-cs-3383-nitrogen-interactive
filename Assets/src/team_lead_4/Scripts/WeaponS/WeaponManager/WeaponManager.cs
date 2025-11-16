@@ -69,7 +69,7 @@ public class WeaponManager : MonoBehaviour
 
     private void AddWeapon(WeaponBase weapon)
     {
-        var instance = Instantiate(weapon.prefab, weaponHolder);
+        var instance = Instantiate(weapon.GetPrefab(), weaponHolder);
         instance.transform.localPosition = Vector3.zero;
         instance.transform.localRotation = Quaternion.identity;
         instance.SetActive(false);

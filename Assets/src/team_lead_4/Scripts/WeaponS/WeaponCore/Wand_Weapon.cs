@@ -4,11 +4,10 @@ using UnityEngine.Events;
 
 public class Wand : WeaponBase
 {
-    public GameObject orbPrefab;
-    public Transform firePoint;
-    Vector3 spawnP;
-    Quaternion spawnR;
-    private bool isAttacking = false;
+    private GameObject orbPrefab;
+    private Transform firePoint;
+    private Vector3 spawnP;
+    private Quaternion spawnR;
     // private float nextAttackTime;
 
     public Wand(GameObject prefabType)
@@ -16,7 +15,7 @@ public class Wand : WeaponBase
         setWeaponName("Wand");
         setWeaponDamage(10);
         setAttackRate(1.5f);
-        prefab = prefabType;
+        SetPrefab(prefabType);
         setWeaponTier(1);
         setAugmentName("NONE");
     }
@@ -31,22 +30,22 @@ public class Wand : WeaponBase
     {
         if(isAttacking)
         {
-            if (firePoint == null && prefab != null)
+            if (GetFirePoint() == null && GetPrefab() != null)
             {
                 Debug.Log("null firepoint");
-                firePoint = prefab.transform.Find("firePoint");
+                SetFirePoint(GetPrefab().transform.Find("firePoint"));
             }
 
-            if (orbPrefab == null)
+            if (GetOrbPrefab() == null)
             {
                 Debug.Log("Wand projectile not assigned");
                 return;
             }
 
-            if (firePoint != null)
+            if (GetFirePoint() != null)
             {
-                spawnP = firePoint.position;
-                spawnR = firePoint.rotation;
+                spawnP = GetFirePoint().position;
+                spawnR = GetFirePoint().rotation;
                 // Debug.Log("spawn position: " + spawnP);
             }
 
@@ -56,7 +55,7 @@ public class Wand : WeaponBase
 
             if (orbScript != null)
             {
-                orbScript.damage = getWeaponDamage();
+                orbScript.SetDamage(getWeaponDamage());
             }
         }
         EndAttack();
@@ -72,5 +71,25 @@ public class Wand : WeaponBase
     {
         isAttacking = false;
         // Debug.Log("is NOT attacking");
+    }
+
+    public GameObject GetOrbPrefab()
+    {
+        return orbPrefab;
+    }
+
+    public void SetOrbPrefab(GameObject prefab)
+    {
+        orbPrefab = prefab;
+    }
+
+    public Transform GetFirePoint()
+    {
+        return firePoint;
+    }
+
+    public void SetFirePoint(Transform point)
+    {
+        firePoint = point;
     }
 }

@@ -4,13 +4,12 @@ using UnityEngine.Events;
 
 public class Sword : WeaponBase
 {
-    private bool isAttacking = false;
     public Sword(GameObject prefabType)
     {
         setWeaponName("Sword");
         setWeaponDamage(10);
         setAttackRate(1.5f);
-        prefab = prefabType;
+        SetPrefab(prefabType);
         setWeaponTier(1);
         setAugmentName("NONE");
     }

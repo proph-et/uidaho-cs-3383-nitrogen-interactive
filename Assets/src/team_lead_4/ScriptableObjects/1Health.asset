@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45f30c284b3cede418008e35e8c2b4c4, type: 3}
   m_Name: 1Health
   m_EditorClassIdentifier: TL4NewAssembly::HealthSO
-  HealthAmount: 1
+  HealthAmount: 10
