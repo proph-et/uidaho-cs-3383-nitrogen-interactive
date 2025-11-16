@@ -115,7 +115,7 @@ public class Shop : MonoBehaviour
 
     public void UpgradeSword()
     {
-        int discountedPrice = (int)discount.apply_discount(_swordPrice);
+        int discountedPrice = (int)discount.ApplyDiscount(_swordPrice);
 
         if (playerInventory.getMoney() >= discountedPrice)
         {
@@ -134,7 +134,7 @@ public class Shop : MonoBehaviour
 
     public void UpgradeBow()
     {
-        int discountedPrice = (int)discount.apply_discount(_bowPrice);
+        int discountedPrice = (int)discount.ApplyDiscount(_bowPrice);
 
         if (playerInventory.getMoney() >= discountedPrice)
         {
@@ -153,7 +153,7 @@ public class Shop : MonoBehaviour
 
     public void UpgradeWand()
     {
-        int discountedPrice = (int)discount.apply_discount(_wandPrice);
+        int discountedPrice = (int)discount.ApplyDiscount(_wandPrice);
 
         if (playerInventory.getMoney() >= discountedPrice)
         {
@@ -178,7 +178,7 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
+        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
 
 
         if (playerInventory.getMoney() >= discountedPrice)
@@ -203,7 +203,7 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
+        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
 
         if (playerInventory.getMoney() >= discountedPrice)
         {
@@ -227,7 +227,7 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
+        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
 
 
         if (playerInventory.getMoney() >= discountedPrice)
@@ -252,8 +252,7 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
-
+        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
 
         if (playerInventory.getMoney() >= discountedPrice)
         {
@@ -277,7 +276,7 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
+        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
 
         if (playerInventory.getMoney() >= discountedPrice)
         {
@@ -301,7 +300,7 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
+        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
 
         if (playerInventory.getMoney() >= discountedPrice)
         {
@@ -361,13 +360,13 @@ public class Shop : MonoBehaviour
         bowTierText.text = $"Tier: {playerInventory.getBow().getWeaponTier()}";
         wandTierText.text = $"Tier: {playerInventory.getWand().getWeaponTier()}";
 
-        int discountedSwordPrice = (int)discount.apply_discount(_swordPrice);
+        int discountedSwordPrice = (int)discount.ApplyDiscount(_swordPrice);
         swordPriceText.text = $"{discountedSwordPrice}";
 
-        int discountedBowPrice = (int)discount.apply_discount(_bowPrice);
+        int discountedBowPrice = (int)discount.ApplyDiscount(_bowPrice);
         bowPriceText.text = $"{discountedBowPrice}";
 
-        int discountedWandPrice = (int)discount.apply_discount(_wandPrice);
+        int discountedWandPrice = (int)discount.ApplyDiscount(_wandPrice);
         wandPriceText.text = $"{discountedWandPrice}";
 
         if (playerInventory.getSword().getAugmentName() != "NONE")
@@ -399,7 +398,7 @@ public class Shop : MonoBehaviour
         }
 
 
-        int discountedAugmentPrice = (int)discount.apply_discount(_augmentPrice);
+        int discountedAugmentPrice = (int)discount.ApplyDiscount(_augmentPrice);
 
         swordFireAugmentPriceText.text = $"{discountedAugmentPrice}";
         bowFireAugmentPriceText.text = $"{discountedAugmentPrice}";

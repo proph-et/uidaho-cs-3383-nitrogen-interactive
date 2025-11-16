@@ -2,9 +2,9 @@
 {
     protected float DiscountAmount;
 
-    // public abstract float apply_discount(float value);
-    public float apply_discount(float value)
+    // public virtual float ApplyDiscount(float value)
+    public float ApplyDiscount(float value)
     {
-    return value - (DiscountAmount * value);
+        return value - (DiscountAmount * value);
     }
 }

@@ -5,7 +5,8 @@
         DiscountAmount = discountAmount;
     }
 
-    public float apply_discount(float value)
+    // public override float ApplyDiscount(float value)
+    public float ApplyDiscount(float value)
     {
         return value - (DiscountAmount * value * 2);
     }
