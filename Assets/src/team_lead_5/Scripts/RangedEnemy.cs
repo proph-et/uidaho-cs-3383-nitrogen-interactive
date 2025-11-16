@@ -33,11 +33,4 @@ public class RangedEnemy : BaseEnemy
             alreadyAttacked = true;
         }
     }
-
-    public override void OnDeath()
-    {
-        // Custom death behavior (optional)
-        Debug.Log($"{contextTransform.name} (ranged enemy) has died.");
-        base.OnDeath();
-    }
 }

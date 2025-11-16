@@ -5,7 +5,7 @@ public class Shop : MonoBehaviour
 {
     // Parent reference, child object
     DiscountParent discount = new DiscountChild(0.2f);
-    
+
     public static bool Paused = false;
 
     // Reference to the pause menu UI Canvas.
@@ -399,13 +399,15 @@ public class Shop : MonoBehaviour
         }
 
 
-        swordFireAugmentPriceText.text = $"{_augmentPrice}";
-        bowFireAugmentPriceText.text = $"{_augmentPrice}";
-        wandFireAugmentPriceText.text = $"{_augmentPrice}";
+        int discountedAugmentPrice = (int)discount.apply_discount(_augmentPrice);
 
-        swordIceAugmentPriceText.text = $"{_augmentPrice}";
-        bowIceAugmentPriceText.text = $"{_augmentPrice}";
-        wandIceAugmentPriceText.text = $"{_augmentPrice}";
+        swordFireAugmentPriceText.text = $"{discountedAugmentPrice}";
+        bowFireAugmentPriceText.text = $"{discountedAugmentPrice}";
+        wandFireAugmentPriceText.text = $"{discountedAugmentPrice}";
+
+        swordIceAugmentPriceText.text = $"{discountedAugmentPrice}";
+        bowIceAugmentPriceText.text = $"{discountedAugmentPrice}";
+        wandIceAugmentPriceText.text = $"{discountedAugmentPrice}";
 
         moneyText.text = $"Dough: {playerInventory.getMoney()}";
     }

@@ -3,13 +3,15 @@ using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
-    [Header("Health Settings")]
-    [SerializeField] private float maxHealth = 100f;
+    [Header("Health Settings")] [SerializeField]
+    private float maxHealth = 100f;
+
     private float currentHealth;
 
-    [Header("Events")]
-    [SerializeField] private UnityEvent onDeath;
+    [Header("Events")] [SerializeField] private UnityEvent onDeath;
     [SerializeField] private UnityEvent<float> onDamage;
+
+    private bool isDead = false;
 
     private void Awake()
     {
@@ -18,13 +20,17 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        // Debug.Log("Taking damage");
         if (currentHealth <= 0f) return;
 
         currentHealth = Mathf.Max(currentHealth - amount, 0f);
         onDamage?.Invoke(amount);
 
-        if (currentHealth <= 0f)
-            onDeath?.Invoke();
+        if (currentHealth <= 0 && !isDead)
+        {
+            isDead = true;
+            onDeath.Invoke();
+        }
     }
 
     public void Heal(float amount)
@@ -32,6 +38,7 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0f) return;
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
+
     // --- Getters (safe access) ---
     public float GetCurrentHealth() => currentHealth;
     public float GetMaxHealth() => maxHealth;
