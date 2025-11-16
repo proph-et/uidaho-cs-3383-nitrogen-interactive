@@ -3,7 +3,9 @@ using TMPro;
 
 public class Shop : MonoBehaviour
 {
-    // Static variable tracks the current "state" of the game.
+    // Parent reference, child object
+    DiscountParent discount = new DiscountChild(0.2f);
+    
     public static bool Paused = false;
 
     // Reference to the pause menu UI Canvas.
@@ -113,10 +115,12 @@ public class Shop : MonoBehaviour
 
     public void UpgradeSword()
     {
-        if (playerInventory.getMoney() >= _swordPrice)
+        int discountedPrice = (int)discount.apply_discount(_swordPrice);
+
+        if (playerInventory.getMoney() >= discountedPrice)
         {
             playerInventory.getSword().upgradeWeapon();
-            playerInventory.spendMoney(_swordPrice);
+            playerInventory.spendMoney(discountedPrice);
             _swordPrice += 5 * playerInventory.getSword().getWeaponTier();
         }
         else
@@ -130,10 +134,12 @@ public class Shop : MonoBehaviour
 
     public void UpgradeBow()
     {
-        if (playerInventory.getMoney() >= _augmentPrice)
+        int discountedPrice = (int)discount.apply_discount(_bowPrice);
+
+        if (playerInventory.getMoney() >= discountedPrice)
         {
             playerInventory.getBow().upgradeWeapon();
-            playerInventory.spendMoney(_bowPrice);
+            playerInventory.spendMoney(discountedPrice);
             _bowPrice += 5 * playerInventory.getBow().getWeaponTier();
         }
         else
@@ -147,10 +153,12 @@ public class Shop : MonoBehaviour
 
     public void UpgradeWand()
     {
-        if (playerInventory.getMoney() >= _augmentPrice)
+        int discountedPrice = (int)discount.apply_discount(_wandPrice);
+
+        if (playerInventory.getMoney() >= discountedPrice)
         {
             playerInventory.getWand().upgradeWeapon();
-            playerInventory.spendMoney(_wandPrice);
+            playerInventory.spendMoney(discountedPrice);
             _wandPrice += 5 * playerInventory.getWand().getWeaponTier();
         }
         else
@@ -170,9 +178,12 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        if (playerInventory.getMoney() >= _augmentPrice)
+        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
+
+
+        if (playerInventory.getMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(_augmentPrice);
+            playerInventory.spendMoney(discountedPrice);
             // playerInventory.getSword().addAugment("Fire");
         }
         else
@@ -192,9 +203,11 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        if (playerInventory.getMoney() >= _augmentPrice)
+        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
+
+        if (playerInventory.getMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(_augmentPrice);
+            playerInventory.spendMoney(discountedPrice);
             // playerInventory.getSword().addAugment("Ice");
         }
         else
@@ -214,9 +227,12 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        if (playerInventory.getMoney() >= _augmentPrice)
+        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
+
+
+        if (playerInventory.getMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(_augmentPrice);
+            playerInventory.spendMoney(discountedPrice);
             // playerInventory.getBow().addAugment("Fire");
         }
         else
@@ -236,9 +252,12 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        if (playerInventory.getMoney() >= _augmentPrice)
+        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
+
+
+        if (playerInventory.getMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(_augmentPrice);
+            playerInventory.spendMoney(discountedPrice);
             // playerInventory.getBow().addAugment("Ice");
         }
         else
@@ -258,9 +277,11 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        if (playerInventory.getMoney() >= _augmentPrice)
+        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
+
+        if (playerInventory.getMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(_augmentPrice);
+            playerInventory.spendMoney(discountedPrice);
             // playerInventory.getWand().addAugment("Fire");
         }
         else
@@ -280,9 +301,11 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        if (playerInventory.getMoney() >= _augmentPrice)
+        int discountedPrice = (int)discount.apply_discount(_augmentPrice);
+
+        if (playerInventory.getMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(_augmentPrice);
+            playerInventory.spendMoney(discountedPrice);
             // playerInventory.getWand().addAugment("Ice");
         }
         else
@@ -338,9 +361,14 @@ public class Shop : MonoBehaviour
         bowTierText.text = $"Tier: {playerInventory.getBow().getWeaponTier()}";
         wandTierText.text = $"Tier: {playerInventory.getWand().getWeaponTier()}";
 
-        swordPriceText.text = $"{_swordPrice}";
-        bowPriceText.text = $"{_bowPrice}";
-        wandPriceText.text = $"{_wandPrice}";
+        int discountedSwordPrice = (int)discount.apply_discount(_swordPrice);
+        swordPriceText.text = $"{discountedSwordPrice}";
+
+        int discountedBowPrice = (int)discount.apply_discount(_bowPrice);
+        bowPriceText.text = $"{discountedBowPrice}";
+
+        int discountedWandPrice = (int)discount.apply_discount(_wandPrice);
+        wandPriceText.text = $"{discountedWandPrice}";
 
         if (playerInventory.getSword().getAugmentName() != "NONE")
         {
@@ -369,6 +397,7 @@ public class Shop : MonoBehaviour
         {
             wandAugmentText.text = "No Augment";
         }
+
 
         swordFireAugmentPriceText.text = $"{_augmentPrice}";
         bowFireAugmentPriceText.text = $"{_augmentPrice}";

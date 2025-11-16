@@ -26,9 +26,13 @@ public class BaseEnemy
     // --- Loot ---
     public List<LootItem> lootTable = new List<LootItem>();
 
+
+    // --- Owning spawner ---
+    private EnemySpawner enemySpawner;
+    
     // --- Constructor ---
-    public BaseEnemy(Transform context, NavMeshAgent agent, Transform player, 
-                     LayerMask ground, LayerMask playerMask, float walkRange = 10f)
+    public BaseEnemy(Transform context, NavMeshAgent agent, Transform player,
+        LayerMask ground, LayerMask playerMask, float walkRange = 10f)
     {
         this.contextTransform = context;
         this.agent = agent;
@@ -39,7 +43,7 @@ public class BaseEnemy
     }
 
     // --- Public AI driver ---
-    public virtual void UpdateAI() 
+    public virtual void UpdateAI()
     {
         bool playerInSight = Physics.CheckSphere(contextTransform.position, sightRange, whatIsPlayer);
         bool playerInAttack = Physics.CheckSphere(contextTransform.position, attackRange, whatIsPlayer);
@@ -54,7 +58,7 @@ public class BaseEnemy
 
 
     // --- Core behaviors (virtual) ---
-    protected virtual void Patrol() 
+    protected virtual void Patrol()
     {
         if (!walkPointSet)
             SearchWalkPoint();
@@ -65,7 +69,7 @@ public class BaseEnemy
             walkPointSet = false;
     }
 
-    protected virtual void SearchWalkPoint() 
+    protected virtual void SearchWalkPoint()
     {
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
@@ -85,7 +89,7 @@ public class BaseEnemy
         agent.SetDestination(player.position);
     }
 
-    protected virtual void Attack() 
+    protected virtual void Attack()
     {
         // Default: no implementation (meant to be overridden)
     }
@@ -99,11 +103,17 @@ public class BaseEnemy
 
     public virtual void OnDeath()
     {
+        enemySpawner.decrementEnemyCount();
         Object.Destroy(contextTransform.gameObject, 0.5f);
     }
 
     public virtual void ResetAttack()
     {
         alreadyAttacked = false;
+    }
+
+    public void SetEnemySpawner(EnemySpawner inputEnemySpawner)
+    {
+        enemySpawner = inputEnemySpawner;
     }
 }
