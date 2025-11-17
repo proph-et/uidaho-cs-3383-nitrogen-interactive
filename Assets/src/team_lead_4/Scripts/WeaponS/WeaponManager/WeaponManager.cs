@@ -15,6 +15,8 @@ public class WeaponManager : MonoBehaviour
 
     private GameObject currentInstance;
 
+    private Collider swordHurtBox;
+
     private void Start()
     {
         AddWeapon(playerInventory.getSword());
@@ -22,6 +24,9 @@ public class WeaponManager : MonoBehaviour
         AddWeapon(playerInventory.getWand());
 
         EquipWeapon(playerInventory.getSword().getName());
+
+        swordHurtBox = playerInventory.getSword().hurtBox;
+        
     }
 
     private void Update()
@@ -46,15 +51,24 @@ public class WeaponManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             playerInventory.getCurrentWeapon().StartAttack();
-            playerInventory.getCurrentWeapon().Attack(this.gameObject, null);
 
+            if (playerInventory.getCurrentWeapon().getName() != "Sword")
+            {
+                playerInventory.getCurrentWeapon().Attack(this.gameObject, null);
+            }
             // currentWeapon.StartCooldown(this);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        playerInventory.getCurrentWeapon().Attack(this.gameObject, other);
+        if (other.gameObject.CompareTag("Player")) return;
+        if (other.gameObject.CompareTag("EnemyProjectile")) return;
+        if (other.gameObject.CompareTag("NoCollision")) return;
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            playerInventory.getSword().Attack(this.gameObject, other);
+        }
     }
 
     private void SetLocation()

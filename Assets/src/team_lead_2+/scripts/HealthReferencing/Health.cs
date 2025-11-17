@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        // Debug.Log("Taking damage");
+        Debug.Log($"{gameObject.name} taking {amount} damage");
         if (currentHealth <= 0f) return;
 
         currentHealth = Mathf.Max(currentHealth - amount, 0f);
