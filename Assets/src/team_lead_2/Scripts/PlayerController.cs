@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float dashCooldown;
     private Ability dashAbility;
 
-    private bool isInvincible = false;
-
     [Header("Attack Settings")]
     [SerializeField] private GameObject rightArm;
     [SerializeField] private float attackDuration;
@@ -38,6 +36,9 @@ public class PlayerController : MonoBehaviour
 
     [Header("Health Settings")]
     [SerializeField] private Health _health;
+    private bool isInvincible = false;
+    private bool bcMode = false;
+    
 
     // ------------------
     // Input Events
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour
         dashAbility = new DashAbility(this, dashSpeed, dashDuration, dashCooldown);
         attackAbility = new AttackAbility(this, attackDamage, attackRange, attackDuration, attackCooldown);
 
-        //_health.AddOnDeathListener(OnDeath);
+        _health.AddOnDeathListener(OnDeath);
     }
 
     void FixedUpdate()
@@ -86,6 +87,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         CheckFall();
+        if (Keyboard.current.bKey.wasPressedThisFrame) ToggleBCMode();
     }
 
     /// -----------------
@@ -183,5 +185,19 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Player had died");
         Respawn();
+    }
+
+    ///-----------
+    /// BC Mode stuff
+    /// ---------
+    public void ToggleBCMode()
+    {
+        bcMode = !bcMode;
+        Debug.Log("BC Mode = " + (bcMode ? "ON" : "OFF"));
+    }
+
+    public bool IsBCMode()
+    {
+        return bcMode;
     }
 }

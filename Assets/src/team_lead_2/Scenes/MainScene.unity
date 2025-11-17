@@ -622,7 +622,19 @@ MonoBehaviour:
       m_Calls: []
   onDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 49219396}
+        m_TargetAssemblyTypeName: Health, TL2+Scripts
+        m_MethodName: TakeDamage
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &76599069
 GameObject:
   m_ObjectHideFlags: 0
@@ -10405,7 +10417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2e43844444bc02d41afaaea650728558, type: 3}
       propertyPath: m_Name
-      value: Ch01_nonPBR
+      value: PlayerCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2e43844444bc02d41afaaea650728558, type: 3}
       propertyPath: m_Layer
