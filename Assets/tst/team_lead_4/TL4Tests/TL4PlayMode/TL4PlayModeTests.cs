@@ -23,7 +23,7 @@ public class TL4PlayModeTests
         parentContainer = new GameObject("CollectibleContainer").transform;
 
         Assert.NotNull(CollectablePrefab);
-   //     Debug.Log($"Scene exists? {System.IO.File.Exists("Assets/src/team_lead_4/Scenes/SampleSceneCollectibles.unity")}");
+        //     Debug.Log($"Scene exists? {System.IO.File.Exists("Assets/src/team_lead_4/Scenes/SampleSceneCollectibles.unity")}");
     }
 
     [UnityTest]
@@ -33,13 +33,15 @@ public class TL4PlayModeTests
         int maxSpawn = 100000;
         int count = 0;
 
-        while (true){
-            GameObject spawned = Object.Instantiate(CollectablePrefab, Random.insideUnitSphere * 5f, Quaternion.identity, parentContainer);
+        while (true)
+        {
+            GameObject spawned = Object.Instantiate(CollectablePrefab, Random.insideUnitSphere * 5f,
+                Quaternion.identity, parentContainer);
             Assert.NotNull(spawned);
-            count ++;
+            count++;
             if (count % 1000 == 0)
             {
-                Debug.Log ($"Spawned {count} collectibles");
+                Debug.Log($"Spawned {count} collectibles");
                 yield return null;
             }
 
@@ -47,12 +49,9 @@ public class TL4PlayModeTests
             {
                 Debug.Log("performance issues, failed");
                 Assert.Fail();
-
             }
-
         }
 
         // Assert.Fail("limit reached");
-
     }
 }

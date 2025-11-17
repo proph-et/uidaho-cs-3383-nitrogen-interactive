@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
 
-public class PlayerBoundaryNorthTest
+public class TL2plus_PlayerBoundaryNorthTest
 {
     private GameObject player;
     private Rigidbody rb;
@@ -13,8 +13,8 @@ public class PlayerBoundaryNorthTest
     public IEnumerator LoadSceneAndFindPlayer()
     {
         // Load your scene additively so the Test Runner stays alive
-        if (SceneManager.GetActiveScene().name != "SampleScene")
-            yield return SceneManager.LoadSceneAsync("SampleScene", LoadSceneMode.Additive);
+        if (SceneManager.GetActiveScene().name != "Boss_test_player_behavior")
+            yield return SceneManager.LoadSceneAsync("Boss_test_player_behavior", LoadSceneMode.Additive);
 
         yield return new WaitForSeconds(0.5f);
 
@@ -28,7 +28,7 @@ public class PlayerBoundaryNorthTest
     [UnityTearDown]
     public IEnumerator UnloadScene()
     {
-        yield return SceneManager.UnloadSceneAsync("SampleScene");
+        yield return SceneManager.UnloadSceneAsync("Boss_test_player_behavior");
     }
 
     [UnityTest]
@@ -44,7 +44,7 @@ public class PlayerBoundaryNorthTest
 
         // Let it move for a short duration
         float elapsed = 0f;
-        while (elapsed < 2f)
+        while (elapsed < 10f)
         {
             yield return new WaitForFixedUpdate();
             elapsed += Time.fixedDeltaTime;
@@ -55,8 +55,8 @@ public class PlayerBoundaryNorthTest
         Debug.Log($"Player final Z position: {zPos:F2}");
 
         // Adjust this threshold to match your actual wall Z position
-        Assert.LessOrEqual(zPos, 6.0f, "Player clipped through the north wall!");
-        Assert.Greater(zPos, 4.0f, "Player stopped too far from the north wall (check collider spacing).");
+        Assert.LessOrEqual(zPos, 20.0f, "Player clipped through the north wall!");
+        Assert.Greater(zPos, 15f, "Player stopped too far from the north wall (check collider spacing).");
 
         Debug.Log("Player stopped correctly at the north wall.");
     }

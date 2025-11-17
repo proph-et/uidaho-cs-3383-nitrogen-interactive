@@ -1,4 +1,16 @@
 {
-  "name": "TL4WeaponCore"
+    "name": "TL4WeaponCore",
+    "rootNamespace": "",
+    "references": [
+        "TL2+Scripts"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
-

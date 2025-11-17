@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class Wand : WeaponBase
 {
-    public GameObject orbPrefab;
-    public Transform firePoint;
-    Vector3 spawnP;
-    Quaternion spawnR;
+    private GameObject orbPrefab;
+    private Transform firePoint;
+    private Vector3 spawnP;
+    private Quaternion spawnR;
     // private float nextAttackTime;
 
     public Wand(GameObject prefabType)
@@ -14,7 +15,7 @@ public class Wand : WeaponBase
         setWeaponName("Wand");
         setWeaponDamage(10);
         setAttackRate(1.5f);
-        prefab = prefabType;
+        SetPrefab(prefabType);
         setWeaponTier(1);
         setAugmentName("NONE");
     }
@@ -25,34 +26,70 @@ public class Wand : WeaponBase
     }
 
 
-    public override void Attack(GameObject self)
+    public override void Attack(GameObject self, Collider collision)
     {
-        if (firePoint == null && prefab != null)
+        if(isAttacking)
         {
-            Debug.Log("null firepoint");
-            firePoint = prefab.transform.Find("firePoint");
+            if (GetFirePoint() == null && GetPrefab() != null)
+            {
+                Debug.Log("null firepoint");
+                SetFirePoint(GetPrefab().transform.Find("firePoint"));
+            }
+
+            if (GetOrbPrefab() == null)
+            {
+                Debug.Log("Wand projectile not assigned");
+                return;
+            }
+
+            if (GetFirePoint() != null)
+            {
+                spawnP = GetFirePoint().position;
+                spawnR = GetFirePoint().rotation;
+                // Debug.Log("spawn position: " + spawnP);
+            }
+
+            GameObject orb = GameObject.Instantiate(orbPrefab, spawnP, spawnR);
+
+            MagicOrb orbScript = orb.GetComponent<MagicOrb>();
+
+            if (orbScript != null)
+            {
+                orbScript.SetDamage(getWeaponDamage());
+            }
         }
+        EndAttack();
+    }
 
-        if (orbPrefab == null)
-        {
-            Debug.Log("Wand projectile not assigned");
-            return;
-        }
+    public override void StartAttack()
+    {
+        isAttacking = true;
+        // Debug.Log("isattacking");
+    }
 
-        if (firePoint != null)
-        {
-            spawnP = firePoint.position;
-            spawnR = firePoint.rotation;
-            Debug.Log("spawn position: " + spawnP);
-        }
+    public override void EndAttack()
+    {
+        isAttacking = false;
+        // Debug.Log("is NOT attacking");
+    }
 
-        GameObject orb = GameObject.Instantiate(orbPrefab, spawnP, spawnR);
+    public GameObject GetOrbPrefab()
+    {
+        return orbPrefab;
+    }
 
-        MagicOrb orbScript = orb.GetComponent<MagicOrb>();
+    public void SetOrbPrefab(GameObject prefab)
+    {
+        orbPrefab = prefab;
+    }
 
-        if (orbScript != null)
-        {
-            orbScript.damage = getWeaponDamage();
-        }
+    public Transform GetFirePoint()
+    {
+        return firePoint;
+    }
+
+    public void SetFirePoint(Transform point)
+    {
+        firePoint = point;
     }
 }

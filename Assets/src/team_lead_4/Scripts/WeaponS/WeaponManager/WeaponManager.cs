@@ -11,16 +11,21 @@ public class WeaponManager : MonoBehaviour
         new Dictionary<string, (WeaponBase, GameObject)>();
 
     public Transform weaponHolder;
+    private bool isAttacking = false;
 
     private GameObject currentInstance;
 
+    private Collider swordHurtBox;
+
     private void Start()
     {
-        AddWeapon(playerInventory.getSword());
-        AddWeapon(playerInventory.getBow());
-        AddWeapon(playerInventory.getWand());
+        AddWeapon(playerInventory.GetSword());
+        AddWeapon(playerInventory.GetBow());
+        AddWeapon(playerInventory.GetWand());
 
-        EquipWeapon(playerInventory.getSword().getName());
+        EquipWeapon(playerInventory.GetSword().getName());
+
+        swordHurtBox = playerInventory.GetSword().GetPrefab().GetComponent<Collider>();
     }
 
     private void Update()
@@ -29,33 +34,41 @@ public class WeaponManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            EquipWeapon(playerInventory.getSword().getName());
+            EquipWeapon(playerInventory.GetSword().getName());
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            EquipWeapon(playerInventory.getBow().getName());
+            EquipWeapon(playerInventory.GetBow().getName());
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            EquipWeapon(playerInventory.getWand().getName());
+            EquipWeapon(playerInventory.GetWand().getName());
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            playerInventory.getCurrentWeapon().Attack(this.gameObject);
+            playerInventory.GetCurrentWeapon().StartAttack();
+
+            if (playerInventory.GetCurrentWeapon().getName() != "Sword")
+            {
+                playerInventory.GetCurrentWeapon().Attack(this.gameObject, null);
+            }
             // currentWeapon.StartCooldown(this);
         }
     }
 
-    // private void OnTriggerStay(Collider other)
-    // {
-    //     if(Input.GetMouseButtonDown(0))
-    //     {
-    //         currentWeapon.Attack(other);
-    //     }
-    // }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player")) return;
+        if (other.gameObject.CompareTag("EnemyProjectile")) return;
+        if (other.gameObject.CompareTag("NoCollision")) return;
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            playerInventory.GetSword().Attack(this.gameObject, other);
+        }
+    }
 
     private void SetLocation()
     {
@@ -69,7 +82,7 @@ public class WeaponManager : MonoBehaviour
 
     private void AddWeapon(WeaponBase weapon)
     {
-        var instance = Instantiate(weapon.prefab, weaponHolder);
+        var instance = Instantiate(weapon.GetPrefab(), weaponHolder);
         instance.transform.localPosition = Vector3.zero;
         instance.transform.localRotation = Quaternion.identity;
         instance.SetActive(false);
@@ -79,7 +92,7 @@ public class WeaponManager : MonoBehaviour
         // Wands
         if (weapon is Wand Wand_Weapon)
         {
-            Transform firePoint = instance.transform.Find("firePoint");
+            Transform firePoint = playerInventory.GetOwningPlayer().transform;
             if (firePoint != null)
             {
                 Wand_Weapon.SetFirePointWand(firePoint);
@@ -89,7 +102,7 @@ public class WeaponManager : MonoBehaviour
         // Bows
         if (weapon is Bow Bow_Weapon)
         {
-            Transform firePoint = instance.transform.Find("firePoint");
+            Transform firePoint = playerInventory.GetOwningPlayer().transform;
             if (firePoint != null)
             {
                 Bow_Weapon.SetFirePointBow(firePoint);
@@ -104,9 +117,9 @@ public class WeaponManager : MonoBehaviour
 
         var (data, instance) = weapons[name];
         instance.SetActive(true);
-        playerInventory.setCurrentWeapon(data);
+        playerInventory.SetCurrentWeapon(data);
         currentInstance = instance;
 
-        Debug.Log($"Equipped {name}");
+        // Debug.Log($"Equipped {name}");
     }
 }

@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5973989424818232797, guid: 8c090c9be021f9e48aa84601518cd341, type: 3}
+  m_Sprite: {fileID: 123165589, guid: 8c090c9be021f9e48aa84601518cd341, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 198610345067750395, guid: 0bc7ca93d048bbb4f97beb7d9fc5fedd, type: 3}
+  m_Sprite: {fileID: -1192726482, guid: 0bc7ca93d048bbb4f97beb7d9fc5fedd, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -338,9 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbcb9d7ef7fb81745a032febd59e7be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::src.team_lead_1.scripts.TMPTextChanger
-  onTextChange:
-    m_PersistentCalls:
-      m_Calls: []
+  myTMPTextElement: {fileID: 0}
+  initialText: 
 --- !u!1 &7581386947812441144
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +405,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5973989424818232797, guid: 8c090c9be021f9e48aa84601518cd341, type: 3}
+  m_Sprite: {fileID: 123165589, guid: 8c090c9be021f9e48aa84601518cd341, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

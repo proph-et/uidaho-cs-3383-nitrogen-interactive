@@ -1,10 +1,7 @@
 fileFormatVersion: 2
 guid: 0bc7ca93d048bbb4f97beb7d9fc5fedd
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 198610345067750395
-    second: 9sprite_8bit_circle_outline_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -42,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -109,14 +106,14 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 115, y: 115, z: 115, w: 115}
+      border: {x: 128, y: 128, z: 128, w: 128}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bf32b7a7e0b91c200800000000000000
-      internalID: 198610345067750395
+      spriteID: b1cf24186ac1c5c4db9a5af661a7e30c
+      internalID: -1192726482
       vertices: []
       indices: 
       edges: []
@@ -125,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 39987089d5bbc1649b51e1de4b1308f8
+    spriteID: ddc9bae3d3f84e345a0526ca1442b751
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      9sprite_8bit_circle_outline_0: 198610345067750395
+      9sprite_8bit_circle_outline_0: -1192726482
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,32 +1,53 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class Sword : WeaponBase
 {
+
+
+
     public Sword(GameObject prefabType)
     {
         setWeaponName("Sword");
         setWeaponDamage(10);
         setAttackRate(1.5f);
-        prefab = prefabType;
+        SetPrefab(prefabType);
         setWeaponTier(1);
         setAugmentName("NONE");
     }
 
-    public override void Attack(GameObject self)
+    public override void Attack(GameObject self, Collider collision)
     {
-        Debug.Log("insert sword attack here");
+        if (!isAttacking) return;
+        if (collision != null)
+        {
+            Debug.Log($"collision: {collision.name}");
 
-        // if (other == null)
-        // {
-        //     Debug.Log("other is null");
-        // }
+            var health = collision.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(getWeaponDamage());
+            }
+        }
 
-        // Enemy enemy = other.GetComponent<Enemy>();
-        // if (enemy != null)
-        // {
-        //     enemy.TakeDamage(damage);
-        //     Debug.Log($"Sword hit {enemy.name} for {damage} damage!");
-        // }
+        EndAttack();
+    }
+
+    public override void StartAttack()
+    {
+        isAttacking = true;
+        // Debug.Log("isattacking");
+    }
+
+    public override void EndAttack()
+    {
+        isAttacking = false;
+        // Debug.Log("is NOT attacking");
+    }
+
+    protected override GameObject CreateProjectile()
+    {
+        return null; // default: melee weapons return null
     }
 }

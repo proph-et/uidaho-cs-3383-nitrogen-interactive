@@ -6,16 +6,30 @@ public class WeaponBase
     private string weaponName = "Default";
     private int damage = 10;
     private float attackRate = 1f;
-    public GameObject prefab;
+    private GameObject prefab;
     private int weaponTier;
     private string augmentName;
 
-    protected bool canAttack = true;
+    protected bool isAttacking = false;
 
     //lets any weapon type define its own attack behavior (swing projectile etc)
-    public virtual void Attack(GameObject self)
+    public virtual void Attack(GameObject self, Collider collision)
     {
-        Debug.Log("attacking...");
+        if (isAttacking)
+        {
+            Debug.Log("attacking not set up for WeaponBase");
+        }
+
+        EndAttack();
+    }
+
+    protected virtual GameObject CreateProjectile()
+    {
+        return null; // default: melee weapons return null
+    }
+
+    protected void ConfigureAndLaunch(GameObject projectile, GameObject self)
+    {
     }
 
     public int getWeaponTier()
@@ -74,6 +88,32 @@ public class WeaponBase
     {
         return augmentName;
     }
+
+    public void removeAugment()
+    {
+        augmentName = "NONE";
+    }
+
+    public virtual void StartAttack()
+    {
+        isAttacking = true;
+    }
+
+    public virtual void EndAttack()
+    {
+        isAttacking = false;
+    }
+
+    public GameObject GetPrefab()
+    {
+        return prefab;
+    }
+
+    public void SetPrefab(GameObject Prefab)
+    {
+        prefab = Prefab;
+    }
+
 
     // protected IEnumerator AttackCooldown()
     // {

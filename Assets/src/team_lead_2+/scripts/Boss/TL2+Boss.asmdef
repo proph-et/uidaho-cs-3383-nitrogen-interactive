@@ -1,0 +1,17 @@
+{
+    "name": "TL2+Boss",
+    "rootNamespace": "",
+    "references": [
+        "TL5Scripts",
+        "TL2+Scripts"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

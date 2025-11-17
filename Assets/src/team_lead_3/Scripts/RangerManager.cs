@@ -38,7 +38,7 @@ public class RangerManager : MonoBehaviour
         ab209.onClick.AddListener(() => ranger.GetAb(209));
         ab209.onClick.AddListener(() => ChangeColor(ab209, 9));
     }
-    public void ChangeColor(Button button, int req)
+    private void ChangeColor(Button button, int req)
     {
         if (ranger.rangerLevel >= req)
         {

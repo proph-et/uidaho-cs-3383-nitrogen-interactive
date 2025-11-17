@@ -4,38 +4,66 @@ using System.Collections; // Needed for IEnumerator
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private float interval = 0.5f;
-    [SerializeField] private GameObject Enemy;
+    [SerializeField] private GameObject _enemy;
     [SerializeField] private int MaxNumEnemies = 3;
+    [SerializeField] private bool oneshot = false;
+
     public float spawnRadius = 10f;
     private int numberEnemies = 0;
-   void Start()
+
+    private void Update()
     {
-        StartCoroutine(spawnEnemy(interval, Enemy, MaxNumEnemies));
-    }
- 
-    private IEnumerator spawnEnemy(float interval, GameObject Enemy, int MaxNumEnemies)
-    {
-        yield return new WaitForSeconds(interval);
-        Vector3 spawnPos = GetRandomPointInSphere();
-        GameObject newEnemy = Instantiate(Enemy, spawnPos, Quaternion.identity);
-        numberEnemies++;
-        //Debug.Log("Enemy: "+ numberEnemies);
-        if (numberEnemies != MaxNumEnemies)
+        if (numberEnemies < MaxNumEnemies && !oneshot)
         {
-            StartCoroutine(spawnEnemy(interval, Enemy, MaxNumEnemies));
+            StartCoroutine(spawnEnemy(interval, _enemy, MaxNumEnemies));
         }
     }
-    
+
+    void Start()
+    {
+        if (!oneshot)
+        {
+            StartCoroutine(spawnEnemy(interval, _enemy, MaxNumEnemies));
+        }
+    }
+
+    public void decrementEnemyCount()
+    {
+        numberEnemies--;
+    }
+
+    private IEnumerator spawnEnemy(float interval, GameObject InputEnemy, int MaxNumEnemies)
+    {
+        if (numberEnemies < MaxNumEnemies)
+        {
+            numberEnemies++;
+            yield return new WaitForSeconds(interval);
+            Vector3 spawnPos = GetRandomPointInSphere();
+            GameObject newEnemy = Instantiate(InputEnemy, spawnPos, Quaternion.identity);
+        }
+    }
+
     Vector3 GetRandomPointInSphere()
     {
         Vector3 randomPoint = Random.insideUnitSphere * spawnRadius;
         // Offset by this spawner's position
         return transform.position + randomPoint;
     }
-    
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, spawnRadius);
+    }
+
+    public void SpawnEnemyBoss(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            if(numberEnemies < MaxNumEnemies)
+            {
+                StartCoroutine(spawnEnemy(interval, _enemy, MaxNumEnemies));
+            }
+        }
     }
 }
