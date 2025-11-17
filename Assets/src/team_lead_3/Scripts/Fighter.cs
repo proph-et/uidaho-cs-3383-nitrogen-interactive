@@ -30,7 +30,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab101 = true;
-            LevelSystem.Instance.AddXp(35);
+            LevelSystem.Instance.GetAddXp(35);
         }
         Debug.Log("This is 101");
     }
@@ -66,7 +66,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab103 = true;
-            LevelSystem.Instance.AddXp(12);
+            LevelSystem.Instance.GetAddXp(12);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -185,7 +185,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab109 = true;
-            LevelSystem.Instance.AddXp(70);
+            LevelSystem.Instance.GetAddXp(70);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -248,7 +248,7 @@ public class Fighter : SkillTreeClass
             fighterLevel = fighterLevel + 1;
             ab112 = true;
             LevelSystem.Instance.GetAddSp(2);
-            LevelSystem.Instance.AddXp(100);
+            LevelSystem.Instance.GetAddXp(100);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -257,6 +257,7 @@ public class Fighter : SkillTreeClass
         }
     }
 
+    // getters
     public void GetAb(int ability)
     {
         switch (ability)

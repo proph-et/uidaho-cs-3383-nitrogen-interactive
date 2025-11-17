@@ -17,9 +17,9 @@ public class LevelSystemTest
     public IEnumerator DoesXPWork()
     {
         Debug.Log(levelSystem.GetLevelNum());
-        levelSystem.AddXp(50);
+        LevelSystem.Instance.GetAddXp(60);
         Debug.Log(levelSystem.GetLevelNum());
-        levelSystem.AddXp(60);
+        LevelSystem.Instance.GetAddXp(60);
 
         Assert.AreEqual(2, levelSystem.GetLevelNum());
         yield return null;

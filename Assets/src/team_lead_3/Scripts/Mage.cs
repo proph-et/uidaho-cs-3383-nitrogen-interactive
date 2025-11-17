@@ -20,7 +20,7 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab301 = true;
-            LevelSystem.Instance.AddXp(30);
+            LevelSystem.Instance.GetAddXp(30);
         }
     }
     void Ability302() // adds 45 health
@@ -54,7 +54,7 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab303 = true;
-            LevelSystem.Instance.AddXp(50);
+            LevelSystem.Instance.GetAddXp(50);
         }
         else
         {
@@ -130,7 +130,7 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab307 = true;
-            LevelSystem.Instance.AddXp(150);
+            LevelSystem.Instance.GetAddXp(150);
         }
         else
         {
@@ -149,7 +149,7 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab308 = true;
-            LevelSystem.Instance.AddXp(300);
+            LevelSystem.Instance.GetAddXp(300);
             LevelSystem.Instance.GetAddSp(1);
         }
         else
@@ -158,6 +158,7 @@ public class Mage : SkillTreeClass
         }
     }
 
+    // Getters 
     public void GetAb(int ability)
     {
         switch (ability)
