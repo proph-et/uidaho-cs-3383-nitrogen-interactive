@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-
     public Slider slider;
+
     public Gradient gradient;
+
     //private Image fill;
     private Health health;
     private GameObject player;

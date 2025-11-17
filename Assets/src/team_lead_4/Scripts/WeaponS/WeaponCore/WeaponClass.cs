@@ -92,6 +92,11 @@ public class WeaponBase
     {
         return augmentName;
     }
+    
+    public void removeAugment()
+    {
+        augmentName = "NONE";
+    }
 
     public virtual void StartAttack()
     {

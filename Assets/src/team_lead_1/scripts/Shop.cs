@@ -184,7 +184,7 @@ public class Shop : MonoBehaviour
         if (playerInventory.getMoney() >= discountedPrice)
         {
             playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getSword().addAugment("Fire");
+            playerInventory.getSword().setAugmentName("Fire");
         }
         else
         {
@@ -208,7 +208,7 @@ public class Shop : MonoBehaviour
         if (playerInventory.getMoney() >= discountedPrice)
         {
             playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getSword().addAugment("Ice");
+            playerInventory.getSword().setAugmentName("Ice");
         }
         else
         {
@@ -221,7 +221,7 @@ public class Shop : MonoBehaviour
 
     public void fireBow()
     {
-        if (playerInventory.getSword().getAugmentName() == "Fire")
+        if (playerInventory.getBow().getAugmentName() == "Fire")
         {
             shopAudioManager.ErrorSound();
             return;
@@ -233,7 +233,7 @@ public class Shop : MonoBehaviour
         if (playerInventory.getMoney() >= discountedPrice)
         {
             playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getBow().addAugment("Fire");
+            playerInventory.getBow().setAugmentName("Fire");
         }
         else
         {
@@ -246,7 +246,7 @@ public class Shop : MonoBehaviour
 
     public void iceBow()
     {
-        if (playerInventory.getSword().getAugmentName() == "Ice")
+        if (playerInventory.getBow().getAugmentName() == "Ice")
         {
             shopAudioManager.ErrorSound();
             return;
@@ -257,7 +257,7 @@ public class Shop : MonoBehaviour
         if (playerInventory.getMoney() >= discountedPrice)
         {
             playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getBow().addAugment("Ice");
+            playerInventory.getBow().setAugmentName("Ice");
         }
         else
         {
@@ -270,7 +270,7 @@ public class Shop : MonoBehaviour
 
     public void fireWand()
     {
-        if (playerInventory.getSword().getAugmentName() == "Fire")
+        if (playerInventory.getWand().getAugmentName() == "Fire")
         {
             shopAudioManager.ErrorSound();
             return;
@@ -281,7 +281,7 @@ public class Shop : MonoBehaviour
         if (playerInventory.getMoney() >= discountedPrice)
         {
             playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getWand().addAugment("Fire");
+            playerInventory.getWand().setAugmentName("Fire");
         }
         else
         {
@@ -294,7 +294,7 @@ public class Shop : MonoBehaviour
 
     public void iceWand()
     {
-        if (playerInventory.getSword().getAugmentName() == "Ice")
+        if (playerInventory.getWand().getAugmentName() == "Ice")
         {
             shopAudioManager.ErrorSound();
             return;
@@ -305,7 +305,7 @@ public class Shop : MonoBehaviour
         if (playerInventory.getMoney() >= discountedPrice)
         {
             playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getWand().addAugment("Ice");
+            playerInventory.getWand().setAugmentName("Ice");
         }
         else
         {
@@ -324,33 +324,33 @@ public class Shop : MonoBehaviour
             return;
         }
 
-        // playerInventory.getSword().removeAugment();
+        playerInventory.getSword().removeAugment();
         RefreshUI();
     }
 
 
     public void removeBowAugment()
     {
-        if (playerInventory.getSword().getAugmentName() == "NONE")
+        if (playerInventory.getBow().getAugmentName() == "NONE")
         {
             shopAudioManager.ErrorSound();
             return;
         }
 
-        // playerInventory.getSword().removeAugment();
+        playerInventory.getBow().removeAugment();
         RefreshUI();
     }
 
 
     public void removeWandAugment()
     {
-        if (playerInventory.getSword().getAugmentName() == "NONE")
+        if (playerInventory.getWand().getAugmentName() == "NONE")
         {
             shopAudioManager.ErrorSound();
             return;
         }
 
-        // playerInventory.getSword().removeAugment();
+        playerInventory.getWand().removeAugment();
         RefreshUI();
     }
 
@@ -378,7 +378,7 @@ public class Shop : MonoBehaviour
             swordAugmentText.text = "No Augment";
         }
 
-        if (playerInventory.getSword().getAugmentName() != "NONE")
+        if (playerInventory.getBow().getAugmentName() != "NONE")
         {
             bowAugmentText.text = $"{playerInventory.getBow().getAugmentName()}\nClick To Remove";
         }
@@ -388,9 +388,9 @@ public class Shop : MonoBehaviour
         }
 
 
-        if (playerInventory.getSword().getAugmentName() != "NONE")
+        if (playerInventory.getWand().getAugmentName() != "NONE")
         {
-            bowAugmentText.text = $"{playerInventory.getBow().getAugmentName()}\nClick To Remove";
+            wandAugmentText.text = $"{playerInventory.getWand().getAugmentName()}\nClick To Remove";
         }
         else
         {

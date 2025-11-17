@@ -73,6 +73,6 @@ public class RangedEnemyController : MonoBehaviour
         Debug.Log("RangedEnemyController handling death");
         // Example: play animation, drop loot, notify UI
         _spawner.decrementEnemyCount();
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject);
     }
 }

@@ -7,37 +7,36 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Random Shit")]
-    Rigidbody rb;
+    [Header("Random Shit")] Rigidbody rb;
     private Animator _animator;
     private Ability currentAbility;
 
-    [Header("Movement Settings")]
-    public float speed;
+    [Header("Movement Settings")] public float speed;
     [SerializeField] private Vector2 move;
 
-    [Header("Respawn Settings")]
-    private Transform spawnPoint;
+    [Header("Respawn Settings")] private Transform spawnPoint;
     private float fallThreshold = -5f;
 
-    [Header("Dash Settings")]
-    [SerializeField] private float dashSpeed;
+    [Header("Dash Settings")] [SerializeField]
+    private float dashSpeed;
+
     [SerializeField] public float dashDuration;
     [SerializeField] public float dashCooldown;
     private Ability dashAbility;
 
     private bool isInvincible = false;
 
-    [Header("Attack Settings")]
-    [SerializeField] private GameObject rightArm;
+    [Header("Attack Settings")] [SerializeField]
+    private GameObject rightArm;
+
     [SerializeField] private float attackDuration;
     [SerializeField] private float attackRange;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float attackDamage;
     private Ability attackAbility;
 
-    [Header("Health Settings")]
-    [SerializeField] private Health _health;
+    [Header("Health Settings")] [SerializeField]
+    private Health _health;
 
     // ------------------
     // Input Events
@@ -50,6 +49,7 @@ public class PlayerController : MonoBehaviour
             dashAbility.Activate(gameObject);
         }
     }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         move = context.ReadValue<Vector2>();
@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     // ---------------
     // Unity Functions
     // -----------------
-    
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
     }
+
     void Update()
     {
         CheckFall();
@@ -91,13 +92,12 @@ public class PlayerController : MonoBehaviour
     /// -----------------
     /// Core Movement
     /// -----------------
-
     public void MovePlayer()
     {
         Vector3 movement = new Vector3(move.x, 0f, move.y);
         Vector2 tilt = GetTiltInput();
 
-        if(tilt != Vector2.zero)
+        if (tilt != Vector2.zero)
         {
             movement = new Vector3(tilt.x, 0f, tilt.y);
         }
@@ -122,7 +122,6 @@ public class PlayerController : MonoBehaviour
     ///------------
     /// Tilt Controls
     /// ------------- 
-    
     private Vector2 GetTiltInput()
     {
         Vector3 accel = Input.acceleration;
@@ -130,7 +129,7 @@ public class PlayerController : MonoBehaviour
 
         Vector2 tilt = new Vector2(accel.x, accel.y);
 
-        if(tilt.magnitude < 0.15f)
+        if (tilt.magnitude < 0.15f)
         {
             tilt = Vector2.zero;
         }
@@ -153,7 +152,7 @@ public class PlayerController : MonoBehaviour
     {
         return isInvincible;
     }
-    
+
     /// ---------------
     /// Respawn stuff
     /// -----------------
@@ -177,6 +176,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(0, 1, 0);
         }
+
+        _health.Heal(_health.GetMaxHealth(), respawning: true);
     }
 
     private void OnDeath()

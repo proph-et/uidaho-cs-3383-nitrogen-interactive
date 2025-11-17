@@ -3,8 +3,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-   
-    public float lifeDuration = 3.0f; 
+
+    public float lifeDuration = 3.0f;
+    private float damage = 5;
+
     void Start()
     {
         Destroy(gameObject, lifeDuration);
@@ -14,6 +16,20 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        return;
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            var health = collision.gameObject.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(damage);
+            }
+        }
+
+        Destroy(gameObject);
     }
 }

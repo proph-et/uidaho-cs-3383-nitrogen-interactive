@@ -33,9 +33,9 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Heal(float amount)
+    public void Heal(float amount, bool respawning = false)
     {
-        if (currentHealth <= 0f) return;
+        if (currentHealth <= 0f && !respawning) return;
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
 

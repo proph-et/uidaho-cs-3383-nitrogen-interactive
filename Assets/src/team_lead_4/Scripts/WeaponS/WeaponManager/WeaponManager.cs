@@ -79,7 +79,7 @@ public class WeaponManager : MonoBehaviour
         // Wands
         if (weapon is Wand Wand_Weapon)
         {
-            Transform firePoint = instance.transform.Find("firePoint");
+            Transform firePoint = playerInventory.owningPlayer.transform;
             if (firePoint != null)
             {
                 Wand_Weapon.SetFirePointWand(firePoint);
@@ -89,7 +89,7 @@ public class WeaponManager : MonoBehaviour
         // Bows
         if (weapon is Bow Bow_Weapon)
         {
-            Transform firePoint = instance.transform.Find("firePoint");
+            Transform firePoint = playerInventory.owningPlayer.transform;
             if (firePoint != null)
             {
                 Bow_Weapon.SetFirePointBow(firePoint);

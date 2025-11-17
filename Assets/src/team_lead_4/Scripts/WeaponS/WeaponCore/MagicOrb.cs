@@ -19,7 +19,7 @@ public class MagicOrb : MonoBehaviour
     private void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        if (!collisionActive && Time.time-spawnTime >= collisionDelay)
+        if (!collisionActive && Time.time - spawnTime >= collisionDelay)
         {
             collisionActive = true;
             // Debug.Log("collision active true");
@@ -28,11 +28,18 @@ public class MagicOrb : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (!collisionActive) return;
-        var health = collider.GetComponent<Health>();
-        if (health != null)
+        // if (!collisionActive && !collider.gameObject.CompareTag("Player")) return;
+        if (collider.gameObject.CompareTag("Player")) return;
+        if (collider.gameObject.CompareTag("Enemy"))
         {
-            health.TakeDamage(GetDamage());
+            // Debug.Log($"wand projectile hit: {collider.name}");
+            var health = collider.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(GetDamage());
+            }
+
+            Destroy(gameObject);
         }
     }
 
@@ -46,4 +53,3 @@ public class MagicOrb : MonoBehaviour
         damage = Damage;
     }
 }
-

@@ -17,10 +17,13 @@ public class Inventory : MonoBehaviour
     public GameObject magicOrbPrefab;
     public GameObject arrowPrefab;
 
+    public GameObject owningPlayer;
+
     private int money;
 
-    private void Start()
+    private void Awake()
     {
+        owningPlayer = GameObject.FindGameObjectWithTag("Player");
         sword = new Sword(swordPrefab);
         bow = new Bow(bowPrefab);
         wand = new Wand(wandPrefab);
@@ -67,14 +70,4 @@ public class Inventory : MonoBehaviour
     {
         money -= inputMoney;
     }
-
-
-    // public void AddItem(Item item)
-    // {
-    //     if (item != null)
-    //     {
-    //         items.Add(item);
-    //         Debug.Log("Added item: " + item.itemName);
-    //     }
-    // }
 }

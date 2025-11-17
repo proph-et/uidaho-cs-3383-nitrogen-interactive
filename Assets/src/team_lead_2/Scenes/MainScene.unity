@@ -652,6 +652,7 @@ MonoBehaviour:
   wandPrefab: {fileID: 3681383412935456387, guid: ba6a17332b8271c4fb7a3ff9e432f78d, type: 3}
   magicOrbPrefab: {fileID: 3426547337634153820, guid: 000485916a2335949a72151d2862596a, type: 3}
   arrowPrefab: {fileID: 3643442020744239277, guid: 4c4445ca2be5a084a8537e3c472a42b1, type: 3}
+  owningPlayer: {fileID: 0}
 --- !u!114 &49219395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,7 +682,19 @@ MonoBehaviour:
   maxHealth: 100
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 49219382}
+        m_TargetAssemblyTypeName: PlayerController, team_lead_2_Runtime
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDamage:
     m_PersistentCalls:
       m_Calls: []

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0bc7ca93d048bbb4f97beb7d9fc5fedd
+guid: d684f77c15297d84a888967ea7b8f6c9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,23 +97,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 9sprite_8bit_circle_outline_0
+      name: SwordSprite_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 512
-        height: 512
+        width: 1024
+        height: 1024
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 128, y: 128, z: 128, w: 128}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1cf24186ac1c5c4db9a5af661a7e30c
-      internalID: -1192726482
+      spriteID: 6a44765d2e8b4f946bfdbec30704c8a8
+      internalID: 882000082
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ddc9bae3d3f84e345a0526ca1442b751
+    spriteID: 179d476e64f220c468867a2515ac8552
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +132,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      9sprite_8bit_circle_outline_0: -1192726482
+      SwordSprite_0: 882000082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
