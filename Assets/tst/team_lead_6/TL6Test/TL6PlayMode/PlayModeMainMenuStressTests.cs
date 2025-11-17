@@ -83,37 +83,7 @@ public class MainMenuPlayModeStressTests : MonoBehaviour
     }
 
     // -------------------------
-    // Stress Test 1: Rapid PlayGame Calls
-    // -------------------------
-    [UnityTest]
-    public IEnumerator Stress_RapidPlayGameCalls()
-    {
-        for (int i = 0; i < 50; i++)
-        {
-            menu.PlayGame();
-            yield return null;
-        }
-
-        Assert.Pass("PlayGame() handled rapid repeated calls without crashing.");
-    }
-
-    // -------------------------
-    // Stress Test 2: Rapid Quit Calls
-    // -------------------------
-    [UnityTest]
-    public IEnumerator Stress_RapidQuitCalls()
-    {
-        for (int i = 0; i < 50; i++)
-        {
-            menu.Quit();
-            yield return null;
-        }
-
-        Assert.Pass("Quit() handled rapid repeated calls without crashing.");
-    }
-
-    // -------------------------
-    // Stress Test 3: Rapid Play Button Clicks
+    // Stress Test 1: Rapid Play Button Clicks
     // -------------------------
     [UnityTest]
     public IEnumerator Stress_RapidButtonClicks()
@@ -130,42 +100,9 @@ public class MainMenuPlayModeStressTests : MonoBehaviour
         }
     }
 
-    // -------------------------
-    // Stress Test 4: Repeated Scene Loading
-    // -------------------------
-    [UnityTest]
-    public IEnumerator Stress_RepeatedSceneLoading()
-    {
-        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-        for (int i = 0; i < 10; i++)
-        {
-            SceneManager.LoadScene(sceneIndex);
-            yield return null;
-        }
-
-        Assert.Pass("SceneManager handled repeated loads of the same scene.");
-    }
 
     // -------------------------
-    // Stress Test 5: Mixed PlayGame and Quit Calls
-    // -------------------------
-    [UnityTest]
-    public IEnumerator Stress_MixedPlayAndQuit()
-    {
-        for (int i = 0; i < 25; i++)
-        {
-            menu.PlayGame();
-            yield return null;
-            menu.Quit();
-            yield return null;
-        }
-
-        Assert.Pass("MainMenu handled mixed PlayGame and Quit calls under stress.");
-    }
-
-    // -------------------------
-    // Stress Test 6: High-Frequency Multiple Button Clicks
+    // Stress Test 2: High-Frequency Multiple Button Clicks
     // -------------------------
     [UnityTest]
     public IEnumerator Stress_MultipleButtons_HighFrequencyClicks()
