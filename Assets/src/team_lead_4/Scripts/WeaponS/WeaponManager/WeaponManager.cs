@@ -19,14 +19,13 @@ public class WeaponManager : MonoBehaviour
 
     private void Start()
     {
-        AddWeapon(playerInventory.getSword());
-        AddWeapon(playerInventory.getBow());
-        AddWeapon(playerInventory.getWand());
+        AddWeapon(playerInventory.GetSword());
+        AddWeapon(playerInventory.GetBow());
+        AddWeapon(playerInventory.GetWand());
 
-        EquipWeapon(playerInventory.getSword().getName());
+        EquipWeapon(playerInventory.GetSword().getName());
 
-        swordHurtBox = playerInventory.getSword().hurtBox;
-        
+        swordHurtBox = playerInventory.GetSword().GetPrefab().GetComponent<Collider>();
     }
 
     private void Update()
@@ -35,26 +34,26 @@ public class WeaponManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            EquipWeapon(playerInventory.getSword().getName());
+            EquipWeapon(playerInventory.GetSword().getName());
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            EquipWeapon(playerInventory.getBow().getName());
+            EquipWeapon(playerInventory.GetBow().getName());
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            EquipWeapon(playerInventory.getWand().getName());
+            EquipWeapon(playerInventory.GetWand().getName());
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            playerInventory.getCurrentWeapon().StartAttack();
+            playerInventory.GetCurrentWeapon().StartAttack();
 
-            if (playerInventory.getCurrentWeapon().getName() != "Sword")
+            if (playerInventory.GetCurrentWeapon().getName() != "Sword")
             {
-                playerInventory.getCurrentWeapon().Attack(this.gameObject, null);
+                playerInventory.GetCurrentWeapon().Attack(this.gameObject, null);
             }
             // currentWeapon.StartCooldown(this);
         }
@@ -67,7 +66,7 @@ public class WeaponManager : MonoBehaviour
         if (other.gameObject.CompareTag("NoCollision")) return;
         if (other.gameObject.CompareTag("Enemy"))
         {
-            playerInventory.getSword().Attack(this.gameObject, other);
+            playerInventory.GetSword().Attack(this.gameObject, other);
         }
     }
 
@@ -93,7 +92,7 @@ public class WeaponManager : MonoBehaviour
         // Wands
         if (weapon is Wand Wand_Weapon)
         {
-            Transform firePoint = playerInventory.owningPlayer.transform;
+            Transform firePoint = playerInventory.GetOwningPlayer().transform;
             if (firePoint != null)
             {
                 Wand_Weapon.SetFirePointWand(firePoint);
@@ -103,7 +102,7 @@ public class WeaponManager : MonoBehaviour
         // Bows
         if (weapon is Bow Bow_Weapon)
         {
-            Transform firePoint = playerInventory.owningPlayer.transform;
+            Transform firePoint = playerInventory.GetOwningPlayer().transform;
             if (firePoint != null)
             {
                 Bow_Weapon.SetFirePointBow(firePoint);
@@ -118,7 +117,7 @@ public class WeaponManager : MonoBehaviour
 
         var (data, instance) = weapons[name];
         instance.SetActive(true);
-        playerInventory.setCurrentWeapon(data);
+        playerInventory.SetCurrentWeapon(data);
         currentInstance = instance;
 
         // Debug.Log($"Equipped {name}");

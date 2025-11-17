@@ -13,8 +13,8 @@ public class CurrencySO : CollectableSOBase
         Inventory inventory = objectThatCollected.GetComponent<Inventory>();
         if (inventory != null)
         {
-            inventory.addMoney(CurrencyAmount);
-            Debug.Log($"Collected {CurrencyAmount} coins. Total: {inventory.getMoney()}");
+            inventory.AddMoney(CurrencyAmount);
+            Debug.Log($"Collected {CurrencyAmount} coins. Total: {inventory.GetMoney()}");
         }
         else
         {

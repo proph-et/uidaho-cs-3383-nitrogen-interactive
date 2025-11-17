@@ -20,7 +20,6 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        return;
         if (collision.gameObject.CompareTag("Player"))
         {
             var health = collision.gameObject.GetComponent<Health>();

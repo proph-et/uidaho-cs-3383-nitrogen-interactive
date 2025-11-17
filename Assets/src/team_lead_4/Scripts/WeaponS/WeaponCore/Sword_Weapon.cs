@@ -4,7 +4,8 @@ using UnityEngine.Events;
 
 public class Sword : WeaponBase
 {
-    public Collider hurtBox;
+
+
 
     public Sword(GameObject prefabType)
     {
@@ -14,7 +15,6 @@ public class Sword : WeaponBase
         SetPrefab(prefabType);
         setWeaponTier(1);
         setAugmentName("NONE");
-        hurtBox = prefabType.GetComponent<Collider>();
     }
 
     public override void Attack(GameObject self, Collider collision)
