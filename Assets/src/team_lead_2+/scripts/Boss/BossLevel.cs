@@ -86,10 +86,14 @@ public class BossLevel : MonoBehaviour
         //add animation here
         Movement?.StopMoving();
         enabled = false;
+        StopAllCoroutines();
+        _currentphase = null;
 
         Animator.SetTrigger("Bossdead");
 
         StartCoroutine(FinishDeath());
+
+        Destroy(player.gameObject);
 
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
 

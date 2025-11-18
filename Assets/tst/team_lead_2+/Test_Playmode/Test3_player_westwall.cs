@@ -12,17 +12,16 @@ public class TL2plus_PlayerBoundaryWestTest
     [UnitySetUp]
     public IEnumerator LoadSceneAndFindPlayer()
     {
-        // Load your scene additively so the Test Runner stays alive
         if (SceneManager.GetActiveScene().name != "Boss_test_player_behavior")
             yield return SceneManager.LoadSceneAsync("Boss_test_player_behavior", LoadSceneMode.Additive);
 
         yield return new WaitForSeconds(0.5f);
 
         player = GameObject.FindWithTag("Player");
-        Assert.IsNotNull(player, "Player not found. Make sure it's tagged 'Player'.");
+        Assert.IsNotNull(player);
 
         rb = player.GetComponent<Rigidbody>();
-        Assert.IsNotNull(rb, "Player must have a Rigidbody.");
+        Assert.IsNotNull(rb);
     }
 
     [UnityTearDown]
@@ -32,32 +31,35 @@ public class TL2plus_PlayerBoundaryWestTest
     }
 
     [UnityTest]
-    public IEnumerator Player_ShouldStopAtNorthWall()
+    public IEnumerator Player_ShouldStopAtWestWall()
     {
-        // Reset player state
+        Transform spawn = GameObject.Find("SpawnPoint")?.transform;
+        Assert.IsNotNull(spawn);
+
+        var cc = player.GetComponent<CharacterController>();
+        if (cc != null) cc.enabled = false;
+
         rb.linearVelocity = Vector3.zero;
-        player.transform.position = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.position = spawn.position + Vector3.up * 0.05f;
+
+        yield return new WaitForFixedUpdate();
         yield return new WaitForFixedUpdate();
 
-        // Push the player northward (positive Z direction)
-        rb.linearVelocity = Vector3.left * 10f;
+        rb.AddForce(Vector3.left * 80f, ForceMode.VelocityChange);
 
-        // Let it move for a short duration
-        float elapsed = 0f;
-        while (elapsed < 10f)
+        float t = 0f;
+        while (t < 5.0f)
         {
             yield return new WaitForFixedUpdate();
-            elapsed += Time.fixedDeltaTime;
+            t += Time.fixedDeltaTime;
         }
 
-        // Check final position — should be close to the wall but not beyond it
         float xPos = player.transform.position.x;
-        Debug.Log($"Player final Z position: {xPos:F2}");
 
-        // Adjust this threshold to match your actual wall Z position
-        Assert.LessOrEqual(xPos, -20.0f, "Player clipped through the north wall!");
-        Assert.Greater(xPos, -15.0f, "Player stopped too far from the north wall (check collider spacing).");
+        Assert.GreaterOrEqual(xPos, -20.0f, "Player clipped through the west wall!");
+        Assert.LessOrEqual(xPos, -15.0f, "Player stopped too early before the west wall!");
 
-        Debug.Log("Player stopped correctly at the north wall.");
+        if (cc != null) cc.enabled = true;
     }
 }

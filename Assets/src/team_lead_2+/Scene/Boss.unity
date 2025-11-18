@@ -9015,6 +9015,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 5276264363155778697, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5934326064380010187, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5934326064380010187, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -9042,19 +9050,56 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5276264363155778697, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 403159336}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 403159334}
   m_SourcePrefab: {fileID: 100100000, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
 --- !u!114 &403159332 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5127152044642176066, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
   m_PrefabInstance: {fileID: 403159331}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 403159335}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afe9c44600270754fa75df0dcf3f4ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossLevel
+--- !u!1 &403159333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
+  m_PrefabInstance: {fileID: 403159331}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &403159334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403159333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0daf09a4d15e841bdd7ccd586273cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: TL2+Boss::AbilityEventRelay
+  combat: {fileID: 0}
+--- !u!1 &403159335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5276264363155778697, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
+  m_PrefabInstance: {fileID: 403159331}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &403159336
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403159335}
+  m_Mesh: {fileID: 0}
 --- !u!1 &406271844
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,15 +12,23 @@ public class BossCombat : MonoBehaviour
     public void DoSwordAttack()
     {
         Collider[] hits = Physics.OverlapSphere(transform.position, swordRange, playerLayer);
-        foreach (var hit in hits) 
+
+        HashSet<GameObject> damaged = new HashSet<GameObject>();
+
+        foreach (var hit in hits)
         {
-            var hp = hit.GetComponentInParent<Health>();
-            if(hp != null)
+            GameObject root = hit.transform.root.gameObject;
+
+            if (damaged.Contains(root))
+                continue;
+
+            var hp = root.GetComponentInChildren<Health>();
+            if (hp != null)
             {
                 hp.TakeDamage(swordDamage);
+                damaged.Add(root);
             }
         }
-
     }
 
     public void SpawnMeatballAboveBoss()

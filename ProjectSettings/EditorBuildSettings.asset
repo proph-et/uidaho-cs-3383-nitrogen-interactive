@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/src/team_lead_2+/Scene/Boss.unity
     guid: d4578d63a3e9c8c46a13565200acbbc4
+  - enabled: 1
+    path: Assets/tst/team_lead_2+/Scene/Boss_Boundri_test_boss.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/tst/team_lead_2+/Scene/Boss_test_player_behavior.unity
+    guid: d260c32ab4073c44b8fa82736f86cf27
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3392606fe494775429699269a492e76f, type: 2}
   m_UseUCBPForAssetBundles: 0

@@ -9,7 +9,7 @@ public class MeatBallPhysics : MonoBehaviour
     [SerializeField] private float followHeight = 3f;
     [SerializeField] private float followSpeed = 5f;
     [SerializeField] private float fallSpeed = 10f;
-    [SerializeField] private int damage = 20;
+    [SerializeField] private float damage = 20f;
     [SerializeField] private int amountToSpawn = 3;
 
     private Transform target;
@@ -76,7 +76,7 @@ public class MeatBallPhysics : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Health hp = other.GetComponentInParent<Health>();
+            Health hp = other.GetComponent<Health>();
             if (hp != null)
             {
                 hp.TakeDamage(damage);

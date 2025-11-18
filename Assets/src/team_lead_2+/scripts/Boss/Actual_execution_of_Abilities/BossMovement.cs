@@ -36,6 +36,7 @@ public class BossMovement : MonoBehaviour
         // Switch Animator to Walking if not already
         if (!animator.GetBool("isMoving"))
         {
+            Debug.Log("Boss is moving bool animator true");
             animator.SetBool("isMoving", true);
         }
     }
@@ -49,8 +50,11 @@ public class BossMovement : MonoBehaviour
         }
 
         // Switch Animator to Idle
-        if (animator != null)
+        if (animator.GetBool("isMoving"))
+        {
+            Debug.Log("Boss is moving bool animator false");
             animator.SetBool("isMoving", false);
+        }
     }
 
     public void SetSpeedMultiplier(float value)

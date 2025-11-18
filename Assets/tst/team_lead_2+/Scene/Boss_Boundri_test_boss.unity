@@ -8973,7 +8973,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.18
       objectReference: {fileID: 0}
     - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8981,7 +8981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 1438348507310371686, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9022,7 +9022,7 @@ PrefabInstance:
     - target: {fileID: 5934326064380010187, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 403159332}
+      objectReference: {fileID: 0}
     - target: {fileID: 5934326064380010187, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Die
@@ -9035,22 +9035,28 @@ PrefabInstance:
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7189460704701113656, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
+      propertyPath: m_Height
+      value: 2.6226282
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189460704701113656, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
+      propertyPath: m_Center.y
+      value: 0.8150673
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189460704701113656, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
+      propertyPath: m_Center.z
+      value: -0.00000011920929
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876712963612710682, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
+      propertyPath: m_BaseOffset
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5127152044642176066, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
---- !u!114 &403159332 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5127152044642176066, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
-  m_PrefabInstance: {fileID: 403159331}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe9c44600270754fa75df0dcf3f4ce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BossLevel
 --- !u!1 &406271844
 GameObject:
   m_ObjectHideFlags: 0
@@ -16033,7 +16039,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: b2d6aa1265454344287b82651edd016d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 17e76ae0422d4174791538023e72e97b, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &705157731
 Transform:
@@ -18918,6 +18924,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &834409242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 834409243}
+  m_Layer: 0
+  m_Name: Boss_Sauce_Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &834409243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834409242}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.57, y: 0, z: 3.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47466,3 +47503,4 @@ SceneRoots:
   - {fileID: 1235829203}
   - {fileID: 2114180961}
   - {fileID: 304845622}
+  - {fileID: 834409243}

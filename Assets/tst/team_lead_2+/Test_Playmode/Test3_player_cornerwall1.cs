@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
 
-public class TL2plus_PlayerSceneClipTest
+public class TL2plus_Corner_test
 {
     private GameObject player;
     private Rigidbody rb;
@@ -37,20 +37,23 @@ public class TL2plus_PlayerSceneClipTest
         yield return SceneManager.UnloadSceneAsync("Boss_test_player_behavior");
     }
 
-    [UnityTest, Timeout(120000)]
+    [UnityTest]
     public IEnumerator Player_ShouldClipAtHighSpeed()
     {
         bool clipped = false;
         float safeSpeed = 0f;
 
+        Transform spawn = GameObject.Find("SpawnPoint").transform;
+        Assert.IsNotNull(spawn, "Missing SpawnPoint transform!");
+
         for (float speed = 10f; speed <= 400f; speed += 10f)
         {
             rb.linearVelocity = Vector3.zero;
-            player.transform.position = Vector3.zero;
+
+            rb.position = spawn.position;
             yield return new WaitForFixedUpdate();
 
-            // Push player forward
-            rb.linearVelocity = (Vector3.forward + Vector3.left) * speed;
+            rb.linearVelocity = (Vector3.forward + Vector3.left).normalized * speed;
 
             float elapsed = 0f;
             while (elapsed < 0.5f)
@@ -59,7 +62,6 @@ public class TL2plus_PlayerSceneClipTest
                 elapsed += Time.fixedDeltaTime;
             }
 
-            // If player moved past expected wall position, assume clipping
             if (player.transform.position.z >= 17f || player.transform.position.x <= -17f)
             {
                 Debug.LogWarning($"Player clipped through wall at ≈ {speed}");
@@ -70,11 +72,6 @@ public class TL2plus_PlayerSceneClipTest
             safeSpeed = speed;
         }
 
-        if (!clipped)
-            Debug.Log($"Player stayed contained up to {safeSpeed} speed.");
-        else
-            Debug.Log($"Player started clipping near {safeSpeed + 5f} speed.");
-
-        Assert.Greater(safeSpeed, 0f, "Player clipped immediately — check colliders or Rigidbody mode.");
+        Assert.IsTrue(safeSpeed > 0f, "Player clipped immediately — check player collider bounds.");
     }
 }
