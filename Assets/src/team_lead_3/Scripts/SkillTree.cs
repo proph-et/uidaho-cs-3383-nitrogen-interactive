@@ -28,7 +28,7 @@ public class SkillTree : MonoBehaviour
         skilltree = new SkillTreeClass();
         skilltree.SetLevelSystem(levelSystem);
         skilltree.Init();
-
+        SkillTreeClass.health = FindObjectOfType<Health>();
     }
 
     private void Awake()
