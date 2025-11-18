@@ -24,19 +24,32 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float dashCooldown;
     private Ability dashAbility;
 
-    private bool isInvincible = false;
+// <<<<<<< HEAD
+    [Header("Attack Settings")]
+    [SerializeField] private GameObject rightArm;
+// // =======
+//     private bool isInvincible = false;
 
-    [Header("Attack Settings")] [SerializeField]
-    private GameObject rightArm;
+//     [Header("Attack Settings")] [SerializeField]
+//     private GameObject rightArm;
 
+// // >>>>>>> 09358adc2f6e5e3157c85b84fd4b73d70ec2ea32
     [SerializeField] private float attackDuration;
     [SerializeField] private float attackRange;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float attackDamage;
     private Ability attackAbility;
 
-    [Header("Health Settings")] [SerializeField]
-    private Health _health;
+// <<<<<<< HEAD
+    [Header("Health Settings")]
+    [SerializeField] private Health _health;
+    private bool isInvincible = false;
+    private bool bcMode = false;
+    
+// // =======
+//     [Header("Health Settings")] [SerializeField]
+//     private Health _health;
+// // >>>>>>> 09358adc2f6e5e3157c85b84fd4b73d70ec2ea32
 
     // ------------------
     // Input Events
@@ -186,4 +199,21 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player had died");
         Respawn();
     }
+// <<<<<<< HEAD
+
+    ///-----------
+    /// BC Mode stuff
+    /// ---------
+    public void ToggleBCMode()
+    {
+        bcMode = !bcMode;
+        Debug.Log("BC Mode = " + (bcMode ? "ON" : "OFF"));
+    }
+
+    public bool IsBCMode()
+    {
+        return bcMode;
+    }
 }
+// =======
+// }
