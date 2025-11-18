@@ -31,7 +31,7 @@ public class CurrencyTests
     {
         var serialized = ScriptableObject.CreateInstance<CurrencySO>();
         serialized.SetCurrency(25);
-        Assert.AreEqual(25, serialized.CurrencyAmount);
+        Assert.AreEqual(25, serialized.GetCurrencyAmount());
     }
 
     [Test]
@@ -63,21 +63,6 @@ public class CurrencyTests
 
         Assert.AreEqual(shouldBeZero, 0);
     }
-
-    // [Test]
-    // public void Collect_HealsTarget()
-    // {
-    //     var so = ScriptableObject.CreateInstance<HealthSO>();
-    //     so.SetHealthAmount(10);
-
-    //     var go = new GameObject();
-    //     var health = go.AddComponent<Health>();
-    //     health.TakeDamage(10);
-
-    //     so.Collect(go);
-
-    //     Assert.AreEqual(health.GetCurrentHealth(), (health.GetMaxHealth()));
-    // }
 
     [Test]
     public void CurrencyDoesNotExceedIntegerMaxOverflow()
@@ -186,9 +171,9 @@ public class CurrencyTests
     {
         var wand = new Wand(null);
         var orb = new GameObject("OrbPrefab");
-    
+
         wand.SetOrbPrefab(orb);
-    
+
         Assert.AreEqual(orb, wand.GetOrbPrefab());
     }
 
