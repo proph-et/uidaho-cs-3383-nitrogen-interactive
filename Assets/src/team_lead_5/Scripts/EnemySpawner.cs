@@ -38,17 +38,28 @@ public class EnemySpawner : MonoBehaviour
         {
             numberEnemies++;
             yield return new WaitForSeconds(interval);
-            Vector3 spawnPos = GetRandomPointInSphere();
+            Vector3 spawnPos = GetRandomPointOnGround();
             GameObject newEnemy = Instantiate(InputEnemy, spawnPos, Quaternion.identity);
         }
     }
 
-    Vector3 GetRandomPointInSphere()
+    Vector3 GetRandomPointOnGround()
+    {
+        Vector2 circle = Random.insideUnitCircle * spawnRadius;
+
+        return new Vector3(
+            transform.position.x + circle.x,
+            transform.position.y,       // Always spawn at ground height
+            transform.position.z + circle.y
+        );
+    }
+    
+    /*Vector3 GetRandomPointInSphere()
     {
         Vector3 randomPoint = Random.insideUnitSphere * spawnRadius;
         // Offset by this spawner's position
         return transform.position + randomPoint;
-    }
+    }*/
 
     void OnDrawGizmosSelected()
     {
