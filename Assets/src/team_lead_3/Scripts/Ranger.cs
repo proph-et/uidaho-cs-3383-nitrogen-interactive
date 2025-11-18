@@ -166,7 +166,7 @@ public class Ranger : SkillTreeClass
             rangerLevel = rangerLevel + 1;
             ab208 = true;
             Debug.Log("Skill unlocked!");
-            LevelSystem.Instance.AddXp(50);
+            LevelSystem.Instance.GetAddXp(50);
         }
         else
         {
@@ -195,6 +195,7 @@ public class Ranger : SkillTreeClass
         }
     }
 
+    // getters
     public void GetAb(int ability)
     {
         switch (ability)

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Boss
+  - Enemy
+  - EnemyProjectile
+  - NoCollision
   layers:
   - Default
   - TransparentFX

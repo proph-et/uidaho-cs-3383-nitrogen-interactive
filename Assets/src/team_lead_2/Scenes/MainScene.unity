@@ -652,6 +652,7 @@ MonoBehaviour:
   wandPrefab: {fileID: 3681383412935456387, guid: ba6a17332b8271c4fb7a3ff9e432f78d, type: 3}
   magicOrbPrefab: {fileID: 3426547337634153820, guid: 000485916a2335949a72151d2862596a, type: 3}
   arrowPrefab: {fileID: 3643442020744239277, guid: 4c4445ca2be5a084a8537e3c472a42b1, type: 3}
+  owningPlayer: {fileID: 49219381}
 --- !u!114 &49219395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -681,10 +682,34 @@ MonoBehaviour:
   maxHealth: 100
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 49219382}
+        m_TargetAssemblyTypeName: PlayerController, team_lead_2_Runtime
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 49219396}
+        m_TargetAssemblyTypeName: Health, TL2+Scripts
+        m_MethodName: TakeDamage
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &76599069
 GameObject:
   m_ObjectHideFlags: 0
@@ -6216,7 +6241,7 @@ GameObject:
   - component: {fileID: 839601498}
   m_Layer: 13
   m_Name: rightArm
-  m_TagString: Untagged
+  m_TagString: NoCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10063,6 +10088,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 746289704}
     - target: {fileID: 7991857877589794059, guid: 7b1b8b2c6942a2b4190726cfa5f4d5e9, type: 3}
+      propertyPath: shopInterface
+      value: 
+      objectReference: {fileID: 746289704}
+    - target: {fileID: 7991857877589794059, guid: 7b1b8b2c6942a2b4190726cfa5f4d5e9, type: 3}
       propertyPath: swordTierText
       value: 
       objectReference: {fileID: 664015822}
@@ -10075,9 +10104,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1359948424}
     - target: {fileID: 7991857877589794059, guid: 7b1b8b2c6942a2b4190726cfa5f4d5e9, type: 3}
+      propertyPath: discountAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7991857877589794059, guid: 7b1b8b2c6942a2b4190726cfa5f4d5e9, type: 3}
       propertyPath: swordPriceText
       value: 
       objectReference: {fileID: 1112284230}
+    - target: {fileID: 7991857877589794059, guid: 7b1b8b2c6942a2b4190726cfa5f4d5e9, type: 3}
+      propertyPath: _discountAmount
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7991857877589794059, guid: 7b1b8b2c6942a2b4190726cfa5f4d5e9, type: 3}
       propertyPath: playerInventory
       value: 
@@ -11266,7 +11303,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2e43844444bc02d41afaaea650728558, type: 3}
       propertyPath: m_Name
-      value: Ch01_nonPBR
+      value: PlayerCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2e43844444bc02d41afaaea650728558, type: 3}
       propertyPath: m_Layer
@@ -13168,7 +13205,7 @@ GameObject:
   - component: {fileID: 1986509804}
   m_Layer: 13
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: NoCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

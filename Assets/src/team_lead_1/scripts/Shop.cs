@@ -1,20 +1,21 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.Serialization;
 
 public class Shop : MonoBehaviour
 {
     // Parent reference, child object
-    DiscountParent discount = new DiscountChild(0.2f);
+    [SerializeField] private int discountAmount;
+    private DiscountParent _discount;
 
-    public static bool Paused = false;
+    private static bool _paused = false;
 
-    // Reference to the pause menu UI Canvas.
-    public GameObject ShopInterface;
+    [SerializeField] private GameObject shopInterface;
 
-    public SMScript levelAudioManager;
-    public SMScript shopAudioManager;
+    [SerializeField] public SMScript levelAudioManager;
+    [SerializeField] public SMScript shopAudioManager;
 
-    public Inventory playerInventory;
+    [SerializeField] public Inventory playerInventory;
 
     private int _swordPrice = 10;
     private int _wandPrice = 10;
@@ -22,41 +23,42 @@ public class Shop : MonoBehaviour
 
     private int _augmentPrice = 10;
 
-    public TextMeshProUGUI swordTierText;
-    public TextMeshProUGUI bowTierText;
-    public TextMeshProUGUI wandTierText;
-
-    public TextMeshProUGUI swordPriceText;
-    public TextMeshProUGUI bowPriceText;
-    public TextMeshProUGUI wandPriceText;
-
-    public TextMeshProUGUI swordAugmentText;
-    public TextMeshProUGUI bowAugmentText;
-    public TextMeshProUGUI wandAugmentText;
-
-    public TextMeshProUGUI swordFireAugmentPriceText;
-    public TextMeshProUGUI bowFireAugmentPriceText;
-    public TextMeshProUGUI wandFireAugmentPriceText;
-
-    public TextMeshProUGUI swordIceAugmentPriceText;
-    public TextMeshProUGUI bowIceAugmentPriceText;
-    public TextMeshProUGUI wandIceAugmentPriceText;
-
-    public TextMeshProUGUI moneyText;
+    [SerializeField] public TextMeshProUGUI swordTierText;
+    [SerializeField] public TextMeshProUGUI bowTierText;
+    [SerializeField] public TextMeshProUGUI wandTierText;
+    [SerializeField] public TextMeshProUGUI swordPriceText;
+    [SerializeField] public TextMeshProUGUI bowPriceText;
+    [SerializeField] public TextMeshProUGUI wandPriceText;
+    [SerializeField] public TextMeshProUGUI swordAugmentText;
+    [SerializeField] public TextMeshProUGUI bowAugmentText;
+    [SerializeField] public TextMeshProUGUI wandAugmentText;
+    [SerializeField] public TextMeshProUGUI swordFireAugmentPriceText;
+    [SerializeField] public TextMeshProUGUI bowFireAugmentPriceText;
+    [SerializeField] public TextMeshProUGUI wandFireAugmentPriceText;
+    [SerializeField] public TextMeshProUGUI swordIceAugmentPriceText;
+    [SerializeField] public TextMeshProUGUI bowIceAugmentPriceText;
+    [SerializeField] public TextMeshProUGUI wandIceAugmentPriceText;
+    [SerializeField] public TextMeshProUGUI moneyText;
 
 
     void Start()
     {
+        _discount = new DiscountChild(discountAmount);
         // Ensure the game starts in the "Playing" state.
         Time.timeScale = 1f;
         RefreshUI();
     }
 
+    public void CreateDiscount(DiscountChild newDiscountChild)
+    {
+        _discount = newDiscountChild;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            playerInventory.addMoney(100);
+            playerInventory.AddMoney(100);
             RefreshUI();
         }
 
@@ -65,7 +67,7 @@ public class Shop : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             Debug.Log("opened shop");
-            if (Paused)
+            if (_paused)
             {
                 // If game is currently paused, resume it.
                 Play();
@@ -84,13 +86,13 @@ public class Shop : MonoBehaviour
     public void Stop()
     {
         // Show the pause menu UI.
-        ShopInterface.SetActive(true);
+        shopInterface.SetActive(true);
 
         // Stop in-game time so everything freezes.
         Time.timeScale = 0f;
 
         // Update the state flag.
-        Paused = true;
+        _paused = true;
         levelAudioManager.pauseBackgroundMusic();
 
         RefreshUI();
@@ -102,26 +104,26 @@ public class Shop : MonoBehaviour
     public void Play()
     {
         // Hide the pause menu UI.
-        ShopInterface.SetActive(false);
+        shopInterface.SetActive(false);
 
         // Resume normal time flow.
         Time.timeScale = 1f;
 
         // Update the state flag.
-        Paused = false;
+        _paused = false;
         levelAudioManager.unpauseBackgroundMusic();
     }
 
 
     public void UpgradeSword()
     {
-        int discountedPrice = (int)discount.ApplyDiscount(_swordPrice);
+        int discountedPrice = _discount.ApplyDiscount(_swordPrice);
 
-        if (playerInventory.getMoney() >= discountedPrice)
+        if (playerInventory.GetMoney() >= discountedPrice)
         {
-            playerInventory.getSword().upgradeWeapon();
-            playerInventory.spendMoney(discountedPrice);
-            _swordPrice += 5 * playerInventory.getSword().getWeaponTier();
+            playerInventory.GetSword().upgradeWeapon();
+            playerInventory.SpendMoney(discountedPrice);
+            _swordPrice += 5 * playerInventory.GetSword().getWeaponTier();
         }
         else
         {
@@ -134,13 +136,13 @@ public class Shop : MonoBehaviour
 
     public void UpgradeBow()
     {
-        int discountedPrice = (int)discount.ApplyDiscount(_bowPrice);
+        int discountedPrice = _discount.ApplyDiscount(_bowPrice);
 
-        if (playerInventory.getMoney() >= discountedPrice)
+        if (playerInventory.GetMoney() >= discountedPrice)
         {
-            playerInventory.getBow().upgradeWeapon();
-            playerInventory.spendMoney(discountedPrice);
-            _bowPrice += 5 * playerInventory.getBow().getWeaponTier();
+            playerInventory.GetBow().upgradeWeapon();
+            playerInventory.SpendMoney(discountedPrice);
+            _bowPrice += 5 * playerInventory.GetBow().getWeaponTier();
         }
         else
         {
@@ -153,13 +155,13 @@ public class Shop : MonoBehaviour
 
     public void UpgradeWand()
     {
-        int discountedPrice = (int)discount.ApplyDiscount(_wandPrice);
+        int discountedPrice = _discount.ApplyDiscount(_wandPrice);
 
-        if (playerInventory.getMoney() >= discountedPrice)
+        if (playerInventory.GetMoney() >= discountedPrice)
         {
-            playerInventory.getWand().upgradeWeapon();
-            playerInventory.spendMoney(discountedPrice);
-            _wandPrice += 5 * playerInventory.getWand().getWeaponTier();
+            playerInventory.GetWand().upgradeWeapon();
+            playerInventory.SpendMoney(discountedPrice);
+            _wandPrice += 5 * playerInventory.GetWand().getWeaponTier();
         }
         else
         {
@@ -172,19 +174,19 @@ public class Shop : MonoBehaviour
 
     public void fireSword()
     {
-        if (playerInventory.getSword().getAugmentName() == "Fire")
+        if (playerInventory.GetSword().getAugmentName() == "Fire")
         {
             shopAudioManager.ErrorSound();
             return;
         }
 
-        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
+        int discountedPrice = _discount.ApplyDiscount(_augmentPrice);
 
 
-        if (playerInventory.getMoney() >= discountedPrice)
+        if (playerInventory.GetMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getSword().addAugment("Fire");
+            playerInventory.SpendMoney(discountedPrice);
+            playerInventory.GetSword().setAugmentName("Fire");
         }
         else
         {
@@ -197,18 +199,18 @@ public class Shop : MonoBehaviour
 
     public void iceSword()
     {
-        if (playerInventory.getSword().getAugmentName() == "Ice")
+        if (playerInventory.GetSword().getAugmentName() == "Ice")
         {
             shopAudioManager.ErrorSound();
             return;
         }
 
-        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
+        int discountedPrice = _discount.ApplyDiscount(_augmentPrice);
 
-        if (playerInventory.getMoney() >= discountedPrice)
+        if (playerInventory.GetMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getSword().addAugment("Ice");
+            playerInventory.SpendMoney(discountedPrice);
+            playerInventory.GetSword().setAugmentName("Ice");
         }
         else
         {
@@ -221,19 +223,19 @@ public class Shop : MonoBehaviour
 
     public void fireBow()
     {
-        if (playerInventory.getSword().getAugmentName() == "Fire")
+        if (playerInventory.GetBow().getAugmentName() == "Fire")
         {
             shopAudioManager.ErrorSound();
             return;
         }
 
-        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
+        int discountedPrice = _discount.ApplyDiscount(_augmentPrice);
 
 
-        if (playerInventory.getMoney() >= discountedPrice)
+        if (playerInventory.GetMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getBow().addAugment("Fire");
+            playerInventory.SpendMoney(discountedPrice);
+            playerInventory.GetBow().setAugmentName("Fire");
         }
         else
         {
@@ -246,18 +248,18 @@ public class Shop : MonoBehaviour
 
     public void iceBow()
     {
-        if (playerInventory.getSword().getAugmentName() == "Ice")
+        if (playerInventory.GetBow().getAugmentName() == "Ice")
         {
             shopAudioManager.ErrorSound();
             return;
         }
 
-        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
+        int discountedPrice = _discount.ApplyDiscount(_augmentPrice);
 
-        if (playerInventory.getMoney() >= discountedPrice)
+        if (playerInventory.GetMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getBow().addAugment("Ice");
+            playerInventory.SpendMoney(discountedPrice);
+            playerInventory.GetBow().setAugmentName("Ice");
         }
         else
         {
@@ -270,18 +272,18 @@ public class Shop : MonoBehaviour
 
     public void fireWand()
     {
-        if (playerInventory.getSword().getAugmentName() == "Fire")
+        if (playerInventory.GetWand().getAugmentName() == "Fire")
         {
             shopAudioManager.ErrorSound();
             return;
         }
 
-        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
+        int discountedPrice = _discount.ApplyDiscount(_augmentPrice);
 
-        if (playerInventory.getMoney() >= discountedPrice)
+        if (playerInventory.GetMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getWand().addAugment("Fire");
+            playerInventory.SpendMoney(discountedPrice);
+            playerInventory.GetWand().setAugmentName("Fire");
         }
         else
         {
@@ -294,18 +296,18 @@ public class Shop : MonoBehaviour
 
     public void iceWand()
     {
-        if (playerInventory.getSword().getAugmentName() == "Ice")
+        if (playerInventory.GetWand().getAugmentName() == "Ice")
         {
             shopAudioManager.ErrorSound();
             return;
         }
 
-        int discountedPrice = (int)discount.ApplyDiscount(_augmentPrice);
+        int discountedPrice = _discount.ApplyDiscount(_augmentPrice);
 
-        if (playerInventory.getMoney() >= discountedPrice)
+        if (playerInventory.GetMoney() >= discountedPrice)
         {
-            playerInventory.spendMoney(discountedPrice);
-            // playerInventory.getWand().addAugment("Ice");
+            playerInventory.SpendMoney(discountedPrice);
+            playerInventory.GetWand().setAugmentName("Ice");
         }
         else
         {
@@ -318,69 +320,69 @@ public class Shop : MonoBehaviour
 
     public void removeSwordAugment()
     {
-        if (playerInventory.getSword().getAugmentName() == "NONE")
+        if (playerInventory.GetSword().getAugmentName() == "NONE")
         {
             shopAudioManager.ErrorSound();
             return;
         }
 
-        // playerInventory.getSword().removeAugment();
+        playerInventory.GetSword().removeAugment();
         RefreshUI();
     }
 
 
     public void removeBowAugment()
     {
-        if (playerInventory.getSword().getAugmentName() == "NONE")
+        if (playerInventory.GetBow().getAugmentName() == "NONE")
         {
             shopAudioManager.ErrorSound();
             return;
         }
 
-        // playerInventory.getSword().removeAugment();
+        playerInventory.GetBow().removeAugment();
         RefreshUI();
     }
 
 
     public void removeWandAugment()
     {
-        if (playerInventory.getSword().getAugmentName() == "NONE")
+        if (playerInventory.GetWand().getAugmentName() == "NONE")
         {
             shopAudioManager.ErrorSound();
             return;
         }
 
-        // playerInventory.getSword().removeAugment();
+        playerInventory.GetWand().removeAugment();
         RefreshUI();
     }
 
     public void RefreshUI()
     {
-        swordTierText.text = $"Tier: {playerInventory.getSword().getWeaponTier()}";
-        bowTierText.text = $"Tier: {playerInventory.getBow().getWeaponTier()}";
-        wandTierText.text = $"Tier: {playerInventory.getWand().getWeaponTier()}";
+        swordTierText.text = $"Tier: {playerInventory.GetSword().getWeaponTier()}";
+        bowTierText.text = $"Tier: {playerInventory.GetBow().getWeaponTier()}";
+        wandTierText.text = $"Tier: {playerInventory.GetWand().getWeaponTier()}";
 
-        int discountedSwordPrice = (int)discount.ApplyDiscount(_swordPrice);
+        int discountedSwordPrice = _discount.ApplyDiscount(_swordPrice);
         swordPriceText.text = $"{discountedSwordPrice}";
 
-        int discountedBowPrice = (int)discount.ApplyDiscount(_bowPrice);
+        int discountedBowPrice = _discount.ApplyDiscount(_bowPrice);
         bowPriceText.text = $"{discountedBowPrice}";
 
-        int discountedWandPrice = (int)discount.ApplyDiscount(_wandPrice);
+        int discountedWandPrice = _discount.ApplyDiscount(_wandPrice);
         wandPriceText.text = $"{discountedWandPrice}";
 
-        if (playerInventory.getSword().getAugmentName() != "NONE")
+        if (playerInventory.GetSword().getAugmentName() != "NONE")
         {
-            swordAugmentText.text = $"{playerInventory.getSword().getAugmentName()}\nClick To Remove";
+            swordAugmentText.text = $"{playerInventory.GetSword().getAugmentName()}\nClick To Remove";
         }
         else
         {
             swordAugmentText.text = "No Augment";
         }
 
-        if (playerInventory.getSword().getAugmentName() != "NONE")
+        if (playerInventory.GetBow().getAugmentName() != "NONE")
         {
-            bowAugmentText.text = $"{playerInventory.getBow().getAugmentName()}\nClick To Remove";
+            bowAugmentText.text = $"{playerInventory.GetBow().getAugmentName()}\nClick To Remove";
         }
         else
         {
@@ -388,9 +390,9 @@ public class Shop : MonoBehaviour
         }
 
 
-        if (playerInventory.getSword().getAugmentName() != "NONE")
+        if (playerInventory.GetWand().getAugmentName() != "NONE")
         {
-            bowAugmentText.text = $"{playerInventory.getBow().getAugmentName()}\nClick To Remove";
+            wandAugmentText.text = $"{playerInventory.GetWand().getAugmentName()}\nClick To Remove";
         }
         else
         {
@@ -398,7 +400,7 @@ public class Shop : MonoBehaviour
         }
 
 
-        int discountedAugmentPrice = (int)discount.ApplyDiscount(_augmentPrice);
+        int discountedAugmentPrice = _discount.ApplyDiscount(_augmentPrice);
 
         swordFireAugmentPriceText.text = $"{discountedAugmentPrice}";
         bowFireAugmentPriceText.text = $"{discountedAugmentPrice}";
@@ -408,6 +410,6 @@ public class Shop : MonoBehaviour
         bowIceAugmentPriceText.text = $"{discountedAugmentPrice}";
         wandIceAugmentPriceText.text = $"{discountedAugmentPrice}";
 
-        moneyText.text = $"Dough: {playerInventory.getMoney()}";
+        moneyText.text = $"Dough: {playerInventory.GetMoney()}";
     }
 }

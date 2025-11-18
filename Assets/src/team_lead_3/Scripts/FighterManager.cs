@@ -47,7 +47,7 @@ public class FighterManager : MonoBehaviour
         ab112.onClick.AddListener(() => ChangeColor(ab112, 12));
     }
 
-    public void ChangeColor(Button button, int req)
+    private void ChangeColor(Button button, int req)
     {
         if (fighter.fighterLevel >= req)
         {

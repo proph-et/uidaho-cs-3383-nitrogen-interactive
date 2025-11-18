@@ -8,6 +8,6 @@ public class XPHandler : Collectable
     {
         // base.Collect(collector);
         // Debug.Log("added xp");
-        LevelSystem.Instance.AddXp(5);
+        LevelSystem.Instance.GetAddXp(5);
     }
 }

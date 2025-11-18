@@ -1,80 +1,116 @@
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 [DefaultExecutionOrder(-100)]
 public class Inventory : MonoBehaviour
 {
-    private WeaponBase currentWeapon;
+    private WeaponBase _currentWeapon;
 
-    private Sword sword;
-    private Bow bow;
-    private Wand wand;
+    private Sword _sword;
+    private Bow _bow;
+    private Wand _wand;
 
-    public GameObject swordPrefab;
-    public GameObject bowPrefab;
-    public GameObject wandPrefab;
-    public GameObject magicOrbPrefab;
-    public GameObject arrowPrefab;
+    [SerializeField] private GameObject swordPrefab;
+    [SerializeField] private GameObject bowPrefab;
+    [SerializeField] private GameObject wandPrefab;
+    [SerializeField] private GameObject magicOrbPrefab;
+    [SerializeField] private GameObject arrowPrefab;
 
-    private int money;
+    [SerializeField] private GameObject owningPlayer;
 
-    private void Start()
+    private int _money;
+
+    private void Awake()
     {
-        sword = new Sword(swordPrefab);
-        bow = new Bow(bowPrefab);
-        wand = new Wand(wandPrefab);
-        wand.SetOrbPrefab(magicOrbPrefab);
-        bow.SetProjectilePrefab(arrowPrefab);
+        owningPlayer = GameObject.FindGameObjectWithTag("Player");
+        _sword = new Sword(swordPrefab);
+        _bow = new Bow(bowPrefab);
+        _bow.SetProjectilePrefab(arrowPrefab);
+        _wand = new Wand(wandPrefab);
+        _wand.SetOrbPrefab(magicOrbPrefab);
     }
 
-    public WeaponBase getCurrentWeapon()
+    public GameObject GetPrefab(string targetPrefab)
     {
-        return currentWeapon;
+        switch (targetPrefab)
+        {
+            case "Sword":
+                return swordPrefab;
+            case "Bow":
+                return bowPrefab;
+            case "Wand":
+                return wandPrefab;
+            case "MagicOrb":
+                return magicOrbPrefab;
+            case "Arrow":
+                return arrowPrefab;
+            default:
+                return null;
+        }
     }
 
-    public void setCurrentWeapon(WeaponBase newWeapon)
+    public GameObject SetTestPrefab(string targetPrefab, GameObject prefab)
     {
-        currentWeapon = newWeapon;
+        switch (targetPrefab)
+        {
+            case "Sword":
+                return swordPrefab;
+            case "Bow":
+                return bowPrefab;
+            case "Wand":
+                return wandPrefab;
+            case "MagicOrb":
+                return magicOrbPrefab;
+            case "Arrow":
+                return arrowPrefab;
+            default:
+                return null;
+        }
     }
 
-    public Sword getSword()
+    public GameObject GetOwningPlayer()
     {
-        return sword;
+        return owningPlayer;
     }
 
-    public Bow getBow()
+    public WeaponBase GetCurrentWeapon()
     {
-        return bow;
+        return _currentWeapon;
     }
 
-    public Wand getWand()
+    public void SetCurrentWeapon(WeaponBase newWeapon)
     {
-        return wand;
+        _currentWeapon = newWeapon;
     }
 
-    public int getMoney()
+    public Sword GetSword()
     {
-        return money;
+        return _sword;
     }
 
-    public void addMoney(int inputMoney)
+    public Bow GetBow()
     {
-        money += inputMoney;
+        return _bow;
     }
 
-    public void spendMoney(int inputMoney)
+    public Wand GetWand()
     {
-        money -= inputMoney;
+        return _wand;
     }
 
+    public int GetMoney()
+    {
+        return _money;
+    }
 
-    // public void AddItem(Item item)
-    // {
-    //     if (item != null)
-    //     {
-    //         items.Add(item);
-    //         Debug.Log("Added item: " + item.itemName);
-    //     }
-    // }
+    public void AddMoney(int inputMoney)
+    {
+        _money += inputMoney;
+    }
+
+    public void SpendMoney(int inputMoney)
+    {
+        _money -= inputMoney;
+    }
 }

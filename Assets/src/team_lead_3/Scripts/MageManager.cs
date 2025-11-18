@@ -36,7 +36,7 @@ public class MageManager : MonoBehaviour
         ab308.onClick.AddListener(() => ChangeColor(ab308, 8));
     }
 
-    public void ChangeColor(Button button, int req)
+    private void ChangeColor(Button button, int req)
     {
         if (mage.mageLevel >= req)
         {

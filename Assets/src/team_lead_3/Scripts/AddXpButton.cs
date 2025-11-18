@@ -32,7 +32,7 @@ public class AddXpButton : MonoBehaviour
 
             if (levelSystem != null)
             {
-                levelSystem.AddXp(xpAmount);
+                LevelSystem.Instance.GetAddXp(xpAmount);
                 Debug.Log($"Added {xpAmount} XP!");
             }
             else

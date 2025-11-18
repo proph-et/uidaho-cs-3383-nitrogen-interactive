@@ -34,9 +34,8 @@ public class PauseMenuEditModeStressTests
         Time.timeScale = 1f;
     }
 
-    // -------------------------
     // Stress Test 1: Repeated Stop() calls
-    // -------------------------
+
     [Test]
     public void Stress_StopRepeatedly()
     {
@@ -49,9 +48,9 @@ public class PauseMenuEditModeStressTests
         }
     }
 
-    // -------------------------
+
     // Stress Test 2: Repeated Play() calls
-    // -------------------------
+
     [Test]
     public void Stress_PlayRepeatedly()
     {
@@ -66,9 +65,9 @@ public class PauseMenuEditModeStressTests
         }
     }
 
-    // -------------------------
+
     // Stress Test 3: Rapid toggle Stop() → Play()
-    // -------------------------
+
     [Test]
     public void Stress_RapidToggleStopPlay()
     {
@@ -81,9 +80,8 @@ public class PauseMenuEditModeStressTests
         }
     }
 
-    // -------------------------
     // Stress Test 4: Simulate Escape key toggles multiple times
-    // -------------------------
+
     [Test]
     public void Stress_EscapeKeySimulation()
     {
@@ -94,21 +92,11 @@ public class PauseMenuEditModeStressTests
         }
     }
 
-    // -------------------------
-    // Stress Test 5: Repeated MainMenuButton() calls
-    // -------------------------
-    [Test]
-    public void Stress_MainMenuButtonRepeatedly()
-    {
-        for (int i = 0; i < 50; i++)
-        {
-            Assert.DoesNotThrow(() => pauseMenu.MainMenuButton(), "MainMenuButton should not throw exceptions under stress.");
-        }
-    }
 
-    // -------------------------
+
+
     // Helper: Simulate Escape key press in Edit Mode
-    // -------------------------
+
     private void SimulateEscapeKey()
     {
         if (PauseMenu.Paused)

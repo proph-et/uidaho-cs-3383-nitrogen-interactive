@@ -14,19 +14,21 @@ public class Sword : WeaponBase
         setAugmentName("NONE"); // No augment applied to the sword by default.
     }
 
-    public override void Attack(GameObject self, Collider collider)
+    public override void Attack(GameObject self, Collider collision)
     {
-        if (isAttacking && collider != null) // Ensure we are attacking and hit a valid target.
+        if (!isAttacking) return;
+        if (collision != null)
         {
-            // Debug.Log("insert sword attack here");
-            var health = collider.GetComponent<Health>(); // Try to get the health component of what we hit.
+            // Debug.Log($"collision: {collision.name}");
 
+            var health = collision.GetComponent<Health>();
             if (health != null)
             {
-                health.TakeDamage(getWeaponDamage()); // Deal damage if the target has health.
+                health.TakeDamage(getWeaponDamage());
             }
         }
-        EndAttack(); // Finish the attack after dealing damage.
+
+        EndAttack();
     }
 
     public override void StartAttack()

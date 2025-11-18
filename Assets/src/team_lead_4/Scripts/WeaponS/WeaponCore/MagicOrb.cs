@@ -29,12 +29,18 @@ public class MagicOrb : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (!collisionActive) return; // Ignore collisions until enough time has passed.
-
-        var health = collider.GetComponent<Health>(); 
-        if (health != null)
+        // if (!collisionActive && !collider.gameObject.CompareTag("Player")) return;
+        if (collider.gameObject.CompareTag("Player")) return;
+        if (collider.gameObject.CompareTag("Enemy"))
         {
-            health.TakeDamage(GetDamage()); 
+            // Debug.Log($"wand projectile hit: {collider.name}");
+            var health = collider.GetComponent<Health>();
+            if (health != null)
+            {
+                health.TakeDamage(GetDamage());
+            }
+
+            Destroy(gameObject);
         }
     }
 

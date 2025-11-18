@@ -4,7 +4,9 @@ public class Arrow : MonoBehaviour
 {
     private float speed = 30f; // Holds speed of the arrow.
     private float damage = 20f; // Holds damage of the arrow.
+
     private float lifetime = 10f; // Holds the lifetime of the arrow. Controls how long the arrow is in the world before being destroyed.
+
     private float collisionDelay = 0.25f; // Controls how long before the arrow can collide with objects.
 
     private float spawnTime; // Holds the time that the arrow was spawned.
@@ -43,22 +45,25 @@ public class Arrow : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        // Debug.Log("collision triggered");
-        if (!collisionActive) return; // Ignore collisions until enough time has passed.
-        // Debug.Log("has hit");
-        if (hasHit) return; // Prevent handling the collision more than once.
+        if (hasHit) return;
+        if (collider.gameObject.CompareTag("Player")) return;
+        if (collider.gameObject.CompareTag("EnemyProjectile")) return;
+        if (collider.gameObject.CompareTag("NoCollision")) return;
+
 
         hasHit = true; // Mark the arrow as having hit something.
+        if (collider.gameObject.CompareTag("Enemy"))
+        {
+            var health = collider.GetComponent<Health>(); // Try to get the Health component of the thing we hit.
+            if (health != null)
+            {
+                health.TakeDamage(GetDamage()); // Apply damage if it has health.
+            }
+        }
 
         arrowRB.linearVelocity = Vector3.zero; // Stop the arrow's movement.
         arrowRB.isKinematic = true; // Disable physics on the arrow.
         transform.parent = collider.transform; // Stick the arrow to the object it hit.
-
-        var health = collider.GetComponent<Health>(); // Try to get the Health component of the thing we hit.
-        if (health != null)
-        {
-            health.TakeDamage(GetDamage()); // Apply damage if it has health.
-        }
     }
 
     public float GetArrowSpeed()

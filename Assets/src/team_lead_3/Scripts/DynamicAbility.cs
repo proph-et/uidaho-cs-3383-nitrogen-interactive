@@ -14,11 +14,11 @@ public class Ability101 : DynamicAbility
     public override void Unlock()
     {
         Debug.Log("Ab101 unlocked");
-        LevelSystem.Instance.AddXp(35);
+        LevelSystem.Instance.GetAddXp(35);
     }
 
     public static void DoNothing()
     {
-        LevelSystem.Instance.AddXp(0);
+        LevelSystem.Instance.GetAddXp(0);
     }
 }

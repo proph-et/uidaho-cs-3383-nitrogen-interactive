@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        // Debug.Log("Taking damage");
+        Debug.Log($"{gameObject.name} taking {amount} damage");
         if (currentHealth <= 0f) return;
 
         currentHealth = Mathf.Max(currentHealth - amount, 0f);
@@ -33,9 +33,9 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void Heal(float amount)
+    public void Heal(float amount, bool respawning = false)
     {
-        if (currentHealth <= 0f) return;
+        if (currentHealth <= 0f && !respawning) return;
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
     }
 

@@ -25,7 +25,8 @@ public class Wand : WeaponBase
         firePoint = point; // Assign a fire point specifically for the wand.
     }
 
-    public override void Attack(GameObject self, Collider collider)
+
+    public override void Attack(GameObject self, Collider collision)
     {
         if (isAttacking) // Only attack if the wand is actively performing an attack.
         {
