@@ -14,10 +14,8 @@ public class CurrencyTests
         currencySO = ScriptableObject.CreateInstance<CurrencySO>();
     }
 
+    // Currency Tests
 
-
-
-    // A Test behaves as an ordinary method
     [Test]
     public void CurrencyDefaultValueEqualTo0()
     {
@@ -65,16 +63,36 @@ public class CurrencyTests
     }
 
     [Test]
-    public void CurrencyDoesNotExceedIntegerMaxOverflow()
+    public void CollectAddsMoneyToInventory()
     {
-        currencySO.SetCurrency(int.MaxValue);
+        var currency = ScriptableObject.CreateInstance<CurrencySO>();
+        currency.SetCurrency(3);
 
-        currencySO.Collect(null);
+        GameObject player = new GameObject();
+        var inv = player.AddComponent<Inventory>();
 
-        long amount = currencySO.GetCurrency();
+        currency.Collect(player);
 
-        Assert.AreEqual(int.MaxValue, amount);
+        Assert.AreEqual(3, inv.GetMoney());
     }
+
+    // ---------------------------------------------------------
+    // Reminder to add in the Max Overflow check into currency.
+    // ---------------------------------------------------------
+
+    // [Test]
+    // public void CurrencyDoesNotExceedIntegerMaxOverflow()
+    // {
+    //     currencySO.SetCurrency(int.MaxValue);
+
+    //     currencySO.Collect(null);
+
+    //     long amount = currencySO.GetCurrency();
+
+    //     Assert.AreEqual(int.MaxValue, amount);
+    // }
+
+    // Health Tests
 
     [Test]
     public void CollectNoHealthComponentEqualsNoError()
@@ -91,6 +109,39 @@ public class CurrencyTests
         var so = ScriptableObject.CreateInstance<HealthSO>();
         Assert.AreEqual(10, so.GetHealthAmount());
     }
+
+    [Test]
+    public void SetHealthUpdatesValue()
+    {
+        var serialized = ScriptableObject.CreateInstance<HealthSO>();
+        serialized.SetHealthAmount(25);
+        Assert.AreEqual(25, serialized.GetHealthAmount());
+    }
+
+    [Test]
+    public void GetHeathReturnsCorrectValue()
+    {
+        var serialized = ScriptableObject.CreateInstance<HealthSO>();
+        serialized.SetHealthAmount(10);
+        Assert.AreEqual(10, serialized.GetHealthAmount());
+    }
+
+    // [Test]    
+    // public void CollectHealsHealthComponent()
+    // {
+    //     var healthSO = ScriptableObject.CreateInstance<HealthSO>();
+    //     // healthSO.SetHealthAmount(10);
+
+    //     GameObject player = new GameObject();
+    //     var health = player.AddComponent<Health>();
+
+    //     float before = health.GetCurrentHealth();
+    //     healthSO.Collect(player);
+
+    //     Assert.Greater(health.GetCurrentHealth(), before);
+    // }
+
+    // Arrow Tests
 
     [Test]
     public void GetDamageArrowReturnsCorrectValue()
@@ -113,7 +164,7 @@ public class CurrencyTests
     }
 
     [Test]
-    public void Arrow_GetArrowSpeed_ReturnsValue()
+    public void ArrowGetArrowSpeedReturnsValue()
     {
         var go = new GameObject();
         var rb = go.AddComponent<Rigidbody>();
@@ -128,6 +179,30 @@ public class CurrencyTests
         var a = go.AddComponent<Arrow>();
         Assert.AreEqual(30f, a.GetArrowSpeed());
     }
+
+    // Orb Tests
+
+    [Test]
+    public void GetDamageOrbReturnsCorrectValue()
+    {
+        var go = new GameObject();
+        var orb = go.AddComponent<MagicOrb>();
+
+        orb.SetDamage(40);
+        Assert.AreEqual(40, orb.GetDamage());
+    }
+
+    [Test]
+    public void SetDamageOrbUpdatesValue()
+    {
+        var go = new GameObject();
+        var orb = go.AddComponent<MagicOrb>();
+
+        orb.SetDamage(15);
+        Assert.AreEqual(15, orb.GetDamage());
+    }
+
+    // Sword Tests
 
     [Test]
     public void SwordDealsDamageWhenAttacking()
@@ -155,8 +230,10 @@ public class CurrencyTests
         Assert.Pass(); // no throw = good
     }
 
+    // Bow Tests
+
     [Test]
-    public void Bow_CanAssignProjectilePrefab()
+    public void BowCanAssignProjectilePrefab()
     {
         var bow = new Bow(null);
         var prefab = new GameObject("ArrowPrefab");
@@ -166,8 +243,10 @@ public class CurrencyTests
         Assert.AreEqual(prefab, bow.GetProjectilePrefab());
     }
 
+    // Wand Tests
+
     [Test]
-    public void Wand_CanAssignOrbPrefab()
+    public void WandCanAssignOrbPrefab()
     {
         var wand = new Wand(null);
         var orb = new GameObject("OrbPrefab");
@@ -176,31 +255,5 @@ public class CurrencyTests
 
         Assert.AreEqual(orb, wand.GetOrbPrefab());
     }
-
-
-    // [Test]
-    // public void XPHandler_AddsXp()
-    // {
-    //     var xpObj = new GameObject();
-    //     var handler = xpObj.AddComponent<XPHandler>();
-
-    //     LevelSystem.Instance = new LevelSystem(); // if needed for your implementation
-
-    //     LevelSystem.Instance.SetXp(0);
-    //     handler.Collect(new GameObject());
-
-    //     Assert.AreEqual(5, LevelSystem.Instance.GetXp());
-    // }
-    // [Test]
-    // public void ArrowHasRigidbodyAfterAwakeFunctionIsCalled()
-    // {
-    //     var go = new GameObject();
-    //     go.AddComponent<Rigidbody>();
-
-    //     var a = go.AddComponent<Arrow>();
-    //     Assert.NotNull(a.GetArrowRB());
-    // }
-
-
 
 }

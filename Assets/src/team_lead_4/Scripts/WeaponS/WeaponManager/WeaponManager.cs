@@ -2,12 +2,23 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
+// Manages all weapons the player can use. 
+// Responsibilities:
+// - Instantiate all weapon prefabs and store references
+// - Equip and activate ONE weapon at a time
+// - Trigger events to the correct weapon
+// - Maintain weapon positions under the weapon holder transform
+//
+// This class acts as the central dispatcher for weapon behavior that needs Monobehaviour or can't be performed by the weapons themselves.
+
 public class WeaponManager : MonoBehaviour
 {
     public Inventory playerInventory; // Reference to the player's inventory.
 
+
+    // Stores each weapon by name for O(1) lookups when equipping.
     private Dictionary<string, (WeaponBase data, GameObject instance)> weapons =
-        new Dictionary<string, (WeaponBase, GameObject)>(); // Holds each weapon and its spawned instance.
+        new Dictionary<string, (WeaponBase, GameObject)>();
 
     public Transform weaponHolder; // Holds the transform where weapons are displayed.
     private bool isAttacking = false; // Tracks whether the player is currently attacking.
@@ -16,14 +27,15 @@ public class WeaponManager : MonoBehaviour
 
     private Collider swordHurtBox; // Holds the sword's hurtbox collider for melee attacks.
 
-    private void Start()
+    private void Start()        // All weapons are instantiated once at startup to avoid runtime Instantiate() costs and to ensure instant weapon swapping without lag.
     {
-        AddWeapon(playerInventory.GetSword()); // Add the sword to the weapon list.
-        AddWeapon(playerInventory.GetBow()); // Add the bow to the weapon list.
-        AddWeapon(playerInventory.GetWand()); // Add the wand to the weapon list.
+        AddWeapon(playerInventory.GetSword()); 
+        AddWeapon(playerInventory.GetBow()); 
+        AddWeapon(playerInventory.GetWand()); 
 
         EquipWeapon(playerInventory.GetSword().getName()); // Start the game with the sword equipped.
 
+        // Melee weapons require collider-based hit detection, ranged weapons do not.
         swordHurtBox = playerInventory.GetSword().GetPrefab().GetComponent<Collider>(); // Cache the sword's hurtbox.
     }
 
@@ -60,11 +72,14 @@ public class WeaponManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")) return; // Ignore player collisions.
-        if (other.gameObject.CompareTag("EnemyProjectile")) return; // Ignore enemy projectiles.
-        if (other.gameObject.CompareTag("NoCollision")) return; // Ignore non-collision objects.
+        // Ignore collisions with player, friendly projectiles, or non-colliding objects.
+        // Only apply melee damage if the collider belongs to an enemy.
 
-        if (other.gameObject.CompareTag("Enemy")) // When hitting an enemy, perform sword attack.
+        if (other.gameObject.CompareTag("Player")) return; 
+        if (other.gameObject.CompareTag("EnemyProjectile")) return; 
+        if (other.gameObject.CompareTag("NoCollision")) return; 
+
+        if (other.gameObject.CompareTag("Enemy")) 
         {
             playerInventory.GetSword().Attack(this.gameObject, other);
         }
@@ -72,7 +87,9 @@ public class WeaponManager : MonoBehaviour
 
     private void SetLocation()
     {
-        //do stuffff
+        // Ensure equipped weapon snaps to the weaponHolder transform.
+        // This forces all weapons to use a consistent pivot point on the player model.
+
         if (currentInstance == null) return; // If no weapon is equipped, do nothing.
 
         currentInstance.transform.parent = weaponHolder; // Keep weapon attached to holder.
@@ -112,7 +129,8 @@ public class WeaponManager : MonoBehaviour
 
     private void EquipWeapon(string name)
     {
-        foreach (var kvp in weapons) // Hide all weapon instances.
+        // Deactivate all weapon instances so only the equipped one is visible. This is inexpensive because weapons are simple GameObjects.
+        foreach (var kvp in weapons) 
             kvp.Value.instance.SetActive(false);
 
         var (data, instance) = weapons[name]; // Get the weapon we want to equip.

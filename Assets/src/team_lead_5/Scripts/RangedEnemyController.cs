@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+    //[added by Haddie] 
 using System.Collections;
 using System.Collections.Generic;
 
@@ -80,7 +81,7 @@ public class RangedEnemyController : MonoBehaviour
         // Example: play animation, drop loot, notify UI
         _spawner.decrementEnemyCount();
 
-        //added by Haddie
+        //[added by Haddie] 
         foreach(LootItem lootItem in lootTable)
         {
             if(Random.Range(0f, 100f) <= lootItem.dropChance)

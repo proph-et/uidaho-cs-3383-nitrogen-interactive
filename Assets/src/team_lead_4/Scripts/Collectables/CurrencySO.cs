@@ -4,12 +4,19 @@ using UnityEngine;
 public class CurrencySO : CollectableSOBase
 {
     public int CurrencyAmount = 1;          // How much currency this collectable gives
-    private int MaxCurrency = int.MaxValue; // Hard cap to prevent overflow (not currently enforced)
+    private int MaxCurrency = int.MaxValue -1; // Hard cap to prevent overflow
 
     public override void Collect(GameObject objectThatCollected)
     {
         // Try to get the Inventory component from the collector
         Inventory inventory = objectThatCollected.GetComponent<Inventory>();
+
+        // Added MaxCurrency check because of tests.
+        if ((inventory.GetMoney() + CurrencyAmount) > MaxCurrency)
+        {
+            Debug.Log("Reached max currency.");
+            return;
+        }
         if (inventory != null)
         {
             // Add the configured currency amount to the player's inventory
@@ -22,6 +29,8 @@ public class CurrencySO : CollectableSOBase
         {
             // Warn if the object collecting has no inventory attached
             Debug.LogWarning("Collector has no Inventory component!");
+            return;
+
         }
     }
 

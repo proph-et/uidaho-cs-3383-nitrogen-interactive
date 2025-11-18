@@ -7,7 +7,8 @@
         "TL4NewAssembly",
         "TL2+Scripts",
         "TL4WeaponCore",
-        "Game"
+        "Game",
+        "TL1Scripts"
     ],
     "includePlatforms": [
         "Editor"
