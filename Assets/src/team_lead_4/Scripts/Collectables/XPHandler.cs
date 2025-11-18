@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class XPHandler : Collectable
 {
-    // [SerializeField] private XPSO xpData;
+    // Handles awarding XP when collected
+    private int amountXP = 5;
 
     public override void Collect(GameObject collector)
     {
-        // base.Collect(collector);
-        // Debug.Log("added xp");
-        LevelSystem.Instance.GetAddXp(5);
+        // Grant a fixed amount of XP to the LevelSystem
+        LevelSystem.Instance.GetAddXp(amountXP);
     }
 }

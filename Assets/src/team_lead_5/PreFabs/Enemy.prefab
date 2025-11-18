@@ -191,6 +191,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a46e98b6d3b75443bab5d421d7554d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: NewAssembly::RangedEnemyController
+  lootTable:
+  - itemPrefab: {fileID: 2224896175731632670, guid: 558c19fce5712c9408fffa554de98144, type: 3}
+    dropChance: 70.5
+  - itemPrefab: {fileID: 4510537224572103534, guid: 2cc3e42fa8f78f54fa7e0ead32c7d2d5, type: 3}
+    dropChance: 56.6
+  - itemPrefab: {fileID: 487750977179941515, guid: b0d4593f37bdce646b6e0c5f303c21dc, type: 3}
+    dropChance: 18.2
   agent: {fileID: 1303896027989038505}
   player: {fileID: 0}
   whatIsGround:

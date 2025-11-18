@@ -1,9 +1,16 @@
 using UnityEngine;
 using UnityEngine.AI;
+    //[added by Haddie] 
+using System.Collections;
+using System.Collections.Generic;
 
 public class RangedEnemyController : MonoBehaviour
 {
     private RangedEnemy enemyLogic;
+
+    // [added by Haddie] LootTable
+    [Header("Loot")]
+    public List<LootItem> lootTable = new List<LootItem>();
 
     //setup
     public NavMeshAgent agent;
@@ -73,6 +80,27 @@ public class RangedEnemyController : MonoBehaviour
         Debug.Log("RangedEnemyController handling death");
         // Example: play animation, drop loot, notify UI
         _spawner.decrementEnemyCount();
+
+        //[added by Haddie] 
+        foreach(LootItem lootItem in lootTable)
+        {
+            if(Random.Range(0f, 100f) <= lootItem.dropChance)
+            {
+                InstantiateLoot(lootItem.itemPrefab);
+            }
+            break;
+        }
+
         Destroy(gameObject);
+        
+    }
+
+    //[added by Haddie] 
+    public void InstantiateLoot(GameObject loot)
+    {
+        if(loot != null)
+        {
+            GameObject droppedLoot = Instantiate(loot, transform.position, Quaternion.identity);
+        }
     }
 }

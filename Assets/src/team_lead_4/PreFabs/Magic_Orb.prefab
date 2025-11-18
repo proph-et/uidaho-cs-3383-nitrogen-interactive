@@ -4870,7 +4870,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.71
+  m_Radius: 0.69
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1780767557170458878
 Rigidbody:
@@ -4911,9 +4911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62ae89c31dd44b47bb82808b29a669b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: TL4NewAssembly::MagicOrb
-  speed: 5
-  lifetime: 2
-  damage: 10
 --- !u!1 &3567924988785688792
 GameObject:
   m_ObjectHideFlags: 0

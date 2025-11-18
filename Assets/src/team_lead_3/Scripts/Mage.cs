@@ -35,7 +35,7 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab302 = true;
-            health.Heal(45);
+            SkillTreeClass.health.Heal(45);
         }
         else
         {
@@ -111,7 +111,7 @@ public class Mage : SkillTreeClass
         {
             mageLevel = mageLevel + 1;
             ab306 = true;
-            health.Heal(50);
+            SkillTreeClass.health.Heal(50);
         }
         else
         {

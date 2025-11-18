@@ -55,7 +55,9 @@ public class LevelWindow : MonoBehaviour
 
         transform.Find("AddXpButton").GetComponent<Button>().onClick.AddListener(() => levelSystem.GetAddXp(100));
     }
-    private void LevelSystem_OnlvlChanged(object sender, EventArgs e)
+    
+    // these are subscribers, or observers, to the event
+    private void LevelSystem_OnlvlChanged(object sender, EventArgs e) 
     {
         // the level has changed, so update the text
         SetLvlNum();

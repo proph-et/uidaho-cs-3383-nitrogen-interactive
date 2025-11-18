@@ -24,6 +24,7 @@ public class Sword : WeaponBase
             var health = collision.GetComponent<Health>();
             if (health != null)
             {
+                // Debug.Log("taking damage from sword: " + getWeaponDamage());
                 health.TakeDamage(getWeaponDamage());
             }
         }

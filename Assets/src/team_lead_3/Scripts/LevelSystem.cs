@@ -21,14 +21,15 @@ public class LevelSystem
     }
 
     // observer pattern
-    public event EventHandler OnXpChanged;
-    public event EventHandler OnlvlChanged;
+    // Level system is the observable, things that subscribe to the event are the observers
+    public event EventHandler OnXpChanged; // means that the xp changed
+    public event EventHandler OnlvlChanged; // means that the level changed
 
     int level;
     int xp;
     int xpToNext;
 
-    public LevelSystem() // this technically needs to be private
+    public LevelSystem()
     {
         level = 1;
         xp = 0;
@@ -38,7 +39,7 @@ public class LevelSystem
         OnXpChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    private void AddXp(int amount) // might want to make this private, but other classes call it
+    private void AddXp(int amount)
     {
         xp = xp + amount;
         while (xp >= xpToNext) // if you have enough xp
@@ -72,12 +73,12 @@ public class LevelSystem
     }
 
     // ***** Getters ********
-    public float GetLevelNum() // a getter so it must be public 
+    public float GetLevelNum()
     {
         return level;
     }
 
-    public float GetXpNum() // also a getter
+    public float GetXpNum()
     {
         return (float)xp;
     }
