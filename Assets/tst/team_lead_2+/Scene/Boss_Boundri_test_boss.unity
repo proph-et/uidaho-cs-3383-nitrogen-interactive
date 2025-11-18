@@ -9024,10 +9024,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 403159332}
     - target: {fileID: 5934326064380010187, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
-      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5934326064380010187, guid: 9ac58e74516053d4fb06f986b679ef4f, type: 3}
       propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Die
       objectReference: {fileID: 0}
@@ -16037,7 +16033,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: fe421d3d6cf656e42b1f0021e549d71d, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: b2d6aa1265454344287b82651edd016d, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &705157731
 Transform:

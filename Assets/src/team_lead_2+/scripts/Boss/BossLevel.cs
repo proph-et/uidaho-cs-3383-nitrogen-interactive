@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossLevel : MonoBehaviour
 {
@@ -86,9 +87,11 @@ public class BossLevel : MonoBehaviour
         Movement?.StopMoving();
         enabled = false;
 
-        Animator.SetTrigger("death");
+        Animator.SetTrigger("Bossdead");
 
         StartCoroutine(FinishDeath());
+
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
 
         Debug.Log("You won the Game!");
     }
