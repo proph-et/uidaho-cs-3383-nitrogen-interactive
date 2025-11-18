@@ -12,14 +12,21 @@ public class Health : MonoBehaviour
     [SerializeField] private UnityEvent<float> onDamage;
 
     private bool isDead = false;
+    private IBCMode invincibleSource;
 
     private void Awake()
     {
         currentHealth = maxHealth;
+        invincibleSource = GetComponent<IBCMode>();
     }
 
     public void TakeDamage(float amount)
     {
+        if(invincibleSource != null && invincibleSource.IsInvincible())
+        {
+            Debug.Log($"{gameObject.name} has BC mode enabled, so damage will be ignored");
+            return;
+        }
         Debug.Log($"{gameObject.name} taking {amount} damage");
         if (currentHealth <= 0f) return;
 

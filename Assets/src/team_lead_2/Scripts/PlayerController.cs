@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IBCMode
 {
     [Header("Random Shit")] Rigidbody rb;
     private Animator _animator;
@@ -24,32 +24,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float dashCooldown;
     private Ability dashAbility;
 
-// <<<<<<< HEAD
     [Header("Attack Settings")]
     [SerializeField] private GameObject rightArm;
-// // =======
-//     private bool isInvincible = false;
 
-//     [Header("Attack Settings")] [SerializeField]
-//     private GameObject rightArm;
-
-// // >>>>>>> 09358adc2f6e5e3157c85b84fd4b73d70ec2ea32
     [SerializeField] private float attackDuration;
     [SerializeField] private float attackRange;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float attackDamage;
     private Ability attackAbility;
 
-// <<<<<<< HEAD
     [Header("Health Settings")]
     [SerializeField] private Health _health;
     private bool isInvincible = false;
     private bool bcMode = false;
-    
-// // =======
-//     [Header("Health Settings")] [SerializeField]
-//     private Health _health;
-// // >>>>>>> 09358adc2f6e5e3157c85b84fd4b73d70ec2ea32
 
     // ------------------
     // Input Events
@@ -164,7 +151,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsInvincible()
     {
-        return isInvincible;
+        return bcMode;
     }
 
     /// ---------------
@@ -199,7 +186,6 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player had died");
         Respawn();
     }
-// <<<<<<< HEAD
 
     ///-----------
     /// BC Mode stuff
@@ -209,11 +195,4 @@ public class PlayerController : MonoBehaviour
         bcMode = !bcMode;
         Debug.Log("BC Mode = " + (bcMode ? "ON" : "OFF"));
     }
-
-    public bool IsBCMode()
-    {
-        return bcMode;
-    }
 }
-// =======
-// }
