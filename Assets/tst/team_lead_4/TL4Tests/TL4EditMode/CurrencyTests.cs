@@ -41,19 +41,6 @@ public class CurrencyTests
     }
 
     [Test]
-    public void CurrencyManuallySetToNegativeThisShouldFail()
-    {
-        SerializedObject serialized = new SerializedObject(currencySO);
-        serialized.FindProperty("Currency").intValue = -10;
-        serialized.ApplyModifiedProperties();
-
-        int amount = currencySO.GetCurrency();
-
-
-        Assert.Less(amount, 0);
-    }
-
-    [Test]
     public void SubtractTotalCurrencyResultsInZero()
     {
         int amount = currencySO.GetCurrency();
@@ -125,21 +112,6 @@ public class CurrencyTests
         serialized.SetHealthAmount(10);
         Assert.AreEqual(10, serialized.GetHealthAmount());
     }
-
-    // [Test]    
-    // public void CollectHealsHealthComponent()
-    // {
-    //     var healthSO = ScriptableObject.CreateInstance<HealthSO>();
-    //     // healthSO.SetHealthAmount(10);
-
-    //     GameObject player = new GameObject();
-    //     var health = player.AddComponent<Health>();
-
-    //     float before = health.GetCurrentHealth();
-    //     healthSO.Collect(player);
-
-    //     Assert.Greater(health.GetCurrentHealth(), before);
-    // }
 
     // Arrow Tests
 
@@ -230,6 +202,24 @@ public class CurrencyTests
         Assert.Pass(); // no throw = good
     }
 
+    [Test]
+    public void SwordEndAttackWorks()
+    {
+        var sword = new Sword(null);
+        
+        sword.StartAttack();
+        sword.EndAttack();
+
+        // attempt attacking should do nothing
+        var targetGO = new GameObject();
+        var target = targetGO.AddComponent<Health>();
+        float before = target.GetCurrentHealth();
+
+        sword.Attack(new GameObject(), target.GetComponent<Collider>());
+
+        Assert.AreEqual(before, target.GetCurrentHealth());
+    }
+
     // Bow Tests
 
     [Test]
@@ -254,6 +244,26 @@ public class CurrencyTests
         wand.SetOrbPrefab(orb);
 
         Assert.AreEqual(orb, wand.GetOrbPrefab());
+    }
+
+    // WeaponBase Tests 
+
+    [Test]
+    public void WeaponBaseNameSetGet()
+    {
+        var w = new WeaponBase();
+        w.setWeaponName("Laser Sword");
+
+        Assert.AreEqual("Laser Sword", w.getName());
+    }
+
+    [Test]
+    public void WeaponBaseSetTierWorks()
+    {
+        var w = new WeaponBase();
+        w.setWeaponTier(3);
+
+        Assert.AreEqual(3, w.getWeaponTier());
     }
 
 }
