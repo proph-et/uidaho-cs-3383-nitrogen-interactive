@@ -10,7 +10,7 @@ public class XPSO : CollectableSOBase
     public override void Collect(GameObject objectThatCollected)
     {
         // Debug.Log("added xp");
-        LevelSystem.Instance.AddXp(xpAmount);
+        LevelSystem.Instance.GetAddXp(xpAmount);
 
     }
 }

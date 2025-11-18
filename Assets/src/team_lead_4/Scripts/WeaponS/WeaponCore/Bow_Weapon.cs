@@ -26,7 +26,7 @@ public class Bow : WeaponBase
         firePoint = point;
     }
 
-    public override void Attack(GameObject self, Collider collider)
+    public override void Attack(GameObject self, Collider collision)
     {
         if(isAttacking)
         {

@@ -13,17 +13,13 @@ public class WeaponBase
     protected bool isAttacking = false;
 
     //lets any weapon type define its own attack behavior (swing projectile etc)
-    public virtual void Attack(GameObject self, Collider collider)
+    public virtual void Attack(GameObject self, Collider collision)
     {
-        if (isAttacking && collider != null)
+        if (isAttacking)
         {
-            var health = collider.GetComponent<Health>();
-
-            if (health != null)
-            {
-                health.TakeDamage(getWeaponDamage());
-            }
+            Debug.Log("attacking not set up for WeaponBase");
         }
+
         EndAttack();
     }
 
@@ -93,6 +89,11 @@ public class WeaponBase
         return augmentName;
     }
 
+    public void removeAugment()
+    {
+        augmentName = "NONE";
+    }
+
     public virtual void StartAttack()
     {
         isAttacking = true;
@@ -112,7 +113,6 @@ public class WeaponBase
     {
         prefab = Prefab;
     }
-
 
 
     // protected IEnumerator AttackCooldown()

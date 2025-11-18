@@ -53,7 +53,7 @@ public class LevelWindow : MonoBehaviour
         levelSystem.OnXpChanged += LevelSystem_OnXpChanged;
         levelSystem.OnlvlChanged += LevelSystem_OnlvlChanged;
 
-        transform.Find("AddXpButton").GetComponent<Button>().onClick.AddListener(() => levelSystem.AddXp(100));
+        transform.Find("AddXpButton").GetComponent<Button>().onClick.AddListener(() => levelSystem.GetAddXp(100));
     }
     private void LevelSystem_OnlvlChanged(object sender, EventArgs e)
     {

@@ -28,11 +28,12 @@ public class PauseMenuPlayModeBoundaryTests : MonoBehaviour
     [TearDown]
     public void TearDown()
     {
-        Object.DestroyImmediate(pauseMenuObj);
-        Object.DestroyImmediate(canvasObj);
+        Object.Destroy(pauseMenuObj);
+        Object.Destroy(canvasObj);
         PauseMenu.Paused = false;
         Time.timeScale = 1f;
     }
+
 
     // -------------------------
     // Boundary Test 1: Stop() sets Paused = true and freezes time

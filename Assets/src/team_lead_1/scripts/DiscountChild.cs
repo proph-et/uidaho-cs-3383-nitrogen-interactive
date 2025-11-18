@@ -1,12 +1,15 @@
 ﻿public class DiscountChild : DiscountParent
 {
-    public DiscountChild(float discountAmount)
+    public DiscountChild(int discountAmount)
     {
         DiscountAmount = discountAmount;
     }
 
-    public float apply_discount(float value)
+    // public override int ApplyDiscount(int value)
+        public int ApplyDiscount(int value)
     {
-        return value - (DiscountAmount * value * 2);
+        int discountedAmount = value - DiscountAmount;
+        if (discountedAmount >= 0) return discountedAmount;
+        return 0;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Collectable/Currency", fileName = "New Coin Collectable")]
 public class CurrencySO : CollectableSOBase
 {
-    public int CurrencyAmount = 1;
+    private int CurrencyAmount = 1;
     private int MaxCurrency = int.MaxValue;
 
     public override void Collect(GameObject objectThatCollected)
@@ -13,8 +13,8 @@ public class CurrencySO : CollectableSOBase
         Inventory inventory = objectThatCollected.GetComponent<Inventory>();
         if (inventory != null)
         {
-            inventory.addMoney(CurrencyAmount);
-            Debug.Log($"Collected {CurrencyAmount} coins. Total: {inventory.getMoney()}");
+            inventory.AddMoney(CurrencyAmount);
+            Debug.Log($"Collected {CurrencyAmount} coins. Total: {inventory.GetMoney()}");
         }
         else
         {
@@ -30,5 +30,10 @@ public class CurrencySO : CollectableSOBase
     public void SetCurrency(int amount)
     {
         CurrencyAmount = amount;
+    }
+
+    public int GetCurrencyAmount()
+    {
+        return CurrencyAmount;
     }
 }

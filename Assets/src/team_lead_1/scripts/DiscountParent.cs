@@ -1,10 +1,10 @@
 ﻿public abstract class DiscountParent
 {
-    protected float DiscountAmount;
+    protected int DiscountAmount;
 
-    // public abstract float apply_discount(float value);
-    public float apply_discount(float value)
+    // public virtual int ApplyDiscount(int value)
+    public int ApplyDiscount(int value)
     {
-    return value - (DiscountAmount * value);
+        return (int)(value - DiscountAmount * (value / 100.0f));
     }
 }

@@ -63,7 +63,7 @@ public class SkillTree : MonoBehaviour
         xpTimer += Time.deltaTime;
         if (xpTimer >= OneSec)
         {
-            levelSystem.AddXp(1);
+            levelSystem.GetAddXp(1);
             xpTimer = 0f;
         }
 

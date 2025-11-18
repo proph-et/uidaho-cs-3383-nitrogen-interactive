@@ -15,12 +15,13 @@ public class SkillTreeClass
         //levelSystem = LevelSystem.Instance;
     }
 
-    public void Init()
+    public void Init() // I have a good reason for this to be public
     {
         overallLevel = (int)LevelSystem.Instance.GetLevelNum();
         Debug.Log($"The level is {overallLevel}");
         LevelSystem.Instance.skillPoint = 1;
-        Debug.Log($"You have {LevelSystem.Instance.skillPoint} skill points");
+        int current_sp = LevelSystem.Instance.GetSp();
+        Debug.Log($"You have {current_sp} skill points");
 
         // *** This is where the dynamic binding gets called so uncomment this ****
         //DynamicAbility ability = new Ability101();
@@ -31,11 +32,11 @@ public class SkillTreeClass
     {
         Debug.Log("ADD SKILL IS BEING CALLED");
         // Debug.Log($"YOU HAVE {skillPoints} skill points");
-        if (flag == true && LevelSystem.Instance.skillPoint >= 1)
+        if (flag == true && LevelSystem.Instance.GetSp() >= 1)
         {
             //add the skill
             overallLevel = overallLevel + 1;
-            LevelSystem.Instance.skillPoint = LevelSystem.Instance.skillPoint - 1;
+            LevelSystem.Instance.skillPoint = LevelSystem.Instance.GetSp() - 1;
             return true;
         }
         else

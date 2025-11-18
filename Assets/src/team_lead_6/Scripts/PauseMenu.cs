@@ -14,11 +14,6 @@ public class PauseMenu : MonoBehaviour
     // The script changes behavior based on which state the game is in.
     // When the player presses Escape, it toggles between those states
     // by calling Play() or Stop().
-    //
-    // It also shows some COMMAND PATTERN behavior because each public
-    // method (Play, Stop, MainMenuButton) can be triggered by UI buttons.
-    // These methods act as “commands” that perform specific actions
-    // without the button needing to know how they work.
     // -------------------------------------------------------------
 
     // Static variable tracks the current "state" of the game.
@@ -83,7 +78,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     // -------------------------------------------------------------
-    // COMMAND: Load the main menu scene.
+    // Load the main menu scene.
     // This method can be linked to a UI button, encapsulating the
     // logic for quitting to the main menu.
     // -------------------------------------------------------------
@@ -97,3 +92,46 @@ public class PauseMenu : MonoBehaviour
     }
 }
 
+// +--------------------------------------+
+// |            MonoBehaviour             |
+// +--------------------------------------+
+//                 ▲
+//                 |
+// +--------------------------------------+
+// |              PauseMenu               |
+// +--------------------------------------+
+// | + PauseMenuCanvas : GameObject       |
+// | + static Paused : bool               |
+// +--------------------------------------+
+// | + Start()                            |
+// | + Update()                           |
+// | + Stop()                             |
+// | + Play()                             |
+// | + MainMenuButton()                   |
+// +--------------------------------------+
+//                 |
+//                 | modifies
+//                 v
+// +--------------------------------------+
+// |           Time (UnityEngine)         |
+// +--------------------------------------+
+// | + timeScale : float                  |
+// +--------------------------------------+
+
+//                 |
+//                 | accesses
+//                 v
+// +--------------------------------------+
+// |           GameObject                 |
+// +--------------------------------------+
+// | + SetActive(active : bool)           |
+// +--------------------------------------+
+
+//                 |
+//                 | loads scenes through
+//                 v
+// +--------------------------------------+
+// |       SceneManager (UnityEngine)     |
+// +--------------------------------------+
+// | + LoadSceneAsync(index : int)        |
+// +--------------------------------------+

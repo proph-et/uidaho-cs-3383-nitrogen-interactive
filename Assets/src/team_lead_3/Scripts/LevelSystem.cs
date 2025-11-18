@@ -38,7 +38,7 @@ public class LevelSystem
         OnXpChanged?.Invoke(this, EventArgs.Empty);
     }
 
-    public void AddXp(int amount) // might want to make this private, but other classes call it
+    private void AddXp(int amount) // might want to make this private, but other classes call it
     {
         xp = xp + amount;
         while (xp >= xpToNext) // if you have enough xp
@@ -93,5 +93,13 @@ public class LevelSystem
     public void GetAddSp(int amount)
     {
         AddSp(amount);
+    }
+    public void GetAddXp(int amount)
+    {
+        AddXp(amount);
+    }
+    public int GetSp()
+    {
+        return skillPoint;
     }
 }
