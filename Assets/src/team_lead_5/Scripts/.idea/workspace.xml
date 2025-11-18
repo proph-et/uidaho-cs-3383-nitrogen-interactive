@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f0aa234d-c40c-41d2-8857-d1f38227a7dc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../PreFabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/../PreFabs/Enemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BaseEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BaseEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RangedEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RangedEnemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RangedEnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RangedEnemyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EnemySpawner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +17,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/BaseEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/BaseEnemy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Enemy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/EnemySpawner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Projectile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/RangedEnemy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/RangedEnemyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/RangedEnemy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/RangedEnemyController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -66,6 +61,8 @@
       <workItem from="1762906883986" duration="3742000" />
       <workItem from="1763009328532" duration="25000" />
       <workItem from="1763009370101" duration="5561000" />
+      <workItem from="1763421444473" duration="612000" />
+      <workItem from="1763438105599" duration="1639000" />
     </task>
     <servers />
   </component>
