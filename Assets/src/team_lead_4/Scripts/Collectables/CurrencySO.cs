@@ -1,11 +1,10 @@
 using UnityEngine;
 
-
 [CreateAssetMenu(menuName = "Collectable/Currency", fileName = "New Coin Collectable")]
 public class CurrencySO : CollectableSOBase
 {
-    private int CurrencyAmount = 1;
-    private int MaxCurrency = int.MaxValue;
+    public int CurrencyAmount = 1;          // How much currency this collectable gives
+    private int MaxCurrency = int.MaxValue; // Hard cap to prevent overflow (not currently enforced)
 
     public override void Collect(GameObject objectThatCollected)
     {
@@ -13,27 +12,26 @@ public class CurrencySO : CollectableSOBase
         Inventory inventory = objectThatCollected.GetComponent<Inventory>();
         if (inventory != null)
         {
+            // Add the configured currency amount to the player's inventory
             inventory.AddMoney(CurrencyAmount);
+
+            // Log current total for debugging
             Debug.Log($"Collected {CurrencyAmount} coins. Total: {inventory.GetMoney()}");
         }
         else
         {
+            // Warn if the object collecting has no inventory attached
             Debug.LogWarning("Collector has no Inventory component!");
         }
     }
 
     public int GetCurrency()
     {
-        return CurrencyAmount;
+        return CurrencyAmount; // Return how much this coin is worth
     }
 
     public void SetCurrency(int amount)
     {
-        CurrencyAmount = amount;
-    }
-
-    public int GetCurrencyAmount()
-    {
-        return CurrencyAmount;
+        CurrencyAmount = amount; // Update coin value (used by tests or dynamic difficulty)
     }
 }

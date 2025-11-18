@@ -31,7 +31,7 @@ public class CurrencyTests
     {
         var serialized = ScriptableObject.CreateInstance<CurrencySO>();
         serialized.SetCurrency(25);
-        Assert.AreEqual(25, serialized.GetCurrencyAmount());
+        Assert.AreEqual(25, serialized.CurrencyAmount);
     }
 
     [Test]
