@@ -23,7 +23,7 @@ public class MainMenu : MenuBase
     // the shared actions from MenuBase.
     // Called when the "Play" button is pressed.
     // This command loads the next scene in the Build Settings list.
-    public void PlayGame() //Cant be priivate because of inheritance
+    public override void PlayGame() //Cant be priivate because of inheritance
     {
         // Load the next scene by index.
 
