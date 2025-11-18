@@ -46,7 +46,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab102 = true;
-            health.Heal(9);
+            SkillTreeClass.health.Heal(9);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -165,7 +165,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab108 = true;
-            health.Heal(18);
+            SkillTreeClass.health.Heal(18);
             Debug.Log("Skill Unlocked!");
         }
         else
@@ -227,7 +227,7 @@ public class Fighter : SkillTreeClass
             ab111 = true;
 
             float amountToRestore = health.GetMaxHealth() - health.GetCurrentHealth();
-            health.Heal(amountToRestore);
+            SkillTreeClass.health.Heal(amountToRestore);
             Debug.Log("Skill Unlocked!");
         }
         else

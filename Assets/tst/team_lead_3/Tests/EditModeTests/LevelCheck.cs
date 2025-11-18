@@ -51,4 +51,130 @@ public class LevelCheck
         Assert.Fail();
         yield return null;
     }
+    [UnityTest]
+    public IEnumerator IsLevelSystemSet()
+    {
+        float level_num = LevelSystem.Instance.GetLevelNum();
+        if (level_num == 1)
+        {
+            Assert.Pass();
+        }
+        else
+        {
+            Assert.Fail();
+        }
+        yield return null;
+    }
+    [UnityTest]
+    public IEnumerator AreSkillPointsSet()
+    {
+        int sp = LevelSystem.Instance.GetSp();
+        if (sp == 1)
+        {
+            Assert.Pass();
+        }
+        else
+        {
+            Assert.Fail();
+        }
+        yield return null;
+    }
+    [UnityTest]
+    public IEnumerator IsXpSetCorrectly()
+    {
+        float xp = LevelSystem.Instance.GetXpNum();
+        if (xp == 0)
+        {
+            Assert.Pass();
+        }
+        else
+        {
+            Assert.Fail();
+        }
+        yield return null;
+    }
+    [UnityTest]
+    public IEnumerator IsXpNext()
+    {
+        int xpnext = LevelSystem.Instance.GetXpToNext(1);
+        int shouldbe = 10;
+        if (xpnext == shouldbe)
+        {
+            Assert.Pass();
+        }
+        else
+        {
+            Assert.Fail();
+        }
+        yield return null;
+    }
+    [UnityTest]
+    public IEnumerator CheckThatXpToNextDoubles() // make sure it takes 20xp to reach next level
+    {
+        int xpnext = LevelSystem.Instance.GetXpToNext(2);
+        int shouldbe = 20;
+        if (xpnext == shouldbe)
+        {
+            Assert.Pass();
+        }
+        else
+        {
+            Assert.Fail();
+        }
+        yield return null;
+    }
+    [UnityTest]
+    public IEnumerator CheckThatXpToNextDoubles2() // make sure it takes 20xp to reach next level
+    {
+        int xpnext = LevelSystem.Instance.GetXpToNext(3);
+        int shouldbe = 30;
+        if (xpnext == shouldbe)
+        {
+            Assert.Pass();
+        }
+        else
+        {
+            Assert.Fail();
+        }
+        yield return null;
+    }
+    [UnityTest]
+    public IEnumerator RangerLvlCheck()
+    {
+        if (ranger.rangerLevel == 0)
+        {
+            Assert.Pass();
+        }
+        else
+        {
+            Assert.Fail();
+        }
+        yield return null;
+    }
+    [UnityTest]
+    public IEnumerator MageLvlCheck()
+    {
+        if (mage.mageLevel == 0)
+        {
+            Assert.Pass();
+        }
+        else
+        {
+            Assert.Fail();
+        }
+        yield return null;
+    }
+        [UnityTest]
+    public IEnumerator FighterLvlCheck()
+    {
+        if (fighter.fighterLevel == 0)
+        {
+            Assert.Pass();
+        }
+        else
+        {
+            Assert.Fail();
+        }
+        yield return null;
+    }
 }

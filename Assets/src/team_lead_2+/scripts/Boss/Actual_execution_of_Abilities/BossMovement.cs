@@ -33,8 +33,11 @@ public class BossMovement : MonoBehaviour
 
         agent.SetDestination(player.position);
 
-        // Switch Animator to Walking
-        animator.SetBool("isMoving", true);
+        // Switch Animator to Walking if not already
+        if (!animator.GetBool("isMoving"))
+        {
+            animator.SetBool("isMoving", true);
+        }
     }
 
     public void StopMoving()

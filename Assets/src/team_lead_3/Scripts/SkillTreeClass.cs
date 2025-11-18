@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class SkillTreeClass
 {
-    protected static Health health;
+    public static Health health;
     protected static PlayerController pc;
     private int overallLevel = 1;
     private LevelSystem levelSystem;

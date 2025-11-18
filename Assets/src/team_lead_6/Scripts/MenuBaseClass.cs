@@ -29,7 +29,7 @@ public class MenuBase
 
     public virtual void Quit() // Cannot be private becasue Unitys said "virtual or Abstract methods cannot be private"
     {
-        Debug.Log("Quit a generic Scene...");
+        Application.Quit();
     }
 
 }

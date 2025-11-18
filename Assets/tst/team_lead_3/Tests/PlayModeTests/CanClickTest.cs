@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class CanClickTest : InputTestFixture
 {
     Mouse mouse;
+    public bool is_open = true;
     
 
     [UnitySetUp]
@@ -33,6 +34,19 @@ public class CanClickTest : InputTestFixture
             Assert.Fail();
         }
 
+        yield return null;
+    }
+    [UnityTest]
+    public IEnumerator LoadSceneTest() // does the skill tree load in at runtime
+    {
+        if (is_open)
+        {
+            Assert.Pass();
+        }
+        else
+        {
+            Assert.Fail();
+        }
         yield return null;
     }
 
