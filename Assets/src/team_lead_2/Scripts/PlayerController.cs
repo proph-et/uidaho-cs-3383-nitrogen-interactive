@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour, IBCMode
     private Animator _animator;
     private Ability currentAbility;
 
-    [Header("Movement Settings")] public float speed;
+    [Header("Movement Settings")] 
+    public float speed;
     [SerializeField] private Vector2 move;
 
     [Header("Respawn Settings")] private Transform spawnPoint;
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour, IBCMode
     private Ability attackAbility;
 
     [Header("Health Settings")]
+    [SerializeField] public float armor;
     [SerializeField] private Health _health;
     private bool isInvincible = false;
     private bool bcMode = false;
@@ -153,6 +155,12 @@ public class PlayerController : MonoBehaviour, IBCMode
     {
         return bcMode;
     }
+
+    public void SetSpeed(float newSpeed)
+    {
+    speed = newSpeed;
+    }
+
 
     /// ---------------
     /// Respawn stuff

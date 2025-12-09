@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class SkillTreeClass
 {
     public static Health health;
-    protected static PlayerController pc;
+    public static PlayerController pc;
     private int overallLevel = 1;
     private LevelSystem levelSystem;
     private int levReq; // the level required to unlock that skill
@@ -17,6 +17,7 @@ public class SkillTreeClass
 
     public void Init() // I have a good reason for this to be public
     {
+        
         overallLevel = (int)LevelSystem.Instance.GetLevelNum();
         Debug.Log($"The level is {overallLevel}");
         LevelSystem.Instance.skillPoint = 1;

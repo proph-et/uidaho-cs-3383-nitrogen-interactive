@@ -13,7 +13,6 @@ public class Health : MonoBehaviour
 
     private bool isDead = false;
     private IBCMode invincibleSource;
-
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -22,6 +21,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+
         if(invincibleSource != null && invincibleSource.IsInvincible())
         {
             Debug.Log($"{gameObject.name} has BC mode enabled, so damage will be ignored");
@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
         }
         Debug.Log($"{gameObject.name} taking {amount} damage");
         if (currentHealth <= 0f) return;
-
+            
         currentHealth = Mathf.Max(currentHealth - amount, 0f);
         onDamage?.Invoke(amount);
 
@@ -44,6 +44,16 @@ public class Health : MonoBehaviour
     {
         if (currentHealth <= 0f && !respawning) return;
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+    }
+
+    public void IncreaseMaxHealth(float increaseAmount)
+    {
+        if (increaseAmount <= 0f) return;
+
+        maxHealth += increaseAmount;
+        Heal(increaseAmount, false);
+
+        //onDamage?.Invoke(0f); //maybe needed for ui updating 
     }
 
     // --- Getters (safe access) ---

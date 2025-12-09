@@ -30,7 +30,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab101 = true;
-            LevelSystem.Instance.GetAddXp(35);
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         Debug.Log("This is 101");
     }
@@ -46,8 +46,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab102 = true;
-            SkillTreeClass.health.Heal(9);
-            Debug.Log("Skill Unlocked!");
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         else
         {
@@ -66,8 +65,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab103 = true;
-            LevelSystem.Instance.GetAddXp(12);
-            Debug.Log("Skill Unlocked!");
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         else
         {
@@ -86,7 +84,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab104 = true;
-            LevelSystem.Instance.GetAddSp(1);
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         else
         {
@@ -105,8 +103,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab105 = true;
-            health.Heal(34);
-            Debug.Log("Skill Unlocked!");
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         else
         {
@@ -125,8 +122,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab106 = true;
-            LevelSystem.Instance.GetXpBoost(12);
-            Debug.Log("Skill Unlocked!");
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         else
         {
@@ -145,8 +141,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab107 = true;
-            LevelSystem.Instance.GetAddSp(1);
-            Debug.Log("Skill Unlocked!");
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         else
         {
@@ -165,8 +160,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab108 = true;
-            SkillTreeClass.health.Heal(18);
-            Debug.Log("Skill Unlocked!");
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         else
         {
@@ -185,8 +179,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab109 = true;
-            LevelSystem.Instance.GetAddXp(70);
-            Debug.Log("Skill Unlocked!");
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         else
         {
@@ -205,8 +198,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab110 = true;
-            LevelSystem.Instance.GetXpBoost(5);
-            Debug.Log("Skill Unlocked!");
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         else
         {
@@ -227,8 +219,7 @@ public class Fighter : SkillTreeClass
             ab111 = true;
 
             float amountToRestore = health.GetMaxHealth() - health.GetCurrentHealth();
-            SkillTreeClass.health.Heal(amountToRestore);
-            Debug.Log("Skill Unlocked!");
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         else
         {
@@ -247,9 +238,7 @@ public class Fighter : SkillTreeClass
         {
             fighterLevel = fighterLevel + 1;
             ab112 = true;
-            LevelSystem.Instance.GetAddSp(2);
-            LevelSystem.Instance.GetAddXp(100);
-            Debug.Log("Skill Unlocked!");
+            pc.SetSpeed(pc.speed * 1.1f);
         }
         else
         {

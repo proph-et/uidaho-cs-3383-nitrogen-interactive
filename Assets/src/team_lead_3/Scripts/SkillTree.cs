@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using PlasticPipe.Certificates;
 
 public class SkillTree : MonoBehaviour
 {
@@ -28,7 +29,9 @@ public class SkillTree : MonoBehaviour
         skilltree = new SkillTreeClass();
         skilltree.SetLevelSystem(levelSystem);
         skilltree.Init();
-        SkillTreeClass.health = FindObjectOfType<Health>();
+        SkillTreeClass.pc = FindObjectOfType<PlayerController>();
+        GameObject player = SkillTreeClass.pc.gameObject;
+        SkillTreeClass.health = player.GetComponent<Health>();
     }
 
     private void Awake()

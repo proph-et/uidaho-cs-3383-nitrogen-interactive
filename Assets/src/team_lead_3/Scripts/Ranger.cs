@@ -25,7 +25,7 @@ public class Ranger : SkillTreeClass
             rangerLevel = rangerLevel + 1;
             ab201 = true;
             float amountToHeal = health.GetMaxHealth() - health.GetCurrentHealth();
-            SkillTreeClass.health.Heal(amountToHeal);
+            SkillTreeClass.health.IncreaseMaxHealth(SkillTreeClass.health.GetMaxHealth() * 0.1f);
             Debug.Log("We healing up boys");
         }
         else
@@ -45,8 +45,7 @@ public class Ranger : SkillTreeClass
         {
             rangerLevel = rangerLevel + 1;
             ab202 = true;
-            Debug.Log("Invincible");
-            pc.IsInvincible();
+            SkillTreeClass.health.IncreaseMaxHealth(SkillTreeClass.health.GetMaxHealth() * 0.1f);
         }
         else
         {
@@ -65,8 +64,7 @@ public class Ranger : SkillTreeClass
         {
             rangerLevel = rangerLevel + 1;
             ab203 = true;
-            Debug.Log("Adding some health");
-            SkillTreeClass.health.Heal((float)5.0);
+            SkillTreeClass.health.IncreaseMaxHealth(SkillTreeClass.health.GetMaxHealth() * 0.1f);
         }
         else
         {
@@ -85,8 +83,7 @@ public class Ranger : SkillTreeClass
         {
             rangerLevel = rangerLevel + 1;
             ab204 = true;
-            Debug.Log("Adding 15 health");
-            SkillTreeClass.health.Heal((float)15);
+            SkillTreeClass.health.IncreaseMaxHealth(SkillTreeClass.health.GetMaxHealth() * 0.1f);
         }
         else
         {
@@ -105,8 +102,7 @@ public class Ranger : SkillTreeClass
         {
             rangerLevel = rangerLevel + 1;
             ab205 = true;
-            Debug.Log("Skill unlocked!");
-            SkillTreeClass.health.TakeDamage(0);
+            SkillTreeClass.health.IncreaseMaxHealth(SkillTreeClass.health.GetMaxHealth() * 0.1f);
         }
         else
         {
@@ -125,8 +121,7 @@ public class Ranger : SkillTreeClass
         {
             rangerLevel = rangerLevel + 1;
             ab206 = true;
-            Debug.Log("Skill unlocked!");
-            pc.IsInvincible();
+            SkillTreeClass.health.IncreaseMaxHealth(SkillTreeClass.health.GetMaxHealth() * 0.1f);
         }
         else
         {
@@ -145,8 +140,7 @@ public class Ranger : SkillTreeClass
         {
             rangerLevel = rangerLevel + 1;
             ab207 = true;
-            Debug.Log("Skill unlocked!");
-            SkillTreeClass.health.Heal(35);
+            SkillTreeClass.health.IncreaseMaxHealth(SkillTreeClass.health.GetMaxHealth() * 0.1f);
         }
         else
         {
@@ -165,8 +159,7 @@ public class Ranger : SkillTreeClass
         {
             rangerLevel = rangerLevel + 1;
             ab208 = true;
-            Debug.Log("Skill unlocked!");
-            LevelSystem.Instance.GetAddXp(50);
+            SkillTreeClass.health.IncreaseMaxHealth(SkillTreeClass.health.GetMaxHealth() * 0.1f);
         }
         else
         {
@@ -186,8 +179,7 @@ public class Ranger : SkillTreeClass
             float amountToHeal = health.GetMaxHealth() - health.GetCurrentHealth();
             rangerLevel = rangerLevel + 1;
             ab209 = true;
-            Debug.Log("Skill unlocked!");
-            SkillTreeClass.health.Heal(amountToHeal);
+            SkillTreeClass.health.IncreaseMaxHealth(SkillTreeClass.health.GetMaxHealth() * 0.1f);
         }
         else
         {

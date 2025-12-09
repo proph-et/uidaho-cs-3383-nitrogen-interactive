@@ -352,6 +352,7 @@ MonoBehaviour:
   attackRange: 0.5
   attackCooldown: 0.2
   attackDamage: 10
+  armor: 0
   _health: {fileID: 0}
 --- !u!136 &49219384
 CapsuleCollider:
@@ -13665,7 +13666,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024319515}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 420.78934, y: 212.73465, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -14146,7 +14147,6 @@ SceneRoots:
   - {fileID: 600228401}
   - {fileID: 991610420}
   - {fileID: 1972059827}
-  - {fileID: 2024319517}
   - {fileID: 1410713447}
   - {fileID: 861117543}
   - {fileID: 2030994640}
@@ -14160,3 +14160,4 @@ SceneRoots:
   - {fileID: 109983900}
   - {fileID: 675206245}
   - {fileID: 435618667}
+  - {fileID: 2024319517}
