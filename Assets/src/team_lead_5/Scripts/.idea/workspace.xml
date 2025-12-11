@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f0aa234d-c40c-41d2-8857-d1f38227a7dc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/EnemySpawner.cs" afterDir="false" />
-    </list>
+    <list default="true" id="f0aa234d-c40c-41d2-8857-d1f38227a7dc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +59,7 @@
       <workItem from="1763009328532" duration="25000" />
       <workItem from="1763009370101" duration="5561000" />
       <workItem from="1763421444473" duration="612000" />
-      <workItem from="1763438105599" duration="1639000" />
+      <workItem from="1763438105599" duration="2288000" />
     </task>
     <servers />
   </component>
